@@ -1,7 +1,10 @@
+export type PersonaId = 'umkm' | 'auditor' | 'consumer' | 'officer' | 'guest';
+
 export interface Service {
   id: string;
   title: string; // This will now be a translation key
   icon: React.ReactNode;
+  personas?: PersonaId[]; // Array of personas that can see this service. If undefined, visible to all.
 }
 
 export interface NewsArticle {

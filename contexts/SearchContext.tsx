@@ -1,6 +1,6 @@
 import React, { createContext, useState, useContext } from 'react';
 
-type SearchScope = 'all' | 'products' | 'certificates';
+type SearchScope = 'all' | 'products' | 'certificates' | 'map';
 
 interface SearchFilters {
     category?: string;

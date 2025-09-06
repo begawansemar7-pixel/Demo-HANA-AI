@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslations } from '../hooks/useTranslations';
 import { SERVICES } from '../constants';
+import { useAuth } from '../hooks/useAuth';
 
 interface MoreServicesPageProps {
   onNavigate: (page: string) => void;
@@ -8,9 +9,21 @@ interface MoreServicesPageProps {
 
 const MoreServicesPage: React.FC<MoreServicesPageProps> = ({ onNavigate }) => {
   const { t } = useTranslations();
+  const { persona } = useAuth();
   
-  // A mock list of services, can be expanded in a real app
-  const moreServices = SERVICES.slice(0, 8); 
+  // Filter services based on persona
+  const availableServices = SERVICES.filter(service => {
+      // The "More" service itself should not be listed on the "More Services" page
+      if (service.id === 'more') {
+          return false;
+      }
+      // Guests see all services
+      if (persona === 'guest') {
+          return true;
+      }
+      // Filter based on persona for logged-in users
+      return !service.personas || service.personas.includes(persona!);
+  });
 
   return (
     <div className="container mx-auto px-4 py-8 animate-fadein min-h-[calc(100vh-200px)]">
@@ -20,7 +33,7 @@ const MoreServicesPage: React.FC<MoreServicesPageProps> = ({ onNavigate }) => {
       </div>
       
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-        {moreServices.map(service => (
+        {availableServices.map(service => (
           <a
             key={service.id}
             href="#"

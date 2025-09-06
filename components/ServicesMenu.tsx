@@ -2,6 +2,7 @@ import React from 'react';
 import { SERVICES } from '../constants';
 import type { Service } from '../types';
 import { useTranslations } from '../hooks/useTranslations';
+import { useAuth } from '../hooks/useAuth';
 
 interface ServiceCardProps {
   service: Service;
@@ -29,17 +30,28 @@ interface ServicesMenuProps {
 
 const ServicesMenu: React.FC<ServicesMenuProps> = ({ onNavigate }) => {
   const { t } = useTranslations();
+  const { persona } = useAuth();
 
   const handleServiceClick = (serviceId: string) => {
     onNavigate(serviceId);
   };
+
+  const filteredServices = SERVICES.filter(service => {
+    // Guests see all services to encourage exploration
+    if (persona === 'guest') {
+      return true;
+    }
+    // If a service has no specific personas, it's visible to all logged-in users.
+    // If it has a personas array, check if the current persona is included.
+    return !service.personas || service.personas.includes(persona!);
+  });
 
   return (
     <section id="services-menu" className="container mx-auto px-4 py-8">
       <h2 className="text-2xl font-bold mb-4">{t('home.services.title')}</h2>
       
       <div className="flex space-x-4 overflow-x-auto pb-4 -mx-4 px-4">
-        {SERVICES.map(service => (
+        {filteredServices.map(service => (
           <ServiceCard 
             key={service.id} 
             service={service} 

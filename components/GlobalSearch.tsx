@@ -73,6 +73,14 @@ const GlobalSearch: React.FC<GlobalSearchProps> = ({ isOpen, onClose, onSearch }
         setGlobalFilters(localFilters);
         triggerGlobalSearch();
 
+        // 1. Handle explicit scopes
+        if (searchScope === 'products' || searchScope === 'certificates' || searchScope === 'map') {
+            onSearch(searchScope, query);
+            onClose();
+            return;
+        }
+
+        // 2. Handle 'all' scope by inferring intent
         const lowerQuery = query.toLowerCase();
         const mapKeywords = [
             'near me', 'nearby', 'restaurant', 'food', 'mosque', 'masjid', 'shop', 
@@ -82,15 +90,15 @@ const GlobalSearch: React.FC<GlobalSearchProps> = ({ isOpen, onClose, onSearch }
             'بالقرب مني', 'مطعم', 'طعام', 'مسجد', 'متجر', 'سوق', 'مقهى', 'مخبز', 'جزار', 'ابحث'
         ];
         const isMapQuery = mapKeywords.some(keyword => lowerQuery.includes(keyword));
-
+        
         if (isMapQuery) {
             onSearch('map', query);
+        } else if (lowerQuery.includes('cert')) {
+            onSearch('certificates', query);
         } else {
-            const effectiveScope = searchScope === 'all' 
-                ? (lowerQuery.includes('cert') ? 'certificates' : 'products')
-                : searchScope;
-            onSearch(effectiveScope as 'products' | 'certificates', query);
+            onSearch('products', query); // Default
         }
+        
         onClose();
     };
 
@@ -180,7 +188,7 @@ const GlobalSearch: React.FC<GlobalSearchProps> = ({ isOpen, onClose, onSearch }
                         <div className="md:border-r pr-6">
                              <h3 className="font-semibold text-gray-700 mb-3">{t('search.searchIn')}</h3>
                              <div className="space-y-2">
-                                {(['all', 'products', 'certificates'] as const).map(scope => (
+                                {(['all', 'products', 'certificates', 'map'] as const).map(scope => (
                                      <button 
                                         key={scope}
                                         onClick={() => setSearchScope(scope)}
@@ -238,6 +246,11 @@ const GlobalSearch: React.FC<GlobalSearchProps> = ({ isOpen, onClose, onSearch }
                                             ))}
                                         </select>
                                     </div>
+                                )}
+                                { searchScope === 'map' && (
+                                     <div className="text-center text-gray-500 p-4 animate-fadein">
+                                         {t('search.noFiltersForMap')}
+                                     </div>
                                 )}
                              </div>
                         </div>
