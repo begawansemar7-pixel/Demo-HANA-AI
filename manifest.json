@@ -1,0 +1,18 @@
+{
+  "name": "AI Halal Advisor",
+  "short_name": "Halal Advisor",
+  "description": "An AI-powered web and mobile application for BPJPH to empower businesses, halal supervisors, auditors, BPJPH officers, and consumers in navigating halal certification, compliance, and product verification.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f9fafb",
+  "theme_color": "#1E7145",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

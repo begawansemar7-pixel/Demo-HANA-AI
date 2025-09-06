@@ -1,0 +1,8 @@
+{
+  "name": "Demo HANA AI Halal Advisor",
+  "description": "An AI-powered web and mobile application for BPJPH to empower businesses, halal supervisors, auditors, BPJPH officers, and consumers in navigating halal certification, compliance, and product verification.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

@@ -1,0 +1,549 @@
+{
+  "header": {
+    "searchPlaceholder": "Cari produk halal, layanan...",
+    "searchLabel": "Cari",
+    "profileMenu": {
+      "viewProfile": "Lihat Profil",
+      "switchPersona": "Ganti Persona",
+      "loginRegister": "Masuk / Daftar"
+    }
+  },
+  "nav": {
+    "home": "Beranda",
+    "promotions": "Promosi",
+    "news": "Berita",
+    "profile": "Profil",
+    "regulation": "Regulasi"
+  },
+  "home": {
+    "hero": {
+      "announcements": {
+        "1": { "title": "Wajib Sertifikasi Halal 2024", "subtitle": "Mulai 17 Oktober 2024 untuk Produk Makanan dan Minuman" },
+        "2": { "title": "Sertifikasi Halal Gratis (SEHATI)", "subtitle": "Memberdayakan Usaha Mikro dan Kecil melalui Program SEHATI" },
+        "3": { "title": "SIHALAL: Pintu Gerbang Halal Anda", "subtitle": "Akses semua layanan sertifikasi halal melalui platform SIHALAL" }
+      },
+      "ads": {
+        "1": { "title": "Kosmetik Halal Premium", "brand": "Wardah Beauty", "cta": "Beli Sekarang" },
+        "2": { "title": "Keju Halal Artisanal", "brand": "Mazaraat", "cta": "Temukan Lebih" },
+        "3": { "title": "Makanan Halal Siap Saji", "brand": "Sedaap Food", "cta": "Pesan Hari Ini" },
+        "4": { "title": "Koleksi Fashion Muslim", "brand": "Elzatta Hijab", "cta": "Lihat Koleksi" }
+      }
+    },
+    "stories": {
+      "title": "Inspirasi & Gaya Hidup",
+      "items": {
+        "1": {
+          "title": "Dari Dapur Rumahan ke Pasar Global",
+          "user": "UMKM 'Rendang Enak'",
+          "content": "Ibu Siti memulai 'Rendang Enak' dari dapur rumahnya yang sederhana dengan resep keluarga turun-temurun. Awalnya hanya menjual kepada tetangga, ia bermimpi untuk berbagi rendang Padang otentiknya dengan dunia. Perjalanannya penuh tantangan, terutama dalam menavigasi kompleksitas keamanan pangan dan sertifikasi.\n\nMemperoleh sertifikat halal menjadi titik balik. Itu bukan sekadar label; itu adalah janji kualitas dan kepercayaan kepada pelanggannya. Dengan sertifikat tersebut, ia menjadi percaya diri untuk mendekati distributor yang lebih besar dan bahkan berpartisipasi dalam pameran makanan internasional. Kini, 'Rendang Enak' diekspor ke tiga negara, sebuah bukti bagaimana sertifikasi halal dapat membuka pintu bagi usaha kecil untuk mencapai ambisi global mereka."
+        },
+        "2": {
+          "title": "Panduan Wisata Halal ke Jepang",
+          "user": "Blogger Gaya Hidup",
+          "content": "Menjelajahi Jepang sebagai wisatawan Muslim bisa menjadi pengalaman yang luar biasa, tetapi membutuhkan perencanaan. Meskipun kesadaran akan halal semakin meningkat, menemukan pilihan makanan bersertifikat masih bisa menjadi tantangan di luar kota-kota besar. Tips pertama saya adalah menggunakan aplikasi seperti 'Halal Navi' atau 'Japan Halal TV' untuk menemukan masjid dan restoran ramah halal.\n\nJangan takut untuk bertanya! Mempelajari beberapa frasa kunci dalam bahasa Jepang seperti 'Watashi wa butaniku o taberaremasen' (Saya tidak bisa makan babi) bisa sangat membantu. Banyak restoran, terutama di daerah wisata, menjadi lebih akomodatif. Saya juga merekomendasikan mengunjungi toko serba ada untuk makanan ringan; cari produk dengan daftar bahan yang jelas dan hindari yang mengandung gelatin (ゼラチン) atau shortening (ショートニング) kecuali dinyatakan berbasis nabati. Keindahan dan budaya Jepang sepadan dengan usaha ekstra, dan dengan perencanaan yang cermat, Anda dapat menikmati perjalanan halal yang lezat dan tanpa khawatir."
+        },
+        "3": {
+          "title": "Sains di Balik Gelatin Halal",
+          "user": "Teknolog Pangan",
+          "content": "Gelatin adalah salah satu bahan paling kritis dalam produksi makanan halal. Ini adalah zat pembentuk gel yang berasal dari kolagen, biasanya bersumber dari kulit dan tulang hewan. Status 'syubhat' (meragukan) muncul karena hewan sumbernya harus halal, dan jika itu sapi, harus disembelih sesuai syariat Islam. Gelatin yang berasal dari babi adalah haram secara mutlak.\n\nSebagai teknolog pangan, pekerjaan saya meliputi verifikasi sumber gelatin. Kami menggunakan teknik canggih seperti Polymerase Chain Reaction (PCR) untuk menguji DNA babi. Selain itu, kami bekerja dengan pemasok yang menyediakan gelatin dari sumber sapi halal bersertifikat. Kabar baiknya bagi konsumen adalah alternatif semakin umum. Gelatin berbasis ikan, serta zat pembentuk gel nabati seperti agar-agar, pektin, dan karagenan, adalah pengganti ramah halal yang sangat baik yang digunakan di banyak produk makanan modern."
+        },
+        "4": {
+          "title": "Digitalisasi Audit Halal",
+          "user": "LPH 'Amanah'",
+          "content": "Sebagai Lembaga Pemeriksa Halal (LPH), peran kami adalah memastikan seluruh proses produksi memenuhi standar halal yang ketat. Secara tradisional, ini melibatkan banyak dokumen dan pelacakan manual, yang memakan waktu dan rentan terhadap kesalahan. Peralihan ke platform digital seperti SIHALAL telah merevolusi pekerjaan kami.\n\nKini, kami dapat mengelola jadwal audit, meninjau dokumentasi, dan mengirimkan laporan dalam satu sistem terintegrasi. Jejak digital ini meningkatkan transparansi dan akuntabilitas bagi semua pihak yang terlibat—pelaku usaha, LPH, dan BPJPH. Ini memungkinkan kami melakukan audit dengan lebih efisien, yang berarti pelaku usaha bisa mendapatkan sertifikat mereka lebih cepat. Teknologi adalah alat yang kuat dalam menegakkan integritas proses halal, dan kami bangga menjadi yang terdepan dalam transformasi digital ini."
+        },
+        "5": {
+          "title": "Perjalanan Halal Seorang Konsumen",
+          "user": "Anggota Komunitas",
+          "content": "Bagi saya, memilih yang halal bukan hanya tentang menghindari bahan-bahan tertentu; ini adalah bagian inti dari identitas saya dan cara hidup. Ini tentang kesadaran akan apa yang saya konsumsi dan memastikan itu suci dan diizinkan. Dulu, ini berarti menghabiskan berjam-jam di supermarket, dengan susah payah membaca label bahan yang kecil dan sering merasa tidak pasti.\n\nMaraknya pelabelan halal yang jelas dan alat-alat seperti aplikasi AI Halal Advisor ini sangat memberdayakan. Kemampuan untuk memindai barcode dengan cepat atau memeriksa nomor sertifikat memberi saya ketenangan pikiran. Ini memungkinkan saya untuk mendukung bisnis yang berkomitmen pada transparansi dan membuat pilihan yang percaya diri untuk keluarga saya. Aksesibilitas informasi ini telah membuat perjalanan halal saya lebih sederhana dan menyenangkan."
+        }
+      }
+    },
+    "services": {
+      "title": "Layanan Kami",
+      "items": {
+        "hana": "HANA AI",
+        "certCheck": "Cek Sertifikat Halal",
+        "ingredientValidator": "Validasi Bahan",
+        "marketplace": "Pasar Halal",
+        "regulation": "Regulasi Halal",
+        "supplierVerification": "Verifikasi Pemasok",
+        "scanBarcode": "Pindai Barcode/QR",
+        "about": "Tentang Kami",
+        "more": "Layanan Lain"
+      }
+    },
+    "promotions": {
+      "title": "Promosi Spesial",
+      "items": {
+        "1": {
+          "title": "Diskon Sertifikasi Halal Pertama",
+          "description": "Dapatkan diskon 20% untuk pengajuan sertifikasi halal pertama Anda. Penawaran terbatas untuk UMKM baru.",
+          "cta": "Klaim Penawaran",
+          "details": "Penawaran khusus untuk usaha UMKM baru yang mendaftarkan lini produk pertama mereka. Diskon ini berlaku untuk biaya pendaftaran dan diterapkan secara otomatis saat Anda mengirimkan aplikasi melalui portal online kami. Bantu kami membantu Anda berkembang!",
+          "terms": "Hanya berlaku untuk pendaftar pertama kali. Tidak dapat digabungkan dengan penawaran lain. Berlaku untuk usaha dengan pendapatan tahunan di bawah Rp 500 juta.",
+          "expiry": "31 Desember 2024",
+          "videoUrl": "https://videos.pexels.com/video-files/8550338/8550338-hd_1920_1080_30fps.mp4"
+        },
+        "2": {
+          "title": "Konsultasi Bahan Halal Gratis",
+          "description": "Jadwalkan konsultasi gratis 30 menit dengan ahli halal kami untuk membahas bahan produk Anda.",
+          "cta": "Pesan Sekarang",
+          "details": "Ragu dengan suatu bahan? Tim auditor Halal dan ilmuwan pangan kami siap membantu. Pesan panggilan video pribadi untuk mendapatkan jawaban atas pertanyaan Anda dan memastikan produk Anda berada di jalur yang benar untuk sertifikasi.",
+          "terms": "Satu konsultasi gratis per usaha. Tergantung ketersediaan ahli. Sesi harus dipesan setidaknya satu minggu sebelumnya.",
+          "expiry": "30 November 2024",
+          "videoUrl": "https://videos.pexels.com/video-files/5963503/5963503-hd_1920_1080_25fps.mp4"
+        },
+        "3": {
+          "title": "Program Mitra Pasar Halal",
+          "description": "Bergabunglah dengan pasar kami dan tampil di halaman depan selama sebulan penuh. Tingkatkan penjualan Anda!",
+          "cta": "Pelajari Lebih Lanjut",
+          "details": "Tingkatkan visibilitas Anda dengan bergabung di pasar resmi AI Halal Advisor. Mitra dalam program ini akan ditampilkan secara menonjol di halaman beranda kami dan di buletin mingguan kami, menjangkau ribuan konsumen.",
+          "terms": "Harus memiliki sertifikat halal BPJPH yang valid. Daftar produk akan ditinjau. Penempatan fitur dijadwalkan berdasarkan urutan kedatangan.",
+          "expiry": "Berkelanjutan"
+        }
+      }
+    },
+    "news": {
+      "title": "Berita & Info BPJPH",
+      "loadMore": "Muat Lebih",
+      "clearFilter": "Hapus Filter",
+      "categories": {
+        "all": "Semua",
+        "technology": "Teknologi",
+        "event": "Acara",
+        "education": "Edukasi",
+        "government": "Pemerintah"
+      },
+      "articles": {
+        "1": { "title": "BPJPH & Kemenkop UKM Kolaborasi Sertifikasi Halal UMKM", "summary": "Kolaborasi baru bertujuan untuk mempercepat sertifikasi halal bagi jutaan produk UMKM, memperkuat ekosistem halal Indonesia.", "content": "Badan Penyelenggara Jaminan Produk Halal (BPJPH) dan Kementerian Koperasi dan UKM (Kemenkop UKM) menandatangani nota kesepahaman untuk mempercepat sertifikasi halal bagi UMKM. Kemitraan strategis ini bertujuan untuk mengintegrasikan data dan menyediakan dukungan yang efisien, sehingga memudahkan jutaan usaha kecil untuk mematuhi peraturan wajib halal yang akan datang. Kolaborasi ini akan berfokus pada sosialisasi bersama, pelatihan, dan penyediaan akses ke pembiayaan untuk mengurangi hambatan sertifikasi.\n\nKepala BPJPH, Muhammad Aqil Irham, menyatakan, 'Sinergi ini sangat penting untuk membangun ekosistem halal nasional yang kuat. Dengan bekerja sama, kita dapat memastikan UMKM tidak tertinggal dan dapat bersaing di pasar domestik maupun global.' Program ini diharapkan akan diluncurkan di beberapa provinsi percontohan sebelum diluncurkan secara nasional.", "category": "Pemerintah", "date": "10 Okt 2024", "url": "https://bpjph.halal.go.id/news/bpjph-kemenkop-ukm-kolaborasi-akselerasi-sertifikasi-halal-umk" },
+        "2": { "title": "Kepala BPJPH Paparkan 3 Isu Prioritas Ekosistem Halal Dunia", "summary": "Kepala BPJPH menyoroti pengakuan bersama, integrasi digital, dan peningkatan kapasitas sebagai isu prioritas utama untuk standar halal global.", "content": "Berbicara di World Halal Summit, Kepala BPJPH, Muhammad Aqil Irham, menekankan tiga prioritas utama untuk membangun ekosistem halal global yang kuat. Pertama adalah menciptakan kerangka kerja untuk Perjanjian Saling Pengakuan (MRA) antara lembaga sertifikasi halal di seluruh dunia untuk mengurangi hambatan perdagangan. Prioritas kedua adalah pengembangan platform digital terintegrasi yang menghubungkan semua pemangku kepentingan, dari produsen hingga konsumen, untuk memastikan transparansi dan ketertelusuran. Terakhir, beliau menyoroti pentingnya meningkatkan kapasitas dan kompetensi auditor dan penyelia halal melalui pelatihan standar dan program pengembangan profesional.\n\n'Sistem yang terpadu dan didukung secara digital bukan lagi pilihan, melainkan sebuah keharusan untuk masa depan industri halal global,' ujarnya dalam pidato utamanya.", "category": "Pemerintah", "date": "09 Okt 2024", "url": "https://bpjph.halal.go.id/news/kepala-bpjph-paparkan-3-isu-prioritas-wujudkan-ekosistem-halal-dunia" },
+        "3": { "title": "Kewajiban Sertifikasi Halal Adalah Perintah Undang-undang, Tegas Kepala BPJPH", "summary": "Kepala BPJPH menegaskan kembali bahwa kewajiban sertifikasi halal yang akan datang adalah implementasi langsung dari undang-undang untuk melindungi konsumen.", "content": "Menjelang tenggat waktu Oktober 2024, Kepala BPJPH memberikan pengingat tegas bahwa kewajiban sertifikasi halal adalah amanat langsung dari Undang-Undang No. 33 Tahun 2014. Beliau mengklarifikasi bahwa ini bukan kebijakan baru, melainkan tahap implementasi dari undang-undang yang sudah lama dirancang untuk memberikan kepastian hukum dan perlindungan bagi konsumen Muslim di Indonesia. 'Kami mendesak semua pelaku usaha di sektor makanan dan minuman untuk segera mendaftarkan produk mereka. Ini adalah tanggung jawab kolektif untuk menegakkan hak-hak konsumen,' tegasnya. BPJPH sedang meningkatkan upaya sosialisasi dan edukasi untuk memastikan semua pelaku usaha mengetahui kewajiban mereka dan langkah-langkah yang diperlukan untuk mendapatkan sertifikasi melalui portal SIHALAL.", "category": "Edukasi", "date": "08 Okt 2024", "url": "https://bpjph.halal.go.id/news/tegas-kepala-bpjph-kewajiban-sertifikasi-halal-adalah-perintah-undang-undang" },
+        "4": { "title": "BPJPH Buka Layanan Sertifikasi Halal 'On The Spot' di Halal World 2024", "summary": "Untuk mempercepat kepatuhan, BPJPH menyediakan layanan pendaftaran dan konsultasi sertifikasi halal di tempat selama acara Halal World 2024.", "content": "Selama pameran Halal World 2024 yang ramai, BPJPH membuka gerai layanan khusus yang menawarkan pendaftaran sertifikasi halal di tempat. Inisiatif ini bertujuan untuk membuat prosesnya lebih mudah diakses dan untuk menjawab pertanyaan serta kekhawatiran dari para pemilik usaha secara langsung. Ratusan pemilik UMKM memanfaatkan layanan ini, menerima panduan langsung tentang persiapan dokumen dan pengajuan aplikasi melalui sistem SIHALAL. 'Kami ingin proaktif dan membawa layanan langsung kepada masyarakat,' kata seorang perwakilan BPJPH. Acara ini juga menampilkan seminar singkat tentang pentingnya sertifikasi halal dan manfaat program SEHATI gratis untuk usaha kecil.", "category": "Acara", "date": "07 Okt 2024", "url": "https://bpjph.halal.go.id/news/bpjph-buka-layanan-sertifikasi-halal-on-the-spot-di-halal-world-2024" }
+      }
+    }
+  },
+  "footer": {
+    "about": { "title": "AI Halal Advisor", "description": "Sebuah inisiatif untuk mendukung ekosistem Jaminan Produk Halal di Indonesia. © 2023 BPJPH, Kementerian Agama." },
+    "links": { "title": "Tautan Cepat", "about": "Tentang Kami", "faq": "FAQ", "privacy": "Kebijakan Privasi", "terms": "Syarat Layanan" },
+    "contact": { "title": "Hubungi Kami", "hotline": "Call Center: 146", "email": "Email: halal@kemenag.go.id", "address": "Jl. Lapangan Banteng Barat No. 3-4, Jakarta Pusat" },
+    "social": { "title": "Ikuti Kami" }
+  },
+  "personas": {
+    "title": "Selamat Datang di AI Halal Advisor",
+    "subtitle": "Silakan pilih peran Anda untuk personalisasi pengalaman.",
+    "continueAsGuest": "Lanjutkan sebagai Tamu",
+    "welcomeAudio": "Selamat Datang di AI Halal Advisor. Saya HANA, pemandu Anda untuk sertifikasi, produk, dan layanan halal. Silakan pilih peran di bawah ini untuk memulai.",
+    "toggleAudio": "Alihkan audio selamat datang",
+    "umkm": { "name": "UMKM / Produsen", "description": "Kelola produk dan proses sertifikasi Anda." },
+    "auditor": { "name": "Auditor / LPH", "description": "Lakukan audit dan kelola laporan pemeriksaan halal." },
+    "consumer": { "name": "Konsumen", "description": "Verifikasi produk, cari tempat halal, dan pelajari lebih lanjut." },
+    "officer": { "name": "Petugas BPJPH", "description": "Awasi sertifikasi, kepatuhan, dan peraturan." }
+  },
+  "hana": {
+    "welcomeMessage": "Assalamualaikum! Saya HANA, Penasihat Halal Anda. Ada yang bisa saya bantu hari ini?",
+    "chatTitle": "Chat dengan HANA",
+    "inputPlaceholder": "Tanyakan apa saja pada HANA...",
+    "listeningPlaceholder": "Mendengarkan...",
+    "title": "HANA",
+    "subtitle": "Penasihat Halal AI Anda",
+    "suggestionsTitle": "Saran Cepat",
+    "suggestion1": "Apa itu sertifikasi halal?",
+    "suggestion2": "Bagaimana cara mengecek produk?",
+    "suggestion3": "Daftar restoran halal di dekat saya",
+    "errorMessage": "Maaf, saya sedang kesulitan terhubung ke basis pengetahuan saya saat ini. Silakan coba lagi sebentar lagi.",
+    "downloadChat": "Unduh Obrolan",
+    "downloadSuccess": "Log obrolan diunduh!",
+    "freeTrial": "Uji Coba Gratis",
+    "sessionTime": "Waktu Sesi",
+    "timeRemaining": "Sisa Waktu: {time}",
+    "paymentTitle": "Diperlukan Peningkatan Sesi",
+    "paymentMessage": "Uji coba gratis 5 menit Anda telah berakhir. Silakan lakukan pembayaran sebesar Rp 50.000 untuk melanjutkan konsultasi Anda hingga 60 menit.",
+    "paymentButton": "Bayar dan Lanjutkan",
+    "sessionEndedTitle": "Sesi Berakhir",
+    "sessionEndedMessage": "Sesi 60 menit Anda telah berakhir. Anda dapat memulai konsultasi baru kapan saja.",
+    "startNewSession": "Mulai Sesi Baru"
+  },
+  "certCheck": {
+    "title": "Cek Sertifikat Halal",
+    "subtitle": "Verifikasi status halal produk dan usaha.",
+    "searchPlaceholder": "Masukkan no sertifikat, produk, atau nama produsen...",
+    "searchButton": "Cari",
+    "loading": "Mencari...",
+    "initialPrompt": "Masukkan kata kunci di atas untuk mencari sertifikat halal.",
+    "noResults": "Sertifikat yang cocok tidak ditemukan. Coba pencarian lain.",
+    "noResultsTitle": "Hasil Tidak Ditemukan",
+    "resultsTitle": "Hasil Pencarian",
+    "statusCertified": "Tersertifikasi",
+    "statusNotCertified": "Tidak Tersertifikasi",
+    "statusExpired": "Kedaluwarsa",
+    "statusInvalidDate": "Tanggal Tidak Valid",
+    "expiryDate": "Berlaku Hingga",
+    "addCertificate": "Tambah Sertifikat Baru",
+    "modalTitle": "Tambah Sertifikat Halal",
+    "certNumberLabel": "Nomor Sertifikat",
+    "certNumberPlaceholder": "cth: ID1234567890123",
+    "productLabel": "Nama Produk",
+    "productPlaceholder": "cth: Mie Instan",
+    "producerLabel": "Nama Produsen",
+    "producerPlaceholder": "cth: Sedaap Food Inc.",
+    "statusLabel": "Status Halal",
+    "expiryLabel": "Tanggal Kedaluwarsa",
+    "saveButton": "Simpan Sertifikat",
+    "cancelButton": "Batal",
+    "errorCertNumberRequired": "Nomor sertifikat wajib diisi.",
+    "errorProductRequired": "Nama produk wajib diisi.",
+    "errorProducerRequired": "Nama produsen wajib diisi.",
+    "errorDateRequired": "Tanggal kedaluwarsa wajib diisi.",
+    "errorInvalidFormat": "Silakan masukkan format tanggal yang valid.",
+    "errorDateInPast": "Tanggal kedaluwarsa tidak boleh di masa lalu.",
+    "addSuccessMessage": "Sertifikat berhasil ditambahkan!",
+    "emptyStateTitle": "Tidak Ada Sertifikat",
+    "emptyStateSubtitle": "Daftar sertifikat halal Anda kosong. Tambahkan sertifikat pertama Anda untuk memulai.",
+    "addFirstCertificate": "Tambah Sertifikat Pertama",
+    "startDateLabel": "Filter dari Tanggal",
+    "endDateLabel": "Filter sampai Tanggal",
+    "clearFiltersButton": "Hapus Filter",
+    "modalDetailTitle": "Detail Sertifikat",
+    "certIdLabel": "ID Sertifikat",
+    "closeButton": "Tutup",
+    "tooltips": {
+      "statusCertified": "Sertifikat ini valid dan belum kedaluwarsa.",
+      "statusExpired": "Sertifikat ini telah melewati tanggal kedaluwarsa.",
+      "statusNotCertified": "Produk atau produsen ini tidak memiliki sertifikat halal yang valid.",
+      "statusInvalidDate": "Tanggal kedaluwarsa untuk sertifikat ini tidak dapat diverifikasi.",
+      "expiryDate": "Tanggal hingga sertifikat halal ini berlaku."
+    },
+    "exportButton": "Ekspor ke CSV",
+    "pagination": {
+      "showingResults": "Menampilkan {start} - {end} dari {total} hasil",
+      "first": "Pertama",
+      "last": "Terakhir",
+      "previous": "Sebelumnya",
+      "next": "Berikutnya",
+      "pageTooltip": "Halaman {currentPage} dari {totalPages}"
+    }
+  },
+  "ingredientValidator": {
+    "title": "Validasi Bahan",
+    "subtitle": "Analisis bahan produk untuk status kehalalannya.",
+    "inputLabel": "Daftar Bahan",
+    "inputPlaceholder": "Masukkan bahan, pisahkan dengan koma atau baris baru...",
+    "validateButton": "Validasi Bahan",
+    "loading": "Menganalisis...",
+    "initialPrompt": "Masukkan bahan di atas untuk memeriksa status kehalalannya.",
+    "resultsTitle": "Hasil Analisis",
+    "statusHalal": "Halal",
+    "statusHaram": "Haram",
+    "statusSyubhat": "Syubhat (Meragukan)",
+    "reasons": {
+      "halalPlantBased": "Dianggap halal karena umumnya berbasis nabati atau sintetis.",
+      "haramAlcoholPork": "Dianggap haram karena berasal dari atau mengandung babi/alkohol.",
+      "syubhatSource": "Sumber bahan ini bisa dari hewan atau tumbuhan. Memerlukan sertifikasi untuk konfirmasi.",
+      "syubhatRennet": "Rennet bisa berasal dari sumber hewani, mikroba, atau nabati. Sumber hewani harus dari hewan yang disembelih secara halal."
+    }
+  },
+  "marketplace": {
+    "title": "Pasar Halal",
+    "subtitle": "Temukan produk halal bersertifikat dari produsen terpercaya.",
+    "searchPlaceholder": "Cari produk...",
+    "searchLabel": "Cari produk",
+    "noResults": "Tidak ada produk yang cocok dengan kriteria Anda.",
+    "categories": {
+      "all": "Semua",
+      "food": "Makanan & Minuman",
+      "cosmetics": "Kosmetik",
+      "fashion": "Fashion",
+      "pharmaceuticals": "Farmasi"
+    },
+    "products": {
+      "1": { "name": "Mie Instan Kari Spesial", "producer": "Sedaap Food Inc.", "price": "Rp 3.500", "category": "Food", "description": "Mi instan lezat dan mudah disiapkan dengan rasa kari spesial yang kaya dan aromatik. Bersertifikat halal, cocok untuk santapan cepat dan memuaskan kapan saja.", "reviews": { "1": {"author": "Aisha B.", "rating": "5", "comment": "Mi kari instan terbaik! Sangat beraroma."} } },
+      "2": { "name": "Serum Pencerah Wajah", "producer": "Wardah Beauty", "price": "Rp 75.000", "category": "Cosmetics", "description": "Serum ringan bersertifikat halal yang membantu mencerahkan warna kulit dan mengurangi bintik hitam. Diformulasikan dengan ekstrak alami untuk kulit bercahaya.", "reviews": { "1": {"author": "Fatima S.", "rating": "5", "comment": "Kulitku tidak pernah secerah ini. Sangat direkomendasikan!"}, "2": {"author": "Zainab K.", "rating": "4", "comment": "Serum yang bagus, tapi butuh waktu untuk melihat hasilnya."} } },
+      "3": { "name": "Jilbab Sutra", "producer": "Elzatta Hijab", "price": "Rp 150.000", "category": "Fashion", "description": "Jilbab sutra yang elegan dan mewah dengan jatuhan yang indah. Terbuat dari kain berkualitas tinggi yang sejuk, cocok untuk acara khusus atau pakaian sehari-hari.", "reviews": { "1": {"author": "Layla R.", "rating": "5", "comment": "Sangat lembut dan warnanya cantik."} } },
+      "4": { "name": "Keju Gouda", "producer": "Mazaraat", "price": "Rp 55.000", "category": "Food", "description": "Keju Gouda artisanal yang dibuat dengan rennet mikroba bersertifikat halal. Memiliki rasa kacang yang lembut dan tekstur yang halus, cocok untuk sandwich dan hidangan pembuka.", "reviews": {} },
+      "5": { "name": "Suplemen Vitamin C", "producer": "HalalPharm", "price": "Rp 95.000", "category": "Pharmaceuticals", "description": "Tingkatkan sistem kekebalan tubuh Anda dengan suplemen Vitamin C bersertifikat halal kami. Dibuat dengan bahan-bahan berkualitas tinggi dan bebas dari bahan tambahan non-halal.", "reviews": { "1": {"author": "Omar H.", "rating": "5", "comment": "Andalan di rumah kami, terutama saat musim flu."} } },
+      "6": { "name": "Lipstik Matte", "producer": "Wardah Beauty", "price": "Rp 48.000", "category": "Cosmetics", "description": "Lipstik matte tahan lama dengan formula yang nyaman dan tidak membuat kering. Tersedia dalam berbagai warna cantik, semuanya ramah wudu dan halal.", "reviews": { "1": {"author": "Maryam A.", "rating": "4", "comment": "Warnanya indah, tapi bisa sedikit kering setelah beberapa jam."} } },
+      "7": { "name": "Ayam Beku Halal", "producer": "So Good Foods", "price": "Rp 40.000", "category": "Food", "description": "Ayam beku kualitas premium, diproses dan dikemas sesuai dengan standar halal yang ketat. Empuk, juicy, dan cocok untuk semua resep favorit Anda.", "reviews": {} },
+      "8": { "name": "Tunik Motif", "producer": "Elzatta Hijab", "price": "Rp 250.000", "category": "Fashion", "description": "Tunik motif yang gaya dan sopan terbuat dari kain yang nyaman dan ringan. Menampilkan desain unik yang cocok untuk suasana santai maupun formal.", "reviews": { "1": {"author": "Yasmin F.", "rating": "5", "comment": "Saya mendapat banyak pujian saat mengenakan ini!"} } },
+      "9": { "name": "Sirup Batuk Herbal", "producer": "HalalPharm", "price": "Rp 25.000", "category": "Pharmaceuticals", "description": "Sirup batuk herbal yang menenangkan terbuat dari bahan-bahan alami dan halal. Efektif meredakan batuk dan sakit tenggorokan tanpa alkohol atau zat terlarang lainnya.", "reviews": {} },
+      "10": { "name": "Susu UHT", "producer": "Cimory", "price": "Rp 5.500", "category": "Food", "description": "Susu UHT segar dan bergizi, bersumber dari sapi yang dirawat dengan baik dan diproses di fasilitas bersertifikat halal. Pilihan sehat untuk seluruh keluarga.", "reviews": { "1": {"author": "Ibrahim M.", "rating": "5", "comment": "Anak-anak saya suka susu ini."} } },
+      "11": { "name": "Sabun Cuci Muka", "producer": "Wardah Beauty", "price": "Rp 28.000", "category": "Cosmetics", "description": "Pembersih wajah yang lembut namun efektif yang membersihkan kulit tanpa menghilangkan kelembapan alaminya. Bersertifikat halal dan cocok untuk semua jenis kulit.", "reviews": {} },
+      "12": { "name": "Rendang Sapi Siap Saji", "producer": "Sedaap Food Inc.", "price": "Rp 35.000", "category": "Food", "description": "Rendang Sapi otentik Indonesia, siap santap dalam hitungan menit. Dibuat dengan daging sapi bersertifikat halal dan paduan bumbu tradisional yang kaya untuk hidangan lezat dan praktis.", "reviews": { "1": {"author": "David L.", "rating": "5", "comment": "Rasa yang luar biasa otentik untuk makanan siap saji. Menakjubkan!"} } }
+    },
+    "addToBasket": "Tambah ke Keranjang",
+    "priceRange": "Rentang Harga",
+    "reset": "Atur Ulang",
+    "quickView": "Lihat Cepat",
+    "viewFullDetails": "Lihat Detail Lengkap",
+    "exportButton": "Ekspor ke CSV",
+    "sortBy": {
+      "label": "Urutkan berdasarkan",
+      "default": "Urutan Standar",
+      "priceAsc": "Harga: Rendah ke Tinggi",
+      "priceDesc": "Harga: Tinggi ke Rendah",
+      "ratingDesc": "Peringkat Tertinggi",
+      "nameAsc": "Nama: A-Z"
+    }
+  },
+  "productDetail": {
+    "backToMarketplace": "Kembali ke Pasar Halal",
+    "customerReviews": "Ulasan Pelanggan",
+    "noReviews": "Produk ini belum memiliki ulasan.",
+    "reviews": "ulasan"
+  },
+  "basket": {
+    "title": "Keranjang Belanja",
+    "empty": "Keranjang Anda kosong.",
+    "total": "Total",
+    "checkout": "Lanjut ke Pembayaran",
+    "remove": "Hapus item"
+  },
+  "checkout": {
+    "title": "Pembayaran",
+    "summary": "Ringkasan Pesanan",
+    "shippingAddress": "Alamat Pengiriman",
+    "shippingAddressPlaceholder": "Masukkan alamat pengiriman lengkap Anda",
+    "fullNamePlaceholder": "Masukkan nama lengkap Anda",
+    "processing": "Memproses...",
+    "confirmPurchase": "Konfirmasi Pembelian"
+  },
+  "success": {
+    "title": "Pembelian Berhasil!",
+    "message": "Terima kasih atas pesanan Anda. Konfirmasi telah dikirim ke email Anda.",
+    "continueShopping": "Lanjutkan Belanja"
+  },
+   "auth": {
+    "guestAccessDenied": "Fitur ini untuk pengguna terdaftar. Silakan buat akun untuk mengakses profil Anda.",
+    "loginTitle": "Masuk sebagai",
+    "registerTitle": "Buat Akun sebagai",
+    "emailLabel": "Alamat Email",
+    "emailPlaceholder": "cth: user@example.com",
+    "passwordLabel": "Kata Sandi",
+    "passwordPlaceholder": "Masukkan 8+ karakter",
+    "loginButton": "Masuk",
+    "loading": "Memuat...",
+    "registerButton": "Buat Akun",
+    "forgotPassword": "Lupa Kata Sandi?",
+    "noAccount": "Belum punya akun?",
+    "haveAccount": "Sudah punya akun?",
+    "registerLink": "Daftar Sekarang",
+    "loginLink": "Masuk di Sini",
+    "rememberMe": "Ingat Saya",
+    "invalidEmail": "Harap masukkan alamat email yang valid.",
+    "passwordTooShort": "Kata sandi harus terdiri dari minimal 8 karakter.",
+    "emailRequired": "Alamat email wajib diisi.",
+    "forgotPasswordTitle": "Atur Ulang Kata Sandi",
+    "forgotPasswordSubtitle": "Masukkan email Anda dan kami akan mengirimkan tautan untuk masuk kembali ke akun Anda.",
+    "sendResetLink": "Kirim Tautan Atur Ulang",
+    "resetLinkSent": "Jika ada akun dengan email tersebut, kami telah mengirimkan tautan atur ulang kata sandi.",
+    "backToLogin": "Kembali ke Halaman Masuk",
+    "fullNameLabel": "Nama Lengkap",
+    "fullNamePlaceholder": "cth: Aisha Fatima",
+    "confirmPasswordLabel": "Konfirmasi Kata Sandi",
+    "confirmPasswordPlaceholder": "Masukkan ulang kata sandi Anda",
+    "passwordsDoNotMatch": "Kata sandi tidak cocok",
+    "nameRequired": "Nama lengkap wajib diisi.",
+    "businessNameLabel": "Nama Usaha",
+    "businessNamePlaceholder": "cth: Halal Foods Nusantara",
+    "businessNameRequired": "Nama usaha wajib diisi.",
+    "businessIdLabel": "NIB (Nomor Induk Berusaha)",
+    "businessIdPlaceholder": "Masukkan NIB Anda",
+    "businessIdRequired": "NIB wajib diisi.",
+    "auditorIdLabel": "ID Auditor",
+    "auditorIdPlaceholder": "Masukkan ID auditor Anda",
+    "auditorIdRequired": "ID Auditor wajib diisi.",
+    "lphNameLabel": "Nama LPH",
+    "lphNamePlaceholder": "cth: LPH Amanah Cendekia",
+    "lphNameRequired": "Nama LPH wajib diisi.",
+    "officerIdLabel": "ID Petugas",
+    "officerIdPlaceholder": "Masukkan ID petugas Anda",
+    "officerIdRequired": "ID Petugas wajib diisi.",
+    "departmentLabel": "Departemen",
+    "departmentPlaceholder": "cth: Divisi Sertifikasi",
+    "departmentRequired": "Departemen wajib diisi.",
+    "profileTitle": "Profil Saya",
+    "logoutButton": "Keluar",
+    "emailOrAuditorIdLabel": "Email atau ID Auditor",
+    "emailOrAuditorIdPlaceholder": "cth: auditor@lph.com atau AUD-12345",
+    "emailOrOfficerIdLabel": "Email atau ID Petugas",
+    "emailOrOfficerIdPlaceholder": "cth: petugas@bpjph.go.id atau OFF-12345",
+    "loginWithGoogle": "Masuk dengan Google",
+    "orDivider": "ATAU"
+  },
+  "carousel": {
+    "announcement": "Pengumuman"
+  },
+  "search": {
+    "title": "Pencarian Global",
+    "searchIn": "Cari di",
+    "scopeAll": "Semua",
+    "scopeProducts": "Produk",
+    "scopeCertificates": "Sertifikat",
+    "filters": "Filter",
+    "category": "Kategori",
+    "certificationStatus": "Status Sertifikasi",
+    "clearAll": "Hapus Semua",
+    "searchButton": "Cari",
+    "suggestions": {
+      "title": "Pencarian Populer",
+      "1": "makanan halal di dekat saya",
+      "2": "proses sertifikasi halal",
+      "3": "verifikasi produk"
+    }
+  },
+  "profilePage": {
+    "notifications": {
+      "title": "Pengaturan Notifikasi",
+      "description": "Tetap ter-update dengan pengumuman penting, promosi baru, dan perubahan status sertifikasi.",
+      "enableButton": "Aktifkan Notifikasi",
+      "sendTestButton": "Kirim Notifikasi Tes",
+      "enabledText": "Notifikasi telah diaktifkan. Anda siap menerima update!",
+      "deniedText": "Notifikasi diblokir. Harap aktifkan di pengaturan browser Anda untuk menerima update.",
+      "testTitle": "AI Halal Advisor",
+      "testBody": "Ini adalah notifikasi tes. Anda sekarang telah berlangganan update!"
+    }
+  },
+  "newsPage": {
+    "title": "Berita & Info BPJPH",
+    "subtitle": "Tetap terinformasi dengan perkembangan dan pengumuman terbaru."
+  },
+  "newsDetail": {
+    "backToNews": "Kembali ke Berita",
+    "shareArticle": "Bagikan Artikel",
+    "copySuccess": "Tautan disalin!"
+  },
+  "storyDetail": {
+    "backToHome": "Kembali ke Beranda"
+  },
+  "promotionModal": {
+    "termsTitle": "Syarat & Ketentuan",
+    "validUntilTitle": "Berlaku Hingga",
+    "shareButton": "Bagikan Promosi",
+    "shareMessage": "Promosi berhasil dibagikan!",
+    "copySuccessMessage": "Tautan disalin ke papan klip!"
+  },
+  "promotionsPage": {
+    "subtitle": "Lihat penawaran terbaru dan promosi spesial.",
+    "items": {
+      "1": {
+        "title": "Diskon Sertifikasi Halal Pertama",
+        "description": "Dapatkan diskon 20% untuk pengajuan sertifikasi halal pertama Anda. Penawaran terbatas untuk UMKM baru.",
+        "cta": "Klaim Penawaran",
+        "details": "Penawaran khusus untuk usaha UMKM baru yang mendaftarkan lini produk pertama mereka. Diskon ini berlaku untuk biaya pendaftaran dan diterapkan secara otomatis saat Anda mengirimkan aplikasi melalui portal online kami. Bantu kami membantu Anda berkembang!",
+        "terms": "Hanya berlaku untuk pendaftar pertama kali. Tidak dapat digabungkan dengan penawaran lain. Berlaku untuk usaha dengan pendapatan tahunan di bawah Rp 500 juta.",
+        "expiry": "31 Desember 2024",
+        "videoUrl": "https://videos.pexels.com/video-files/8550338/8550338-hd_1920_1080_30fps.mp4"
+      },
+      "2": {
+        "title": "Konsultasi Bahan Halal Gratis",
+        "description": "Jadwalkan konsultasi gratis 30 menit dengan ahli halal kami untuk membahas bahan produk Anda.",
+        "cta": "Pesan Sekarang",
+        "details": "Ragu dengan suatu bahan? Tim auditor Halal dan ilmuwan pangan kami siap membantu. Pesan panggilan video pribadi untuk mendapatkan jawaban atas pertanyaan Anda dan memastikan produk Anda berada di jalur yang benar untuk sertifikasi.",
+        "terms": "Satu konsultasi gratis per usaha. Tergantung ketersediaan ahli. Sesi harus dipesan setidaknya satu minggu sebelumnya.",
+        "expiry": "30 November 2024",
+        "videoUrl": "https://videos.pexels.com/video-files/5963503/5963503-hd_1920_1080_25fps.mp4"
+      },
+      "3": {
+        "title": "Program Mitra Pasar Halal",
+        "description": "Bergabunglah dengan pasar kami dan tampil di halaman depan selama sebulan penuh. Tingkatkan penjualan Anda!",
+        "cta": "Pelajari Lebih Lanjut",
+        "details": "Tingkatkan visibilitas Anda dengan bergabung di pasar resmi AI Halal Advisor. Mitra dalam program ini akan ditampilkan secara menonjol di halaman beranda kami dan di buletin mingguan kami, menjangkau ribuan konsumen.",
+        "terms": "Harus memiliki sertifikat halal BPJPH yang valid. Daftar produk akan ditinjau. Penempatan fitur dijadwalkan berdasarkan urutan kedatangan.",
+        "expiry": "Berkelanjutan"
+      },
+      "4": {
+        "title": "Paket Pelatihan Auditor Halal",
+        "description": "Daftar untuk pelatihan auditor kami dan dapatkan akses eksklusif ke perangkat digital kami secara gratis.",
+        "cta": "Daftar Sekarang",
+        "details": "Jadilah auditor Halal bersertifikat dengan program pelatihan komprehensif kami. Paket khusus ini mencakup materi kursus lengkap, biaya ujian, dan langganan satu tahun untuk perangkat lunak auditor premium kami.",
+        "terms": "Penawaran hanya berlaku untuk pendaftaran baru. Langganan perangkat lunak tidak dapat dialihkan. Kursus harus diselesaikan dalam waktu 6 bulan setelah pendaftaran.",
+        "expiry": "31 Oktober 2024"
+      },
+      "5": {
+        "title": "Paket Go-Digital UMKM",
+        "description": "Bawa bisnis halal Anda online dengan paket spesial kami termasuk situs web dan pemasaran.",
+        "cta": "Mulai",
+        "details": "Biarkan kami membantu Anda membawa bisnis Halal Anda ke tingkat berikutnya. Paket ini menyediakan situs web e-commerce sederhana, penyiapan media sosial, dan paket awal untuk iklan digital, semuanya disesuaikan untuk konsumen Halal.",
+        "terms": "Ini adalah layanan yang disediakan oleh mitra pihak ketiga. Hosting situs web dan biaya iklan tidak termasuk dalam harga paket. Slot terbatas tersedia per bulan.",
+        "expiry": "31 Desember 2024"
+      },
+      "6": {
+        "title": "Langganan Gaya Hidup Halal Keluarga",
+        "description": "Berlangganan kotak bulanan kami berisi produk halal pilihan untuk seluruh keluarga.",
+        "cta": "Berlangganan",
+        "details": "Temukan produk Halal baru dan menarik setiap bulan! Setiap kotak diisi dengan pilihan makanan ringan, bahan-bahan, dan item gaya hidup dari mitra UMKM bersertifikat. Cara yang bagus untuk mendukung usaha kecil.",
+        "terms": "Langganan diperpanjang secara otomatis setiap bulan. Dapat dibatalkan kapan saja. Pengiriman hanya tersedia di wilayah Indonesia.",
+        "expiry": "Berkelanjutan"
+      }
+    }
+  },
+  "supplierVerification": {
+    "title": "Verifikasi Pemasok",
+    "subtitle": "Pastikan rantai pasokan Anda memenuhi standar halal.",
+    "placeholder": "Fitur verifikasi pemasok akan segera hadir. Nantikan pembaruannya!"
+  },
+  "scanBarcode": {
+    "title": "Pindai Barcode/QR",
+    "subtitle": "Periksa status produk dengan cepat dengan memindai barcode atau kode QR-nya.",
+    "cameraPlaceholder": "Posisikan barcode atau kode QR di dalam bingkai.",
+    "uploadButton": "Unggah dari Galeri",
+    "scanResult": "Hasil Pindaian",
+    "scanAgain": "Pindai Lagi",
+    "noCamera": "Tidak dapat mengakses kamera. Harap periksa izin dan coba lagi.",
+    "noCodeFound": "Tidak ada barcode atau kode QR yang dapat terdeteksi pada gambar."
+  },
+  "moreServices": {
+    "title": "Layanan Lainnya",
+    "subtitle": "Jelajahi semua fitur yang ditawarkan oleh AI Halal Advisor.",
+    "comingSoon": "Segera Hadir"
+  },
+  "regulation": {
+    "title": "Regulasi Halal",
+    "subtitle": "Akses peraturan dan pedoman resmi Jaminan Produk Halal.",
+    "placeholder": "Fitur perpustakaan regulasi akan segera hadir. Nantikan pembaruannya!",
+    "backToList": "Kembali ke Daftar Regulasi",
+    "pdfPlaceholder": "Placeholder Penampil PDF",
+    "categories": {
+      "law": "Undang-Undang",
+      "gov": "Peraturan Pemerintah",
+      "ministerial": "Keputusan Menteri",
+      "bpjph": "Peraturan BPJPH"
+    },
+    "docs": {
+      "1": {
+        "title": "UU Nomor 33 Tahun 2014",
+        "description": "Undang-undang utama tentang Jaminan Produk Halal, menetapkan mandat sertifikasi halal untuk produk di Indonesia."
+      },
+      "2": {
+        "title": "Peraturan Pemerintah No. 39 Tahun 2021",
+        "description": "Peraturan pelaksana untuk UU No. 33 Tahun 2014, merinci tahapan dan prosedur jaminan produk halal."
+      },
+      "3": {
+        "title": "Keputusan Menteri Agama No. 748 Tahun 2021",
+        "description": "Menetapkan jenis-jenis produk yang wajib bersertifikat halal."
+      },
+      "4": {
+        "title": "Keputusan Kepala BPJPH No. 1 Tahun 2021",
+        "description": "Petunjuk teknis mengenai pelaksanaan layanan Jaminan Produk Halal."
+      }
+    }
+  },
+  "showMore": "Tampilkan Lebih Banyak",
+  "showLess": "Tampilkan Lebih Sedikit",
+  "mapPage": {
+    "title": "Pencarian Lokasi",
+    "subtitle": "Menampilkan hasil untuk: \"{query}\"",
+    "mapTitle": "Peta menampilkan hasil untuk {query}"
+  },
+  "aboutPage": {
+    "title": "Tentang AI Halal Advisor",
+    "subtitle": "Memberdayakan Ekosistem Halal dengan Teknologi",
+    "paragraph1": "AI Halal Advisor adalah platform digital perintis yang dirancang untuk mendukung dan menyederhanakan ekosistem Jaminan Produk Halal di Indonesia. Dikembangkan bekerja sama dengan Badan Penyelenggara Jaminan Produk Halal (BPJPH), aplikasi ini berfungsi sebagai alat yang komprehensif bagi semua pemangku kepentingan yang terlibat dalam industri halal.",
+    "paragraph2": "Misi kami adalah memberdayakan pelaku usaha, penyelia halal, auditor, petugas BPJPH, dan konsumen dengan menyediakan akses mudah ke informasi, menyederhanakan proses sertifikasi, dan membina pasar halal yang transparan dan dapat dipercaya. Mulai dari memverifikasi bahan produk hingga mengakses peraturan terbaru, AI Halal Advisor adalah solusi terpadu Anda untuk semua hal yang berkaitan dengan halal.",
+    "bpjphTitle": "Tentang BPJPH",
+    "bpjphParagraph1": "BPJPH (Badan Penyelenggara Jaminan Produk Halal) adalah lembaga pemerintah di bawah Kementerian Agama Republik Indonesia. BPJPH memegang mandat untuk menyelenggarakan Jaminan Produk Halal sebagaimana diamanatkan oleh Undang-Undang No. 33 Tahun 2014.",
+    "bpjphParagraph2": "Lembaga ini bertanggung jawab untuk menerbitkan sertifikat halal, mengakreditasi Lembaga Pemeriksa Halal (LPH), serta mengembangkan standar dan sistem yang menjamin integritas produk halal yang beredar di Indonesia dan luar negeri. AI Halal Advisor adalah inisiatif resmi untuk mendigitalkan dan meningkatkan layanan yang disediakan oleh BPJPH.",
+    "techTitle": "Teknologi Kami",
+    "techParagraph1": "Didukung oleh model AI canggih dari Google, AI Halal Advisor menyediakan fitur cerdas seperti asisten AI HANA, analisis bahan, dan mesin pencari pintar untuk memberikan informasi yang akurat dan relevan dengan cepat dan efisien."
+  }
+}

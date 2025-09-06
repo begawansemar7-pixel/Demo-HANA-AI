@@ -1,0 +1,549 @@
+{
+  "header": {
+    "searchPlaceholder": "Search for halal products, services...",
+    "searchLabel": "Search",
+    "profileMenu": {
+      "viewProfile": "View Profile",
+      "switchPersona": "Switch Persona",
+      "loginRegister": "Login / Register"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "promotions": "Promotions",
+    "news": "News",
+    "profile": "Profile",
+    "regulation": "Regulation"
+  },
+  "home": {
+    "hero": {
+      "announcements": {
+        "1": { "title": "Mandatory Halal Certification 2024", "subtitle": "Starts October 17, 2024 for Food and Beverage Products" },
+        "2": { "title": "Free Halal Certification (SEHATI)", "subtitle": "Empowering Micro and Small Enterprises with the SEHATI Program" },
+        "3": { "title": "SIHALAL: Your Gateway to Halal", "subtitle": "Access all halal certification services through the SIHALAL platform" }
+      },
+      "ads": {
+        "1": { "title": "Premium Halal Cosmetics", "brand": "Wardah Beauty", "cta": "Shop Now" },
+        "2": { "title": "Artisanal Halal Cheese", "brand": "Mazaraat", "cta": "Discover More" },
+        "3": { "title": "Ready-to-Eat Halal Meals", "brand": "Sedaap Food", "cta": "Order Today" },
+        "4": { "title": "Modest Fashion Collection", "brand": "Elzatta Hijab", "cta": "View Collection" }
+      }
+    },
+    "stories": {
+      "title": "Inspiration & Lifestyle",
+      "items": {
+        "1": {
+          "title": "From Home Kitchen to Global Market",
+          "user": "UMKM 'Rendang Enak'",
+          "content": "Ibu Siti started 'Rendang Enak' from her small home kitchen with a family recipe passed down through generations. Initially selling to neighbors, she dreamed of sharing her authentic Padang rendang with the world. The journey was challenging, especially navigating the complexities of food safety and certification.\n\nGetting a halal certificate was a turning point. It wasn't just a label; it was a promise of quality and trust to her customers. With the certificate, she gained the confidence to approach larger distributors and even participate in international food expos. Today, 'Rendang Enak' is exported to three countries, a testament to how halal certification can open doors for small businesses to achieve their global ambitions."
+        },
+        "2": {
+          "title": "Halal Travel Guide to Japan",
+          "user": "Lifestyle Blogger",
+          "content": "Exploring Japan as a Muslim traveler can be an incredible experience, but it requires some planning. While awareness of halal is growing, finding certified food options can still be a challenge outside major cities. My first tip is to use apps like 'Halal Navi' or 'Japan Halal TV' to locate mosques and halal-friendly restaurants.\n\nDon't be afraid to ask! Learning a few key Japanese phrases like 'Watashi wa butaniku o taberaremasen' (I cannot eat pork) can be very helpful. Many restaurants, especially in tourist areas, are becoming more accommodating. I also recommend visiting convenience stores for snacks; look for products with clear ingredient lists and avoid those with gelatin (ゼラチン) or shortening (ショートニング) unless specified as plant-based. Japan's beauty and culture are worth the extra effort, and with careful planning, you can enjoy a worry-free and delicious halal journey."
+        },
+        "3": {
+          "title": "The Science of Halal Gelatin",
+          "user": "Food Technologist",
+          "content": "Gelatin is one of the most critical ingredients in halal food production. It's a gelling agent derived from collagen, typically sourced from animal skin and bones. The 'syubhat' (doubtful) status arises because the source animal must be halal, and if it's a cow, it must be slaughtered according to Islamic rites. Pork-derived gelatin is strictly haram.\n\nAs a food technologist, my work involves verifying the source of gelatin. We use advanced techniques like Polymerase Chain Reaction (PCR) to test for porcine DNA. Furthermore, we work with suppliers who provide gelatin from certified halal bovine sources. The good news for consumers is that alternatives are becoming more common. Fish-based gelatin, as well as plant-based gelling agents like agar-agar, pectin, and carrageenan, are excellent halal-friendly substitutes used in many modern food products."
+        },
+        "4": {
+          "title": "Digitalizing Halal Audits",
+          "user": "LPH 'Amanah'",
+          "content": "As a Halal Inspection Agency (LPH), our role is to ensure that the entire production process meets stringent halal standards. Traditionally, this involved a lot of paperwork and manual tracking, which was time-consuming and prone to errors. The shift to digital platforms like SIHALAL has revolutionized our work.\n\nNow, we can manage our audit schedules, review documentation, and submit reports all within a single integrated system. This digital trail increases transparency and accountability for everyone involved—the business, the LPH, and BPJPH. It allows us to conduct audits more efficiently, which means businesses can get their certificates faster. Technology is a powerful tool in upholding the integrity of the halal process, and we are proud to be at the forefront of this digital transformation."
+        },
+        "5": {
+          "title": "A Consumer's Halal Journey",
+          "user": "Community Member",
+          "content": "For me, choosing halal isn't just about avoiding certain ingredients; it's a core part of my identity and a way of life. It’s about being mindful of what I consume and ensuring it's pure and permissible. In the past, this meant spending hours in the supermarket, painstakingly reading tiny ingredient labels and often feeling uncertain.\n\nThe rise of clear halal labeling and tools like this AI Halal Advisor app has been empowering. Being able to quickly scan a barcode or check a certificate number gives me peace of mind. It allows me to support businesses that are committed to transparency and to make confident choices for my family. This accessibility to information has made my halal journey simpler and more joyful."
+        }
+      }
+    },
+    "services": {
+      "title": "Our Services",
+      "items": {
+        "hana": "HANA AI",
+        "certCheck": "Check Halal Certificate",
+        "ingredientValidator": "Ingredient Validator",
+        "marketplace": "Halal Marketplace",
+        "regulation": "Halal Regulation",
+        "supplierVerification": "Supplier Verification",
+        "scanBarcode": "Scan Barcode/QR",
+        "about": "About Us",
+        "more": "More Services"
+      }
+    },
+    "promotions": {
+      "title": "Special Promotions",
+      "items": {
+        "1": {
+          "title": "Discount on First Halal Certification",
+          "description": "Get a 20% discount on your first halal certification application. Limited time offer for new UMKM.",
+          "cta": "Claim Offer",
+          "details": "A special offer for new UMKM businesses registering for their first product line. This discount applies to the registration fee and is automatically applied when you submit your application through our online portal. Help us help you grow!",
+          "terms": "Valid for first-time applicants only. Cannot be combined with other offers. Applicable for businesses with annual revenue under Rp 500 million.",
+          "expiry": "December 31, 2024",
+          "videoUrl": "https://videos.pexels.com/video-files/8550338/8550338-hd_1920_1080_30fps.mp4"
+        },
+        "2": {
+          "title": "Free Halal Ingredient Consultation",
+          "description": "Schedule a free 30-minute consultation with our halal experts to discuss your product ingredients.",
+          "cta": "Book Now",
+          "details": "Unsure about an ingredient? Our team of Halal auditors and food scientists are here to help. Book a one-on-one video call to get your questions answered and ensure your product is on the right track for certification.",
+          "terms": "One free consultation per business. Subject to expert availability. Session must be booked at least one week in advance.",
+          "expiry": "November 30, 2024",
+          "videoUrl": "https://videos.pexels.com/video-files/5963503/5963503-hd_1920_1080_25fps.mp4"
+        },
+        "3": {
+          "title": "Halal Marketplace Partner Program",
+          "description": "Join our marketplace and get featured on the front page for a full month. Boost your sales!",
+          "cta": "Learn More",
+          "details": "Increase your visibility by joining the AI Halal Advisor's official marketplace. Partners in this program will be featured prominently on our home page and in our weekly newsletter, reaching thousands of consumers.",
+          "terms": "Must have a valid BPJPH halal certificate. Product listings are subject to review. Feature placement is scheduled on a first-come, first-served basis.",
+          "expiry": "Ongoing"
+        }
+      }
+    },
+    "news": {
+      "title": "BPJPH News & Updates",
+      "loadMore": "Load More",
+      "clearFilter": "Clear Filter",
+      "categories": {
+        "all": "All",
+        "technology": "Technology",
+        "event": "Event",
+        "education": "Education",
+        "government": "Government"
+      },
+      "articles": {
+        "1": { "title": "BPJPH & Ministry of Cooperatives Collaborate for MSME Halal Certification", "summary": "A new collaboration aims to accelerate halal certification for millions of MSME products, strengthening Indonesia's halal ecosystem.", "content": "The Halal Product Assurance Organizing Body (BPJPH) and the Ministry of Cooperatives and Small and Medium Enterprises (Kemenkop UKM) have signed a memorandum of understanding to accelerate halal certification for MSMEs. This strategic partnership aims to integrate data and provide streamlined support, making it easier for millions of small businesses to comply with the upcoming mandatory halal regulations. The collaboration will focus on joint socialization, training, and providing access to financing to reduce the barriers to certification.\n\nHead of BPJPH, Muhammad Aqil Irham, stated, 'This synergy is crucial for building a strong national halal ecosystem. By working together, we can ensure that MSMEs are not left behind and can compete in both domestic and global markets.' The program is expected to launch in several pilot provinces before a nationwide rollout.", "category": "Government", "date": "Oct 10, 2024", "url": "https://bpjph.halal.go.id/news/bpjph-kemenkop-ukm-kolaborasi-akselerasi-sertifikasi-halal-umk" },
+        "2": { "title": "Head of BPJPH Outlines 3 Priorities for Global Halal Ecosystem", "summary": "The Head of BPJPH highlighted mutual recognition, digital integration, and capacity building as key priorities for a global halal standard.", "content": "Speaking at the World Halal Summit, the Head of BPJPH, Muhammad Aqil Irham, emphasized three key priorities for establishing a robust global halal ecosystem. The first is creating a framework for Mutual Recognition Agreements (MRA) between halal certification bodies worldwide to reduce trade barriers. The second priority is the development of an integrated digital platform that connects all stakeholders, from producers to consumers, ensuring transparency and traceability. Lastly, he highlighted the importance of enhancing the capacity and competency of halal auditors and supervisors through standardized training and professional development programs.\n\n'A unified and digitally-powered system is no longer an option but a necessity for the future of the global halal industry,' he remarked during his keynote address.", "category": "Government", "date": "Oct 09, 2024", "url": "https://bpjph.halal.go.id/news/kepala-bpjph-paparkan-3-isu-prioritas-wujudkan-ekosistem-halal-dunia" },
+        "3": { "title": "Mandatory Halal Certification is a Legal Mandate, Says BPJPH Head", "summary": "The Head of BPJPH reaffirms that the upcoming mandatory halal certification is a direct implementation of the law to protect consumers.", "content": "With the October 2024 deadline approaching, the Head of BPJPH has issued a firm reminder that mandatory halal certification is a direct mandate of Law No. 33 of 2014. He clarified that this is not a new policy but the implementation phase of a long-standing law designed to provide legal certainty and protection for Muslim consumers in Indonesia. 'We urge all business actors in the food and beverage sector to immediately register their products. This is a collective responsibility to uphold consumer rights,' he stated. The agency is increasing its outreach and educational efforts to ensure all businesses are aware of their obligations and the steps required to achieve certification through the SIHALAL portal.", "category": "Education", "date": "Oct 08, 2024", "url": "https://bpjph.halal.go.id/news/tegas-kepala-bpjph-kewajiban-sertifikasi-halal-adalah-perintah-undang-undang" },
+        "4": { "title": "BPJPH Offers On-the-Spot Certification at Halal World 2024", "summary": "To speed up compliance, BPJPH provided on-the-spot halal certification registration and consultation services during the Halal World 2024 event.", "content": "During the bustling Halal World 2024 exhibition, BPJPH set up a dedicated service booth offering on-the-spot registration for halal certification. This initiative aimed to make the process more accessible and to directly address questions and concerns from business owners. Hundreds of MSME owners took advantage of the service, receiving immediate guidance on document preparation and application submission via the SIHALAL system. 'We want to be proactive and bring the service directly to the people,' said a BPJPH representative. The event also featured short seminars on the importance of halal certification and the benefits of the free SEHATI program for small businesses.", "category": "Event", "date": "Oct 07, 2024", "url": "https://bpjph.halal.go.id/news/bpjph-buka-layanan-sertifikasi-halal-on-the-spot-di-halal-world-2024" }
+      }
+    }
+  },
+  "footer": {
+    "about": { "title": "AI Halal Advisor", "description": "An initiative to support the Halal Product Assurance ecosystem in Indonesia. © 2023 BPJPH, Ministry of Religious Affairs." },
+    "links": { "title": "Quick Links", "about": "About Us", "faq": "FAQ", "privacy": "Privacy Policy", "terms": "Terms of Service" },
+    "contact": { "title": "Contact Us", "hotline": "Call Center: 146", "email": "Email: halal@kemenag.go.id", "address": "Jl. Lapangan Banteng Barat No. 3-4, Jakarta Pusat" },
+    "social": { "title": "Follow Us" }
+  },
+  "personas": {
+    "title": "Welcome to AI Halal Advisor",
+    "subtitle": "Please select your role to personalize your experience.",
+    "continueAsGuest": "Continue as Guest",
+    "welcomeAudio": "Welcome to the AI Halal Advisor. I am HANA, your guide to halal certification, products, and services. Please select a role below to begin.",
+    "toggleAudio": "Toggle welcome audio",
+    "umkm": { "name": "UMKM / Producer", "description": "Manage your products and certification process." },
+    "auditor": { "name": "Auditor / LPH", "description": "Conduct audits and manage halal inspection reports." },
+    "consumer": { "name": "Consumer", "description": "Verify products, find halal places, and learn more." },
+    "officer": { "name": "BPJPH Officer", "description": "Oversee certification, compliance, and regulations." }
+  },
+  "hana": {
+    "welcomeMessage": "Assalamualaikum! I am HANA, your Halal Advisor. How can I help you today?",
+    "chatTitle": "Chat with HANA",
+    "inputPlaceholder": "Ask HANA anything...",
+    "listeningPlaceholder": "Listening...",
+    "title": "HANA",
+    "subtitle": "Your AI Halal Advisor",
+    "suggestionsTitle": "Quick Suggestions",
+    "suggestion1": "What is halal certification?",
+    "suggestion2": "How to check a product?",
+    "suggestion3": "List halal restaurants near me",
+    "errorMessage": "I'm sorry, I'm having trouble connecting to my knowledge base right now. Please try again in a moment.",
+    "downloadChat": "Download Chat",
+    "downloadSuccess": "Chat log downloaded!",
+    "freeTrial": "Free Trial",
+    "sessionTime": "Session Time",
+    "timeRemaining": "Time: {time}",
+    "paymentTitle": "Session Upgrade Required",
+    "paymentMessage": "Your 5-minute free trial has ended. Please make a payment of Rp 50.000 to continue your consultation for up to 60 minutes.",
+    "paymentButton": "Pay and Continue",
+    "sessionEndedTitle": "Session Ended",
+    "sessionEndedMessage": "Your 60-minute session has ended. You can start a new consultation anytime.",
+    "startNewSession": "Start New Session"
+  },
+  "certCheck": {
+    "title": "Check Halal Certificate",
+    "subtitle": "Verify the halal status of products and businesses.",
+    "searchPlaceholder": "Enter certificate no, product, or producer name...",
+    "searchButton": "Search",
+    "loading": "Searching...",
+    "initialPrompt": "Enter a search term above to find halal certificates.",
+    "noResults": "No matching certificates found. Please try a different search.",
+    "noResultsTitle": "No Results Found",
+    "resultsTitle": "Search Results",
+    "statusCertified": "Certified",
+    "statusNotCertified": "Not Certified",
+    "statusExpired": "Expired",
+    "statusInvalidDate": "Invalid Date",
+    "expiryDate": "Expires On",
+    "addCertificate": "Add New Certificate",
+    "modalTitle": "Add Halal Certificate",
+    "certNumberLabel": "Certificate Number",
+    "certNumberPlaceholder": "e.g., ID1234567890123",
+    "productLabel": "Product Name",
+    "productPlaceholder": "e.g., Instant Noodles",
+    "producerLabel": "Producer Name",
+    "producerPlaceholder": "e.g., Sedaap Food Inc.",
+    "statusLabel": "Halal Status",
+    "expiryLabel": "Expiry Date",
+    "saveButton": "Save Certificate",
+    "cancelButton": "Cancel",
+    "errorCertNumberRequired": "Certificate number is required.",
+    "errorProductRequired": "Product name is required.",
+    "errorProducerRequired": "Producer name is required.",
+    "errorDateRequired": "Expiry date is required.",
+    "errorInvalidFormat": "Please enter a valid date.",
+    "errorDateInPast": "Expiry date cannot be in the past.",
+    "addSuccessMessage": "Certificate added successfully!",
+    "emptyStateTitle": "No Certificates Found",
+    "emptyStateSubtitle": "Your list of halal certificates is empty. Add your first certificate to get started.",
+    "addFirstCertificate": "Add First Certificate",
+    "startDateLabel": "Filter by Start Date",
+    "endDateLabel": "Filter by End Date",
+    "clearFiltersButton": "Clear Filters",
+    "modalDetailTitle": "Certificate Details",
+    "certIdLabel": "Certificate ID",
+    "closeButton": "Close",
+    "tooltips": {
+      "statusCertified": "This certificate is valid and has not expired.",
+      "statusExpired": "This certificate has passed its expiry date.",
+      "statusNotCertified": "This product or producer does not have a valid halal certificate.",
+      "statusInvalidDate": "The expiry date for this certificate could not be verified.",
+      "expiryDate": "The date until which the halal certificate is valid."
+    },
+    "exportButton": "Export to CSV",
+    "pagination": {
+      "showingResults": "Showing {start} - {end} of {total} results",
+      "first": "First",
+      "last": "Last",
+      "previous": "Previous",
+      "next": "Next",
+      "pageTooltip": "Page {currentPage} of {totalPages}"
+    }
+  },
+  "ingredientValidator": {
+    "title": "Ingredient Validator",
+    "subtitle": "Analyze product ingredients for their halal status.",
+    "inputLabel": "List of Ingredients",
+    "inputPlaceholder": "Enter ingredients, separated by commas or new lines...",
+    "validateButton": "Validate Ingredients",
+    "loading": "Analyzing...",
+    "initialPrompt": "Enter ingredients above to check their halal status.",
+    "resultsTitle": "Analysis Results",
+    "statusHalal": "Halal",
+    "statusHaram": "Haram",
+    "statusSyubhat": "Syubhat (Doubtful)",
+    "reasons": {
+      "halalPlantBased": "Considered halal as it is generally plant-based or synthetic.",
+      "haramAlcoholPork": "Considered haram as it is derived from or contains pork/alcohol.",
+      "syubhatSource": "The source of this ingredient can be animal or plant. Requires certification to confirm.",
+      "syubhatRennet": "Rennet can be from animal, microbial, or vegetable sources. Animal source must be from a halal-slaughtered animal."
+    }
+  },
+  "marketplace": {
+    "title": "Halal Marketplace",
+    "subtitle": "Discover certified halal products from trusted producers.",
+    "searchPlaceholder": "Search for products...",
+    "searchLabel": "Search for products",
+    "noResults": "No products found matching your criteria.",
+    "categories": {
+        "all": "All",
+        "food": "Food & Beverage",
+        "cosmetics": "Cosmetics",
+        "fashion": "Fashion",
+        "pharmaceuticals": "Pharmaceuticals"
+    },
+    "products": {
+      "1": { "name": "Instant Noodles Special Curry", "producer": "Sedaap Food Inc.", "price": "$0.50", "category": "Food", "description": "Delicious and easy-to-prepare instant noodles with a rich and aromatic special curry flavor. Certified halal, perfect for a quick and satisfying meal anytime.", "reviews": { "1": {"author": "Aisha B.", "rating": "5", "comment": "The best instant curry noodles out there! So flavorful."} } },
+      "2": { "name": "Brightening Serum", "producer": "Wardah Beauty", "price": "$12.99", "category": "Cosmetics", "description": "A lightweight, halal-certified serum that helps to brighten the skin tone and reduce dark spots. Formulated with natural extracts for a radiant complexion.", "reviews": { "1": {"author": "Fatima S.", "rating": "5", "comment": "My skin has never looked better. Highly recommend!"}, "2": {"author": "Zainab K.", "rating": "4", "comment": "Good serum, but takes time to see results."} } },
+      "3": { "name": "Silk Hijab", "producer": "Elzatta Hijab", "price": "$25.00", "category": "Fashion", "description": "An elegant and luxurious silk hijab that drapes beautifully. Made from high-quality, breathable fabric, perfect for special occasions or everyday wear.", "reviews": { "1": {"author": "Layla R.", "rating": "5", "comment": "So soft and the color is gorgeous."} } },
+      "4": { "name": "Gouda Cheese", "producer": "Mazaraat", "price": "$8.75", "category": "Food", "description": "Artisanal Gouda cheese made with halal-certified microbial rennet. It has a mild, nutty flavor and a smooth texture, great for sandwiches and platters.", "reviews": {} },
+      "5": { "name": "Vitamin C Supplement", "producer": "HalalPharm", "price": "$15.20", "category": "Pharmaceuticals", "description": "Boost your immune system with our halal-certified Vitamin C supplements. Made with high-quality ingredients and free from non-halal additives.", "reviews": { "1": {"author": "Omar H.", "rating": "5", "comment": "A staple in our household, especially during flu season."} } },
+      "6": { "name": "Matte Lipstick", "producer": "Wardah Beauty", "price": "$9.50", "category": "Cosmetics", "description": "A long-lasting matte lipstick with a comfortable, non-drying formula. Available in a variety of beautiful shades, all wudu-friendly and halal.", "reviews": { "1": {"author": "Maryam A.", "rating": "4", "comment": "Beautiful color, but can be a bit drying after a few hours."} } },
+      "7": { "name": "Frozen Halal Chicken", "producer": "So Good Foods", "price": "$10.00", "category": "Food", "description": "Premium quality frozen chicken, processed and packed according to strict halal standards. Tender, juicy, and perfect for all your favorite recipes.", "reviews": {} },
+      "8": { "name": "Printed Tunic", "producer": "Elzatta Hijab", "price": "$45.00", "category": "Fashion", "description": "A stylish and modest printed tunic made from comfortable, lightweight fabric. Features a unique design that is perfect for both casual and formal settings.", "reviews": { "1": {"author": "Yasmin F.", "rating": "5", "comment": "I received so many compliments when I wore this!"} } },
+      "9": { "name": "Herbal Cough Syrup", "producer": "HalalPharm", "price": "$7.80", "category": "Pharmaceuticals", "description": "A soothing herbal cough syrup made from natural, halal ingredients. Effectively relieves coughs and sore throats without alcohol or other prohibited substances.", "reviews": {} },
+      "10": { "name": "UHT Milk", "producer": "Cimory", "price": "$1.50", "category": "Food", "description": "Fresh and nutritious UHT milk, sourced from well-cared-for cows and processed in a halal-certified facility. A healthy choice for the whole family.", "reviews": { "1": {"author": "Ibrahim M.", "rating": "5", "comment": "My kids love this milk."} } },
+      "11": { "name": "Cleansing Face Wash", "producer": "Wardah Beauty", "price": "$7.00", "category": "Cosmetics", "description": "A gentle yet effective face wash that cleanses the skin without stripping its natural moisture. Halal-certified and suitable for all skin types.", "reviews": {} },
+      "12": { "name": "Beef Rendang Ready Meal", "producer": "Sedaap Food Inc.", "price": "$5.50", "category": "Food", "description": "Authentic Indonesian Beef Rendang, ready to eat in minutes. Made with certified halal beef and a rich blend of traditional spices for a delicious and convenient meal.", "reviews": { "1": {"author": "David L.", "rating": "5", "comment": "Incredibly authentic flavor for a ready meal. Amazing!"} } }
+    },
+    "addToBasket": "Add to Basket",
+    "priceRange": "Price Range",
+    "reset": "Reset",
+    "quickView": "Quick View",
+    "viewFullDetails": "View Full Details",
+    "exportButton": "Export to CSV",
+    "sortBy": {
+      "label": "Sort by",
+      "default": "Default Sorting",
+      "priceAsc": "Price: Low to High",
+      "priceDesc": "Price: High to Low",
+      "ratingDesc": "Highest Rated",
+      "nameAsc": "Name: A-Z"
+    }
+  },
+  "productDetail": {
+    "backToMarketplace": "Back to Marketplace",
+    "customerReviews": "Customer Reviews",
+    "noReviews": "This product has no reviews yet.",
+    "reviews": "reviews"
+  },
+  "basket": {
+    "title": "Shopping Basket",
+    "empty": "Your basket is empty.",
+    "total": "Total",
+    "checkout": "Proceed to Checkout",
+    "remove": "Remove item"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "summary": "Order Summary",
+    "shippingAddress": "Shipping Address",
+    "shippingAddressPlaceholder": "Enter your full shipping address",
+    "fullNamePlaceholder": "Enter your full name",
+    "processing": "Processing...",
+    "confirmPurchase": "Confirm Purchase"
+  },
+  "success": {
+    "title": "Purchase Successful!",
+    "message": "Thank you for your order. A confirmation has been sent to your email.",
+    "continueShopping": "Continue Shopping"
+  },
+  "auth": {
+    "guestAccessDenied": "This feature is for registered users. Please create an account to access your profile.",
+    "loginTitle": "Login as",
+    "registerTitle": "Create Account as",
+    "emailLabel": "Email Address",
+    "emailPlaceholder": "e.g., user@example.com",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter 8+ characters",
+    "loginButton": "Login",
+    "loading": "Loading...",
+    "registerButton": "Create Account",
+    "forgotPassword": "Forgot Password?",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?",
+    "registerLink": "Register Now",
+    "loginLink": "Login Here",
+    "rememberMe": "Remember Me",
+    "invalidEmail": "Please enter a valid email address.",
+    "passwordTooShort": "Password must be at least 8 characters long.",
+    "emailRequired": "Email address is required.",
+    "forgotPasswordTitle": "Reset Your Password",
+    "forgotPasswordSubtitle": "Enter your email and we'll send you a link to get back into your account.",
+    "sendResetLink": "Send Reset Link",
+    "resetLinkSent": "If an account with that email exists, we have sent a password reset link.",
+    "backToLogin": "Back to Login",
+    "fullNameLabel": "Full Name",
+    "fullNamePlaceholder": "e.g., Aisha Fatima",
+    "confirmPasswordLabel": "Confirm Password",
+    "confirmPasswordPlaceholder": "Re-enter your password",
+    "passwordsDoNotMatch": "Passwords do not match",
+    "nameRequired": "Full name is required.",
+    "businessNameLabel": "Business Name",
+    "businessNamePlaceholder": "e.g., Halal Foods Nusantara",
+    "businessNameRequired": "Business name is required.",
+    "businessIdLabel": "Business ID (NIB)",
+    "businessIdPlaceholder": "Enter your NIB",
+    "businessIdRequired": "Business ID is required.",
+    "auditorIdLabel": "Auditor ID",
+    "auditorIdPlaceholder": "Enter your auditor ID",
+    "auditorIdRequired": "Auditor ID is required.",
+    "lphNameLabel": "LPH Name",
+    "lphNamePlaceholder": "e.g., LPH Amanah Cendekia",
+    "lphNameRequired": "LPH name is required.",
+    "officerIdLabel": "Officer ID",
+    "officerIdPlaceholder": "Enter your officer ID",
+    "officerIdRequired": "Officer ID is required.",
+    "departmentLabel": "Department",
+    "departmentPlaceholder": "e.g., Certification Division",
+    "departmentRequired": "Department is required.",
+    "profileTitle": "My Profile",
+    "logoutButton": "Logout",
+    "emailOrAuditorIdLabel": "Email or Auditor ID",
+    "emailOrAuditorIdPlaceholder": "e.g., auditor@lph.com or AUD-12345",
+    "emailOrOfficerIdLabel": "Email or Officer ID",
+    "emailOrOfficerIdPlaceholder": "e.g., officer@bpjph.go.id or OFF-12345",
+    "loginWithGoogle": "Login with Google",
+    "orDivider": "OR"
+  },
+  "carousel": {
+    "announcement": "Announcement"
+  },
+  "search": {
+    "title": "Global Search",
+    "searchIn": "Search In",
+    "scopeAll": "All",
+    "scopeProducts": "Products",
+    "scopeCertificates": "Certificates",
+    "filters": "Filters",
+    "category": "Category",
+    "certificationStatus": "Certification Status",
+    "clearAll": "Clear All",
+    "searchButton": "Search",
+    "suggestions": {
+      "title": "Popular Searches",
+      "1": "halal food near me",
+      "2": "halal certification process",
+      "3": "product verification"
+    }
+  },
+  "profilePage": {
+    "notifications": {
+      "title": "Notification Settings",
+      "description": "Stay updated with important announcements, new promotions, and changes in certification status.",
+      "enableButton": "Enable Notifications",
+      "sendTestButton": "Send Test Notification",
+      "enabledText": "Notifications are enabled. You're all set!",
+      "deniedText": "Notifications are blocked. Please enable them in your browser settings to receive updates.",
+      "testTitle": "AI Halal Advisor",
+      "testBody": "This is a test notification. You are now subscribed to updates!"
+    }
+  },
+  "newsPage": {
+    "title": "BPJPH News & Updates",
+    "subtitle": "Stay informed with the latest developments and announcements."
+  },
+  "newsDetail": {
+    "backToNews": "Back to News",
+    "shareArticle": "Share Article",
+    "copySuccess": "Link copied!"
+  },
+  "storyDetail": {
+    "backToHome": "Back to Home"
+  },
+  "promotionModal": {
+    "termsTitle": "Terms & Conditions",
+    "validUntilTitle": "Valid Until",
+    "shareButton": "Share Promotion",
+    "shareMessage": "Promotion shared successfully!",
+    "copySuccessMessage": "Link copied to clipboard!"
+  },
+  "promotionsPage": {
+    "subtitle": "Check out the latest deals and special offers.",
+    "items": {
+      "1": {
+        "title": "Discount on First Halal Certification",
+        "description": "Get a 20% discount on your first halal certification application. Limited time offer for new UMKM.",
+        "cta": "Claim Offer",
+        "details": "A special offer for new UMKM businesses registering for their first product line. This discount applies to the registration fee and is automatically applied when you submit your application through our online portal. Help us help you grow!",
+        "terms": "Valid for first-time applicants only. Cannot be combined with other offers. Applicable for businesses with annual revenue under Rp 500 million.",
+        "expiry": "December 31, 2024",
+        "videoUrl": "https://videos.pexels.com/video-files/8550338/8550338-hd_1920_1080_30fps.mp4"
+      },
+      "2": {
+        "title": "Free Halal Ingredient Consultation",
+        "description": "Schedule a free 30-minute consultation with our halal experts to discuss your product ingredients.",
+        "cta": "Book Now",
+        "details": "Unsure about an ingredient? Our team of Halal auditors and food scientists are here to help. Book a one-on-one video call to get your questions answered and ensure your product is on the right track for certification.",
+        "terms": "One free consultation per business. Subject to expert availability. Session must be booked at least one week in advance.",
+        "expiry": "November 30, 2024",
+        "videoUrl": "https://videos.pexels.com/video-files/5963503/5963503-hd_1920_1080_25fps.mp4"
+      },
+      "3": {
+        "title": "Halal Marketplace Partner Program",
+        "description": "Join our marketplace and get featured on the front page for a full month. Boost your sales!",
+        "cta": "Learn More",
+        "details": "Increase your visibility by joining the AI Halal Advisor's official marketplace. Partners in this program will be featured prominently on our home page and in our weekly newsletter, reaching thousands of consumers.",
+        "terms": "Must have a valid BPJPH halal certificate. Product listings are subject to review. Feature placement is scheduled on a first-come, first-served basis.",
+        "expiry": "Ongoing"
+      },
+      "4": {
+        "title": "Halal Auditor Training Bundle",
+        "description": "Sign up for our auditor training and get exclusive access to our digital tools for free.",
+        "cta": "Enroll Now",
+        "details": "Become a certified Halal auditor with our comprehensive training program. This special bundle includes the full course material, examination fees, and a one-year subscription to our premium auditor software.",
+        "terms": "Offer valid for new enrollments only. Software subscription is non-transferable. Course must be completed within 6 months of enrollment.",
+        "expiry": "October 31, 2024"
+      },
+      "5": {
+        "title": "UMKM Digital Go-Live Package",
+        "description": "Get your halal business online with our special package including website and marketing.",
+        "cta": "Get Started",
+        "details": "Let us help you take your Halal business to the next level. This package provides a simple e-commerce website, social media setup, and a starter pack for digital advertising, all tailored for Halal consumers.",
+        "terms": "This is a service provided by a third-party partner. Website hosting and ad spend are not included in the package price. Limited slots available per month.",
+        "expiry": "December 31, 2024"
+      },
+      "6": {
+        "title": "Family Halal Lifestyle Subscription",
+        "description": "Subscribe to our monthly box of curated halal products for the whole family.",
+        "cta": "Subscribe",
+        "details": "Discover new and exciting Halal products every month! Each box is filled with a selection of snacks, ingredients, and lifestyle items from certified UMKM partners. A great way to support small businesses.",
+        "terms": "Subscription renews automatically each month. Can be cancelled anytime. Shipping available only within Indonesia.",
+        "expiry": "Ongoing"
+      }
+    }
+  },
+  "supplierVerification": {
+    "title": "Supplier Verification",
+    "subtitle": "Ensure your supply chain meets halal standards.",
+    "placeholder": "The supplier verification feature is coming soon. Stay tuned for updates!"
+  },
+  "scanBarcode": {
+    "title": "Scan Barcode/QR",
+    "subtitle": "Quickly check product status by scanning its barcode or QR code.",
+    "cameraPlaceholder": "Position the barcode or QR code within the frame.",
+    "uploadButton": "Upload from Gallery",
+    "scanResult": "Scan Result",
+    "scanAgain": "Scan Again",
+    "noCamera": "Could not access camera. Please check permissions and try again.",
+    "noCodeFound": "No barcode or QR code could be detected in the image."
+  },
+  "moreServices": {
+    "title": "More Services",
+    "subtitle": "Explore all the features offered by AI Halal Advisor.",
+    "comingSoon": "Coming Soon"
+  },
+  "regulation": {
+    "title": "Halal Regulation",
+    "subtitle": "Access official regulations and guidelines for Halal Product Assurance.",
+    "placeholder": "The regulation library feature is coming soon. Stay tuned for updates!",
+    "backToList": "Back to Regulations",
+    "pdfPlaceholder": "PDF Viewer Placeholder",
+    "categories": {
+      "law": "Law",
+      "gov": "Government Regulation",
+      "ministerial": "Ministerial Decree",
+      "bpjph": "BPJPH Regulation"
+    },
+    "docs": {
+      "1": {
+        "title": "Law No. 33 of 2014",
+        "description": "The primary law concerning Halal Product Assurance, establishing the mandate for halal certification for products in Indonesia."
+      },
+      "2": {
+        "title": "Government Regulation No. 39 of 2021",
+        "description": "Implementing regulation for Law No. 33 of 2014, detailing the stages and procedures of halal product assurance."
+      },
+      "3": {
+        "title": "Minister of Religious Affairs Decree No. 748 of 2021",
+        "description": "Specifies the types of products that are required to be halal certified."
+      },
+      "4": {
+        "title": "BPJPH Head Decree No. 1 of 2021",
+        "description": "Technical guidelines regarding the implementation of Halal Product Assurance services."
+      }
+    }
+  },
+  "showMore": "Show More",
+  "showLess": "Show Less",
+  "mapPage": {
+    "title": "Location Search",
+    "subtitle": "Showing results for: \"{query}\"",
+    "mapTitle": "Map showing results for {query}"
+  },
+  "aboutPage": {
+    "title": "About AI Halal Advisor",
+    "subtitle": "Empowering the Halal Ecosystem with Technology",
+    "paragraph1": "The AI Halal Advisor is a pioneering digital platform designed to support and streamline the Halal Product Assurance ecosystem in Indonesia. Developed in collaboration with the Halal Product Assurance Organizing Body (BPJPH), this application serves as a comprehensive tool for all stakeholders involved in the halal industry.",
+    "paragraph2": "Our mission is to empower businesses, halal supervisors, auditors, BPJPH officers, and consumers by providing easy access to information, simplifying certification processes, and fostering a transparent and trustworthy halal marketplace. From verifying product ingredients to accessing the latest regulations, the AI Halal Advisor is your one-stop solution for all things halal.",
+    "bpjphTitle": "About BPJPH",
+    "bpjphParagraph1": "BPJPH (Badan Penyelenggara Jaminan Produk Halal) is a government agency under the Ministry of Religious Affairs of Indonesia. It holds the mandate to organize Halal Product Assurance as stipulated by Law No. 33 of 2014.",
+    "bpjphParagraph2": "The agency is responsible for issuing halal certificates, accrediting Halal Inspection Agencies (LPH), and developing the standards and systems that ensure the integrity of halal products circulating in Indonesia and beyond. The AI Halal Advisor is an official initiative to digitize and enhance the services provided by BPJPH.",
+    "techTitle": "Our Technology",
+    "techParagraph1": "Powered by Google's advanced AI models, the AI Halal Advisor provides intelligent features such as the HANA AI assistant, ingredient analysis, and a smart search engine to deliver accurate and relevant information quickly and efficiently."
+  }
+}
