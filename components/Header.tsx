@@ -167,7 +167,7 @@ const PersonaIndicator: React.FC = () => {
     const icon = React.cloneElement(personaDetails.icon, Object.assign({}, personaDetails.icon.props, { className: "h-5 w-5" }));
 
     return (
-        <div className="hidden lg:flex items-center gap-2 bg-halal-green/10 text-halal-green font-semibold px-3 py-1.5 rounded-full text-sm animate-fadein border border-halal-green/20">
+        <div className="hidden lg:flex items-center gap-2 bg-gray-100 text-halal-green font-semibold px-3 py-1.5 rounded-full text-sm animate-fadein">
             {icon}
             <span>{t(personaDetails.name)}</span>
         </div>
