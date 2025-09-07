@@ -3,7 +3,8 @@ export type PersonaId = 'umkm' | 'auditor' | 'consumer' | 'officer' | 'guest';
 export interface Service {
   id: string;
   title: string; // This will now be a translation key
-  icon: React.ReactNode;
+  // FIX: Changed icon type from React.ReactNode to React.ReactElement for better type safety with React.cloneElement.
+  icon: React.ReactElement;
   personas?: PersonaId[]; // Array of personas that can see this service. If undefined, visible to all.
 }
 
@@ -31,7 +32,8 @@ export interface Persona {
     id: string;
     name: string; // Translation key
     description: string; // Translation key
-    icon: React.ReactNode;
+    // FIX: Changed icon type from React.ReactNode to React.ReactElement to fix an error with React.cloneElement.
+    icon: React.ReactElement;
 }
 
 export interface Promotion {

@@ -1,9 +1,3 @@
-
-
-
-
-
-
 import React, { useState, useRef, useEffect } from 'react';
 import HanaAvatar, { HanaState } from './HanaAvatar';
 import { createHanaChat, sendMessageToHana } from '../services/geminiService';
@@ -26,6 +20,19 @@ interface HanaChatProps {
   onOpen: () => void;
 }
 
+const SpeakerIcon: React.FC = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+    </svg>
+);
+
+const SpeakerMutedIcon: React.FC = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+    </svg>
+);
+
 const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
   const { t, language } = useTranslations();
   const { persona } = useAuth();
@@ -37,6 +44,7 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
   const chatEndRef = useRef<HTMLDivElement>(null);
   const chatRef = useRef<Chat | null>(null);
   const textBeforeListeningRef = useRef('');
+  const [isVoiceModeEnabled, setIsVoiceModeEnabled] = useState(true);
 
   const [timeRemaining, setTimeRemaining] = useState(300); // 5 minutes free trial
   const [isFreeTrial, setIsFreeTrial] = useState(true);
@@ -59,6 +67,14 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
     },
     language: language
   });
+
+  // Effect to handle side-effects of toggling voice mode
+  useEffect(() => {
+    if (!isVoiceModeEnabled) {
+        cancel(); // Stop any ongoing speech
+        stopListening(); // Stop any ongoing listening
+    }
+  }, [isVoiceModeEnabled, cancel, stopListening]);
 
   const formatTime = (seconds: number) => {
     const minutes = Math.floor(seconds / 60);
@@ -125,7 +141,7 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
         const hanaMessage: Message = { id: Date.now() + 1, text: response, sender: 'hana' };
         setMessages(prev => [...prev, hanaMessage]);
         
-        if (isTtsSupported) {
+        if (isTtsSupported && isVoiceModeEnabled) {
             speak(response);
             setCurrentlySpeakingId(hanaMessage.id);
         } else {
@@ -235,13 +251,25 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
                         {isFreeTrial ? t('hana.freeTrial') : t('hana.sessionTime')} | {t('hana.timeRemaining', { time: formatTime(timeRemaining) })}
                     </div>
                 </div>
-                 {messages.length > 1 && (
-                    <button onClick={handleDownloadChat} className="p-1.5 rounded-full hover:bg-white/20 transition-colors" title={t('hana.downloadChat')} aria-label={t('hana.downloadChat')}>
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                        </svg>
-                    </button>
-                 )}
+                 <div className="flex items-center gap-1">
+                    {messages.length > 1 && (
+                        <button onClick={handleDownloadChat} className="p-1.5 rounded-full hover:bg-white/20 transition-colors" title={t('hana.downloadChat')} aria-label={t('hana.downloadChat')}>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                        </button>
+                    )}
+                    {(isTtsSupported || isMicSupported) && (
+                        <button
+                            onClick={() => setIsVoiceModeEnabled(prev => !prev)}
+                            className="p-1.5 rounded-full hover:bg-white/20 transition-colors"
+                            title={t('hana.toggleVoice')}
+                            aria-label={t('hana.toggleVoice')}
+                        >
+                            {isVoiceModeEnabled ? <SpeakerIcon/> : <SpeakerMutedIcon/>}
+                        </button>
+                    )}
+                 </div>
                </div>
               <button onClick={onClose} className="w-8 h-8 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center">&times;</button>
             </header>
@@ -306,7 +334,7 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
             ) : (
                 <div className="p-4 border-t bg-white flex-shrink-0">
                   <div className="flex items-center space-x-2">
-                    {isMicSupported && (
+                    {isMicSupported && isVoiceModeEnabled && (
                         <button
                             type="button"
                             onClick={toggleListening}

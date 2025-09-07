@@ -155,6 +155,7 @@
     "errorMessage": "I'm sorry, I'm having trouble connecting to my knowledge base right now. Please try again in a moment.",
     "downloadChat": "Download Chat",
     "downloadSuccess": "Chat log downloaded!",
+    "toggleVoice": "Toggle Voice Features",
     "freeTrial": "Free Trial",
     "sessionTime": "Session Time",
     "timeRemaining": "Time: {time}",

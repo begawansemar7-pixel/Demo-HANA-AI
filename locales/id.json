@@ -155,6 +155,7 @@
     "errorMessage": "Maaf, saya sedang kesulitan terhubung ke basis pengetahuan saya saat ini. Silakan coba lagi sebentar lagi.",
     "downloadChat": "Unduh Obrolan",
     "downloadSuccess": "Log obrolan diunduh!",
+    "toggleVoice": "Alihkan Fitur Suara",
     "freeTrial": "Uji Coba Gratis",
     "sessionTime": "Waktu Sesi",
     "timeRemaining": "Sisa Waktu: {time}",

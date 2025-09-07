@@ -3,6 +3,7 @@ import { useTranslations } from '../hooks/useTranslations';
 import { useAuth } from '../hooks/useAuth';
 import { useBasket } from '../hooks/useBasket';
 import GlobalSearch from './GlobalSearch';
+import { PERSONAS } from '../constants';
 
 const BpjphLogo: React.FC = () => (
     <div className="flex items-center space-x-3">
@@ -147,6 +148,32 @@ const LanguageToggle: React.FC = () => {
   );
 };
 
+const PersonaIndicator: React.FC = () => {
+    const { persona, isAuthenticated } = useAuth();
+    const { t } = useTranslations();
+
+    if (!isAuthenticated || !persona || persona === 'guest') {
+        return null;
+    }
+
+    const personaDetails = PERSONAS.find(p => p.id === persona);
+
+    if (!personaDetails) {
+        return null;
+    }
+
+    // A smaller icon for the header.
+    // FIX: Use Object.assign to merge props, preventing a TypeScript error from spreading a property of type 'any'.
+    const icon = React.cloneElement(personaDetails.icon, Object.assign({}, personaDetails.icon.props, { className: "h-5 w-5" }));
+
+    return (
+        <div className="hidden lg:flex items-center gap-2 bg-halal-green/10 text-halal-green font-semibold px-3 py-1.5 rounded-full text-sm animate-fadein border border-halal-green/20">
+            {icon}
+            <span>{t(personaDetails.name)}</span>
+        </div>
+    );
+};
+
 interface HeaderProps {
     onNavigate: (page: string) => void;
     onBasketClick: () => void;
@@ -179,7 +206,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, onBasketClick, onSearch }) 
             >
               <span className="text-gray-400">{t('header.searchPlaceholder')}</span>
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </div>
@@ -187,6 +214,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, onBasketClick, onSearch }) 
           </div>
 
           <div className="flex items-center space-x-2 sm:space-x-4">
+            <PersonaIndicator />
             <LanguageToggle />
             {showBasket && <BasketIcon onClick={onBasketClick} />}
             <UserProfileIcon onNavigate={onNavigate}/>

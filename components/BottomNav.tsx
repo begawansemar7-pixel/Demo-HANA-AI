@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslations } from '../hooks/useTranslations';
 import { useAuth } from '../hooks/useAuth';
+import { PERSONAS } from '../constants';
 
 interface BottomNavProps {
     onNavigate: (page: string) => void;
@@ -54,7 +55,7 @@ const getNavItemsForPersona = (
         case 'officer':
              return [
                 { name: t('nav.home'), icon: HomeIcon, key: 'home' },
-                { name: t('certCheck.title'), icon: 'cert-check', key: 'cert-check' },
+                { name: t('certCheck.title'), icon: CertCheckIcon, key: 'cert-check' },
                 ...baseNav.slice(0, 1), // HANA
                 { name: t('nav.regulation'), icon: RegulationIcon, key: 'regulation' },
                 ...baseNav.slice(1), // Profile
@@ -73,9 +74,12 @@ const getNavItemsForPersona = (
 
 const BottomNav: React.FC<BottomNavProps> = ({ onNavigate, currentPage }) => {
   const { t } = useTranslations();
-  const { persona } = useAuth();
+  const { persona, isAuthenticated } = useAuth();
 
   const navItems = getNavItemsForPersona(persona, t);
+  const personaDetails = PERSONAS.find(p => p.id === persona);
+  const personaName = personaDetails ? t(personaDetails.name) : '';
+
 
   return (
     <nav id="bottom-nav" className="md:hidden fixed bottom-0 left-0 right-0 h-20 bg-white/80 backdrop-blur-lg border-t border-gray-200 flex justify-around items-center z-50">
@@ -116,6 +120,9 @@ const BottomNav: React.FC<BottomNavProps> = ({ onNavigate, currentPage }) => {
                  {item.icon}
              </div>
             <span className={`text-xs mt-1 transition-all ${isActive ? 'font-bold' : 'font-medium'}`}>{item.name}</span>
+             {item.key === 'profile' && isAuthenticated && persona !== 'guest' && (
+                <span className="text-[10px] text-halal-green/80 -mt-0.5 font-medium">{personaName}</span>
+            )}
           </button>
         );
       })}
