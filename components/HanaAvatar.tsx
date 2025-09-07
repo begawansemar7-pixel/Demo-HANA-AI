@@ -9,12 +9,13 @@ export enum HanaState {
   ANSWERING = 'answering',
 }
 
-interface HanaAvatarProps {
+// Add React.ButtonHTMLAttributes<HTMLButtonElement> to accept all button props
+interface HanaAvatarProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   state: HanaState;
   onClick: () => void;
 }
 
-const HanaAvatar: React.FC<HanaAvatarProps> = ({ state, onClick }) => {
+const HanaAvatar = React.forwardRef<HTMLButtonElement, HanaAvatarProps>(({ state, onClick, ...props }, ref) => {
   const getStateClasses = () => {
     switch (state) {
       case HanaState.IDLE:
@@ -41,8 +42,10 @@ const HanaAvatar: React.FC<HanaAvatarProps> = ({ state, onClick }) => {
   return (
     <div className="relative">
       <button 
+        ref={ref}
         onClick={onClick}
         className={`w-20 h-20 rounded-full bg-gradient-to-br from-halal-green to-turquoise-blue text-white flex items-center justify-center shadow-lg hover:scale-105 transition-transform duration-300 ${getStateClasses()}`}
+        {...props}
       >
         <div className="relative w-16 h-16 flex items-center justify-center">
           {/* Face Container: Fades back when thinking/listening */}
@@ -73,6 +76,6 @@ const HanaAvatar: React.FC<HanaAvatarProps> = ({ state, onClick }) => {
       </button>
     </div>
   );
-};
+});
 
 export default HanaAvatar;

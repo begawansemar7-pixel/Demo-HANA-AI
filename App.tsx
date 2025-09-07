@@ -161,7 +161,7 @@ const App: React.FC = () => {
   
   if (!isAuthenticated && persona !== 'guest') {
     const AuthLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-        <div className="bg-gray-50 min-h-screen font-poppins text-gray-800 flex items-center justify-center p-4">
+        <div className="bg-gray-50 dark:bg-gray-900 min-h-screen font-poppins text-gray-800 dark:text-gray-200 flex items-center justify-center p-4">
             {children}
         </div>
     );
@@ -195,6 +195,7 @@ const App: React.FC = () => {
   ];
 
   const isHomePage = !pagesWithGrayBg.includes(currentPage);
+  const mainBgClass = isHomePage ? 'bg-halal-pattern' : 'bg-gray-50 dark:bg-gray-800';
 
 
   const renderPage = () => {
@@ -272,7 +273,7 @@ const App: React.FC = () => {
 
 
   return (
-    <div className={`min-h-screen font-poppins text-gray-800 ${isHomePage ? 'bg-halal-pattern' : 'bg-gray-50'}`}>
+    <div className={`min-h-screen font-poppins text-gray-800 dark:text-gray-200 ${mainBgClass}`}>
       <Header 
         onNavigate={navigateTo} 
         onBasketClick={() => setIsBasketOpen(true)} 

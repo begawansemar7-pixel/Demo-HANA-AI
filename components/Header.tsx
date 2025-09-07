@@ -4,6 +4,7 @@ import { useAuth } from '../hooks/useAuth';
 import { useBasket } from '../hooks/useBasket';
 import GlobalSearch from './GlobalSearch';
 import { PERSONAS } from '../constants';
+import ThemeToggle from './ThemeToggle';
 
 const BpjphLogo: React.FC = () => (
     <div className="flex items-center space-x-3">
@@ -71,30 +72,30 @@ const UserProfileIcon: React.FC<{onNavigate: (page: string) => void}> = ({onNavi
         <div className="relative" ref={dropdownRef}>
             <button 
                 onClick={() => setIsDropdownOpen(prev => !prev)} 
-                className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden ring-2 ring-offset-2 ring-transparent hover:ring-halal-green focus:ring-halal-green transition-all"
+                className="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center overflow-hidden ring-2 ring-offset-2 ring-transparent hover:ring-halal-green dark:hover:ring-accent-gold focus:ring-halal-green dark:focus:ring-accent-gold transition-all"
                 aria-haspopup="true"
                 aria-expanded={isDropdownOpen}
             >
                 {user ? (
-                    <span className="font-bold text-halal-green">{user.name.charAt(0)}</span>
+                    <span className="font-bold text-halal-green dark:text-accent-gold">{user.name.charAt(0)}</span>
                 ) : (
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-500 dark:text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                     </svg>
                 )}
             </button>
             {isDropdownOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl z-50 py-1 ring-1 ring-black ring-opacity-5 animate-fadein">
+                <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-xl z-50 py-1 ring-1 ring-black dark:ring-gray-700 ring-opacity-5 animate-fadein">
                     {persona === 'guest' ? (
-                        <button onClick={() => handleAction(logout)} className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                        <button onClick={() => handleAction(logout)} className="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">
                             {t('header.profileMenu.loginRegister')}
                         </button>
                     ) : (
                         <>
-                            <button onClick={() => handleAction(() => onNavigate('profile'))} className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                            <button onClick={() => handleAction(() => onNavigate('profile'))} className="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">
                                 {t('header.profileMenu.viewProfile')}
                             </button>
-                            <button onClick={() => handleAction(logout)} className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                            <button onClick={() => handleAction(logout)} className="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">
                                 {t('header.profileMenu.switchPersona')}
                             </button>
                         </>
@@ -108,12 +109,12 @@ const UserProfileIcon: React.FC<{onNavigate: (page: string) => void}> = ({onNavi
 const BasketIcon: React.FC<{onClick: () => void}> = ({onClick}) => {
     const { totalItems } = useBasket();
     return (
-        <button onClick={onClick} className="relative w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center ring-2 ring-offset-2 ring-transparent hover:ring-halal-green transition-all">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <button onClick={onClick} className="relative w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center ring-2 ring-offset-2 ring-transparent hover:ring-halal-green dark:hover:ring-accent-gold transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-500 dark:text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
             </svg>
             {totalItems > 0 && (
-                <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center border-2 border-white">
+                <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center border-2 border-white dark:border-gray-800">
                     {totalItems}
                 </span>
             )}
@@ -130,15 +131,15 @@ const LanguageToggle: React.FC = () => {
   ];
 
   return (
-    <div className="flex items-center bg-gray-200/70 rounded-full p-1 space-x-1">
+    <div className="flex items-center bg-gray-200/70 dark:bg-gray-900/50 rounded-full p-1 space-x-1">
       {languages.map(lang => (
         <button
           key={lang.code}
           onClick={() => setLanguage(lang.code)}
           className={`px-3 py-1 text-sm font-semibold rounded-full transition-all duration-300 ${
             language === lang.code
-              ? 'bg-white text-halal-green shadow-sm'
-              : 'text-gray-600 hover:bg-gray-300/50'
+              ? 'bg-white dark:bg-gray-700 text-halal-green dark:text-gray-100 shadow-sm'
+              : 'text-gray-600 dark:text-gray-400 hover:bg-gray-300/50 dark:hover:bg-gray-600/50'
           }`}
         >
           {lang.label}
@@ -194,7 +195,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, onBasketClick, onSearch }) 
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 p-4 transition-all duration-300">
-        <div className="container mx-auto flex items-center justify-between p-2 sm:p-3 bg-white/70 backdrop-blur-lg rounded-full shadow-md">
+        <div className="container mx-auto flex items-center justify-between p-2 sm:p-3 bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg rounded-full shadow-md dark:shadow-black/20">
           <button onClick={() => onNavigate('home')} className="flex-shrink-0" aria-label="Go to Homepage">
               <BpjphLogo />
           </button>
@@ -202,7 +203,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, onBasketClick, onSearch }) 
           <div className="flex-1 max-w-lg mx-2 sm:mx-4 hidden md:block">
             <button 
               onClick={() => setIsSearchOpen(true)}
-              className="w-full text-left py-2 pl-10 pr-4 bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-halal-green transition-all"
+              className="w-full text-left py-2 pl-10 pr-4 bg-gray-100 dark:bg-gray-700 rounded-full focus:outline-none focus:ring-2 focus:ring-halal-green dark:focus:ring-accent-gold transition-all"
             >
               <span className="text-gray-400">{t('header.searchPlaceholder')}</span>
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -216,6 +217,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, onBasketClick, onSearch }) 
           <div className="flex items-center space-x-2 sm:space-x-4">
             <PersonaIndicator />
             <LanguageToggle />
+            <ThemeToggle />
             {showBasket && <BasketIcon onClick={onBasketClick} />}
             <UserProfileIcon onNavigate={onNavigate}/>
           </div>

@@ -16,9 +16,12 @@ const LoginPage: React.FC<LoginPageProps> = ({ onNavigate }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [rememberMe, setRememberMe] = useState(false);
-    const [loading, setLoading] = useState(false);
+    const [emailLoading, setEmailLoading] = useState(false);
+    const [googleLoading, setGoogleLoading] = useState(false);
     const [emailError, setEmailError] = useState('');
     const [passwordError, setPasswordError] = useState('');
+
+    const isLoading = emailLoading || googleLoading;
 
     useEffect(() => {
         const rememberedEmail = localStorage.getItem(REMEMBER_ME_KEY);
@@ -34,9 +37,15 @@ const LoginPage: React.FC<LoginPageProps> = ({ onNavigate }) => {
         let isValid = true;
         setEmailError('');
         setPasswordError('');
+        
+        const isSpecialPersona = persona === 'auditor' || persona === 'officer';
 
-        // Basic email validation
-        if (!email || !/\S+@\S+\.\S+/.test(email)) {
+        // Validation for the login ID/email field
+        if (!email.trim()) {
+            setEmailError(t('auth.emailRequired'));
+            isValid = false;
+        } else if (!isSpecialPersona && !/\S+@\S+\.\S+/.test(email)) {
+            // Only validate email format for non-special personas (consumer, umkm)
             setEmailError(t('auth.invalidEmail'));
             isValid = false;
         }
@@ -56,7 +65,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ onNavigate }) => {
         if (!validate()) {
             return;
         }
-        setLoading(true);
+        setEmailLoading(true);
         // Simulate API call
         setTimeout(() => {
             if (rememberMe) {
@@ -65,16 +74,16 @@ const LoginPage: React.FC<LoginPageProps> = ({ onNavigate }) => {
                 localStorage.removeItem(REMEMBER_ME_KEY);
             }
             login({ email, password });
-            setLoading(false);
+            setEmailLoading(false);
         }, 1000);
     };
 
     const handleGoogleLogin = () => {
-        setLoading(true);
+        setGoogleLoading(true);
         // Simulate API call for Google login
         setTimeout(() => {
             login({ email: 'user.example@gmail.com' });
-            setLoading(false);
+            setGoogleLoading(false);
         }, 1000);
     };
 
@@ -104,14 +113,14 @@ const LoginPage: React.FC<LoginPageProps> = ({ onNavigate }) => {
     const loginFieldProps = getLoginFieldProps();
 
     return (
-        <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-xl animate-fadein">
+        <div className="w-full max-w-md bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl animate-fadein">
             <div className="text-center mb-8">
                 {personaDetails && (
-                    <div className="flex flex-col items-center mb-4 text-halal-green">
+                    <div className="flex flex-col items-center mb-4 text-halal-green dark:text-accent-gold">
                         <div className="w-16 h-16">{personaDetails.icon}</div>
-                        <h1 className="text-2xl font-bold text-gray-800 mt-2">
+                        <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mt-2">
                             {t('auth.loginTitle')}{' '}
-                            <span className="text-halal-green">{t(personaDetails.name)}</span>
+                            <span className="text-halal-green dark:text-accent-gold">{t(personaDetails.name)}</span>
                         </h1>
                     </div>
                 )}
@@ -149,15 +158,15 @@ const LoginPage: React.FC<LoginPageProps> = ({ onNavigate }) => {
                             type="checkbox"
                             checked={rememberMe}
                             onChange={(e) => setRememberMe(e.target.checked)}
-                            className="h-4 w-4 text-halal-green focus:ring-halal-green border-gray-300 rounded"
+                            className="h-4 w-4 text-halal-green focus:ring-halal-green border-gray-300 dark:border-gray-600 dark:bg-gray-700 rounded"
                         />
-                        <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
+                        <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900 dark:text-gray-300">
                             {t('auth.rememberMe')}
                         </label>
                     </div>
 
                     <div className="text-sm">
-                        <button type="button" onClick={() => onNavigate('forgot-password')} className="font-medium text-halal-green hover:text-green-700">
+                        <button type="button" onClick={() => onNavigate('forgot-password')} className="font-medium text-halal-green dark:text-accent-gold hover:text-green-700 dark:hover:text-yellow-300">
                             {t('auth.forgotPassword')}
                         </button>
                     </div>
@@ -165,28 +174,28 @@ const LoginPage: React.FC<LoginPageProps> = ({ onNavigate }) => {
                 <div>
                     <button
                         type="submit"
-                        disabled={loading}
+                        disabled={isLoading}
                         className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-halal-green hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-halal-green disabled:opacity-50"
                     >
-                         {loading && <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>}
-                         {loading ? t('auth.loading') : t('auth.loginButton')}
+                         {emailLoading && <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>}
+                         {emailLoading ? t('auth.loading') : t('auth.loginButton')}
                     </button>
                 </div>
             </form>
 
             <div className="my-6 flex items-center">
-                <div className="flex-grow border-t border-gray-300"></div>
-                <span className="flex-shrink mx-4 text-gray-500 text-sm font-semibold">{t('auth.orDivider')}</span>
-                <div className="flex-grow border-t border-gray-300"></div>
+                <div className="flex-grow border-t border-gray-300 dark:border-gray-600"></div>
+                <span className="flex-shrink mx-4 text-gray-500 dark:text-gray-400 text-sm font-semibold">{t('auth.orDivider')}</span>
+                <div className="flex-grow border-t border-gray-300 dark:border-gray-600"></div>
             </div>
 
             <button
                 type="button"
                 onClick={handleGoogleLogin}
-                disabled={loading}
-                className="w-full flex items-center justify-center py-3 px-4 border border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-halal-green disabled:opacity-50"
+                disabled={isLoading}
+                className="w-full flex items-center justify-center py-3 px-4 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm text-sm font-medium text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-halal-green disabled:opacity-50"
             >
-                {loading ? (
+                {googleLoading ? (
                     <div className="w-5 h-5 border-2 border-gray-500 border-t-transparent rounded-full animate-spin mr-2"></div>
                 ) : (
                     <svg className="w-5 h-5 mr-3" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
@@ -196,12 +205,12 @@ const LoginPage: React.FC<LoginPageProps> = ({ onNavigate }) => {
                         <path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.087 5.571l6.19 5.238C42.012 35.853 44 30.273 44 24c0-1.341-.138-2.65-.389-3.917z"></path>
                     </svg>
                 )}
-                {loading ? t('auth.loading') : t('auth.loginWithGoogle')}
+                {googleLoading ? t('auth.loading') : t('auth.loginWithGoogle')}
             </button>
 
-            <p className="mt-8 text-center text-sm text-gray-600">
+            <p className="mt-8 text-center text-sm text-gray-600 dark:text-gray-400">
                 {t('auth.noAccount')}{' '}
-                <button onClick={() => onNavigate('register')} className="font-medium text-halal-green hover:text-green-700">
+                <button onClick={() => onNavigate('register')} className="font-medium text-halal-green dark:text-accent-gold hover:text-green-700 dark:hover:text-yellow-300">
                     {t('auth.registerLink')}
                 </button>
             </p>

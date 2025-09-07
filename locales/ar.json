@@ -164,7 +164,12 @@
     "paymentButton": "ادفع وتابع",
     "sessionEndedTitle": "انتهت الجلسة",
     "sessionEndedMessage": "لقد انتهت جلستك التي تبلغ مدتها 60 دقيقة. يمكنك بدء استشارة جديدة في أي وقت.",
-    "startNewSession": "ابدأ جلسة جديدة"
+    "startNewSession": "ابدأ جلسة جديدة",
+    "openChatLabel": "افتح مساعد HANA الذكي",
+    "closeChatLabel": "إغلاق الدردشة",
+    "startListeningLabel": "بدء الاستماع",
+    "stopListeningLabel": "إيقاف الاستماع",
+    "sendLabel": "إرسال الرسالة"
   },
   "certCheck": {
     "title": "مدقق شهادات الحلال",

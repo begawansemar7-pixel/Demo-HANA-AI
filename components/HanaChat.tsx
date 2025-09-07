@@ -45,6 +45,9 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
   const chatRef = useRef<Chat | null>(null);
   const textBeforeListeningRef = useRef('');
   const [isVoiceModeEnabled, setIsVoiceModeEnabled] = useState(true);
+  
+  const modalRef = useRef<HTMLDivElement>(null);
+  const triggerButtonRef = useRef<HTMLButtonElement>(null);
 
   const [timeRemaining, setTimeRemaining] = useState(300); // 5 minutes free trial
   const [isFreeTrial, setIsFreeTrial] = useState(true);
@@ -125,6 +128,74 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
         setHanaState(HanaState.IDLE);
     }
   }, [isListening, hanaState]);
+  
+  // Keyboard listener for open/close shortcut and escape key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Ctrl/Cmd + K to toggle chat
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        if (isOpen) {
+          onClose();
+        } else {
+          onOpen();
+        }
+      }
+      // Escape to close
+      if (e.key === 'Escape' && isOpen) {
+        onClose();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onOpen, onClose]);
+
+  // Focus management on open/close and focus trap
+  useEffect(() => {
+    if (isOpen) {
+      setTimeout(() => {
+        const inputField = modalRef.current?.querySelector('input[type="text"]');
+        if (inputField) (inputField as HTMLElement).focus();
+      }, 100);
+
+      const handleFocusTrap = (e: KeyboardEvent) => {
+        if (e.key !== 'Tab' || !modalRef.current) return;
+
+        const focusableElements = Array.from(
+          modalRef.current.querySelectorAll<HTMLElement>(
+            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+          )
+        ).filter(el => el.offsetParent !== null);
+
+        if (focusableElements.length === 0) return;
+
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        if (e.shiftKey) { // Shift + Tab
+          if (document.activeElement === firstElement) {
+            e.preventDefault();
+            lastElement.focus();
+          }
+        } else { // Tab
+          if (document.activeElement === lastElement) {
+            e.preventDefault();
+            firstElement.focus();
+          }
+        }
+      };
+      
+      const modal = modalRef.current;
+      modal?.addEventListener('keydown', handleFocusTrap);
+      
+      return () => {
+        modal?.removeEventListener('keydown', handleFocusTrap);
+      };
+    } else {
+      triggerButtonRef.current?.focus();
+    }
+  }, [isOpen]);
 
 
   const handleSend = async (messageToSend?: string) => {
@@ -231,10 +302,22 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
   return (
     <>
       <div className="hidden md:block">
-        <HanaAvatar state={hanaState} onClick={onOpen} />
+        <HanaAvatar 
+            ref={triggerButtonRef}
+            state={hanaState} 
+            onClick={onOpen} 
+            aria-label={t('hana.openChatLabel')}
+        />
       </div>
       {isOpen && (
-        <div className="fixed inset-0 bg-black/30 backdrop-blur-sm z-50 flex items-center justify-center animate-fadein">
+        <div 
+            className="fixed inset-0 bg-black/30 backdrop-blur-sm z-50 flex items-center justify-center animate-fadein"
+            ref={modalRef}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="hana-chat-title"
+            aria-describedby="hana-chat-log"
+        >
           <div className="relative bg-white w-full max-w-lg h-full md:h-[70vh] rounded-2xl shadow-2xl flex flex-col overflow-hidden m-4">
             
             {showDownloadSuccess && (
@@ -246,7 +329,7 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
             <header className="p-4 bg-halal-green text-white flex justify-between items-center flex-shrink-0">
                <div className="flex items-center gap-3">
                 <div className="text-center">
-                    <h3 className="font-bold text-lg">{t('hana.chatTitle')}</h3>
+                    <h3 id="hana-chat-title" className="font-bold text-lg">{t('hana.chatTitle')}</h3>
                     <div className="text-xs bg-white/20 px-2 py-0.5 rounded-full inline-block mt-1">
                         {isFreeTrial ? t('hana.freeTrial') : t('hana.sessionTime')} | {t('hana.timeRemaining', { time: formatTime(timeRemaining) })}
                     </div>
@@ -271,10 +354,10 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
                     )}
                  </div>
                </div>
-              <button onClick={onClose} className="w-8 h-8 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center">&times;</button>
+              <button onClick={onClose} aria-label={t('hana.closeChatLabel')} className="w-8 h-8 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center">&times;</button>
             </header>
 
-            <div className="flex-1 p-4 overflow-y-auto space-y-4">
+            <div id="hana-chat-log" role="log" aria-live="polite" className="flex-1 p-4 overflow-y-auto space-y-4">
               {messages.map(msg => (
                 <div key={msg.id} className={`flex items-end gap-2 ${msg.sender === 'user' ? 'justify-end' : ''}`}>
                   {msg.sender === 'hana' && <div className="w-8 h-8 rounded-full bg-halal-green text-white flex items-center justify-center text-sm font-bold flex-shrink-0">H</div>}
@@ -339,7 +422,7 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
                             type="button"
                             onClick={toggleListening}
                             className={`w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center transition-colors duration-300 ${isListening ? 'bg-red-500 text-white animate-pulse' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
-                            aria-label={isListening ? 'Stop listening' : 'Start listening'}
+                            aria-label={isListening ? t('hana.stopListeningLabel') : t('hana.startListeningLabel')}
                             disabled={isChatDisabled}
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -347,7 +430,9 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
                             </svg>
                         </button>
                     )}
+                    <label htmlFor="hana-input" className="sr-only">{t('hana.inputPlaceholder')}</label>
                     <input 
+                      id="hana-input"
                       type="text"
                       value={input}
                       onChange={(e) => setInput(e.target.value)}
@@ -356,7 +441,7 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
                       className="flex-1 w-full py-2 px-4 bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-halal-green"
                       disabled={isChatDisabled}
                     />
-                    <button onClick={() => handleSend()} disabled={isChatDisabled || input.trim() === ''} className="w-10 h-10 bg-halal-green text-white rounded-full flex-shrink-0 flex items-center justify-center hover:bg-opacity-90 disabled:opacity-50 disabled:cursor-not-allowed">
+                    <button onClick={() => handleSend()} aria-label={t('hana.sendLabel')} disabled={isChatDisabled || input.trim() === ''} className="w-10 h-10 bg-halal-green text-white rounded-full flex-shrink-0 flex items-center justify-center hover:bg-opacity-90 disabled:opacity-50 disabled:cursor-not-allowed">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
                     </button>
                   </div>

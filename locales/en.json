@@ -164,7 +164,12 @@
     "paymentButton": "Pay and Continue",
     "sessionEndedTitle": "Session Ended",
     "sessionEndedMessage": "Your 60-minute session has ended. You can start a new consultation anytime.",
-    "startNewSession": "Start New Session"
+    "startNewSession": "Start New Session",
+    "openChatLabel": "Open HANA AI Assistant",
+    "closeChatLabel": "Close chat",
+    "startListeningLabel": "Start voice input",
+    "stopListeningLabel": "Stop voice input",
+    "sendLabel": "Send message"
   },
   "certCheck": {
     "title": "Check Halal Certificate",

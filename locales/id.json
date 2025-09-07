@@ -164,7 +164,12 @@
     "paymentButton": "Bayar dan Lanjutkan",
     "sessionEndedTitle": "Sesi Berakhir",
     "sessionEndedMessage": "Sesi 60 menit Anda telah berakhir. Anda dapat memulai konsultasi baru kapan saja.",
-    "startNewSession": "Mulai Sesi Baru"
+    "startNewSession": "Mulai Sesi Baru",
+    "openChatLabel": "Buka Asisten AI HANA",
+    "closeChatLabel": "Tutup obrolan",
+    "startListeningLabel": "Mulai mendengarkan",
+    "stopListeningLabel": "Hentikan mendengarkan",
+    "sendLabel": "Kirim pesan"
   },
   "certCheck": {
     "title": "Cek Sertifikat Halal",
