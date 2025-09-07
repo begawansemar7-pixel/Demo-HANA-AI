@@ -51,7 +51,7 @@ const NewsFeed: React.FC<NewsFeedProps> = ({ onNewsSelect }) => {
             className={`px-4 py-2 rounded-full text-sm font-semibold transition-colors whitespace-nowrap ${
               activeCategory === category
                 ? 'bg-halal-green text-white shadow'
-                : 'bg-white text-gray-600 hover:bg-gray-100'
+                : 'bg-white text-gray-600 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700'
             }`}
           >
             {t(`home.news.categories.${category.toLowerCase()}`)}
@@ -72,16 +72,16 @@ const NewsFeed: React.FC<NewsFeedProps> = ({ onNewsSelect }) => {
           <div
             key={article.id}
             onClick={() => onNewsSelect(article.id)}
-            className="bg-white rounded-2xl shadow-md overflow-hidden group transition-shadow hover:shadow-xl block cursor-pointer"
+            className="bg-white dark:bg-gray-800 rounded-2xl shadow-md overflow-hidden group transition-shadow hover:shadow-xl block cursor-pointer"
           >
             <div className="h-40 overflow-hidden">
               <img src={article.imageUrl} alt={article.title} className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300" />
             </div>
             <div className="p-4">
-              <p className="text-xs font-semibold text-halal-green uppercase">{article.category}</p>
-              <h3 className="font-bold text-md mt-1 h-12">{article.title}</h3>
-              <p className="text-sm text-gray-600 mt-2 h-16 overflow-hidden">{article.summary}</p>
-              <p className="text-xs text-gray-400 mt-4">{article.date}</p>
+              <p className="text-xs font-semibold text-halal-green dark:text-accent-gold uppercase">{article.category}</p>
+              <h3 className="font-bold text-md mt-1 h-12 dark:text-gray-200">{article.title}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mt-2 h-16 overflow-hidden">{article.summary}</p>
+              <p className="text-xs text-gray-400 dark:text-gray-500 mt-4">{article.date}</p>
             </div>
           </div>
         ))}
@@ -91,7 +91,7 @@ const NewsFeed: React.FC<NewsFeedProps> = ({ onNewsSelect }) => {
         <div className="text-center mt-8">
             <button 
                 onClick={handleLoadMore}
-                className="bg-white text-halal-green font-bold py-2 px-6 rounded-full shadow hover:bg-gray-50 transition-colors"
+                className="bg-white dark:bg-gray-700 text-halal-green dark:text-gray-200 font-bold py-2 px-6 rounded-full shadow hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
             >
             {t('home.news.loadMore')}
             </button>

@@ -10,10 +10,9 @@
   },
   "nav": {
     "home": "Home",
-    "promotions": "Promotions",
+    "services": "Services",
     "news": "News",
-    "profile": "Profile",
-    "regulation": "Regulation"
+    "profile": "Profile"
   },
   "home": {
     "hero": {
@@ -65,6 +64,8 @@
         "hana": "HANA AI",
         "certCheck": "Check Halal Certificate",
         "ingredientValidator": "Ingredient Validator",
+        "selfDeclare": "Self Declare Halal",
+        "auditChecklist": "Audit Checklist",
         "marketplace": "Halal Marketplace",
         "map": "Map Search",
         "regulation": "Halal Regulation",
@@ -334,12 +335,14 @@
     "forgotPassword": "Forgot Password?",
     "noAccount": "Don't have an account?",
     "haveAccount": "Already have an account?",
-    "registerLink": "Register Now",
+    "registerLink": "Register Here",
     "loginLink": "Login Here",
     "rememberMe": "Remember Me",
     "invalidEmail": "Please enter a valid email address.",
     "passwordTooShort": "Password must be at least 8 characters long.",
     "emailRequired": "Email address is required.",
+    "passwordRequired": "Password is required.",
+    "loginIdRequired": "Email or ID is required.",
     "forgotPasswordTitle": "Reset Your Password",
     "forgotPasswordSubtitle": "Enter your email and we'll send you a link to get back into your account.",
     "sendResetLink": "Send Reset Link",
@@ -351,6 +354,9 @@
     "confirmPasswordPlaceholder": "Re-enter your password",
     "passwordsDoNotMatch": "Passwords do not match",
     "nameRequired": "Full name is required.",
+    "phoneLabel": "Phone Number",
+    "phonePlaceholder": "e.g., +1 555 123 4567",
+    "phoneRequired": "Phone number is required.",
     "businessNameLabel": "Business Name",
     "businessNamePlaceholder": "e.g., Halal Foods Nusantara",
     "businessNameRequired": "Business name is required.",
@@ -376,13 +382,19 @@
     "emailOrOfficerIdLabel": "Email or Officer ID",
     "emailOrOfficerIdPlaceholder": "e.g., officer@bpjph.go.id or OFF-12345",
     "loginWithGoogle": "Login with Google",
-    "orDivider": "OR"
+    "registerWithGoogle": "Register with Google",
+    "orDivider": "OR",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password"
   },
   "carousel": {
     "announcement": "Announcement"
   },
   "search": {
     "title": "Global Search",
+    "close": "Close",
+    "recentSearches": "Recent Searches",
+    "clearHistory": "Clear History",
     "searchIn": "Search In",
     "scopeAll": "All",
     "scopeProducts": "Products",
@@ -537,6 +549,60 @@
         "description": "Technical guidelines regarding the implementation of Halal Product Assurance services."
       }
     }
+  },
+  "selfDeclare": {
+    "title": "Self Declare Halal (SEHATI)",
+    "subtitle": "Free Halal Certification Program for Micro and Small Enterprises",
+    "form": {
+      "title": "Self Declaration Application",
+      "section1Title": "Business Information",
+      "businessNameLabel": "Business Name",
+      "businessNamePlaceholder": "e.g., Warung Ibu Siti",
+      "businessIdLabel": "Business ID (NIB)",
+      "businessIdPlaceholder": "Enter your 13-digit NIB",
+      "businessAddressLabel": "Full Business Address",
+      "businessAddressPlaceholder": "Enter the full address of your production facility",
+      "section2Title": "Product Details",
+      "productNameLabel": "Product Name",
+      "productNamePlaceholder": "e.g., Keripik Singkong Balado",
+      "ingredientsLabel": "List of Ingredients",
+      "ingredientsPlaceholder": "List all ingredients used, separated by commas. e.g., Cassava, Palm Oil, Chili, Salt, Sugar",
+      "section3Title": "Halal Supervisor",
+      "supervisorNameLabel": "Halal Supervisor Name",
+      "supervisorNamePlaceholder": "Enter the full name of the supervisor",
+      "section4Title": "Halal Process Declaration",
+      "processStatement": "I hereby declare that the production process for the product mentioned above is free from any non-halal (haram) or impure (najis) ingredients and contaminants.",
+      "uploadLabel": "Upload Supporting Documents",
+      "uploadInstructions": "Upload NIB, ingredient specifications, etc. (PDF, JPG, PNG)",
+      "uploadButton": "Choose File",
+      "noFileChosen": "No file chosen",
+      "section5Title": "Final Declaration",
+      "truthStatement": "I declare that all the information provided in this application is true and accurate to the best of my knowledge.",
+      "submitButton": "Submit Declaration",
+      "submittingButton": "Submitting...",
+      "errors": {
+        "required": "This field is required.",
+        "agreementRequired": "You must agree to this statement."
+      }
+    },
+    "success": {
+      "title": "Application Submitted!",
+      "message": "Your SEHATI application for product '{productName}' has been successfully submitted. Our team will review it and you will be notified of the next steps via email. Your application ID is SEHATI-{id}.",
+      "newApplicationButton": "Submit Another Application"
+    }
+  },
+  "auditChecklist": {
+    "title": "Audit Checklist",
+    "subtitle": "Complete the following checks for the halal audit process.",
+    "saveButton": "Save Progress",
+    "saveSuccess": "Progress saved successfully!",
+    "items": {
+      "ingredient": "Ingredient Verification",
+      "process": "Production Process Review",
+      "hygiene": "Facility Hygiene",
+      "documentation": "Documentation Review"
+    },
+    "notesPlaceholder": "Add notes here..."
   },
   "showMore": "Show More",
   "showLess": "Show Less",

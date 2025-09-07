@@ -36,6 +36,8 @@ import MapPage from './components/MapPage';
 import AboutPage from './components/AboutPage';
 import { SERVICES } from './constants';
 import type { PersonaId } from './types';
+import SelfDeclarePage from './components/SelfDeclarePage';
+import AuditChecklistPage from './components/AuditChecklistPage';
 
 
 const App: React.FC = () => {
@@ -161,8 +163,15 @@ const App: React.FC = () => {
   
   if (!isAuthenticated && persona !== 'guest') {
     const AuthLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-        <div className="bg-gray-50 dark:bg-gray-900 min-h-screen font-poppins text-gray-800 dark:text-gray-200 flex items-center justify-center p-4">
-            {children}
+        <div className="relative min-h-screen font-poppins text-gray-800 dark:text-gray-200 flex items-center justify-center p-4 overflow-hidden">
+            <div
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 scale-110"
+                style={{ backgroundImage: "url('https://picsum.photos/seed/beautiful-mosque-halal/1920/1080')" }}
+            />
+            <div className="absolute inset-0 bg-white/50 dark:bg-gray-900/60 backdrop-blur-sm" />
+            <div className="relative z-10">
+                {children}
+            </div>
         </div>
     );
 
@@ -188,6 +197,8 @@ const App: React.FC = () => {
     'profile',
     'supplier-verification',
     'scan-barcode',
+    'self-declare',
+    'audit-checklist',
     'more',
     'regulation',
     'map',
@@ -251,6 +262,10 @@ const App: React.FC = () => {
         return <SupplierVerificationPage />;
       case 'scan-barcode':
         return <ScanBarcodePage />;
+      case 'self-declare':
+        return <SelfDeclarePage />;
+      case 'audit-checklist':
+        return <AuditChecklistPage />;
       case 'more':
         return <MoreServicesPage onNavigate={navigateTo} />;
       case 'map':

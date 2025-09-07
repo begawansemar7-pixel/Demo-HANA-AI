@@ -10,10 +10,9 @@
   },
   "nav": {
     "home": "Beranda",
-    "promotions": "Promosi",
+    "services": "Layanan",
     "news": "Berita",
-    "profile": "Profil",
-    "regulation": "Regulasi"
+    "profile": "Profil"
   },
   "home": {
     "hero": {
@@ -65,6 +64,8 @@
         "hana": "HANA AI",
         "certCheck": "Cek Sertifikat Halal",
         "ingredientValidator": "Validasi Bahan",
+        "selfDeclare": "Deklarasi Mandiri Halal",
+        "auditChecklist": "Daftar Periksa Audit",
         "marketplace": "Pasar Halal",
         "map": "Pencarian Peta",
         "regulation": "Regulasi Halal",
@@ -334,12 +335,14 @@
     "forgotPassword": "Lupa Kata Sandi?",
     "noAccount": "Belum punya akun?",
     "haveAccount": "Sudah punya akun?",
-    "registerLink": "Daftar Sekarang",
+    "registerLink": "Daftar di Sini",
     "loginLink": "Masuk di Sini",
     "rememberMe": "Ingat Saya",
     "invalidEmail": "Harap masukkan alamat email yang valid.",
     "passwordTooShort": "Kata sandi harus terdiri dari minimal 8 karakter.",
     "emailRequired": "Alamat email wajib diisi.",
+    "passwordRequired": "Kata sandi wajib diisi.",
+    "loginIdRequired": "Email atau ID wajib diisi.",
     "forgotPasswordTitle": "Atur Ulang Kata Sandi",
     "forgotPasswordSubtitle": "Masukkan email Anda dan kami akan mengirimkan tautan untuk masuk kembali ke akun Anda.",
     "sendResetLink": "Kirim Tautan Atur Ulang",
@@ -351,6 +354,9 @@
     "confirmPasswordPlaceholder": "Masukkan ulang kata sandi Anda",
     "passwordsDoNotMatch": "Kata sandi tidak cocok",
     "nameRequired": "Nama lengkap wajib diisi.",
+    "phoneLabel": "Nomor Telepon",
+    "phonePlaceholder": "cth: 081234567890",
+    "phoneRequired": "Nomor telepon wajib diisi.",
     "businessNameLabel": "Nama Usaha",
     "businessNamePlaceholder": "cth: Halal Foods Nusantara",
     "businessNameRequired": "Nama usaha wajib diisi.",
@@ -376,13 +382,19 @@
     "emailOrOfficerIdLabel": "Email atau ID Petugas",
     "emailOrOfficerIdPlaceholder": "cth: petugas@bpjph.go.id atau OFF-12345",
     "loginWithGoogle": "Masuk dengan Google",
-    "orDivider": "ATAU"
+    "registerWithGoogle": "Daftar dengan Google",
+    "orDivider": "ATAU",
+    "showPassword": "Tampilkan kata sandi",
+    "hidePassword": "Sembunyikan kata sandi"
   },
   "carousel": {
     "announcement": "Pengumuman"
   },
   "search": {
     "title": "Pencarian Global",
+    "close": "Tutup",
+    "recentSearches": "Pencarian Terakhir",
+    "clearHistory": "Hapus Riwayat",
     "searchIn": "Cari di",
     "scopeAll": "Semua",
     "scopeProducts": "Produk",
@@ -537,6 +549,60 @@
         "description": "Petunjuk teknis mengenai pelaksanaan layanan Jaminan Produk Halal."
       }
     }
+  },
+  "selfDeclare": {
+    "title": "Deklarasi Mandiri Halal (SEHATI)",
+    "subtitle": "Program Sertifikasi Halal Gratis untuk Usaha Mikro dan Kecil",
+    "form": {
+      "title": "Formulir Deklarasi Mandiri",
+      "section1Title": "Informasi Usaha",
+      "businessNameLabel": "Nama Usaha",
+      "businessNamePlaceholder": "cth: Warung Ibu Siti",
+      "businessIdLabel": "NIB (Nomor Induk Berusaha)",
+      "businessIdPlaceholder": "Masukkan 13 digit NIB Anda",
+      "businessAddressLabel": "Alamat Lengkap Usaha",
+      "businessAddressPlaceholder": "Masukkan alamat lengkap lokasi produksi Anda",
+      "section2Title": "Detail Produk",
+      "productNameLabel": "Nama Produk",
+      "productNamePlaceholder": "cth: Keripik Singkong Balado",
+      "ingredientsLabel": "Daftar Bahan",
+      "ingredientsPlaceholder": "Sebutkan semua bahan yang digunakan, pisahkan dengan koma. cth: Singkong, Minyak Sawit, Cabai, Garam, Gula",
+      "section3Title": "Penyelia Halal",
+      "supervisorNameLabel": "Nama Penyelia Halal",
+      "supervisorNamePlaceholder": "Masukkan nama lengkap penyelia",
+      "section4Title": "Pernyataan Proses Halal",
+      "processStatement": "Saya dengan ini menyatakan bahwa proses produksi untuk produk yang disebutkan di atas bebas dari bahan dan kontaminan yang tidak halal (haram) atau najis.",
+      "uploadLabel": "Unggah Dokumen Pendukung",
+      "uploadInstructions": "Unggah NIB, spesifikasi bahan, dll. (PDF, JPG, PNG)",
+      "uploadButton": "Pilih File",
+      "noFileChosen": "Belum ada file yang dipilih",
+      "section5Title": "Deklarasi Akhir",
+      "truthStatement": "Saya menyatakan bahwa semua informasi yang diberikan dalam aplikasi ini adalah benar dan akurat sejauh pengetahuan saya.",
+      "submitButton": "Kirim Deklarasi",
+      "submittingButton": "Mengirim...",
+      "errors": {
+        "required": "Bagian ini wajib diisi.",
+        "agreementRequired": "Anda harus menyetujui pernyataan ini."
+      }
+    },
+    "success": {
+      "title": "Aplikasi Terkirim!",
+      "message": "Aplikasi SEHATI Anda untuk produk '{productName}' telah berhasil dikirim. Tim kami akan meninjaunya dan Anda akan diberitahu tentang langkah selanjutnya melalui email. ID aplikasi Anda adalah SEHATI-{id}.",
+      "newApplicationButton": "Ajukan Aplikasi Lain"
+    }
+  },
+  "auditChecklist": {
+    "title": "Daftar Periksa Audit",
+    "subtitle": "Lengkapi pemeriksaan berikut untuk proses audit halal.",
+    "saveButton": "Simpan Progres",
+    "saveSuccess": "Progres berhasil disimpan!",
+    "items": {
+      "ingredient": "Verifikasi Bahan",
+      "process": "Tinjauan Proses Produksi",
+      "hygiene": "Kebersihan Fasilitas",
+      "documentation": "Tinjauan Dokumentasi"
+    },
+    "notesPlaceholder": "Tambahkan catatan di sini..."
   },
   "showMore": "Tampilkan Lebih Banyak",
   "showLess": "Tampilkan Lebih Sedikit",

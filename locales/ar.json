@@ -10,10 +10,9 @@
   },
   "nav": {
     "home": "الرئيسية",
-    "promotions": "العروض",
+    "services": "الخدمات",
     "news": "الأخبار",
-    "profile": "الملف الشخصي",
-    "regulation": "اللوائح"
+    "profile": "الملف الشخصي"
   },
   "home": {
     "hero": {
@@ -65,6 +64,8 @@
         "hana": "HANA AI",
         "certCheck": "مدقق الشهادات",
         "ingredientValidator": "مدقق المكونات",
+        "selfDeclare": "إقرار الحلال الذاتي",
+        "auditChecklist": "قائمة تدقيق المراجعة",
         "marketplace": "السوق الحلال",
         "map": "بحث الخريطة",
         "regulation": "لوائح الحلال",
@@ -334,12 +335,14 @@
     "forgotPassword": "هل نسيت كلمة المرور؟",
     "noAccount": "ليس لديك حساب؟",
     "haveAccount": "هل لديك حساب بالفعل؟",
-    "registerLink": "سجل الآن",
+    "registerLink": "سجل هنا",
     "loginLink": "سجل الدخول هنا",
     "rememberMe": "تذكرني",
     "invalidEmail": "الرجاء إدخال عنوان بريد إلكتروني صالح.",
     "passwordTooShort": "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل.",
     "emailRequired": "عنوان البريد الإلكتروني مطلوب.",
+    "passwordRequired": "كلمة المرور مطلوبة.",
+    "loginIdRequired": "البريد الإلكتروني أو المعرف مطلوب.",
     "forgotPasswordTitle": "إعادة تعيين كلمة المرور",
     "forgotPasswordSubtitle": "أدخل بريدك الإلكتروني وسنرسل لك رابطًا للعودة إلى حسابك.",
     "sendResetLink": "إرسال رابط إعادة التعيين",
@@ -351,6 +354,9 @@
     "confirmPasswordPlaceholder": "أعد إدخال كلمة المرور",
     "passwordsDoNotMatch": "كلمات المرور غير متطابقة",
     "nameRequired": "الاسم الكامل مطلوب.",
+    "phoneLabel": "رقم الهاتف",
+    "phonePlaceholder": "مثال: 0501234567",
+    "phoneRequired": "رقم الهاتف مطلوب.",
     "businessNameLabel": "اسم العمل التجاري",
     "businessNamePlaceholder": "مثال: أطعمة حلال نوسانتارا",
     "businessNameRequired": "اسم العمل التجاري مطلوب.",
@@ -376,13 +382,19 @@
     "emailOrOfficerIdLabel": "البريد الإلكتروني أو معرف المسؤول",
     "emailOrOfficerIdPlaceholder": "مثال: officer@bpjph.go.id أو OFF-12345",
     "loginWithGoogle": "تسجيل الدخول باستخدام جوجل",
-    "orDivider": "أو"
+    "registerWithGoogle": "التسجيل باستخدام جوجل",
+    "orDivider": "أو",
+    "showPassword": "إظهار كلمة المرور",
+    "hidePassword": "إخفاء كلمة المرور"
   },
   "carousel": {
     "announcement": "إعلان"
   },
   "search": {
     "title": "بحث شامل",
+    "close": "إغلاق",
+    "recentSearches": "عمليات البحث الأخيرة",
+    "clearHistory": "مسح السجل",
     "searchIn": "البحث في",
     "scopeAll": "الكل",
     "scopeProducts": "المنتجات",
@@ -537,6 +549,60 @@
         "description": "المبادئ التوجيهية الفنية المتعلقة بتنفيذ خدمات ضمان المنتجات الحلال."
       }
     }
+  },
+  "selfDeclare": {
+    "title": "إقرار الحلال الذاتي (SEHATI)",
+    "subtitle": "برنامج شهادة الحلال المجانية للمشاريع الصغرى والمتوسطة",
+    "form": {
+      "title": "طلب الإقرار الذاتي",
+      "section1Title": "معلومات الشركة",
+      "businessNameLabel": "اسم الشركة",
+      "businessNamePlaceholder": "مثال: متجر أم أحمد",
+      "businessIdLabel": "رقم تعريف الشركة (NIB)",
+      "businessIdPlaceholder": "أدخل رقم NIB المكون من 13 رقمًا",
+      "businessAddressLabel": "عنوان الشركة بالكامل",
+      "businessAddressPlaceholder": "أدخل العنوان الكامل لمنشأة الإنتاج الخاصة بك",
+      "section2Title": "تفاصيل المنتج",
+      "productNameLabel": "اسم المنتج",
+      "productNamePlaceholder": "مثال: رقائق البطاطا الحلوة الحارة",
+      "ingredientsLabel": "قائمة المكونات",
+      "ingredientsPlaceholder": "اذكر جميع المكونات المستخدمة، مفصولة بفواصل. مثال: بطاطا حلوة، زيت نخيل، فلفل حار، ملح، سكر",
+      "section3Title": "مشرف الحلال",
+      "supervisorNameLabel": "اسم مشرف الحلال",
+      "supervisorNamePlaceholder": "أدخل الاسم الكامل للمشرف",
+      "section4Title": "إقرار عملية الحلال",
+      "processStatement": "أقر بموجب هذا بأن عملية الإنتاج للمنتج المذكور أعلاه خالية من أي مكونات أو ملوثات غير حلال (حرام) أو نجسة.",
+      "uploadLabel": "تحميل المستندات الداعمة",
+      "uploadInstructions": "تحميل NIB، مواصفات المكونات، إلخ. (PDF, JPG, PNG)",
+      "uploadButton": "اختر ملفًا",
+      "noFileChosen": "لم يتم اختيار ملف",
+      "section5Title": "الإقرار النهائي",
+      "truthStatement": "أقر بأن جميع المعلومات المقدمة في هذا الطلب صحيحة ودقيقة على حد علمي.",
+      "submitButton": "إرسال الإقرار",
+      "submittingButton": "جاري الإرسال...",
+      "errors": {
+        "required": "هذا الحقل مطلوب.",
+        "agreementRequired": "يجب أن توافق على هذا البيان."
+      }
+    },
+    "success": {
+      "title": "تم إرسال الطلب!",
+      "message": "تم إرسال طلب SEHATI الخاص بك للمنتج '{productName}' بنجاح. سيقوم فريقنا بمراجعته وسيتم إعلامك بالخطوات التالية عبر البريد الإلكتروني. معرف طلبك هو SEHATI-{id}.",
+      "newApplicationButton": "إرسال طلب آخر"
+    }
+  },
+  "auditChecklist": {
+    "title": "قائمة تدقيق المراجعة",
+    "subtitle": "أكمل الفحوصات التالية لعملية تدقيق الحلال.",
+    "saveButton": "حفظ التقدم",
+    "saveSuccess": "تم حفظ التقدم بنجاح!",
+    "items": {
+      "ingredient": "التحقق من المكونات",
+      "process": "مراجعة عملية الإنتاج",
+      "hygiene": "نظافة المنشأة",
+      "documentation": "مراجعة الوثائق"
+    },
+    "notesPlaceholder": "أضف ملاحظات هنا..."
   },
   "showMore": "عرض المزيد",
   "showLess": "عرض أقل",

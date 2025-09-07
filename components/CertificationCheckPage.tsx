@@ -284,6 +284,7 @@ const CertificationCheckPage: React.FC = () => {
     const debouncedSearchTerm = useDebounce(searchTerm, 500);
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
+    const [statusFilter, setStatusFilter] = useState('');
     const [appliedFilters, setAppliedFilters] = useState({ term: '', start: '', end: '', status: '' });
     const [searchResults, setSearchResults] = useState<Certificate[] | null>(null);
     const [loading, setLoading] = useState(false);
@@ -305,10 +306,12 @@ const CertificationCheckPage: React.FC = () => {
     useEffect(() => {
         if (isGlobalSearch && (searchScope === 'all' || searchScope === 'certificates')) {
             setSearchTerm(globalQuery); // Sync input field with global query
+            const newStatus = globalFilters.certStatus || '';
+            setStatusFilter(newStatus);
             setAppliedFilters(prev => ({
                 ...prev,
                 term: globalQuery,
-                status: globalFilters.certStatus || ''
+                status: newStatus
             }));
              // Clear the global search flag after applying it
             clearGlobalSearch();
@@ -342,6 +345,7 @@ const CertificationCheckPage: React.FC = () => {
             term: searchTerm,
             start: startDate,
             end: endDate,
+            status: statusFilter,
         }));
     };
     
@@ -349,6 +353,7 @@ const CertificationCheckPage: React.FC = () => {
         setSearchTerm('');
         setStartDate('');
         setEndDate('');
+        setStatusFilter('');
         setAppliedFilters({ term: '', start: '', end: '', status: '' });
     };
 
@@ -642,6 +647,22 @@ const CertificationCheckPage: React.FC = () => {
                                                 disabled={loading}
                                             />
                                         </div>
+                                    </div>
+                                    <div className="mt-4">
+                                        <label htmlFor="statusFilter" className="block text-sm font-medium text-gray-700 mb-1 ml-2">{t('search.certificationStatus')}</label>
+                                        <select
+                                            id="statusFilter"
+                                            value={statusFilter}
+                                            onChange={e => setStatusFilter(e.target.value)}
+                                            className="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-halal-green bg-white disabled:bg-gray-100"
+                                            disabled={loading}
+                                        >
+                                            <option value="">All</option>
+                                            <option value="certified">{t('certCheck.statusCertified')}</option>
+                                            <option value="expired">{t('certCheck.statusExpired')}</option>
+                                            <option value="notCertified">{t('certCheck.statusNotCertified')}</option>
+                                            <option value="invalidDate">{t('certCheck.statusInvalidDate')}</option>
+                                        </select>
                                     </div>
                                     <div className="text-center mt-6">
                                         <button

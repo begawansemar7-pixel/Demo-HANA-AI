@@ -73,9 +73,9 @@ const ForgotPasswordPage: React.FC<ForgotPasswordPageProps> = ({ onNavigate }) =
                 </form>
             )}
              <p className="mt-8 text-center text-sm text-gray-600">
-                <button onClick={() => onNavigate('login')} className="font-medium text-halal-green hover:text-green-700">
+                <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('login'); }} className="font-medium text-halal-green hover:text-green-700">
                     &larr; {t('auth.backToLogin')}
-                </button>
+                </a>
             </p>
         </div>
     );

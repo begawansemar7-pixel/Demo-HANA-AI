@@ -204,6 +204,8 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, onBasketClick, onSearch }) 
             <button 
               onClick={() => setIsSearchOpen(true)}
               className="w-full text-left py-2 pl-10 pr-4 bg-gray-100 dark:bg-gray-700 rounded-full focus:outline-none focus:ring-2 focus:ring-halal-green dark:focus:ring-accent-gold transition-all"
+              aria-haspopup="dialog"
+              aria-label={t('header.searchLabel')}
             >
               <span className="text-gray-400">{t('header.searchPlaceholder')}</span>
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">

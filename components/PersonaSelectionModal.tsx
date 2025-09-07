@@ -14,13 +14,13 @@ const PersonaCard: React.FC<{ persona: Persona; onClick: () => void }> = ({ pers
   return (
     <div 
       onClick={onClick}
-      className="bg-white/70 backdrop-blur-lg p-6 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer text-center group"
+      className="bg-white/70 dark:bg-gray-800/80 backdrop-blur-lg p-6 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer text-center group"
     >
-      <div className="text-halal-green mx-auto mb-4 group-hover:text-turquoise-blue transition-colors">
+      <div className="text-halal-green dark:text-accent-gold mx-auto mb-4 group-hover:text-turquoise-blue transition-colors">
         {persona.icon}
       </div>
-      <h3 className="text-lg font-bold text-gray-800">{t(persona.name)}</h3>
-      <p className="text-sm text-gray-600 mt-1">{t(persona.description)}</p>
+      <h3 className="text-lg font-bold text-gray-800 dark:text-white">{t(persona.name)}</h3>
+      <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">{t(persona.description)}</p>
     </div>
   );
 };
@@ -70,32 +70,40 @@ const PersonaSelectionModal: React.FC<PersonaSelectionModalProps> = ({ onSelect,
 
 
   return (
-    <div className="fixed inset-0 bg-halal-green/90 backdrop-blur-md z-[100] flex items-center justify-center p-4 animate-fadein bg-welcome-pattern">
-      <div className="w-full max-w-4xl text-center">
-        <div className="flex items-center justify-center gap-4 mb-2">
-            <h1 className="text-4xl font-bold text-white">{t('personas.title')}</h1>
-            {isSupported && (
-                <button
-                    onClick={toggleAudio}
-                    className="w-11 h-11 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center transition-colors text-white"
-                    aria-label={t('personas.toggleAudio')}
-                >
-                    {isSpeaking ? <SpeakerIcon isSpeaking={isSpeaking} /> : <SpeakerMutedIcon />}
-                </button>
-            )}
-        </div>
-        <p className="text-lg text-white/80 mb-12">{t('personas.subtitle')}</p>
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 animate-fadein overflow-hidden">
+        {/* Background Image and Overlay */}
+        <div
+            className="absolute inset-0 bg-cover bg-center transition-transform duration-500 scale-110"
+            style={{ backgroundImage: "url('https://picsum.photos/seed/beautiful-mosque-halal/1920/1080')" }}
+        />
+        <div className="absolute inset-0 bg-halal-green/80 dark:bg-halal-green/90 backdrop-blur-sm" />
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {PERSONAS.map(persona => (
-            <PersonaCard key={persona.id} persona={persona} onClick={() => onSelect(persona.id)} />
-          ))}
+        {/* Content */}
+        <div className="relative z-10 w-full max-w-4xl text-center">
+            <div className="flex items-center justify-center gap-4 mb-2">
+                <h1 className="text-4xl font-bold text-white">{t('personas.title')}</h1>
+                {isSupported && (
+                    <button
+                        onClick={toggleAudio}
+                        className="w-11 h-11 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center transition-colors text-white"
+                        aria-label={t('personas.toggleAudio')}
+                    >
+                        {isSpeaking ? <SpeakerIcon isSpeaking={isSpeaking} /> : <SpeakerMutedIcon />}
+                    </button>
+                )}
+            </div>
+            <p className="text-lg text-white/80 mb-12">{t('personas.subtitle')}</p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {PERSONAS.map(persona => (
+                <PersonaCard key={persona.id} persona={persona} onClick={() => onSelect(persona.id)} />
+            ))}
+            </div>
+            
+            <button onClick={onContinueAsGuest} className="mt-12 text-white/70 hover:text-white transition-colors">
+            {t('personas.continueAsGuest')} &rarr;
+            </button>
         </div>
-        
-        <button onClick={onContinueAsGuest} className="mt-12 text-white/70 hover:text-white transition-colors">
-          {t('personas.continueAsGuest')} &rarr;
-        </button>
-      </div>
     </div>
   );
 };

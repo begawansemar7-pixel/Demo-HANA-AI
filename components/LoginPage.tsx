@@ -15,6 +15,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ onNavigate }) => {
     const { t } = useTranslations();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
     const [rememberMe, setRememberMe] = useState(false);
     const [emailLoading, setEmailLoading] = useState(false);
     const [googleLoading, setGoogleLoading] = useState(false);
@@ -35,26 +36,30 @@ const LoginPage: React.FC<LoginPageProps> = ({ onNavigate }) => {
     
     const validate = () => {
         let isValid = true;
-        setEmailError('');
-        setPasswordError('');
-        
+        const newErrors: { email?: string; password?: string } = {};
+
         const isSpecialPersona = persona === 'auditor' || persona === 'officer';
 
-        // Validation for the login ID/email field
+        // Email/ID validation
         if (!email.trim()) {
-            setEmailError(t('auth.emailRequired'));
+            newErrors.email = isSpecialPersona ? t('auth.loginIdRequired') : t('auth.emailRequired');
             isValid = false;
         } else if (!isSpecialPersona && !/\S+@\S+\.\S+/.test(email)) {
-            // Only validate email format for non-special personas (consumer, umkm)
-            setEmailError(t('auth.invalidEmail'));
+            newErrors.email = t('auth.invalidEmail');
             isValid = false;
         }
 
-        // Basic password validation
-        if (!password || password.length < 8) {
-            setPasswordError(t('auth.passwordTooShort'));
+        // Password validation
+        if (!password) {
+            newErrors.password = t('auth.passwordRequired');
+            isValid = false;
+        } else if (password.length < 8) {
+            newErrors.password = t('auth.passwordTooShort');
             isValid = false;
         }
+
+        setEmailError(newErrors.email || '');
+        setPasswordError(newErrors.password || '');
         
         return isValid;
     };
@@ -137,18 +142,21 @@ const LoginPage: React.FC<LoginPageProps> = ({ onNavigate }) => {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder={loginFieldProps.placeholder}
                     error={emailError}
+                    disabled={isLoading}
                 />
                 <InputField
                     id="password"
                     label={t('auth.passwordLabel')}
                     name="password"
-                    type="password"
+                    type={showPassword ? 'text' : 'password'}
                     autoComplete="current-password"
                     required
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder={t('auth.passwordPlaceholder')}
                     error={passwordError}
+                    disabled={isLoading}
+                    togglePasswordVisibility={() => setShowPassword(!showPassword)}
                 />
                 <div className="flex items-center justify-between">
                     <div className="flex items-center">
@@ -166,9 +174,9 @@ const LoginPage: React.FC<LoginPageProps> = ({ onNavigate }) => {
                     </div>
 
                     <div className="text-sm">
-                        <button type="button" onClick={() => onNavigate('forgot-password')} className="font-medium text-halal-green dark:text-accent-gold hover:text-green-700 dark:hover:text-yellow-300">
+                        <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('forgot-password'); }} className="font-medium text-halal-green dark:text-accent-gold hover:text-green-700 dark:hover:text-yellow-300">
                             {t('auth.forgotPassword')}
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <div>
@@ -210,9 +218,9 @@ const LoginPage: React.FC<LoginPageProps> = ({ onNavigate }) => {
 
             <p className="mt-8 text-center text-sm text-gray-600 dark:text-gray-400">
                 {t('auth.noAccount')}{' '}
-                <button onClick={() => onNavigate('register')} className="font-medium text-halal-green dark:text-accent-gold hover:text-green-700 dark:hover:text-yellow-300">
+                <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('register'); }} className="font-medium text-halal-green dark:text-accent-gold hover:text-green-700 dark:hover:text-yellow-300">
                     {t('auth.registerLink')}
-                </button>
+                </a>
             </p>
         </div>
     );

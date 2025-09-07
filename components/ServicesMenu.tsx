@@ -14,12 +14,12 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onClick }) => {
   return (
     <div 
       onClick={onClick}
-      className="flex flex-col items-center justify-center text-center p-4 bg-white/50 backdrop-blur-md rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer aspect-square w-28 flex-shrink-0"
+      className="flex flex-col items-center justify-center text-center p-4 bg-white dark:bg-gray-800 rounded-2xl shadow-lg dark:shadow-black/20 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer aspect-square w-28 flex-shrink-0"
     >
-      <div className="text-halal-green">
+      <div className="text-halal-green dark:text-accent-gold">
         {service.icon}
       </div>
-      <span className="mt-2 text-sm font-semibold text-gray-700">{t(service.title)}</span>
+      <span className="mt-2 text-sm font-semibold text-gray-700 dark:text-gray-200">{t(service.title)}</span>
     </div>
   );
 };
