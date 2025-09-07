@@ -73,8 +73,6 @@ export const useTextToSpeech = ({ onStart, onEnd, language }: UseTextToSpeechPro
             if (event.error === 'not-allowed') {
                 console.info('Speech synthesis playback failed: Autoplay was blocked by the browser. User interaction is required to start audio.');
             } else {
-// FIX: Complete the implementation of the useTextToSpeech hook which was truncated.
-// This includes completing the speak function, adding the cancel function, and returning the necessary values.
                 console.error('SpeechSynthesis Error:', event.error);
             }
             // Ensure state is reset on error

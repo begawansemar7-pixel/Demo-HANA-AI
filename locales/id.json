@@ -315,6 +315,7 @@
   },
    "auth": {
     "guestAccessDenied": "Fitur ini untuk pengguna terdaftar. Silakan buat akun untuk mengakses profil Anda.",
+    "accessDenied": "Akses Ditolak: Fitur ini tidak tersedia untuk peran Anda.",
     "loginTitle": "Masuk sebagai",
     "registerTitle": "Buat Akun sebagai",
     "emailLabel": "Alamat Email",
@@ -536,7 +537,8 @@
   "mapPage": {
     "title": "Pencarian Lokasi",
     "subtitle": "Menampilkan hasil untuk: \"{query}\"",
-    "mapTitle": "Peta menampilkan hasil untuk {query}"
+    "mapTitle": "Peta menampilkan hasil untuk {query}",
+    "loading": "Memuat peta..."
   },
   "aboutPage": {
     "title": "Tentang AI Halal Advisor",

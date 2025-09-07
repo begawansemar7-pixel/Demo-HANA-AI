@@ -10,6 +10,7 @@ import QuickViewModal from './QuickViewModal';
 import Pagination from './Pagination';
 import { useSearch } from '../contexts/SearchContext';
 import { useDebounce } from '../hooks/useDebounce';
+import { useAuth } from '../hooks/useAuth';
 
 const categories = ['all', 'food', 'cosmetics', 'fashion', 'pharmaceuticals'];
 const ITEMS_PER_PAGE = 8;
@@ -40,6 +41,7 @@ const MarketplacePage: React.FC<MarketplacePageProps> = ({ onProductSelect }) =>
     const { t } = useTranslations();
     const { basketItems, addToBasket, updateQuantity } = useBasket();
     const { products: allProducts, loading } = useProducts();
+    const { persona } = useAuth();
     const [activeCategory, setActiveCategory] = useState('all');
     const [searchTerm, setSearchTerm] = useState('');
     const [sortOrder, setSortOrder] = useState('default');
@@ -64,6 +66,12 @@ const MarketplacePage: React.FC<MarketplacePageProps> = ({ onProductSelect }) =>
     // State for price range filter
     const [localPriceRange, setLocalPriceRange] = useState({ min: minPrice, max: maxPrice });
     const debouncedPriceRange = useDebounce(localPriceRange, 400);
+
+    const canExport = useMemo(() => {
+        if (!persona) return false;
+        // Business roles might need to export data. Let's enable for UMKM.
+        return persona === 'umkm';
+    }, [persona]);
 
 
     // Effect to reset price range when products data or its derived min/max changes
@@ -333,16 +341,18 @@ const MarketplacePage: React.FC<MarketplacePageProps> = ({ onProductSelect }) =>
 
             {/* Action Bar: Export Button */}
             <div className="flex justify-end mb-4">
-                <button
-                    onClick={handleExportCSV}
-                    disabled={filteredProducts.length === 0 || loading}
-                    className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-full text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                    </svg>
-                    <span>{t('marketplace.exportButton')}</span>
-                </button>
+                {canExport && (
+                    <button
+                        onClick={handleExportCSV}
+                        disabled={filteredProducts.length === 0 || loading}
+                        className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-full text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24" stroke="currentColor" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                        <span>{t('marketplace.exportButton')}</span>
+                    </button>
+                )}
             </div>
 
             {/* Product Grid */}

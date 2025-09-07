@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { useTranslations } from '../hooks/useTranslations';
 import { useAuth } from '../hooks/useAuth';
 import { useBasket } from '../hooks/useBasket';
@@ -156,6 +156,13 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ onNavigate, onBasketClick, onSearch }) => {
   const { t } = useTranslations();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const { persona } = useAuth();
+
+  const showBasket = useMemo(() => {
+    if (!persona) return false;
+    return ['consumer', 'umkm', 'guest'].includes(persona);
+  }, [persona]);
+
 
   return (
     <>
@@ -181,7 +188,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, onBasketClick, onSearch }) 
 
           <div className="flex items-center space-x-2 sm:space-x-4">
             <LanguageToggle />
-            <BasketIcon onClick={onBasketClick} />
+            {showBasket && <BasketIcon onClick={onBasketClick} />}
             <UserProfileIcon onNavigate={onNavigate}/>
           </div>
         </div>

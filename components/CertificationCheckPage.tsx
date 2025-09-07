@@ -1,9 +1,10 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { useTranslations } from '../hooks/useTranslations';
 import Pagination from './Pagination';
 import InputField from './InputField';
 import { useSearch } from '../contexts/SearchContext';
 import { useDebounce } from '../hooks/useDebounce';
+import { useAuth } from '../hooks/useAuth';
 
 interface Certificate {
   id: string;
@@ -277,6 +278,7 @@ const AddCertificateModal: React.FC<{
 
 const CertificationCheckPage: React.FC = () => {
     const { t } = useTranslations();
+    const { persona } = useAuth();
     const [certificates, setCertificates] = useState<Certificate[]>(initialDummyData); 
     const [searchTerm, setSearchTerm] = useState('');
     const debouncedSearchTerm = useDebounce(searchTerm, 500);
@@ -292,6 +294,11 @@ const CertificationCheckPage: React.FC = () => {
     const { globalQuery, globalFilters, searchScope, isGlobalSearch, clearGlobalSearch } = useSearch();
     const isInitialLoad = useRef(true);
     const [showAdvancedFilters, setShowAdvancedFilters] = useState(false);
+    
+    const canManageCertificates = useMemo(() => {
+        if (!persona) return false;
+        return ['auditor', 'officer'].includes(persona);
+    }, [persona]);
 
 
     // Sync with global search context
@@ -466,12 +473,14 @@ const CertificationCheckPage: React.FC = () => {
             </svg>
             <h2 className="mt-6 text-2xl font-bold text-gray-800">{t('certCheck.emptyStateTitle')}</h2>
             <p className="mt-2 text-gray-600">{t('certCheck.emptyStateSubtitle')}</p>
-            <button
-                onClick={() => setIsModalOpen(true)}
-                className="mt-8 px-8 py-3 bg-halal-green text-white font-semibold rounded-full hover:bg-opacity-90 transition-colors shadow-lg hover:shadow-xl"
-            >
-                {t('certCheck.addFirstCertificate')}
-            </button>
+            {canManageCertificates && (
+                <button
+                    onClick={() => setIsModalOpen(true)}
+                    className="mt-8 px-8 py-3 bg-halal-green text-white font-semibold rounded-full hover:bg-opacity-90 transition-colors shadow-lg hover:shadow-xl"
+                >
+                    {t('certCheck.addFirstCertificate')}
+                </button>
+            )}
         </div>
     );
 
@@ -650,19 +659,23 @@ const CertificationCheckPage: React.FC = () => {
                     </div>
 
                     <div className="text-center mb-8 flex flex-wrap justify-center items-center gap-4">
-                        <button onClick={() => setIsModalOpen(true)} className="text-halal-green font-semibold hover:text-green-700 transition-colors">
-                            + {t('certCheck.addCertificate')}
-                        </button>
-                        <button
-                            onClick={handleExportCSV}
-                            disabled={!searchResults || searchResults.length === 0}
-                            className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-full text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
-                        >
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24" stroke="currentColor" strokeWidth={2}>
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                            </svg>
-                            {t('certCheck.exportButton')}
-                        </button>
+                        {canManageCertificates && (
+                            <button onClick={() => setIsModalOpen(true)} className="text-halal-green font-semibold hover:text-green-700 transition-colors">
+                                + {t('certCheck.addCertificate')}
+                            </button>
+                        )}
+                        {canManageCertificates && (
+                            <button
+                                onClick={handleExportCSV}
+                                disabled={!searchResults || searchResults.length === 0}
+                                className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-full text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24" stroke="currentColor" strokeWidth={2}>
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                </svg>
+                                {t('certCheck.exportButton')}
+                            </button>
+                        )}
                     </div>
 
                     <div className="max-w-4xl mx-auto">

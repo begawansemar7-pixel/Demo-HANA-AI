@@ -34,6 +34,7 @@ import StoryDetailPage from './components/StoryDetailPage';
 import { useStories } from './hooks/useStories';
 import MapPage from './components/MapPage';
 import AboutPage from './components/AboutPage';
+import { SERVICES } from './constants';
 
 
 const App: React.FC = () => {
@@ -56,10 +57,26 @@ const App: React.FC = () => {
   }
 
   const navigateTo = (page: string) => {
+    const service = SERVICES.find(s => s.id === page);
+    if (persona && persona !== 'guest' && service?.personas && !service.personas.includes(persona)) {
+        alert(t('auth.accessDenied'));
+        return;
+    }
+
+    // Manual check for pages derived from services that also need protection
+    if (page === 'product-detail') {
+        const marketplaceService = SERVICES.find(s => s.id === 'marketplace');
+        if (persona && persona !== 'guest' && marketplaceService?.personas && !marketplaceService.personas.includes(persona)) {
+            alert(t('auth.accessDenied'));
+            return;
+        }
+    }
+
     if (persona === 'guest' && page === 'profile') {
       alert(t('auth.guestAccessDenied'));
       return;
     }
+
     window.scrollTo(0, 0);
     setSelectedProductId(null);
     setSelectedNewsId(null);

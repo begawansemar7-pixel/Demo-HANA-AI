@@ -315,6 +315,7 @@
   },
   "auth": {
     "guestAccessDenied": "This feature is for registered users. Please create an account to access your profile.",
+    "accessDenied": "Access Denied: This feature is not available for your role.",
     "loginTitle": "Login as",
     "registerTitle": "Create Account as",
     "emailLabel": "Email Address",
@@ -536,7 +537,8 @@
   "mapPage": {
     "title": "Location Search",
     "subtitle": "Showing results for: \"{query}\"",
-    "mapTitle": "Map showing results for {query}"
+    "mapTitle": "Map showing results for {query}",
+    "loading": "Loading map..."
   },
   "aboutPage": {
     "title": "About AI Halal Advisor",
