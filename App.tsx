@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import MainCarousel from './components/MainCarousel';
@@ -35,6 +35,7 @@ import { useStories } from './hooks/useStories';
 import MapPage from './components/MapPage';
 import AboutPage from './components/AboutPage';
 import { SERVICES } from './constants';
+import type { PersonaId } from './types';
 
 
 const App: React.FC = () => {
@@ -50,6 +51,25 @@ const App: React.FC = () => {
   const { products } = useProducts();
   const { news } = useNews();
   const { stories } = useStories();
+
+  // Centralize page permissions for consistent access control.
+  // Permissions are derived from the SERVICES constant and extended for pages not listed as services.
+  const pagePermissions = useMemo(() => {
+    const servicePermissions = SERVICES.reduce((acc, service) => {
+      if (service.personas) {
+        acc[service.id] = service.personas;
+      }
+      return acc;
+    }, {} as Record<string, PersonaId[]>);
+
+    return {
+      ...servicePermissions,
+      // Derive permissions for sub-pages from their parent service
+      'product-detail': servicePermissions['marketplace'],
+      // Add explicit permissions for pages not in the SERVICES array
+      'profile': ['consumer', 'umkm', 'auditor', 'officer'],
+    };
+  }, []);
   
   const handleLogout = () => {
     logout();
@@ -57,26 +77,23 @@ const App: React.FC = () => {
   }
 
   const navigateTo = (page: string) => {
-    const service = SERVICES.find(s => s.id === page);
-    if (persona && persona !== 'guest' && service?.personas && !service.personas.includes(persona)) {
-        alert(t('auth.accessDenied'));
-        return;
-    }
+    const allowedPersonas = pagePermissions[page as keyof typeof pagePermissions];
 
-    // Manual check for pages derived from services that also need protection
-    if (page === 'product-detail') {
-        const marketplaceService = SERVICES.find(s => s.id === 'marketplace');
-        if (persona && persona !== 'guest' && marketplaceService?.personas && !marketplaceService.personas.includes(persona)) {
-            alert(t('auth.accessDenied'));
-            return;
+    // Check permissions if they are defined for the page
+    if (allowedPersonas) {
+      // If the user is not authenticated OR their persona is not in the allowed list
+      if (!isAuthenticated || (persona && !allowedPersonas.includes(persona))) {
+        // Provide a specific message for guests trying to access their profile
+        if (persona === 'guest' && page === 'profile') {
+          alert(t('auth.guestAccessDenied'));
+        } else {
+          // General access denied message for other protected routes
+          alert(t('auth.accessDenied'));
         }
+        return; // Block navigation
+      }
     }
-
-    if (persona === 'guest' && page === 'profile') {
-      alert(t('auth.guestAccessDenied'));
-      return;
-    }
-
+    
     window.scrollTo(0, 0);
     setSelectedProductId(null);
     setSelectedNewsId(null);
