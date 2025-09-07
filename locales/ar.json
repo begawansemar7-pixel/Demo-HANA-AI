@@ -178,7 +178,7 @@
     "resultsTitle": "نتائج البحث",
     "statusCertified": "معتمد",
     "statusNotCertified": "غير معتمد",
-    "statusExpired": "منتهي الصلاحية",
+    "statusExpired": "يلزم إعادة التدقيق",
     "statusInvalidDate": "تاريخ غير صالح",
     "expiryDate": "تاريخ الانتهاء",
     "addCertificate": "إضافة شهادة جديدة",
@@ -211,7 +211,7 @@
     "closeButton": "إغلاق",
     "tooltips": {
       "statusCertified": "هذه الشهادة صالحة ولم تنتهِ صلاحيتها بعد.",
-      "statusExpired": "لقد تجاوزت هذه الشهادة تاريخ انتهاء صلاحيتها.",
+      "statusExpired": "هذه الشهادة قد انتهت صلاحيتها وتتطلب إعادة تدقيق.",
       "statusNotCertified": "هذا المنتج أو المُنتِج لا يملك شهادة حلال صالحة.",
       "statusInvalidDate": "تعذر التحقق من تاريخ انتهاء صلاحية هذه الشهادة.",
       "expiryDate": "التاريخ الذي تظل فيه شهادة الحلال صالحة حتى."

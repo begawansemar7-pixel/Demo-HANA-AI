@@ -178,7 +178,7 @@
     "resultsTitle": "Search Results",
     "statusCertified": "Certified",
     "statusNotCertified": "Not Certified",
-    "statusExpired": "Expired",
+    "statusExpired": "Re-audit Needed",
     "statusInvalidDate": "Invalid Date",
     "expiryDate": "Expires On",
     "addCertificate": "Add New Certificate",
@@ -211,7 +211,7 @@
     "closeButton": "Close",
     "tooltips": {
       "statusCertified": "This certificate is valid and has not expired.",
-      "statusExpired": "This certificate has passed its expiry date.",
+      "statusExpired": "This certificate has passed its expiry date and requires a re-audit.",
       "statusNotCertified": "This product or producer does not have a valid halal certificate.",
       "statusInvalidDate": "The expiry date for this certificate could not be verified.",
       "expiryDate": "The date until which the halal certificate is valid."

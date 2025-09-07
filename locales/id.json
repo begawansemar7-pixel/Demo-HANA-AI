@@ -178,7 +178,7 @@
     "resultsTitle": "Hasil Pencarian",
     "statusCertified": "Tersertifikasi",
     "statusNotCertified": "Tidak Tersertifikasi",
-    "statusExpired": "Kedaluwarsa",
+    "statusExpired": "Perlu Audit Ulang",
     "statusInvalidDate": "Tanggal Tidak Valid",
     "expiryDate": "Berlaku Hingga",
     "addCertificate": "Tambah Sertifikat Baru",
@@ -211,7 +211,7 @@
     "closeButton": "Tutup",
     "tooltips": {
       "statusCertified": "Sertifikat ini valid dan belum kedaluwarsa.",
-      "statusExpired": "Sertifikat ini telah melewati tanggal kedaluwarsa.",
+      "statusExpired": "Sertifikat ini telah melewati tanggal kedaluwarsa dan memerlukan audit ulang.",
       "statusNotCertified": "Produk atau produsen ini tidak memiliki sertifikat halal yang valid.",
       "statusInvalidDate": "Tanggal kedaluwarsa untuk sertifikat ini tidak dapat diverifikasi.",
       "expiryDate": "Tanggal hingga sertifikat halal ini berlaku."
