@@ -630,7 +630,8 @@
     "confirmClear": "هل أنت متأكد من أنك تريد حذف جميع سجلات التدقيق بشكل دائم؟",
     "actionHeader": "الإجراء",
     "auditorHeader": "المدقق",
-    "timestampHeader": "الوقت"
+    "timestampHeader": "الوقت",
+    "exportButton": "تصدير إلى CSV"
   },
   "monitoringDashboard": {
     "title": "لوحة المراقبة",

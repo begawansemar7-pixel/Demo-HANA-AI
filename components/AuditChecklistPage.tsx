@@ -54,10 +54,16 @@ const AuditChecklistPage: React.FC = () => {
     setChecklistState(prevState =>
       prevState.map(item => (item.id === id ? { ...item, isChecked } : item))
     );
-    // Log the action
+    // Log the action with context
     const itemName = t(CHECKLIST_ITEMS.find(i => i.id === id)!.titleKey);
     const action = `${isChecked ? 'Completed' : 'Reopened'} check: "${itemName}"`;
-    addAuditLog(action, user?.name || 'Auditor');
+    addAuditLog(action, user?.name || 'Auditor', {
+      entityType: 'Checklist Item',
+      entityId: itemName,
+      details: {
+        status: isChecked ? 'Completed' : 'Reopened'
+      }
+    });
   };
 
   const handleNotesChange = (id: string, notes: string) => {
@@ -74,8 +80,12 @@ const AuditChecklistPage: React.FC = () => {
       setShowSaveSuccess(true);
       setTimeout(() => setShowSaveSuccess(false), 2000);
       
-      // Log the save action
-      addAuditLog('Saved checklist progress and notes.', user?.name || 'Auditor');
+      // Log the save action with context
+      addAuditLog('Saved checklist progress and notes.', user?.name || 'Auditor', {
+        entityType: 'Audit Checklist',
+        entityId: 'All Items',
+        details: { action: 'Saved Progress' }
+      });
   };
 
   const progress = (checklistState.filter(item => item.isChecked).length / checklistState.length) * 100;

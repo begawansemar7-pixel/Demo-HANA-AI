@@ -3,6 +3,9 @@ export interface AuditLogEntry {
   action: string;
   auditorName: string;
   timestamp: string;
+  entityType?: string;
+  entityId?: string;
+  details?: { [key: string]: any };
 }
 
 const LOG_STORAGE_KEY = 'auditLogs';
@@ -25,8 +28,17 @@ export const getAuditLogs = (): AuditLogEntry[] => {
  * Adds a new audit log entry.
  * @param action A description of the action performed.
  * @param auditorName The name of the auditor who performed the action.
+ * @param context Additional context about the action.
  */
-export const addAuditLog = (action: string, auditorName: string): void => {
+export const addAuditLog = (
+  action: string,
+  auditorName: string,
+  context?: {
+    entityType?: string;
+    entityId?: string;
+    details?: { [key: string]: any };
+  }
+): void => {
   if (!action || !auditorName) return;
 
   try {
@@ -36,6 +48,7 @@ export const addAuditLog = (action: string, auditorName: string): void => {
       action,
       auditorName,
       timestamp: new Date().toISOString(),
+      ...context,
     };
     
     // Add the new log to the beginning of the array
@@ -46,6 +59,7 @@ export const addAuditLog = (action: string, auditorName: string): void => {
     console.error("Error saving audit log to localStorage:", error);
   }
 };
+
 
 /**
  * Clears all audit logs from localStorage.

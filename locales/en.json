@@ -630,7 +630,8 @@
     "confirmClear": "Are you sure you want to permanently delete all audit logs?",
     "actionHeader": "Action",
     "auditorHeader": "Auditor",
-    "timestampHeader": "Timestamp"
+    "timestampHeader": "Timestamp",
+    "exportButton": "Export to CSV"
   },
   "monitoringDashboard": {
     "title": "Monitoring Dashboard",
