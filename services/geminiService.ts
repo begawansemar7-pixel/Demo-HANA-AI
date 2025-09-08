@@ -1,5 +1,3 @@
-
-
 import { GoogleGenAI, Chat, GenerateContentResponse } from "@google/genai";
 import { HALAL_KNOWLEDGE_BASE, KnowledgeDocument } from './knowledgeBase';
 
@@ -21,17 +19,19 @@ const getSystemInstruction = (language: string): string => {
  * Finds relevant documents from the knowledge base based on the user's query.
  * This is a simple keyword-based retrieval method.
  * @param query The user's message.
+ * @param language The current language of the user.
  * @returns An array of relevant knowledge documents.
  */
-function findRelevantDocuments(query: string): KnowledgeDocument[] {
+function findRelevantDocuments(query: string, language: string): KnowledgeDocument[] {
+    const knowledgeBaseForLang = HALAL_KNOWLEDGE_BASE[language] || HALAL_KNOWLEDGE_BASE['en'];
     const lowerQuery = query.toLowerCase();
     const queryWords = lowerQuery.split(/\s+/);
     
     // Check for specific keywords that should prioritize regulation documents
-    const regulationKeywords = ['regulation', 'law', 'uu', 'pp', 'legal', 'rules'];
+    const regulationKeywords = ['regulation', 'law', 'uu', 'pp', 'legal', 'rules', 'regulasi', 'hukum', 'undang-undang', 'peraturan', 'قانون', 'لائحة', 'تشريع'];
     const isRegulationQuery = regulationKeywords.some(kw => lowerQuery.includes(kw));
 
-    const scoredDocs = HALAL_KNOWLEDGE_BASE.map(doc => {
+    const scoredDocs = knowledgeBaseForLang.map(doc => {
         let score = 0;
         const contentWords = new Set(doc.content.toLowerCase().split(/\s+/));
         const titleWords = new Set(doc.title.toLowerCase().split(/\s+/));
@@ -85,23 +85,37 @@ export function createHanaChat(language: string): Chat {
  * Sends a message to the Gemini model within a chat session, using RAG.
  * @param chat The Chat instance for the current session.
  * @param message The user's message.
+ * @param language The current language of the user.
  * @returns The model's text response.
  * @throws Will throw an error if the API call fails.
  */
-export async function sendMessageToHana(chat: Chat, message: string): Promise<string> {
+export async function sendMessageToHana(chat: Chat, message: string, language: string): Promise<string> {
     try {
-        // 1. Retrieve relevant documents from the knowledge base
-        const relevantDocs = findRelevantDocuments(message);
+        // 1. Retrieve relevant documents from the knowledge base in the correct language
+        const relevantDocs = findRelevantDocuments(message, language);
 
         let finalMessage = message;
 
         // 2. Augment the prompt if relevant documents are found
         if (relevantDocs.length > 0) {
+            const contextLabels = {
+                'en': { title: 'Title', content: 'Content' },
+                'id': { title: 'Judul', content: 'Isi' },
+                'ar': { title: 'العنوان', content: 'المحتوى' }
+            };
+            const labels = contextLabels[language as keyof typeof contextLabels] || contextLabels['en'];
+
             const context = relevantDocs
-                .map(doc => `Title: ${doc.title}\nContent: ${doc.content}`)
+                .map(doc => `${labels.title}: ${doc.title}\n${labels.content}: ${doc.content}`)
                 .join('\n\n---\n\n');
             
-            finalMessage = `Based on the following information, answer the user's question. If the information isn't relevant, answer the question based on your general knowledge.\n\n[CONTEXT]\n${context}\n\n[USER QUESTION]\n${message}`;
+            const augmentationPrompts: { [key: string]: string } = {
+                'en': `Based on the following information, answer the user's question. If the information isn't relevant, answer the question based on your general knowledge.\n\n[CONTEXT]\n${context}\n\n[USER QUESTION]\n${message}`,
+                'id': `Berdasarkan informasi berikut, jawab pertanyaan pengguna. Jika informasi tidak relevan, jawab pertanyaan berdasarkan pengetahuan umum Anda.\n\n[KONTEKS]\n${context}\n\n[PERTANYAAN PENGGUNA]\n${message}`,
+                'ar': `بناءً على المعلومات التالية، أجب عن سؤال المستخدم. إذا كانت المعلومات غير ذات صلة، فأجب عن السؤال بناءً على معرفتك العامة.\n\n[السياق]\n${context}\n\n[سؤال المستخدم]\n${message}`
+            };
+
+            finalMessage = augmentationPrompts[language] || augmentationPrompts['en'];
         }
 
         // 3. Send the (potentially augmented) message to the model

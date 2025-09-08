@@ -42,6 +42,13 @@ const GlobalSearch: React.FC<GlobalSearchProps> = ({ isOpen, onClose, onSearch }
         t('search.suggestions.2'),
         t('search.suggestions.3'),
     ], [t]);
+    
+    const scopes = useMemo(() => [
+        { id: 'all', labelKey: 'search.scopeAll' },
+        { id: 'products', labelKey: 'search.scopeProducts' },
+        { id: 'certificates', labelKey: 'search.scopeCertificates' },
+        { id: 'map', labelKey: 'search.scopeMap' },
+    ], []);
 
     // Load recent searches from localStorage on mount
     useEffect(() => {
@@ -179,7 +186,28 @@ const GlobalSearch: React.FC<GlobalSearchProps> = ({ isOpen, onClose, onSearch }
                     </button>
                 </div>
 
-                <div className="p-6 border-t dark:border-gray-700">
+                <div className="px-6 pb-4 border-b dark:border-gray-700">
+                    <div className="flex items-center gap-4">
+                        <span className="text-sm font-semibold text-gray-500 dark:text-gray-400 flex-shrink-0">{t('search.searchIn')}</span>
+                        <div className="flex items-center bg-gray-100 dark:bg-gray-900 rounded-full p-1 space-x-1 overflow-x-auto">
+                            {scopes.map(scope => (
+                                <button
+                                    key={scope.id}
+                                    onClick={() => setSearchScope(scope.id as any)}
+                                    className={`px-4 py-1.5 text-sm font-semibold rounded-full transition-all duration-300 whitespace-nowrap ${
+                                        searchScope === scope.id
+                                        ? 'bg-white dark:bg-gray-700 text-halal-green dark:text-gray-100 shadow-sm'
+                                        : 'text-gray-600 dark:text-gray-400 hover:bg-gray-200/50 dark:hover:bg-gray-600/50'
+                                    }`}
+                                >
+                                    {t(scope.labelKey)}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                <div className="p-6">
                     {localQuery.trim() === '' ? (
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                             <div>

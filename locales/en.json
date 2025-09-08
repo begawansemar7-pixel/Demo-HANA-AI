@@ -64,6 +64,7 @@
         "hana": "HANA AI",
         "certCheck": "Check Halal Certificate",
         "ingredientValidator": "Ingredient Validator",
+        "halalVerification": "Halal Verification",
         "selfDeclare": "Self Declare Halal",
         "auditChecklist": "Audit Checklist",
         "marketplace": "Halal Marketplace",
@@ -250,6 +251,20 @@
       "syubhatSource": "The source of this ingredient can be animal or plant. Requires certification to confirm.",
       "syubhatRennet": "Rennet can be from animal, microbial, or vegetable sources. Animal source must be from a halal-slaughtered animal."
     }
+  },
+  "halalVerification": {
+    "title": "Halal Product Verification",
+    "subtitle": "Check the halal status of a product by name or barcode.",
+    "searchPlaceholder": "Enter product name or barcode number...",
+    "searchButton": "Verify",
+    "scanButton": "Scan Barcode",
+    "initialPrompt": "Search for a product to verify its halal status.",
+    "loading": "Verifying...",
+    "noResults": "No product found matching your search.",
+    "resultTitle": "Verification Result",
+    "producerLabel": "Producer",
+    "statusLabel": "Status",
+    "expiryLabel": "Certified Until"
   },
   "marketplace": {
     "title": "Halal Marketplace",

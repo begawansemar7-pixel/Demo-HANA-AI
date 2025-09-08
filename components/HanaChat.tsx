@@ -208,7 +208,7 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
     setHanaState(HanaState.THINKING);
 
     try {
-        const response = await sendMessageToHana(chatRef.current, currentInput);
+        const response = await sendMessageToHana(chatRef.current, currentInput, language);
         const hanaMessage: Message = { id: Date.now() + 1, text: response, sender: 'hana' };
         setMessages(prev => [...prev, hanaMessage]);
         

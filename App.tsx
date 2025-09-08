@@ -38,6 +38,7 @@ import { SERVICES } from './constants';
 import type { PersonaId } from './types';
 import SelfDeclarePage from './components/SelfDeclarePage';
 import AuditChecklistPage from './components/AuditChecklistPage';
+import HalalVerificationPage from './components/HalalVerificationPage';
 
 
 const App: React.FC = () => {
@@ -188,6 +189,7 @@ const App: React.FC = () => {
     'hana',
     'cert-check',
     'ingredient-validator',
+    'halal-verification',
     'marketplace',
     'product-detail',
     'news',
@@ -227,6 +229,8 @@ const App: React.FC = () => {
         return <CertificationCheckPage />;
       case 'ingredient-validator':
         return <IngredientValidatorPage />;
+      case 'halal-verification':
+        return <HalalVerificationPage onNavigate={navigateTo} />;
       case 'marketplace':
         return <MarketplacePage onProductSelect={handleProductSelect} />;
       case 'product-detail':

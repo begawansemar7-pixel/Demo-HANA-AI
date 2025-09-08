@@ -64,6 +64,7 @@
         "hana": "HANA AI",
         "certCheck": "Cek Sertifikat Halal",
         "ingredientValidator": "Validasi Bahan",
+        "halalVerification": "Verifikasi Halal",
         "selfDeclare": "Deklarasi Mandiri Halal",
         "auditChecklist": "Daftar Periksa Audit",
         "marketplace": "Pasar Halal",
@@ -250,6 +251,20 @@
       "syubhatSource": "Sumber bahan ini bisa dari hewan atau tumbuhan. Memerlukan sertifikasi untuk konfirmasi.",
       "syubhatRennet": "Rennet bisa berasal dari sumber hewani, mikroba, atau nabati. Sumber hewani harus dari hewan yang disembelih secara halal."
     }
+  },
+  "halalVerification": {
+    "title": "Verifikasi Produk Halal",
+    "subtitle": "Periksa status halal produk berdasarkan nama atau barcode.",
+    "searchPlaceholder": "Masukkan nama produk atau nomor barcode...",
+    "searchButton": "Verifikasi",
+    "scanButton": "Pindai Barcode",
+    "initialPrompt": "Cari produk untuk memverifikasi status kehalalannya.",
+    "loading": "Memverifikasi...",
+    "noResults": "Produk yang cocok dengan pencarian Anda tidak ditemukan.",
+    "resultTitle": "Hasil Verifikasi",
+    "producerLabel": "Produsen",
+    "statusLabel": "Status",
+    "expiryLabel": "Tersertifikasi Hingga"
   },
   "marketplace": {
     "title": "Pasar Halal",
