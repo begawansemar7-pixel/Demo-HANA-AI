@@ -19,6 +19,9 @@ const CHECKLIST_ITEMS = [
 ];
 
 const LOCAL_STORAGE_KEY = 'auditChecklistState';
+const NOTES_CHAR_WARN_LIMIT = 400;
+const NOTES_CHAR_MAX_LIMIT = 500;
+
 
 const AuditChecklistPage: React.FC = () => {
   const { t } = useTranslations();
@@ -128,6 +131,13 @@ const AuditChecklistPage: React.FC = () => {
             if (!itemState) return null;
 
             const isExpanded = expandedItemId === itemInfo.id;
+            const notesLength = itemState.notes.length;
+            const isWarn = notesLength > NOTES_CHAR_WARN_LIMIT && notesLength < NOTES_CHAR_MAX_LIMIT;
+            const isError = notesLength >= NOTES_CHAR_MAX_LIMIT;
+
+            let counterClasses = "text-gray-500 dark:text-gray-400";
+            if (isWarn) counterClasses = "text-orange-500 font-semibold";
+            if (isError) counterClasses = "text-red-500 font-bold";
 
             return (
               <div key={itemInfo.id} className="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-2xl shadow-md border dark:border-gray-700 transition-all duration-300">
@@ -172,9 +182,15 @@ const AuditChecklistPage: React.FC = () => {
                             value={itemState.notes}
                             onChange={e => handleNotesChange(itemInfo.id, e.target.value)}
                             placeholder={t('auditChecklist.notesPlaceholder')}
-                            className="w-full p-3 border border-gray-200 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-halal-green dark:focus:ring-accent-gold transition-shadow shadow-sm min-h-[100px] bg-white dark:bg-gray-700"
+                            className="w-full p-3 border border-gray-200 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-halal-green dark:focus:ring-accent-gold transition-shadow shadow-sm min-h-[120px] bg-white dark:bg-gray-700"
                             onClick={e => e.stopPropagation()} // Prevent closing when clicking textarea
+                            maxLength={NOTES_CHAR_MAX_LIMIT}
                         />
+                        <div className="text-right text-sm mt-1">
+                          <span className={`${counterClasses} transition-colors`}>
+                            {notesLength} / {NOTES_CHAR_MAX_LIMIT}
+                          </span>
+                        </div>
                     </div>
                 )}
               </div>

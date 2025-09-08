@@ -76,7 +76,6 @@ export const addAuditLog = (
 export const clearAuditLogs = (): void => {
   try {
     localStorage.removeItem(LOG_STORAGE_KEY);
-// FIX: The catch block was malformed. Added curly braces and removed extra characters to fix the syntax error.
   } catch (error) {
     console.error("Error clearing audit logs from localStorage:", error);
   }

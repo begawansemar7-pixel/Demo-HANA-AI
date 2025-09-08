@@ -17,10 +17,19 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ onNavigate }) => {
         phone: '',
         password: '',
         confirmPassword: '',
+        // Persona-specific fields
+        businessName: '',
+        businessId: '',
+        auditorId: '',
+        lphName: '',
+        officerId: '',
+        department: '',
     });
     const [emailLoading, setEmailLoading] = useState(false);
     const [googleLoading, setGoogleLoading] = useState(false);
     const [errors, setErrors] = useState<{ [key: string]: string }>({});
+    const [showPassword, setShowPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
     const isLoading = emailLoading || googleLoading;
 
@@ -44,6 +53,19 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ onNavigate }) => {
         if (!formData.phone.trim()) newErrors.phone = t('auth.phoneRequired');
         if (!formData.password || formData.password.length < 8) newErrors.password = t('auth.passwordTooShort');
         if (formData.password !== formData.confirmPassword) newErrors.confirmPassword = t('auth.passwordsDoNotMatch');
+
+        if (persona === 'umkm') {
+            if (!formData.businessName.trim()) newErrors.businessName = t('auth.businessNameRequired');
+            if (!formData.businessId.trim()) newErrors.businessId = t('auth.businessIdRequired');
+        }
+        if (persona === 'auditor') {
+            if (!formData.auditorId.trim()) newErrors.auditorId = t('auth.auditorIdRequired');
+            if (!formData.lphName.trim()) newErrors.lphName = t('auth.lphNameRequired');
+        }
+        if (persona === 'officer') {
+            if (!formData.officerId.trim()) newErrors.officerId = t('auth.officerIdRequired');
+            if (!formData.department.trim()) newErrors.department = t('auth.departmentRequired');
+        }
 
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
@@ -84,7 +106,7 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ onNavigate }) => {
                     </div>
                 )}
             </div>
-            <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+            <form onSubmit={handleSubmit} className="space-y-4" noValidate>
                 <InputField
                     id="name"
                     name="name"
@@ -96,6 +118,7 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ onNavigate }) => {
                     onChange={handleChange}
                     placeholder={t('auth.fullNamePlaceholder')}
                     error={errors.name}
+                    disabled={isLoading}
                 />
                 <InputField
                     id="email"
@@ -108,6 +131,7 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ onNavigate }) => {
                     onChange={handleChange}
                     placeholder={t('auth.emailPlaceholder')}
                     error={errors.email}
+                    disabled={isLoading}
                 />
                  <InputField
                     id="phone"
@@ -120,32 +144,119 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ onNavigate }) => {
                     onChange={handleChange}
                     placeholder={t('auth.phonePlaceholder')}
                     error={errors.phone}
+                    disabled={isLoading}
                 />
+
+                {persona === 'umkm' && (
+                    <>
+                        <InputField
+                            id="businessName"
+                            name="businessName"
+                            label={t('auth.businessNameLabel')}
+                            value={formData.businessName}
+                            onChange={handleChange}
+                            placeholder={t('auth.businessNamePlaceholder')}
+                            error={errors.businessName}
+                            required
+                            disabled={isLoading}
+                        />
+                        <InputField
+                            id="businessId"
+                            name="businessId"
+                            label={t('auth.businessIdLabel')}
+                            value={formData.businessId}
+                            onChange={handleChange}
+                            placeholder={t('auth.businessIdPlaceholder')}
+                            error={errors.businessId}
+                            required
+                            disabled={isLoading}
+                        />
+                    </>
+                )}
+
+                {persona === 'auditor' && (
+                    <>
+                        <InputField
+                            id="auditorId"
+                            name="auditorId"
+                            label={t('auth.auditorIdLabel')}
+                            value={formData.auditorId}
+                            onChange={handleChange}
+                            placeholder={t('auth.auditorIdPlaceholder')}
+                            error={errors.auditorId}
+                            required
+                            disabled={isLoading}
+                        />
+                        <InputField
+                            id="lphName"
+                            name="lphName"
+                            label={t('auth.lphNameLabel')}
+                            value={formData.lphName}
+                            onChange={handleChange}
+                            placeholder={t('auth.lphNamePlaceholder')}
+                            error={errors.lphName}
+                            required
+                            disabled={isLoading}
+                        />
+                    </>
+                )}
+
+                {persona === 'officer' && (
+                    <>
+                        <InputField
+                            id="officerId"
+                            name="officerId"
+                            label={t('auth.officerIdLabel')}
+                            value={formData.officerId}
+                            onChange={handleChange}
+                            placeholder={t('auth.officerIdPlaceholder')}
+                            error={errors.officerId}
+                            required
+                            disabled={isLoading}
+                        />
+                        <InputField
+                            id="department"
+                            name="department"
+                            label={t('auth.departmentLabel')}
+                            value={formData.department}
+                            onChange={handleChange}
+                            placeholder={t('auth.departmentPlaceholder')}
+                            error={errors.department}
+                            required
+                            disabled={isLoading}
+                        />
+                    </>
+                )}
+
                 <InputField
                     id="password"
                     name="password"
                     label={t('auth.passwordLabel')}
-                    type="password"
+                    type={showPassword ? 'text' : 'password'}
                     autoComplete="new-password"
                     required
                     value={formData.password}
                     onChange={handleChange}
                     placeholder={t('auth.passwordPlaceholder')}
                     error={errors.password}
+                    disabled={isLoading}
+                    togglePasswordVisibility={() => setShowPassword(!showPassword)}
                 />
                 <InputField
                     id="confirmPassword"
                     name="confirmPassword"
                     label={t('auth.confirmPasswordLabel')}
-                    type="password"
+                    type={showConfirmPassword ? 'text' : 'password'}
                     autoComplete="new-password"
                     required
                     value={formData.confirmPassword}
                     onChange={handleChange}
                     placeholder={t('auth.confirmPasswordPlaceholder')}
                     error={errors.confirmPassword}
+                    disabled={isLoading}
+                    togglePasswordVisibility={() => setShowConfirmPassword(!showConfirmPassword)}
                 />
-                <div>
+                <div className="pt-2">
                     <button type="submit" disabled={isLoading} className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-halal-green hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-halal-green disabled:opacity-50">
                         {emailLoading && <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>}
                         {emailLoading ? t('auth.loading') : t('auth.registerButton')}

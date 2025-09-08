@@ -168,7 +168,7 @@ const PersonaIndicator: React.FC = () => {
     const icon = React.cloneElement(personaDetails.icon, Object.assign({}, personaDetails.icon.props, { className: "h-5 w-5" }));
 
     return (
-        <div className="hidden lg:flex items-center gap-2 bg-gray-100 text-halal-green font-semibold px-3 py-1.5 rounded-full text-sm animate-fadein">
+        <div className="hidden lg:flex items-center gap-2 bg-gray-100 dark:bg-gray-800/80 text-halal-green dark:text-accent-gold font-semibold px-3 py-1.5 rounded-full text-sm animate-fadein">
             {icon}
             <span>{t(personaDetails.name)}</span>
         </div>
@@ -217,9 +217,9 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, onBasketClick, onSearch }) 
           </div>
 
           <div className="flex items-center space-x-2 sm:space-x-4">
-            <PersonaIndicator />
             <LanguageToggle />
             <ThemeToggle />
+            <PersonaIndicator />
             {showBasket && <BasketIcon onClick={onBasketClick} />}
             <UserProfileIcon onNavigate={onNavigate}/>
           </div>

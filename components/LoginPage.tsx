@@ -215,7 +215,6 @@ const LoginPage: React.FC<LoginPageProps> = ({ onNavigate }) => {
                 )}
                 {googleLoading ? t('auth.loading') : t('auth.loginWithGoogle')}
             </button>
-
             <p className="mt-8 text-center text-sm text-gray-600 dark:text-gray-400">
                 {t('auth.noAccount')}{' '}
                 <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('register'); }} className="font-medium text-halal-green dark:text-accent-gold hover:text-green-700 dark:hover:text-yellow-300">
@@ -226,4 +225,5 @@ const LoginPage: React.FC<LoginPageProps> = ({ onNavigate }) => {
     );
 };
 
+// FIX: Add default export to resolve import error.
 export default LoginPage;
