@@ -20,6 +20,8 @@ interface HanaChatProps {
   onOpen: () => void;
 }
 
+const CHAT_HISTORY_KEY = 'hanaChatHistory'; // Key for localStorage
+
 const SpeakerIcon: React.FC = () => (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
@@ -111,7 +113,27 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
     // Reset or initialize chat when the modal opens or language changes
     if (isOpen) {
       chatRef.current = createHanaChat(language);
-      setMessages([{ id: Date.now(), text: t('hana.welcomeMessage'), sender: 'hana' }]);
+      const savedHistory = localStorage.getItem(CHAT_HISTORY_KEY);
+      if (savedHistory) {
+        try {
+          const parsedHistory = JSON.parse(savedHistory);
+          // Ensure history is not empty before setting
+          if (Array.isArray(parsedHistory) && parsedHistory.length > 0) {
+            setMessages(parsedHistory);
+          } else {
+            // If stored history is empty/invalid, start with a welcome message
+            setMessages([{ id: Date.now(), text: t('hana.welcomeMessage'), sender: 'hana' }]);
+          }
+        } catch (e) {
+          console.error("Failed to parse chat history:", e);
+          // Fallback to welcome message on parse error
+          setMessages([{ id: Date.now(), text: t('hana.welcomeMessage'), sender: 'hana' }]);
+        }
+      } else {
+        // No history found, start with a welcome message
+        setMessages([{ id: Date.now(), text: t('hana.welcomeMessage'), sender: 'hana' }]);
+      }
+
       setInput('');
       setTimeRemaining(300);
       setIsFreeTrial(true);
@@ -120,6 +142,13 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
         cancel(); // Stop speech when modal is closed
     }
   }, [isOpen, language, t, cancel]);
+  
+  useEffect(() => {
+    // Only save when the chat is open and there's a conversation (more than just the welcome message)
+    if (isOpen && messages.length > 1) {
+      localStorage.setItem(CHAT_HISTORY_KEY, JSON.stringify(messages));
+    }
+  }, [messages, isOpen]);
 
   useEffect(() => {
     if (isListening) {

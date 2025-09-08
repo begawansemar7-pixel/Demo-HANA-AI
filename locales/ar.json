@@ -171,9 +171,9 @@
     "startNewSession": "ابدأ جلسة جديدة",
     "openChatLabel": "افتح مساعد HANA الذكي",
     "closeChatLabel": "إغلاق الدردشة",
-    "startListeningLabel": "بدء الاستماع",
-    "stopListeningLabel": "إيقاف الاستماع",
-    "sendLabel": "إرسال الرسالة"
+    "startListeningLabel": "بدء الإدخال الصوتي",
+    "stopListeningLabel": "إيقاف الإدخال الصوتي",
+    "sendLabel": "إرسال"
   },
   "certCheck": {
     "title": "مدقق شهادات الحلال",

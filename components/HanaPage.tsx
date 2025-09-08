@@ -14,6 +14,8 @@ interface Message {
   sender: 'user' | 'hana';
 }
 
+const CHAT_HISTORY_KEY_PAGE = 'hanaPageChatHistory'; // Separate key for the full page
+
 const SpeakerIcon: React.FC = () => (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
@@ -78,6 +80,7 @@ const HanaPage: React.FC = () => {
   
   const startNewSession = useCallback(() => {
       chatRef.current = createHanaChat(language);
+      localStorage.removeItem(CHAT_HISTORY_KEY_PAGE); // Clear previous history
       setMessages([{ id: Date.now(), text: t('hana.welcomeMessage'), sender: 'hana' }]);
       setInput('');
       setTimeRemaining(300);
@@ -105,10 +108,33 @@ const HanaPage: React.FC = () => {
 
   useEffect(scrollToBottom, [messages]);
 
-  // Init effect
+  // Effect for initial load and language changes (loads history)
   useEffect(() => {
-    startNewSession();
-  }, [startNewSession]);
+    chatRef.current = createHanaChat(language);
+    const savedHistory = localStorage.getItem(CHAT_HISTORY_KEY_PAGE);
+    if (savedHistory) {
+      try {
+        const parsedHistory = JSON.parse(savedHistory);
+        if (Array.isArray(parsedHistory) && parsedHistory.length > 0) {
+          setMessages(parsedHistory);
+        } else {
+          setMessages([{ id: Date.now(), text: t('hana.welcomeMessage'), sender: 'hana' }]);
+        }
+      } catch (e) {
+        console.error("Failed to parse chat history:", e);
+        setMessages([{ id: Date.now(), text: t('hana.welcomeMessage'), sender: 'hana' }]);
+      }
+    } else {
+      setMessages([{ id: Date.now(), text: t('hana.welcomeMessage'), sender: 'hana' }]);
+    }
+  }, [language, t]);
+
+  // Effect for saving messages to localStorage
+  useEffect(() => {
+    if (messages.length > 1) {
+      localStorage.setItem(CHAT_HISTORY_KEY_PAGE, JSON.stringify(messages));
+    }
+  }, [messages]);
 
   useEffect(() => {
     if (isListening) {
@@ -341,7 +367,7 @@ const HanaPage: React.FC = () => {
                                 type="button"
                                 onClick={toggleListening}
                                 className={`w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center transition-colors duration-300 ${isListening ? 'bg-red-500 text-white animate-pulse' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
-                                aria-label={isListening ? 'Stop listening' : 'Start listening'}
+                                aria-label={isListening ? t('hana.stopListeningLabel') : t('hana.startListeningLabel')}
                                 disabled={isChatDisabled}
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -349,7 +375,9 @@ const HanaPage: React.FC = () => {
                                 </svg>
                             </button>
                         )}
-                        <input 
+                        <label htmlFor="hana-page-input" className="sr-only">{t('hana.inputPlaceholder')}</label>
+                        <input
+                            id="hana-page-input"
                             type="text"
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
@@ -358,7 +386,7 @@ const HanaPage: React.FC = () => {
                             className="flex-1 w-full py-2 px-4 bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-halal-green"
                             disabled={isChatDisabled}
                         />
-                        <button onClick={handleSend} disabled={isChatDisabled || input.trim() === ''} className="w-10 h-10 bg-halal-green text-white rounded-full flex-shrink-0 flex items-center justify-center hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed">
+                        <button onClick={handleSend} aria-label={t('hana.sendLabel')} disabled={isChatDisabled || input.trim() === ''} className="w-10 h-10 bg-halal-green text-white rounded-full flex-shrink-0 flex items-center justify-center hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
                         </button>
                     </div>
