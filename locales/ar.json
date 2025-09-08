@@ -638,7 +638,41 @@
   "monitoringDashboard": {
     "title": "لوحة المراقبة",
     "subtitle": "الإشراف على تحليلات الشهادات وأداء النظام.",
-    "placeholder": "ميزة لوحة المراقبة ستتوفر قريبًا. ترقبوا التحليلات في الوقت الفعلي!"
+    "filters": {
+      "timeRange": "النطاق الزمني",
+      "last30days": "آخر 30 يومًا",
+      "last90days": "آخر 90 يومًا",
+      "allTime": "كل الأوقات"
+    },
+    "kpi": {
+      "totalApplications": "إجمالي الطلبات",
+      "certificatesIssued": "الشهادات الصادرة",
+      "pendingReview": "قيد المراجعة",
+      "avgProcessingTime": "متوسط وقت المعالجة",
+      "days": "أيام"
+    },
+    "charts": {
+      "monthlyTrends": "اتجاهات الطلبات الشهرية",
+      "applicationStatus": "حالة الطلبات الحالية",
+      "submitted": "المقدمة",
+      "completed": "المكتملة"
+    },
+    "status": {
+      "certified": "معتمد",
+      "pendingAudit": "قيد التدقيق",
+      "pendingFatwa": "بانتظار الفتوى",
+      "rejected": "مرفوض"
+    },
+    "activity": {
+      "title": "نشاط الشهادات الأخير",
+      "headers": {
+        "id": "معرف الطلب",
+        "business": "اسم النشاط التجاري",
+        "lph": "هيئة فحص الحلال",
+        "status": "الحالة",
+        "date": "تاريخ التقديم"
+      }
+    }
   },
   "showMore": "عرض المزيد",
   "showLess": "عرض أقل",

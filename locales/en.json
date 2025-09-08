@@ -638,7 +638,41 @@
   "monitoringDashboard": {
     "title": "Monitoring Dashboard",
     "subtitle": "Oversee certification analytics and system performance.",
-    "placeholder": "The monitoring dashboard feature is coming soon. Stay tuned for real-time analytics!"
+    "filters": {
+      "timeRange": "Time Range",
+      "last30days": "Last 30 Days",
+      "last90days": "Last 90 Days",
+      "allTime": "All Time"
+    },
+    "kpi": {
+      "totalApplications": "Total Applications",
+      "certificatesIssued": "Certificates Issued",
+      "pendingReview": "Pending Review",
+      "avgProcessingTime": "Avg. Processing Time",
+      "days": "Days"
+    },
+    "charts": {
+      "monthlyTrends": "Monthly Application Trends",
+      "applicationStatus": "Current Application Status",
+      "submitted": "Submitted",
+      "completed": "Completed"
+    },
+    "status": {
+      "certified": "Certified",
+      "pendingAudit": "Pending Audit",
+      "pendingFatwa": "Pending Fatwa",
+      "rejected": "Rejected"
+    },
+    "activity": {
+      "title": "Recent Certification Activity",
+      "headers": {
+        "id": "Application ID",
+        "business": "Business Name",
+        "lph": "LPH",
+        "status": "Status",
+        "date": "Submitted Date"
+      }
+    }
   },
   "showMore": "Show More",
   "showLess": "Show Less",

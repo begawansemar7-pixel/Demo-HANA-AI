@@ -636,9 +636,43 @@
     "contactHeader": "Kontak Auditor"
   },
   "monitoringDashboard": {
-    "title": "Dasbor Monitoring",
+    "title": "Dasbor Pemantauan",
     "subtitle": "Awasi analitik sertifikasi dan kinerja sistem.",
-    "placeholder": "Fitur dasbor monitoring akan segera hadir. Nantikan analitik waktu nyata!"
+    "filters": {
+      "timeRange": "Rentang Waktu",
+      "last30days": "30 Hari Terakhir",
+      "last90days": "90 Hari Terakhir",
+      "allTime": "Semua Waktu"
+    },
+    "kpi": {
+      "totalApplications": "Total Aplikasi",
+      "certificatesIssued": "Sertifikat Terbit",
+      "pendingReview": "Menunggu Tinjauan",
+      "avgProcessingTime": "Waktu Proses Rata-Rata",
+      "days": "Hari"
+    },
+    "charts": {
+      "monthlyTrends": "Tren Aplikasi Bulanan",
+      "applicationStatus": "Status Aplikasi Saat Ini",
+      "submitted": "Diajukan",
+      "completed": "Selesai"
+    },
+    "status": {
+      "certified": "Tersertifikasi",
+      "pendingAudit": "Menunggu Audit",
+      "pendingFatwa": "Menunggu Fatwa",
+      "rejected": "Ditolak"
+    },
+    "activity": {
+      "title": "Aktivitas Sertifikasi Terbaru",
+      "headers": {
+        "id": "ID Aplikasi",
+        "business": "Nama Usaha",
+        "lph": "LPH",
+        "status": "Status",
+        "date": "Tanggal Diajukan"
+      }
+    }
   },
   "showMore": "Tampilkan Lebih",
   "showLess": "Tampilkan Sedikit",
