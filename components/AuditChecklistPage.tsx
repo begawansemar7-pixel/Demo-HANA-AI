@@ -57,6 +57,10 @@ const AuditChecklistPage: React.FC = () => {
   };
 
   const handleCheckboxChange = (id: string, isChecked: boolean) => {
+    const itemBeforeChange = checklistState.find(item => item.id === id);
+    // Fallback if item is somehow not found
+    const wasChecked = itemBeforeChange ? itemBeforeChange.isChecked : !isChecked;
+
     setChecklistState(prevState =>
       prevState.map(item => (item.id === id ? { ...item, isChecked } : item))
     );
@@ -67,7 +71,10 @@ const AuditChecklistPage: React.FC = () => {
       entityType: 'Checklist Item',
       entityId: itemName,
       details: {
-        status: isChecked ? 'Completed' : 'Reopened'
+        status: {
+          oldValue: wasChecked ? 'Completed' : 'Reopened',
+          newValue: isChecked ? 'Completed' : 'Reopened'
+        }
       }
     }, auditorDetails);
   };

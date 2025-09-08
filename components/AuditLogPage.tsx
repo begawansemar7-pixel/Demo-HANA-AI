@@ -168,13 +168,29 @@ const AuditLogPage: React.FC = () => {
                             {log.details && Object.keys(log.details).length > 0 && (
                                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-2 pt-2 mt-2 border-t dark:border-gray-600">
                                     <strong className="text-gray-600 dark:text-gray-300 col-span-1">Change Details:</strong>
-                                    <div className="col-span-2 space-y-1">
-                                    {Object.entries(log.details).map(([key, value]) => (
-                                        <div key={key} className="flex">
-                                            <span className="font-semibold capitalize mr-2">{key.replace(/([A-Z])/g, ' $1')}:</span>
-                                            <span className="text-gray-800 dark:text-gray-100">{String(value)}</span>
-                                        </div>
-                                    ))}
+                                    <div className="col-span-2 space-y-2">
+                                    {Object.entries(log.details).map(([key, value]) => {
+                                        const isChangeObject = typeof value === 'object' && value !== null && 'newValue' in value && 'oldValue' in value;
+
+                                        return (
+                                            <div key={key} className="flex items-start sm:items-center gap-2">
+                                                <span className="font-semibold capitalize flex-shrink-0">{key.replace(/([A-Z])/g, ' $1')}:</span>
+                                                {isChangeObject && (value as any).oldValue !== (value as any).newValue ? (
+                                                    <div className="flex items-center gap-2 flex-wrap">
+                                                        <del className="text-red-600 dark:text-red-300 bg-red-100/60 dark:bg-red-900/40 px-2 py-0.5 rounded-md decoration-2">
+                                                            {String((value as any).oldValue)}
+                                                        </del>
+                                                        <span className="text-gray-500 dark:text-gray-400 font-bold">&rarr;</span>
+                                                        <strong className="text-green-700 dark:text-green-300 bg-green-100/60 dark:bg-green-900/40 px-2 py-0.5 rounded-md">
+                                                            {String((value as any).newValue)}
+                                                        </strong>
+                                                    </div>
+                                                ) : (
+                                                    <span className="text-gray-800 dark:text-gray-100">{typeof value === 'object' ? JSON.stringify(value) : String(value)}</span>
+                                                )}
+                                            </div>
+                                        );
+                                    })}
                                     </div>
                                 </div>
                             )}
