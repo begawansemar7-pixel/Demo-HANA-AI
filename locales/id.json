@@ -67,6 +67,7 @@
         "halalVerification": "Verifikasi Halal",
         "selfDeclare": "Deklarasi Mandiri Halal",
         "auditChecklist": "Daftar Periksa Audit",
+        "monitoringDashboard": "Dasbor Monitoring",
         "marketplace": "Pasar Halal",
         "map": "Pencarian Peta",
         "regulation": "Regulasi Halal",
@@ -618,6 +619,11 @@
       "documentation": "Tinjauan Dokumentasi"
     },
     "notesPlaceholder": "Tambahkan catatan di sini..."
+  },
+  "monitoringDashboard": {
+    "title": "Dasbor Monitoring",
+    "subtitle": "Awasi analitik sertifikasi dan kinerja sistem.",
+    "placeholder": "Fitur dasbor monitoring akan segera hadir. Nantikan analitik waktu-nyata!"
   },
   "showMore": "Tampilkan Lebih Banyak",
   "showLess": "Tampilkan Lebih Sedikit",

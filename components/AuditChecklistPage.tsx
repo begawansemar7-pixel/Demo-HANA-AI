@@ -75,19 +75,19 @@ const AuditChecklistPage: React.FC = () => {
   return (
     <div className="container mx-auto px-4 py-8 animate-fadein min-h-[calc(100vh-200px)]">
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-halal-green">{t('auditChecklist.title')}</h1>
-        <p className="text-lg text-gray-500 mt-2">{t('auditChecklist.subtitle')}</p>
+        <h1 className="text-4xl font-bold text-halal-green dark:text-accent-gold">{t('auditChecklist.title')}</h1>
+        <p className="text-lg text-gray-500 dark:text-gray-400 mt-2">{t('auditChecklist.subtitle')}</p>
       </div>
 
       <div className="max-w-4xl mx-auto">
         {/* Progress Bar */}
         <div className="mb-8">
             <div className="flex justify-between mb-1">
-                <span className="text-base font-medium text-halal-green">Progress</span>
-                <span className="text-sm font-medium text-halal-green">{Math.round(progress)}%</span>
+                <span className="text-base font-medium text-halal-green dark:text-accent-gold">Progress</span>
+                <span className="text-sm font-medium text-halal-green dark:text-accent-gold">{Math.round(progress)}%</span>
             </div>
-            <div className="w-full bg-gray-200 rounded-full h-2.5">
-                <div className="bg-halal-green h-2.5 rounded-full transition-all duration-500" style={{ width: `${progress}%` }}></div>
+            <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                <div className="bg-halal-green dark:bg-accent-gold h-2.5 rounded-full transition-all duration-500" style={{ width: `${progress}%` }}></div>
             </div>
         </div>
       
@@ -99,7 +99,7 @@ const AuditChecklistPage: React.FC = () => {
             const isExpanded = expandedItemId === itemInfo.id;
 
             return (
-              <div key={itemInfo.id} className="bg-white p-4 sm:p-6 rounded-2xl shadow-md border transition-all duration-300">
+              <div key={itemInfo.id} className="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-2xl shadow-md border dark:border-gray-700 transition-all duration-300">
                 <div 
                     className="flex items-center gap-4 cursor-pointer"
                     onClick={() => toggleExpand(itemInfo.id)}
@@ -112,18 +112,18 @@ const AuditChecklistPage: React.FC = () => {
                         checked={itemState.isChecked}
                         onClick={e => e.stopPropagation()}
                         onChange={e => handleCheckboxChange(itemInfo.id, e.target.checked)}
-                        className="h-6 w-6 rounded border-gray-300 text-halal-green focus:ring-halal-green flex-shrink-0"
+                        className="h-6 w-6 rounded border-gray-300 dark:border-gray-600 text-halal-green focus:ring-halal-green flex-shrink-0 bg-gray-100 dark:bg-gray-900"
                     />
                     <label 
                         htmlFor={`checkbox-${itemInfo.id}`}
                         onClick={e => e.stopPropagation()}
-                        className="text-lg font-bold text-gray-800 flex-1 cursor-pointer"
+                        className="text-lg font-bold text-gray-800 dark:text-gray-100 flex-1 cursor-pointer"
                     >
                         {t(itemInfo.titleKey)}
                     </label>
                     <svg 
                         xmlns="http://www.w3.org/2000/svg" 
-                        className={`h-6 w-6 text-gray-500 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} 
+                        className={`h-6 w-6 text-gray-500 dark:text-gray-400 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} 
                         fill="none" 
                         viewBox="0 0 24 24" 
                         stroke="currentColor"
@@ -141,7 +141,7 @@ const AuditChecklistPage: React.FC = () => {
                             value={itemState.notes}
                             onChange={e => handleNotesChange(itemInfo.id, e.target.value)}
                             placeholder={t('auditChecklist.notesPlaceholder')}
-                            className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-halal-green transition-shadow shadow-sm min-h-[100px]"
+                            className="w-full p-3 border border-gray-200 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-halal-green dark:focus:ring-accent-gold transition-shadow shadow-sm min-h-[100px] bg-white dark:bg-gray-700"
                             onClick={e => e.stopPropagation()} // Prevent closing when clicking textarea
                         />
                     </div>

@@ -39,6 +39,7 @@ import type { PersonaId } from './types';
 import SelfDeclarePage from './components/SelfDeclarePage';
 import AuditChecklistPage from './components/AuditChecklistPage';
 import HalalVerificationPage from './components/HalalVerificationPage';
+import MonitoringDashboardPage from './components/MonitoringDashboardPage';
 
 
 const App: React.FC = () => {
@@ -201,6 +202,7 @@ const App: React.FC = () => {
     'scan-barcode',
     'self-declare',
     'audit-checklist',
+    'monitoring-dashboard',
     'more',
     'regulation',
     'map',
@@ -270,6 +272,8 @@ const App: React.FC = () => {
         return <SelfDeclarePage />;
       case 'audit-checklist':
         return <AuditChecklistPage />;
+      case 'monitoring-dashboard':
+        return <MonitoringDashboardPage />;
       case 'more':
         return <MoreServicesPage onNavigate={navigateTo} />;
       case 'map':

@@ -36,6 +36,9 @@ const VerificationIcon = () => React.createElement('svg', { xmlns: "http://www.w
 const AuditChecklistIcon = () => React.createElement('svg', { xmlns: "http://www.w3.org/2000/svg", className: "h-8 w-8", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor" },
   React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 8h6m-6 4h6m-10-4l2 2 4-4" })
 );
+const DashboardIcon = () => React.createElement('svg', { xmlns: "http://www.w3.org/2000/svg", className: "h-8 w-8", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor" },
+  React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0h6m6 0v-6a2 2 0 00-2-2h-2a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2z" })
+);
 
 
 const ALL_LOGGED_IN: PersonaId[] = ['consumer', 'umkm', 'auditor', 'officer'];
@@ -47,6 +50,7 @@ export const SERVICES: Service[] = [
   { id: 'ingredient-validator', title: 'home.services.items.ingredientValidator', icon: CheckIcon(), personas: ['consumer', 'umkm', 'auditor'] },
   { id: 'halal-verification', title: 'home.services.items.halalVerification', icon: VerificationIcon(), personas: ['consumer'] },
   { id: 'audit-checklist', title: 'home.services.items.auditChecklist', icon: AuditChecklistIcon(), personas: ['auditor'] },
+  { id: 'monitoring-dashboard', title: 'home.services.items.monitoringDashboard', icon: DashboardIcon(), personas: ['officer'] },
   { id: 'self-declare', title: 'home.services.items.selfDeclare', icon: SelfDeclareIcon(), personas: ['umkm'] },
   { id: 'marketplace', title: 'home.services.items.marketplace', icon: MarketIcon(), personas: ['consumer', 'umkm'] },
   { id: 'map', title: 'home.services.items.map', icon: MapIcon(), personas: ['consumer'] },

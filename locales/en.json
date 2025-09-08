@@ -67,6 +67,7 @@
         "halalVerification": "Halal Verification",
         "selfDeclare": "Self Declare Halal",
         "auditChecklist": "Audit Checklist",
+        "monitoringDashboard": "Monitoring Dashboard",
         "marketplace": "Halal Marketplace",
         "map": "Map Search",
         "regulation": "Halal Regulation",
@@ -618,6 +619,11 @@
       "documentation": "Documentation Review"
     },
     "notesPlaceholder": "Add notes here..."
+  },
+  "monitoringDashboard": {
+    "title": "Monitoring Dashboard",
+    "subtitle": "Oversee certification analytics and system performance.",
+    "placeholder": "The monitoring dashboard feature is coming soon. Stay tuned for real-time analytics!"
   },
   "showMore": "Show More",
   "showLess": "Show Less",

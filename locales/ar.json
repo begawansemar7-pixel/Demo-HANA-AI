@@ -67,6 +67,7 @@
         "halalVerification": "التحقق من الحلال",
         "selfDeclare": "إقرار الحلال الذاتي",
         "auditChecklist": "قائمة تدقيق المراجعة",
+        "monitoringDashboard": "لوحة المراقبة",
         "marketplace": "السوق الحلال",
         "map": "بحث الخريطة",
         "regulation": "لوائح الحلال",
@@ -618,6 +619,11 @@
       "documentation": "مراجعة الوثائق"
     },
     "notesPlaceholder": "أضف ملاحظات هنا..."
+  },
+  "monitoringDashboard": {
+    "title": "لوحة المراقبة",
+    "subtitle": "الإشراف على تحليلات الشهادات وأداء النظام.",
+    "placeholder": "ميزة لوحة المراقبة ستتوفر قريبًا. ترقبوا التحليلات في الوقت الفعلي!"
   },
   "showMore": "عرض المزيد",
   "showLess": "عرض أقل",
