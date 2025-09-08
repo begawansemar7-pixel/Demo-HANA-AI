@@ -692,5 +692,94 @@
     "bpjphParagraph2": "Badan ini bertanggung jawab untuk menerbitkan sertifikat halal, mengakreditasi Lembaga Pemeriksa Halal (LPH), serta mengembangkan standar dan sistem yang menjamin integritas produk halal yang beredar di Indonesia dan luar negeri. AI Halal Advisor adalah inisiatif resmi untuk mendigitalkan dan meningkatkan layanan yang disediakan oleh BPJPH.",
     "techTitle": "Teknologi Kami",
     "techParagraph1": "Didukung oleh model AI canggih dari Google, AI Halal Advisor menyediakan fitur cerdas seperti asisten AI HANA, analisis bahan, dan mesin pencari pintar untuk memberikan informasi yang akurat dan relevan dengan cepat dan efisien."
+  },
+  "faqPage": {
+    "title": "Pertanyaan yang Sering Diajukan",
+    "subtitle": "Temukan jawaban untuk pertanyaan umum tentang sertifikasi Halal dan layanan kami.",
+    "searchPlaceholder": "Cari pertanyaan...",
+    "questions": [
+      {
+        "q": "Apa itu Sertifikasi Halal?",
+        "a": "Sertifikasi halal adalah proses formal yang memverifikasi dan menjamin bahwa produk, layanan, dan seluruh proses produksi telah sesuai dengan hukum Syariah Islam. Ini memastikan bahwa produk tersebut 'halal' (diperbolehkan) untuk dikonsumsi dan digunakan oleh umat Muslim. Proses ini diawasi di Indonesia oleh BPJPH."
+      },
+      {
+        "q": "Mengapa Sertifikasi Halal penting?",
+        "a": "Sertifikasi ini penting karena beberapa alasan:\n1. **Kepatuhan Agama:** Memberikan jaminan kepada konsumen Muslim bahwa produk memenuhi persyaratan diet keagamaan mereka.\n2. **Kepercayaan Konsumen:** Logo halal membangun kepercayaan dan keyakinan pada sebuah merek.\n3. **Akses Pasar:** Membuka akses ke pasar halal lokal dan global yang luas.\n4. **Amanat Hukum:** Di Indonesia, sertifikasi untuk banyak kategori produk akan menjadi wajib mulai Oktober 2024."
+      },
+      {
+        "q": "Siapa yang dapat mengajukan Sertifikasi Halal?",
+        "a": "Setiap pelaku usaha, termasuk perorangan, badan usaha, atau badan hukum, yang memproduksi atau memperdagangkan produk di Indonesia dapat mengajukan permohonan. Ini mencakup usaha mikro, kecil, menengah, dan besar."
+      },
+      {
+        "q": "Apa itu program SEHATI?",
+        "a": "SEHATI (Sertifikasi Halal Gratis) adalah program yang didanai pemerintah yang menyediakan sertifikasi halal gratis bagi Usaha Mikro dan Kecil (UMKM) yang memenuhi syarat. Tujuannya adalah untuk meringankan beban keuangan dan mendorong usaha kecil agar mematuhi peraturan halal."
+      },
+      {
+        "q": "Berapa lama masa berlaku Sertifikat Halal?",
+        "a": "Sertifikat Halal yang diterbitkan oleh BPJPH berlaku selama empat tahun sejak tanggal diterbitkan, kecuali jika ada perubahan dalam komposisi atau proses produksi produk."
+      },
+      {
+        "q": "Apa itu SIHALAL?",
+        "a": "SIHALAL adalah sistem informasi online resmi yang dikelola oleh BPJPH. Semua proses sertifikasi halal, mulai dari pendaftaran dan penyerahan dokumen hingga pembayaran dan penerbitan sertifikat, dilakukan melalui platform ini."
+      },
+      {
+        "q": "Apa peran LPH (Lembaga Pemeriksa Halal)?",
+        "a": "LPH (Lembaga Pemeriksa Halal) adalah lembaga terakreditasi yang bertanggung jawab untuk melakukan audit dan pemeriksaan kepatuhan halal suatu produk. Pelaku usaha memilih LPH melalui sistem SIHALAL untuk melakukan audit fasilitas, bahan, dan proses mereka."
+      }
+    ]
+  },
+  "privacyPolicyPage": {
+    "title": "Kebijakan Privasi",
+    "subtitle": "Privasi Anda penting bagi kami. Terakhir diperbarui: 26 Oktober 2024",
+    "content": {
+      "section1Title": "1. Informasi yang Kami Kumpulkan",
+      "section1Paragraph1": "Kami mengumpulkan informasi untuk menyediakan layanan yang lebih baik bagi semua pengguna kami. Jenis informasi yang kami kumpulkan meliputi:",
+      "section1List": [
+        "**Informasi Pribadi:** Saat Anda mendaftar, kami meminta informasi pribadi seperti nama, alamat email, dan nomor telepon Anda.",
+        "**Informasi Usaha:** Untuk layanan terkait bisnis, kami mengumpulkan informasi seperti nama usaha Anda, Nomor Induk Berusaha (NIB), dan detail produk.",
+        "**Data Penggunaan:** Kami secara otomatis mengumpulkan informasi tentang interaksi Anda dengan layanan kami, seperti halaman yang dikunjungi, fitur yang digunakan, dan kueri pencarian.",
+        "**Informasi Perangkat:** Kami dapat mengumpulkan informasi spesifik perangkat (seperti model perangkat keras dan versi sistem operasi Anda)."
+      ],
+      "section2Title": "2. Bagaimana Kami Menggunakan Informasi",
+      "section2Paragraph1": "Kami menggunakan informasi yang kami kumpulkan untuk tujuan berikut:",
+      "section2List": [
+        "Untuk menyediakan, memelihara, dan meningkatkan layanan kami.",
+        "Untuk memproses transaksi dan aplikasi Anda untuk Sertifikasi Halal.",
+        "Untuk berkomunikasi dengan Anda, termasuk mengirimkan notifikasi, pembaruan, dan pesan dukungan.",
+        "Untuk mempersonalisasi pengalaman Anda dan menyediakan konten serta fitur yang sesuai dengan profil dan minat Anda.",
+        "Untuk memastikan keamanan platform kami dan untuk mencegah penipuan."
+      ],
+      "section3Title": "3. Berbagi Informasi",
+      "section3Paragraph1": "Kami tidak membagikan informasi pribadi Anda dengan perusahaan, organisasi, atau individu di luar BPJPH kecuali dalam kasus-kasus berikut:",
+      "section3List": [
+        "**Dengan persetujuan Anda:** Kami akan membagikan informasi pribadi jika kami memiliki persetujuan eksplisit dari Anda.",
+        "**Untuk alasan hukum:** Kami akan membagikan informasi pribadi jika kami yakin dengan itikad baik bahwa akses, penggunaan, penyimpanan, atau pengungkapan informasi tersebut diperlukan secara wajar untuk memenuhi hukum, peraturan, proses hukum, atau permintaan pemerintah yang berlaku."
+      ],
+      "section4Title": "4. Keamanan Data",
+      "section4Paragraph1": "Kami bekerja keras untuk melindungi pengguna kami dari akses tidak sah atau perubahan, pengungkapan, atau perusakan informasi yang kami simpan secara tidak sah. Kami menggunakan enkripsi untuk menjaga kerahasiaan data Anda saat transit."
+    }
+  },
+  "termsOfServicePage": {
+    "title": "Syarat dan Ketentuan Layanan",
+    "subtitle": "Harap baca syarat ini dengan saksama sebelum menggunakan layanan kami. Terakhir diperbarui: 26 Oktober 2024",
+    "content": {
+      "section1Title": "1. Persetujuan terhadap Syarat",
+      "section1Paragraph1": "Dengan menggunakan aplikasi AI Halal Advisor ('Layanan'), Anda setuju untuk terikat oleh Syarat dan Ketentuan Layanan ini. Jika Anda tidak setuju dengan syarat ini, jangan gunakan Layanan.",
+      "section2Title": "2. Penggunaan Layanan",
+      "section2Paragraph1": "Anda setuju untuk menggunakan Layanan hanya untuk tujuan yang sah. Anda bertanggung jawab untuk memastikan bahwa penggunaan Anda atas Layanan mematuhi semua hukum, aturan, dan peraturan yang berlaku. Anda tidak boleh:",
+      "section2List": [
+        "Menyerahkan informasi yang salah, tidak akurat, atau menyesatkan.",
+        "Mencoba mengganggu kerja Layanan yang semestinya.",
+        "Menggunakan Layanan untuk aktivitas penipuan atau ilegal apa pun."
+      ],
+      "section3Title": "3. Akun",
+      "section3Paragraph1": "Saat Anda membuat akun dengan kami, Anda harus memberikan informasi yang akurat, lengkap, dan terkini setiap saat. Anda bertanggung jawab untuk menjaga kata sandi yang Anda gunakan untuk mengakses Layanan dan untuk setiap aktivitas atau tindakan di bawah kata sandi Anda.",
+      "section4Title": "4. Kekayaan Intelektual",
+      "section4Paragraph1": "Layanan dan konten asli, fitur, serta fungsionalitasnya adalah dan akan tetap menjadi milik eksklusif BPJPH dan pemberi lisensinya. Layanan ini dilindungi oleh hak cipta, merek dagang, dan hukum lain di Indonesia.",
+      "section5Title": "5. Penghentian",
+      "section5Paragraph1": "Kami dapat menghentikan atau menangguhkan akun Anda dan membatasi akses ke Layanan dengan segera, tanpa pemberitahuan atau kewajiban sebelumnya, untuk alasan apa pun, termasuk namun tidak terbatas pada jika Anda melanggar Syarat.",
+      "section6Title": "6. Batasan Tanggung Jawab",
+      "section6Paragraph1": "Dalam keadaan apa pun, BPJPH, maupun direktur, karyawan, mitra, agen, pemasok, atau afiliasinya, tidak akan bertanggung jawab atas kerusakan tidak langsung, insidental, khusus, konsekuensial, atau hukuman, termasuk namun tidak terbatas pada, kehilangan keuntungan, data, penggunaan, niat baik, atau kerugian tidak berwujud lainnya, yang diakibatkan oleh akses Anda ke atau penggunaan atau ketidakmampuan untuk mengakses atau menggunakan Layanan."
+    }
   }
 }

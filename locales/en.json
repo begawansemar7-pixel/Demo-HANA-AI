@@ -692,5 +692,94 @@
     "bpjphParagraph2": "The agency is responsible for issuing halal certificates, accrediting Halal Inspection Agencies (LPH), and developing standards and systems that ensure the integrity of halal products circulating in Indonesia and abroad. The AI Halal Advisor is an official initiative to digitize and enhance the services provided by BPJPH.",
     "techTitle": "Our Technology",
     "techParagraph1": "Powered by advanced AI models from Google, the AI Halal Advisor provides intelligent features such as the HANA AI assistant, ingredient analysis, and a smart search engine to deliver accurate and relevant information quickly and efficiently."
+  },
+  "faqPage": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to common questions about Halal certification and our services.",
+    "searchPlaceholder": "Search for a question...",
+    "questions": [
+      {
+        "q": "What is Halal Certification?",
+        "a": "Halal certification is a formal process that verifies and guarantees that products, services, and the entire production process comply with Islamic Sharia law. It ensures that products are 'halal' (permissible) for consumption and use by Muslims. This process is overseen in Indonesia by BPJPH."
+      },
+      {
+        "q": "Why is Halal Certification important?",
+        "a": "It is important for several reasons:\n1. **Religious Compliance:** It provides assurance to Muslim consumers that products meet their religious dietary requirements.\n2. **Consumer Trust:** A halal logo builds trust and confidence in a brand.\n3. **Market Access:** It opens up access to the vast local and global halal market.\n4. **Legal Mandate:** In Indonesia, certification for many product categories will become mandatory starting October 2024."
+      },
+      {
+        "q": "Who can apply for Halal Certification?",
+        "a": "Any business actor, including individuals, business entities, or legal entities, that produces or trades products in Indonesia can apply. This includes micro, small, medium, and large enterprises."
+      },
+      {
+        "q": "What is the SEHATI program?",
+        "a": "SEHATI (Sertifikasi Halal Gratis) is a government-funded program that provides free halal certification for eligible Micro and Small Enterprises (UMKM). It aims to ease the financial burden and encourage smaller businesses to comply with halal regulations."
+      },
+      {
+        "q": "How long is a Halal Certificate valid for?",
+        "a": "A Halal certificate issued by BPJPH is valid for four years from the date of issuance, unless there are changes in the product's composition or production process."
+      },
+      {
+        "q": "What is SIHALAL?",
+        "a": "SIHALAL is the official online information system managed by BPJPH. All halal certification processes, from registration and document submission to payment and certificate issuance, are conducted through this platform."
+      },
+      {
+        "q": "What is the role of an LPH (Halal Inspection Agency)?",
+        "a": "An LPH (Lembaga Pemeriksa Halal) is an accredited institution responsible for conducting the audit and examination of a product's halal compliance. The business owner chooses an LPH through the SIHALAL system to perform the audit of their facilities, ingredients, and processes."
+      }
+    ]
+  },
+  "privacyPolicyPage": {
+    "title": "Privacy Policy",
+    "subtitle": "Your privacy is important to us. Last updated: October 26, 2024",
+    "content": {
+      "section1Title": "1. Information We Collect",
+      "section1Paragraph1": "We collect information to provide better services to all our users. The types of information we collect include:",
+      "section1List": [
+        "**Personal Information:** When you register, we ask for personal information like your name, email address, and telephone number.",
+        "**Business Information:** For business-related services, we collect information such as your business name, Business ID (NIB), and product details.",
+        "**Usage Data:** We automatically collect information about your interaction with our services, such as pages visited, features used, and search queries.",
+        "**Device Information:** We may collect device-specific information (such as your hardware model and operating system version)."
+      ],
+      "section2Title": "2. How We Use Information",
+      "section2Paragraph1": "We use the information we collect for the following purposes:",
+      "section2List": [
+        "To provide, maintain, and improve our services.",
+        "To process your transactions and applications for Halal certification.",
+        "To communicate with you, including sending notifications, updates, and support messages.",
+        "To personalize your experience and provide content and features that match your profile and interests.",
+        "To ensure the security of our platform and to prevent fraud."
+      ],
+      "section3Title": "3. Information Sharing",
+      "section3Paragraph1": "We do not share your personal information with companies, organizations, or individuals outside of BPJPH except in the following cases:",
+      "section3List": [
+        "**With your consent:** We will share personal information when we have your explicit consent.",
+        "**For legal reasons:** We will share personal information if we believe in good faith that access, use, preservation, or disclosure of the information is reasonably necessary to meet any applicable law, regulation, legal process, or enforceable governmental request."
+      ],
+      "section4Title": "4. Data Security",
+      "section4Paragraph1": "We work hard to protect our users from unauthorized access to or unauthorized alteration, disclosure, or destruction of information we hold. We use encryption to keep your data private while in transit."
+    }
+  },
+  "termsOfServicePage": {
+    "title": "Terms of Service",
+    "subtitle": "Please read these terms carefully before using our service. Last updated: October 26, 2024",
+    "content": {
+      "section1Title": "1. Agreement to Terms",
+      "section1Paragraph1": "By using the AI Halal Advisor application ('Service'), you agree to be bound by these Terms of Service. If you do not agree to these terms, do not use the Service.",
+      "section2Title": "2. Use of the Service",
+      "section2Paragraph1": "You agree to use the Service only for lawful purposes. You are responsible for ensuring that your use of the Service complies with all applicable laws, rules, and regulations. You must not:",
+      "section2List": [
+        "Submit false, inaccurate, or misleading information.",
+        "Attempt to interfere with the proper working of the Service.",
+        "Use the Service for any fraudulent or illegal activity."
+      ],
+      "section3Title": "3. Accounts",
+      "section3Paragraph1": "When you create an account with us, you must provide information that is accurate, complete, and current at all times. You are responsible for safeguarding the password that you use to access the Service and for any activities or actions under your password.",
+      "section4Title": "4. Intellectual Property",
+      "section4Paragraph1": "The Service and its original content, features, and functionality are and will remain the exclusive property of BPJPH and its licensors. The Service is protected by copyright, trademark, and other laws of Indonesia.",
+      "section5Title": "5. Termination",
+      "section5Paragraph1": "We may terminate or suspend your account and bar access to the Service immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.",
+      "section6Title": "6. Limitation of Liability",
+      "section6Paragraph1": "In no event shall BPJPH, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service."
+    }
   }
 }

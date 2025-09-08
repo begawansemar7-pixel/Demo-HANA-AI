@@ -199,7 +199,7 @@ const MonitoringDashboardPage: React.FC = () => {
                     <ResponsiveContainer width="100%" height={300}>
                         <PieChart>
                             {/* FIX: The recharts types for this project appear to be outdated, causing a TypeScript error on the 'activeIndex' prop which is valid. Using @ts-ignore to bypass this typing issue and allow the component to function as intended. */}
-                            {/* @ts-ignore */}
+                            // @ts-ignore
                             <Pie
                                 activeIndex={activeIndex}
                                 activeShape={renderActiveShape}

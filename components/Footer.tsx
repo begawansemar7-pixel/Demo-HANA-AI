@@ -25,9 +25,9 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <h4 className="font-bold mb-2 text-gray-900 dark:text-white">{t('footer.links.title')}</h4>
             <ul className="space-y-1 text-sm text-gray-600 dark:text-gray-400">
               <li><button onClick={() => onNavigate('about')} className="hover:text-halal-green dark:hover:text-accent-gold">{t('footer.links.about')}</button></li>
-              <li><a href="#" className="hover:text-halal-green dark:hover:text-accent-gold">{t('footer.links.faq')}</a></li>
-              <li><a href="#" className="hover:text-halal-green dark:hover:text-accent-gold">{t('footer.links.privacy')}</a></li>
-              <li><a href="#" className="hover:text-halal-green dark:hover:text-accent-gold">{t('footer.links.terms')}</a></li>
+              <li><button onClick={() => onNavigate('faq')} className="hover:text-halal-green dark:hover:text-accent-gold">{t('footer.links.faq')}</button></li>
+              <li><button onClick={() => onNavigate('privacy-policy')} className="hover:text-halal-green dark:hover:text-accent-gold">{t('footer.links.privacy')}</button></li>
+              <li><button onClick={() => onNavigate('terms-of-service')} className="hover:text-halal-green dark:hover:text-accent-gold">{t('footer.links.terms')}</button></li>
             </ul>
           </div>
           <div>

@@ -41,6 +41,9 @@ import AuditChecklistPage from './components/AuditChecklistPage';
 import AuditLogPage from './components/AuditLogPage';
 import HalalVerificationPage from './components/HalalVerificationPage';
 import MonitoringDashboardPage from './components/MonitoringDashboardPage';
+import FAQPage from './components/FAQPage';
+import PrivacyPolicyPage from './components/PrivacyPolicyPage';
+import TermsOfServicePage from './components/TermsOfServicePage';
 
 
 const App: React.FC = () => {
@@ -209,6 +212,9 @@ const App: React.FC = () => {
     'regulation',
     'map',
     'about',
+    'faq',
+    'privacy-policy',
+    'terms-of-service',
   ];
 
   const isHomePage = !pagesWithGrayBg.includes(currentPage);
@@ -286,6 +292,12 @@ const App: React.FC = () => {
         return <RegulationPage />;
       case 'about':
         return <AboutPage />;
+      case 'faq':
+        return <FAQPage />;
+      case 'privacy-policy':
+        return <PrivacyPolicyPage />;
+      case 'terms-of-service':
+        return <TermsOfServicePage />;
       default:
         return (
              <>
