@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslations } from '../hooks/useTranslations';
+import { addAuditLog } from '../services/logService';
+import { useAuth } from '../hooks/useAuth';
 
 // Define the structure for a checklist item's state
 interface ChecklistItemState {
@@ -20,6 +22,7 @@ const LOCAL_STORAGE_KEY = 'auditChecklistState';
 
 const AuditChecklistPage: React.FC = () => {
   const { t } = useTranslations();
+  const { user } = useAuth();
   
   // Initialize state from localStorage or default
   const [checklistState, setChecklistState] = useState<ChecklistItemState[]>(() => {
@@ -51,6 +54,10 @@ const AuditChecklistPage: React.FC = () => {
     setChecklistState(prevState =>
       prevState.map(item => (item.id === id ? { ...item, isChecked } : item))
     );
+    // Log the action
+    const itemName = t(CHECKLIST_ITEMS.find(i => i.id === id)!.titleKey);
+    const action = `${isChecked ? 'Completed' : 'Reopened'} check: "${itemName}"`;
+    addAuditLog(action, user?.name || 'Auditor');
   };
 
   const handleNotesChange = (id: string, notes: string) => {
@@ -64,10 +71,11 @@ const AuditChecklistPage: React.FC = () => {
   };
 
   const handleSave = () => {
-      // The state is already saved on change due to useEffect. 
-      // This button just provides user feedback.
       setShowSaveSuccess(true);
       setTimeout(() => setShowSaveSuccess(false), 2000);
+      
+      // Log the save action
+      addAuditLog('Saved checklist progress and notes.', user?.name || 'Auditor');
   };
 
   const progress = (checklistState.filter(item => item.isChecked).length / checklistState.length) * 100;

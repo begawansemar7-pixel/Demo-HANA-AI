@@ -67,6 +67,7 @@
         "halalVerification": "Verifikasi Halal",
         "selfDeclare": "Deklarasi Mandiri Halal",
         "auditChecklist": "Daftar Periksa Audit",
+        "auditLog": "Log Audit",
         "monitoringDashboard": "Dasbor Monitoring",
         "marketplace": "Pasar Halal",
         "map": "Pencarian Peta",
@@ -281,18 +282,18 @@
       "pharmaceuticals": "Farmasi"
     },
     "products": {
-      "1": { "name": "Mie Instan Kari Spesial", "producer": "Sedaap Food Inc.", "price": "Rp 3.500", "category": "Food", "description": "Mi instan lezat dan mudah disiapkan dengan rasa kari spesial yang kaya dan aromatik. Bersertifikat halal, cocok untuk santapan cepat dan memuaskan kapan saja.", "reviews": { "1": {"author": "Aisha B.", "rating": "5", "comment": "Mi kari instan terbaik! Sangat beraroma."} } },
-      "2": { "name": "Serum Pencerah Wajah", "producer": "Wardah Beauty", "price": "Rp 75.000", "category": "Cosmetics", "description": "Serum ringan bersertifikat halal yang membantu mencerahkan warna kulit dan mengurangi bintik hitam. Diformulasikan dengan ekstrak alami untuk kulit bercahaya.", "reviews": { "1": {"author": "Fatima S.", "rating": "5", "comment": "Kulitku tidak pernah secerah ini. Sangat direkomendasikan!"}, "2": {"author": "Zainab K.", "rating": "4", "comment": "Serum yang bagus, tapi butuh waktu untuk melihat hasilnya."} } },
-      "3": { "name": "Jilbab Sutra", "producer": "Elzatta Hijab", "price": "Rp 150.000", "category": "Fashion", "description": "Jilbab sutra yang elegan dan mewah dengan jatuhan yang indah. Terbuat dari kain berkualitas tinggi yang sejuk, cocok untuk acara khusus atau pakaian sehari-hari.", "reviews": { "1": {"author": "Layla R.", "rating": "5", "comment": "Sangat lembut dan warnanya cantik."} } },
-      "4": { "name": "Keju Gouda", "producer": "Mazaraat", "price": "Rp 55.000", "category": "Food", "description": "Keju Gouda artisanal yang dibuat dengan rennet mikroba bersertifikat halal. Memiliki rasa kacang yang lembut dan tekstur yang halus, cocok untuk sandwich dan hidangan pembuka.", "reviews": {} },
-      "5": { "name": "Suplemen Vitamin C", "producer": "HalalPharm", "price": "Rp 95.000", "category": "Pharmaceuticals", "description": "Tingkatkan sistem kekebalan tubuh Anda dengan suplemen Vitamin C bersertifikat halal kami. Dibuat dengan bahan-bahan berkualitas tinggi dan bebas dari bahan tambahan non-halal.", "reviews": { "1": {"author": "Omar H.", "rating": "5", "comment": "Andalan di rumah kami, terutama saat musim flu."} } },
-      "6": { "name": "Lipstik Matte", "producer": "Wardah Beauty", "price": "Rp 48.000", "category": "Cosmetics", "description": "Lipstik matte tahan lama dengan formula yang nyaman dan tidak membuat kering. Tersedia dalam berbagai warna cantik, semuanya ramah wudu dan halal.", "reviews": { "1": {"author": "Maryam A.", "rating": "4", "comment": "Warnanya indah, tapi bisa sedikit kering setelah beberapa jam."} } },
-      "7": { "name": "Ayam Beku Halal", "producer": "So Good Foods", "price": "Rp 40.000", "category": "Food", "description": "Ayam beku kualitas premium, diproses dan dikemas sesuai dengan standar halal yang ketat. Empuk, juicy, dan cocok untuk semua resep favorit Anda.", "reviews": {} },
-      "8": { "name": "Tunik Motif", "producer": "Elzatta Hijab", "price": "Rp 250.000", "category": "Fashion", "description": "Tunik motif yang gaya dan sopan terbuat dari kain yang nyaman dan ringan. Menampilkan desain unik yang cocok untuk suasana santai maupun formal.", "reviews": { "1": {"author": "Yasmin F.", "rating": "5", "comment": "Saya mendapat banyak pujian saat mengenakan ini!"} } },
-      "9": { "name": "Sirup Batuk Herbal", "producer": "HalalPharm", "price": "Rp 25.000", "category": "Pharmaceuticals", "description": "Sirup batuk herbal yang menenangkan terbuat dari bahan-bahan alami dan halal. Efektif meredakan batuk dan sakit tenggorokan tanpa alkohol atau zat terlarang lainnya.", "reviews": {} },
-      "10": { "name": "Susu UHT", "producer": "Cimory", "price": "Rp 5.500", "category": "Food", "description": "Susu UHT segar dan bergizi, bersumber dari sapi yang dirawat dengan baik dan diproses di fasilitas bersertifikat halal. Pilihan sehat untuk seluruh keluarga.", "reviews": { "1": {"author": "Ibrahim M.", "rating": "5", "comment": "Anak-anak saya suka susu ini."} } },
-      "11": { "name": "Sabun Cuci Muka", "producer": "Wardah Beauty", "price": "Rp 28.000", "category": "Cosmetics", "description": "Pembersih wajah yang lembut namun efektif yang membersihkan kulit tanpa menghilangkan kelembapan alaminya. Bersertifikat halal dan cocok untuk semua jenis kulit.", "reviews": {} },
-      "12": { "name": "Rendang Sapi Siap Saji", "producer": "Sedaap Food Inc.", "price": "Rp 35.000", "category": "Food", "description": "Rendang Sapi otentik Indonesia, siap santap dalam hitungan menit. Dibuat dengan daging sapi bersertifikat halal dan paduan bumbu tradisional yang kaya untuk hidangan lezat dan praktis.", "reviews": { "1": {"author": "David L.", "rating": "5", "comment": "Rasa yang luar biasa otentik untuk makanan siap saji. Menakjubkan!"} } }
+      "1": { "name": "Mie Instan Kari Spesial", "producer": "Sedaap Food Inc.", "price": "Rp 3.500", "category": "Food", "description": "Mi instan lezat dan mudah disiapkan dengan rasa kari spesial yang kaya dan aromatik. Bersertifikat halal, cocok untuk santapan cepat dan memuaskan kapan saja.", "reviews": { "1": {"author": "Aisha B.", "rating": "5", "comment": "Mi kari instan terbaik! Sangat beraroma."} }, "halalStatus": "Certified", "halalExpiry": "2025-10-22" },
+      "2": { "name": "Serum Pencerah Wajah", "producer": "Wardah Beauty", "price": "Rp 75.000", "category": "Cosmetics", "description": "Serum ringan bersertifikat halal yang membantu mencerahkan warna kulit dan mengurangi bintik hitam. Diformulasikan dengan ekstrak alami untuk kulit bercahaya.", "reviews": { "1": {"author": "Fatima S.", "rating": "5", "comment": "Kulitku tidak pernah secerah ini. Sangat direkomendasikan!"}, "2": {"author": "Zainab K.", "rating": "4", "comment": "Serum yang bagus, tapi butuh waktu untuk melihat hasilnya."} }, "halalStatus": "Certified", "halalExpiry": "2026-01-15" },
+      "3": { "name": "Jilbab Sutra", "producer": "Elzatta Hijab", "price": "Rp 150.000", "category": "Fashion", "description": "Jilbab sutra yang elegan dan mewah dengan jatuhan yang indah. Terbuat dari kain berkualitas tinggi yang sejuk, cocok untuk acara khusus atau pakaian sehari-hari.", "reviews": { "1": {"author": "Layla R.", "rating": "5", "comment": "Sangat lembut dan warnanya cantik."} }, "halalStatus": "Certified", "halalExpiry": "2024-12-31" },
+      "4": { "name": "Keju Gouda", "producer": "Mazaraat", "price": "Rp 55.000", "category": "Food", "description": "Keju Gouda artisanal yang dibuat dengan rennet mikroba bersertifikat halal. Memiliki rasa kacang yang lembut dan tekstur yang halus, cocok untuk sandwich dan hidangan pembuka.", "reviews": {}, "halalStatus": "Certified", "halalExpiry": "2023-01-01" },
+      "5": { "name": "Suplemen Vitamin C", "producer": "HalalPharm", "price": "Rp 95.000", "category": "Pharmaceuticals", "description": "Tingkatkan sistem kekebalan tubuh Anda dengan suplemen Vitamin C bersertifikat halal kami. Dibuat dengan bahan-bahan berkualitas tinggi dan bebas dari bahan tambahan non-halal.", "reviews": { "1": {"author": "Omar H.", "rating": "5", "comment": "Andalan di rumah kami, terutama saat musim flu."} }, "halalStatus": "Not Certified", "halalExpiry": "N/A" },
+      "6": { "name": "Lipstik Matte", "producer": "Wardah Beauty", "price": "Rp 48.000", "category": "Cosmetics", "description": "Lipstik matte tahan lama dengan formula yang nyaman dan tidak membuat kering. Tersedia dalam berbagai warna cantik, semuanya ramah wudu dan halal.", "reviews": { "1": {"author": "Maryam A.", "rating": "4", "comment": "Warnanya indah, tapi bisa sedikit kering setelah beberapa jam."} }, "halalStatus": "Certified", "halalExpiry": "2026-05-30" },
+      "7": { "name": "Ayam Beku Halal", "producer": "So Good Foods", "price": "Rp 40.000", "category": "Food", "description": "Ayam beku kualitas premium, diproses dan dikemas sesuai dengan standar halal yang ketat. Empuk, juicy, dan cocok untuk semua resep favorit Anda.", "reviews": {}, "halalStatus": "Certified", "halalExpiry": "2024-11-05" },
+      "8": { "name": "Tunik Motif", "producer": "Elzatta Hijab", "price": "Rp 250.000", "category": "Fashion", "description": "Tunik motif yang gaya dan sopan terbuat dari kain yang nyaman dan ringan. Menampilkan desain unik yang cocok untuk suasana santai maupun formal.", "reviews": { "1": {"author": "Yasmin F.", "rating": "5", "comment": "Saya mendapat banyak pujian saat mengenakan ini!"} }, "halalStatus": "Certified", "halalExpiry": "2025-08-10" },
+      "9": { "name": "Sirup Batuk Herbal", "producer": "HalalPharm", "price": "Rp 25.000", "category": "Pharmaceuticals", "description": "Sirup batuk herbal yang menenangkan terbuat dari bahan-bahan alami dan halal. Efektif meredakan batuk dan sakit tenggorokan tanpa alkohol atau zat terlarang lainnya.", "reviews": {}, "halalStatus": "Certified", "halalExpiry": "Invalid Date" },
+      "10": { "name": "Susu UHT", "producer": "Cimory", "price": "Rp 5.500", "category": "Food", "description": "Susu UHT segar dan bergizi, bersumber dari sapi yang dirawat dengan baik dan diproses di fasilitas bersertifikat halal. Pilihan sehat untuk seluruh keluarga.", "reviews": { "1": {"author": "Ibrahim M.", "rating": "5", "comment": "Anak-anak saya suka susu ini."} }, "halalStatus": "Certified", "halalExpiry": "2025-02-20" },
+      "11": { "name": "Sabun Cuci Muka", "producer": "Wardah Beauty", "price": "Rp 28.000", "category": "Cosmetics", "description": "Pembersih wajah yang lembut namun efektif yang membersihkan kulit tanpa menghilangkan kelembapan alaminya. Bersertifikat halal dan cocok untuk semua jenis kulit.", "reviews": {}, "halalStatus": "Not Certified", "halalExpiry": "N/A" },
+      "12": { "name": "Rendang Sapi Siap Saji", "producer": "Sedaap Food Inc.", "price": "Rp 35.000", "category": "Food", "description": "Rendang Sapi otentik Indonesia, siap santap dalam hitungan menit. Dibuat dengan daging sapi bersertifikat halal dan paduan bumbu tradisional yang kaya untuk hidangan lezat dan praktis.", "reviews": { "1": {"author": "David L.", "rating": "5", "comment": "Rasa yang luar biasa otentik untuk makanan siap saji. Menakjubkan!"} }, "halalStatus": "Certified", "halalExpiry": "2027-01-01" }
     },
     "addToBasket": "Tambah ke Keranjang",
     "priceRange": "Rentang Harga",
@@ -377,7 +378,7 @@
     "businessNamePlaceholder": "cth: Halal Foods Nusantara",
     "businessNameRequired": "Nama usaha wajib diisi.",
     "businessIdLabel": "NIB (Nomor Induk Berusaha)",
-    "businessIdPlaceholder": "Masukkan NIB Anda",
+    "businessIdPlaceholder": "Masukkan 13 digit NIB Anda",
     "businessIdRequired": "NIB wajib diisi.",
     "auditorIdLabel": "ID Auditor",
     "auditorIdPlaceholder": "Masukkan ID auditor Anda",
@@ -619,6 +620,17 @@
       "documentation": "Tinjauan Dokumentasi"
     },
     "notesPlaceholder": "Tambahkan catatan di sini..."
+  },
+  "auditLog": {
+    "title": "Log Audit",
+    "subtitle": "Tinjauan semua tindakan signifikan yang dilakukan oleh auditor.",
+    "emptyStateTitle": "Tidak Ada Log Ditemukan",
+    "emptyStateSubtitle": "Tindakan dari Daftar Periksa Audit akan dicatat di sini.",
+    "clearLogButton": "Hapus Log",
+    "confirmClear": "Apakah Anda yakin ingin menghapus semua log audit secara permanen?",
+    "actionHeader": "Tindakan",
+    "auditorHeader": "Auditor",
+    "timestampHeader": "Waktu"
   },
   "monitoringDashboard": {
     "title": "Dasbor Monitoring",

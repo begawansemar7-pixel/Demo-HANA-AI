@@ -67,6 +67,7 @@
         "halalVerification": "التحقق من الحلال",
         "selfDeclare": "إقرار الحلال الذاتي",
         "auditChecklist": "قائمة تدقيق المراجعة",
+        "auditLog": "سجل التدقيق",
         "monitoringDashboard": "لوحة المراقبة",
         "marketplace": "السوق الحلال",
         "map": "بحث الخريطة",
@@ -281,18 +282,18 @@
         "pharmaceuticals": "الأدوية"
     },
     "products": {
-      "1": { "name": "نودلز فورية بالكاري الخاص", "producer": "Sedaap Food Inc.", "price": "2 ر.س", "category": "Food", "description": "نودلز فورية لذيذة وسهلة التحضير بنكهة الكاري الخاصة الغنية والعطرية. معتمدة حلال، مثالية لوجبة سريعة ومرضية في أي وقت.", "reviews": { "1": {"author": "عائشة ب.", "rating": "5", "comment": "أفضل نودلز كاري فورية! لذيذة جدا."} } },
-      "2": { "name": "سيروم تفتيح البشرة", "producer": "Wardah Beauty", "price": "50 ر.س", "category": "Cosmetics", "description": "سيروم خفيف معتمد حلال يساعد على تفتيح لون البشرة وتقليل البقع الداكنة. مركب من مستخلصات طبيعية لبشرة مشرقة.", "reviews": { "1": {"author": "فاطمة س.", "rating": "5", "comment": "بشرتي لم تكن أفضل من هذا. أنصح به بشدة!"}, "2": {"author": "زينب ك.", "rating": "4", "comment": "سيروم جيد، لكنه يستغرق وقتاً لرؤية النتائج."} } },
-      "3": { "name": "حجاب حريري", "producer": "Elzatta Hijab", "price": "95 ر.س", "category": "Fashion", "description": "حجاب حريري أنيق وفاخر ينسدل بشكل جميل. مصنوع من قماش عالي الجودة يسمح بمرور الهواء، مثالي للمناسبات الخاصة أو الارتداء اليومي.", "reviews": { "1": {"author": "ليلى ر.", "rating": "5", "comment": "ناعم جداً ولونه رائع."} } },
-      "4": { "name": "جبنة جودا", "producer": "Mazaraat", "price": "33 ر.س", "category": "Food", "description": "جبنة جودا حرفية مصنوعة من منفحة ميكروبية معتمدة حلال. لها نكهة جوز خفيفة وقوام ناعم، رائعة للسندويشات وأطباق التقديم.", "reviews": {} },
-      "5": { "name": "مكمل فيتامين سي", "producer": "HalalPharm", "price": "57 ر.س", "category": "Pharmaceuticals", "description": "عزز جهازك المناعي بمكملات فيتامين سي المعتمدة حلال. مصنوعة من مكونات عالية الجودة وخالية من الإضافات غير الحلال.", "reviews": { "1": {"author": "عمر ح.", "rating": "5", "comment": "عنصر أساسي في منزلنا، خاصة خلال موسم الأنفلونزا."} } },
-      "6": { "name": "أحمر شفاه مطفي", "producer": "Wardah Beauty", "price": "36 ر.س", "category": "Cosmetics", "description": "أحمر شفاه مطفي يدوم طويلاً بتركيبة مريحة وغير مجففة. متوفر بمجموعة متنوعة من الألوان الجميلة، كلها مناسبة للوضوء وحلال.", "reviews": { "1": {"author": "مريم أ.", "rating": "4", "comment": "لون جميل، لكنه قد يكون مجففاً قليلاً بعد بضع ساعات."} } },
-      "7": { "name": "دجاج حلال مجمد", "producer": "So Good Foods", "price": "38 ر.س", "category": "Food", "description": "دجاج مجمد عالي الجودة، معالج ومعبأ وفقًا لمعايير الحلال الصارمة. طري، وغني بالعصارة، ومثالي لجميع وصفاتك المفضلة.", "reviews": {} },
-      "8": { "name": "تونيك مطبوع", "producer": "Elzatta Hijab", "price": "170 ر.س", "category": "Fashion", "description": "تونيك مطبوع أنيق ومحتشم مصنوع من قماش مريح وخفيف الوزن. يتميز بتصميم فريد مثالي للإعدادات غير الرسمية والرسمية.", "reviews": { "1": {"author": "ياسمين ف.", "rating": "5", "comment": "تلقيت الكثير من الإطراءات عندما ارتديت هذا!"} } },
-      "9": { "name": "شراب سعال عشبي", "producer": "HalalPharm", "price": "29 ر.س", "category": "Pharmaceuticals", "description": "شراب سعال عشبي مهدئ مصنوع من مكونات طبيعية وحلال. يخفف السعال والتهاب الحلق بفعالية بدون كحول أو مواد محظورة أخرى.", "reviews": {} },
-      "10": { "name": "حليب UHT", "producer": "Cimory", "price": "6 ر.س", "category": "Food", "description": "حليب UHT طازج ومغذي، مصدره أبقار تحظى برعاية جيدة ومعالج في منشأة معتمدة حلال. خيار صحي لجميع أفراد الأسرة.", "reviews": { "1": {"author": "إبراهيم م.", "rating": "5", "comment": "أطفالي يحبون هذا الحليب."} } },
-      "11": { "name": "غسول وجه منظف", "producer": "Wardah Beauty", "price": "26 ر.س", "category": "Cosmetics", "description": "غسول وجه لطيف وفعال ينظف البشرة دون تجريدها من رطوبتها الطبيعية. معتمد حلال ومناسب لجميع أنواع البشرة.", "reviews": {} },
-      "12": { "name": "وجبة رندانج لحم جاهزة", "producer": "Sedaap Food Inc.", "price": "21 ر.س", "category": "Food", "description": "رندانج لحم إندونيسي أصيل، جاهز للأكل في دقائق. مصنوع من لحم بقري معتمد حلال ومزيج غني من التوابل التقليدية لوجبة لذيذة ومريحة.", "reviews": { "1": {"author": "ديفيد ل.", "rating": "5", "comment": "نكهة أصلية بشكل لا يصدق لوجبة جاهزة. مذهل!"} } }
+      "1": { "name": "نودلز فورية بالكاري الخاص", "producer": "Sedaap Food Inc.", "price": "2 ر.س", "category": "Food", "description": "نودلز فورية لذيذة وسهلة التحضير بنكهة الكاري الخاصة الغنية والعطرية. معتمدة حلال، مثالية لوجبة سريعة ومرضية في أي وقت.", "reviews": { "1": {"author": "عائشة ب.", "rating": "5", "comment": "أفضل نودلز كاري فورية! لذيذة جدا."} }, "halalStatus": "Certified", "halalExpiry": "2025-10-22" },
+      "2": { "name": "سيروم تفتيح البشرة", "producer": "Wardah Beauty", "price": "50 ر.س", "category": "Cosmetics", "description": "سيروم خفيف معتمد حلال يساعد على تفتيح لون البشرة وتقليل البقع الداكنة. مركب من مستخلصات طبيعية لبشرة مشرقة.", "reviews": { "1": {"author": "فاطمة س.", "rating": "5", "comment": "بشرتي لم تكن أفضل من هذا. أنصح به بشدة!"}, "2": {"author": "زينب ك.", "rating": "4", "comment": "سيروم جيد، لكنه يستغرق وقتاً لرؤية النتائج."} }, "halalStatus": "Certified", "halalExpiry": "2026-01-15" },
+      "3": { "name": "حجاب حريري", "producer": "Elzatta Hijab", "price": "95 ر.س", "category": "Fashion", "description": "حجاب حريري أنيق وفاخر ينسدل بشكل جميل. مصنوع من قماش عالي الجودة يسمح بمرور الهواء، مثالي للمناسبات الخاصة أو الارتداء اليومي.", "reviews": { "1": {"author": "ليلى ر.", "rating": "5", "comment": "ناعم جداً ولونه رائع."} }, "halalStatus": "Certified", "halalExpiry": "2024-12-31" },
+      "4": { "name": "جبنة جودا", "producer": "Mazaraat", "price": "33 ر.س", "category": "Food", "description": "جبنة جودا حرفية مصنوعة من منفحة ميكروبية معتمدة حلال. لها نكهة جوز خفيفة وقوام ناعم، رائعة للسندويشات وأطباق التقديم.", "reviews": {}, "halalStatus": "Certified", "halalExpiry": "2023-01-01" },
+      "5": { "name": "مكمل فيتامين سي", "producer": "HalalPharm", "price": "57 ر.س", "category": "Pharmaceuticals", "description": "عزز جهازك المناعي بمكملات فيتامين سي المعتمدة حلال. مصنوعة من مكونات عالية الجودة وخالية من الإضافات غير الحلال.", "reviews": { "1": {"author": "عمر ح.", "rating": "5", "comment": "عنصر أساسي في منزلنا، خاصة خلال موسم الأنفلونزا."} }, "halalStatus": "Not Certified", "halalExpiry": "N/A" },
+      "6": { "name": "أحمر شفاه مطفي", "producer": "Wardah Beauty", "price": "36 ر.س", "category": "Cosmetics", "description": "أحمر شفاه مطفي يدوم طويلاً بتركيبة مريحة وغير مجففة. متوفر بمجموعة متنوعة من الألوان الجميلة، كلها مناسبة للوضوء وحلال.", "reviews": { "1": {"author": "مريم أ.", "rating": "4", "comment": "لون جميل، لكنه قد يكون مجففاً قليلاً بعد بضع ساعات."} }, "halalStatus": "Certified", "halalExpiry": "2026-05-30" },
+      "7": { "name": "دجاج حلال مجمد", "producer": "So Good Foods", "price": "38 ر.س", "category": "Food", "description": "دجاج مجمد عالي الجودة، معالج ومعبأ وفقًا لمعايير الحلال الصارمة. طري، وغني بالعصارة، ومثالي لجميع وصفاتك المفضلة.", "reviews": {}, "halalStatus": "Certified", "halalExpiry": "2024-11-05" },
+      "8": { "name": "تونيك مطبوع", "producer": "Elzatta Hijab", "price": "170 ر.س", "category": "Fashion", "description": "تونيك مطبوع أنيق ومحتشم مصنوع من قماش مريح وخفيف الوزن. يتميز بتصميم فريد مثالي للإعدادات غير الرسمية والرسمية.", "reviews": { "1": {"author": "ياسمين ف.", "rating": "5", "comment": "تلقيت الكثير من الإطراءات عندما ارتديت هذا!"} }, "halalStatus": "Certified", "halalExpiry": "2025-08-10" },
+      "9": { "name": "شراب سعال عشبي", "producer": "HalalPharm", "price": "29 ر.س", "category": "Pharmaceuticals", "description": "شراب سعال عشبي مهدئ مصنوع من مكونات طبيعية وحلال. يخفف السعال والتهاب الحلق بفعالية بدون كحول أو مواد محظورة أخرى.", "reviews": {}, "halalStatus": "Certified", "halalExpiry": "Invalid Date" },
+      "10": { "name": "حليب UHT", "producer": "Cimory", "price": "6 ر.س", "category": "Food", "description": "حليب UHT طازج ومغذي، مصدره أبقار تحظى برعاية جيدة ومعالج في منشأة معتمدة حلال. خيار صحي لجميع أفراد الأسرة.", "reviews": { "1": {"author": "إبراهيم م.", "rating": "5", "comment": "أطفالي يحبون هذا الحليب."} }, "halalStatus": "Certified", "halalExpiry": "2025-02-20" },
+      "11": { "name": "غسول وجه منظف", "producer": "Wardah Beauty", "price": "26 ر.س", "category": "Cosmetics", "description": "غسول وجه لطيف وفعال ينظف البشرة دون تجريدها من رطوبتها الطبيعية. معتمد حلال ومناسب لجميع أنواع البشرة.", "reviews": {}, "halalStatus": "Not Certified", "halalExpiry": "N/A" },
+      "12": { "name": "وجبة رندانج لحم جاهزة", "producer": "Sedaap Food Inc.", "price": "21 ر.س", "category": "Food", "description": "رندانج لحم إندونيسي أصيل، جاهز للأكل في دقائق. مصنوع من لحم بقري معتمد حلال ومزيج غني من التوابل التقليدية لوجبة لذيذة ومريحة.", "reviews": { "1": {"author": "ديفيد ل.", "rating": "5", "comment": "نكهة أصلية بشكل لا يصدق لوجبة جاهزة. مذهل!"} }, "halalStatus": "Certified", "halalExpiry": "2027-01-01" }
     },
     "addToBasket": "أضف إلى السلة",
     "priceRange": "نطاق السعر",
@@ -619,6 +620,17 @@
       "documentation": "مراجعة الوثائق"
     },
     "notesPlaceholder": "أضف ملاحظات هنا..."
+  },
+  "auditLog": {
+    "title": "سجل التدقيق",
+    "subtitle": "مراجعة لجميع الإجراءات الهامة التي يقوم بها المدققون.",
+    "emptyStateTitle": "لم يتم العثور على سجلات",
+    "emptyStateSubtitle": "سيتم تسجيل الإجراءات من قائمة تدقيق المراجعة هنا.",
+    "clearLogButton": "مسح السجل",
+    "confirmClear": "هل أنت متأكد من أنك تريد حذف جميع سجلات التدقيق بشكل دائم؟",
+    "actionHeader": "الإجراء",
+    "auditorHeader": "المدقق",
+    "timestampHeader": "الوقت"
   },
   "monitoringDashboard": {
     "title": "لوحة المراقبة",

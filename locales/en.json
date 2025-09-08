@@ -67,6 +67,7 @@
         "halalVerification": "Halal Verification",
         "selfDeclare": "Self Declare Halal",
         "auditChecklist": "Audit Checklist",
+        "auditLog": "Audit Log",
         "monitoringDashboard": "Monitoring Dashboard",
         "marketplace": "Halal Marketplace",
         "map": "Map Search",
@@ -281,18 +282,18 @@
         "pharmaceuticals": "Pharmaceuticals"
     },
     "products": {
-      "1": { "name": "Instant Noodles Special Curry", "producer": "Sedaap Food Inc.", "price": "$0.50", "category": "Food", "description": "Delicious and easy-to-prepare instant noodles with a rich and aromatic special curry flavor. Certified halal, perfect for a quick and satisfying meal anytime.", "reviews": { "1": {"author": "Aisha B.", "rating": "5", "comment": "The best instant curry noodles out there! So flavorful."} } },
-      "2": { "name": "Brightening Serum", "producer": "Wardah Beauty", "price": "$12.99", "category": "Cosmetics", "description": "A lightweight, halal-certified serum that helps to brighten the skin tone and reduce dark spots. Formulated with natural extracts for a radiant complexion.", "reviews": { "1": {"author": "Fatima S.", "rating": "5", "comment": "My skin has never looked better. Highly recommend!"}, "2": {"author": "Zainab K.", "rating": "4", "comment": "Good serum, but takes time to see results."} } },
-      "3": { "name": "Silk Hijab", "producer": "Elzatta Hijab", "price": "$25.00", "category": "Fashion", "description": "An elegant and luxurious silk hijab that drapes beautifully. Made from high-quality, breathable fabric, perfect for special occasions or everyday wear.", "reviews": { "1": {"author": "Layla R.", "rating": "5", "comment": "So soft and the color is gorgeous."} } },
-      "4": { "name": "Gouda Cheese", "producer": "Mazaraat", "price": "$8.75", "category": "Food", "description": "Artisanal Gouda cheese made with halal-certified microbial rennet. It has a mild, nutty flavor and a smooth texture, great for sandwiches and platters.", "reviews": {} },
-      "5": { "name": "Vitamin C Supplement", "producer": "HalalPharm", "price": "$15.20", "category": "Pharmaceuticals", "description": "Boost your immune system with our halal-certified Vitamin C supplements. Made with high-quality ingredients and free from non-halal additives.", "reviews": { "1": {"author": "Omar H.", "rating": "5", "comment": "A staple in our household, especially during flu season."} } },
-      "6": { "name": "Matte Lipstick", "producer": "Wardah Beauty", "price": "$9.50", "category": "Cosmetics", "description": "A long-lasting matte lipstick with a comfortable, non-drying formula. Available in a variety of beautiful shades, all wudu-friendly and halal.", "reviews": { "1": {"author": "Maryam A.", "rating": "4", "comment": "Beautiful color, but can be a bit drying after a few hours."} } },
-      "7": { "name": "Frozen Halal Chicken", "producer": "So Good Foods", "price": "$10.00", "category": "Food", "description": "Premium quality frozen chicken, processed and packed according to strict halal standards. Tender, juicy, and perfect for all your favorite recipes.", "reviews": {} },
-      "8": { "name": "Printed Tunic", "producer": "Elzatta Hijab", "price": "$45.00", "category": "Fashion", "description": "A stylish and modest printed tunic made from comfortable, lightweight fabric. Features a unique design that is perfect for both casual and formal settings.", "reviews": { "1": {"author": "Yasmin F.", "rating": "5", "comment": "I received so many compliments when I wore this!"} } },
-      "9": { "name": "Herbal Cough Syrup", "producer": "HalalPharm", "price": "$7.80", "category": "Pharmaceuticals", "description": "A soothing herbal cough syrup made from natural, halal ingredients. Effectively relieves coughs and sore throats without alcohol or other prohibited substances.", "reviews": {} },
-      "10": { "name": "UHT Milk", "producer": "Cimory", "price": "$1.50", "category": "Food", "description": "Fresh and nutritious UHT milk, sourced from well-cared-for cows and processed in a halal-certified facility. A healthy choice for the whole family.", "reviews": { "1": {"author": "Ibrahim M.", "rating": "5", "comment": "My kids love this milk."} } },
-      "11": { "name": "Cleansing Face Wash", "producer": "Wardah Beauty", "price": "$7.00", "category": "Cosmetics", "description": "A gentle yet effective face wash that cleanses the skin without stripping its natural moisture. Halal-certified and suitable for all skin types.", "reviews": {} },
-      "12": { "name": "Beef Rendang Ready Meal", "producer": "Sedaap Food Inc.", "price": "$5.50", "category": "Food", "description": "Authentic Indonesian Beef Rendang, ready to eat in minutes. Made with certified halal beef and a rich blend of traditional spices for a delicious and convenient meal.", "reviews": { "1": {"author": "David L.", "rating": "5", "comment": "Incredibly authentic flavor for a ready meal. Amazing!"} } }
+      "1": { "name": "Instant Noodles Special Curry", "producer": "Sedaap Food Inc.", "price": "$0.50", "category": "Food", "description": "Delicious and easy-to-prepare instant noodles with a rich and aromatic special curry flavor. Certified halal, perfect for a quick and satisfying meal anytime.", "reviews": { "1": {"author": "Aisha B.", "rating": "5", "comment": "The best instant curry noodles out there! So flavorful."} }, "halalStatus": "Certified", "halalExpiry": "2025-10-22" },
+      "2": { "name": "Brightening Serum", "producer": "Wardah Beauty", "price": "$12.99", "category": "Cosmetics", "description": "A lightweight, halal-certified serum that helps to brighten the skin tone and reduce dark spots. Formulated with natural extracts for a radiant complexion.", "reviews": { "1": {"author": "Fatima S.", "rating": "5", "comment": "My skin has never looked better. Highly recommend!"}, "2": {"author": "Zainab K.", "rating": "4", "comment": "Good serum, but takes time to see results."} }, "halalStatus": "Certified", "halalExpiry": "2026-01-15" },
+      "3": { "name": "Silk Hijab", "producer": "Elzatta Hijab", "price": "$25.00", "category": "Fashion", "description": "An elegant and luxurious silk hijab that drapes beautifully. Made from high-quality, breathable fabric, perfect for special occasions or everyday wear.", "reviews": { "1": {"author": "Layla R.", "rating": "5", "comment": "So soft and the color is gorgeous."} }, "halalStatus": "Certified", "halalExpiry": "2024-12-31" },
+      "4": { "name": "Gouda Cheese", "producer": "Mazaraat", "price": "$8.75", "category": "Food", "description": "Artisanal Gouda cheese made with halal-certified microbial rennet. It has a mild, nutty flavor and a smooth texture, great for sandwiches and platters.", "reviews": {}, "halalStatus": "Certified", "halalExpiry": "2023-01-01" },
+      "5": { "name": "Vitamin C Supplement", "producer": "HalalPharm", "price": "$15.20", "category": "Pharmaceuticals", "description": "Boost your immune system with our halal-certified Vitamin C supplements. Made with high-quality ingredients and free from non-halal additives.", "reviews": { "1": {"author": "Omar H.", "rating": "5", "comment": "A staple in our household, especially during flu season."} }, "halalStatus": "Not Certified", "halalExpiry": "N/A" },
+      "6": { "name": "Matte Lipstick", "producer": "Wardah Beauty", "price": "$9.50", "category": "Cosmetics", "description": "A long-lasting matte lipstick with a comfortable, non-drying formula. Available in a variety of beautiful shades, all wudu-friendly and halal.", "reviews": { "1": {"author": "Maryam A.", "rating": "4", "comment": "Beautiful color, but can be a bit drying after a few hours."} }, "halalStatus": "Certified", "halalExpiry": "2026-05-30" },
+      "7": { "name": "Frozen Halal Chicken", "producer": "So Good Foods", "price": "$10.00", "category": "Food", "description": "Premium quality frozen chicken, processed and packed according to strict halal standards. Tender, juicy, and perfect for all your favorite recipes.", "reviews": {}, "halalStatus": "Certified", "halalExpiry": "2024-11-05" },
+      "8": { "name": "Printed Tunic", "producer": "Elzatta Hijab", "price": "$45.00", "category": "Fashion", "description": "A stylish and modest printed tunic made from comfortable, lightweight fabric. Features a unique design that is perfect for both casual and formal settings.", "reviews": { "1": {"author": "Yasmin F.", "rating": "5", "comment": "I received so many compliments when I wore this!"} }, "halalStatus": "Certified", "halalExpiry": "2025-08-10" },
+      "9": { "name": "Herbal Cough Syrup", "producer": "HalalPharm", "price": "$7.80", "category": "Pharmaceuticals", "description": "A soothing herbal cough syrup made from natural, halal ingredients. Effectively relieves coughs and sore throats without alcohol or other prohibited substances.", "reviews": {}, "halalStatus": "Certified", "halalExpiry": "Invalid Date" },
+      "10": { "name": "UHT Milk", "producer": "Cimory", "price": "$1.50", "category": "Food", "description": "Fresh and nutritious UHT milk, sourced from well-cared for cows and processed in a halal-certified facility. A healthy choice for the whole family.", "reviews": { "1": {"author": "Ibrahim M.", "rating": "5", "comment": "My kids love this milk."} }, "halalStatus": "Certified", "halalExpiry": "2025-02-20" },
+      "11": { "name": "Facial Cleansing Soap", "producer": "Wardah Beauty", "price": "$2.00", "category": "Cosmetics", "description": "A gentle yet effective facial cleanser that cleanses the skin without stripping its natural moisture. Halal-certified and suitable for all skin types.", "reviews": {}, "halalStatus": "Not Certified", "halalExpiry": "N/A" },
+      "12": { "name": "Ready-to-Eat Beef Rendang", "producer": "Sedaap Food Inc.", "price": "$2.50", "category": "Food", "description": "Authentic Indonesian Beef Rendang, ready to eat in minutes. Made with halal-certified beef and a rich blend of traditional spices for a delicious and convenient meal.", "reviews": { "1": {"author": "David L.", "rating": "5", "comment": "Incredibly authentic taste for a ready-made meal. Amazing!"} }, "halalStatus": "Certified", "halalExpiry": "2027-01-01" }
     },
     "addToBasket": "Add to Basket",
     "priceRange": "Price Range",
@@ -305,12 +306,12 @@
       "default": "Default Sorting",
       "priceAsc": "Price: Low to High",
       "priceDesc": "Price: High to Low",
-      "ratingDesc": "Highest Rated",
+      "ratingDesc": "Highest Rating",
       "nameAsc": "Name: A-Z"
     }
   },
   "productDetail": {
-    "backToMarketplace": "Back to Marketplace",
+    "backToMarketplace": "Back to Halal Marketplace",
     "customerReviews": "Customer Reviews",
     "noReviews": "This product has no reviews yet.",
     "reviews": "reviews"
@@ -336,33 +337,33 @@
     "message": "Thank you for your order. A confirmation has been sent to your email.",
     "continueShopping": "Continue Shopping"
   },
-  "auth": {
+   "auth": {
     "guestAccessDenied": "This feature is for registered users. Please create an account to access your profile.",
     "accessDenied": "Access Denied: This feature is not available for your role.",
-    "loginTitle": "Login as",
+    "loginTitle": "Log in as",
     "registerTitle": "Create Account as",
     "emailLabel": "Email Address",
     "emailPlaceholder": "e.g., user@example.com",
     "passwordLabel": "Password",
     "passwordPlaceholder": "Enter 8+ characters",
-    "loginButton": "Login",
+    "loginButton": "Log In",
     "loading": "Loading...",
     "registerButton": "Create Account",
     "forgotPassword": "Forgot Password?",
     "noAccount": "Don't have an account?",
     "haveAccount": "Already have an account?",
-    "registerLink": "Register Here",
-    "loginLink": "Login Here",
+    "registerLink": "Sign Up Here",
+    "loginLink": "Log In Here",
     "rememberMe": "Remember Me",
     "invalidEmail": "Please enter a valid email address.",
-    "passwordTooShort": "Password must be at least 8 characters long.",
+    "passwordTooShort": "Password must be at least 8 characters.",
     "emailRequired": "Email address is required.",
     "passwordRequired": "Password is required.",
     "loginIdRequired": "Email or ID is required.",
-    "forgotPasswordTitle": "Reset Your Password",
+    "forgotPasswordTitle": "Reset Password",
     "forgotPasswordSubtitle": "Enter your email and we'll send you a link to get back into your account.",
     "sendResetLink": "Send Reset Link",
-    "resetLinkSent": "If an account with that email exists, we have sent a password reset link.",
+    "resetLinkSent": "If an account with that email exists, we've sent a password reset link.",
     "backToLogin": "Back to Login",
     "fullNameLabel": "Full Name",
     "fullNamePlaceholder": "e.g., Aisha Fatima",
@@ -371,13 +372,13 @@
     "passwordsDoNotMatch": "Passwords do not match",
     "nameRequired": "Full name is required.",
     "phoneLabel": "Phone Number",
-    "phonePlaceholder": "e.g., +1 555 123 4567",
+    "phonePlaceholder": "e.g., 555-123-4567",
     "phoneRequired": "Phone number is required.",
     "businessNameLabel": "Business Name",
     "businessNamePlaceholder": "e.g., Halal Foods Nusantara",
     "businessNameRequired": "Business name is required.",
     "businessIdLabel": "Business ID (NIB)",
-    "businessIdPlaceholder": "Enter your NIB",
+    "businessIdPlaceholder": "Enter your 13-digit NIB",
     "businessIdRequired": "Business ID is required.",
     "auditorIdLabel": "Auditor ID",
     "auditorIdPlaceholder": "Enter your auditor ID",
@@ -392,13 +393,13 @@
     "departmentPlaceholder": "e.g., Certification Division",
     "departmentRequired": "Department is required.",
     "profileTitle": "My Profile",
-    "logoutButton": "Logout",
+    "logoutButton": "Log Out",
     "emailOrAuditorIdLabel": "Email or Auditor ID",
     "emailOrAuditorIdPlaceholder": "e.g., auditor@lph.com or AUD-12345",
     "emailOrOfficerIdLabel": "Email or Officer ID",
     "emailOrOfficerIdPlaceholder": "e.g., officer@bpjph.go.id or OFF-12345",
-    "loginWithGoogle": "Login with Google",
-    "registerWithGoogle": "Register with Google",
+    "loginWithGoogle": "Log in with Google",
+    "registerWithGoogle": "Sign up with Google",
     "orDivider": "OR",
     "showPassword": "Show password",
     "hidePassword": "Hide password"
@@ -411,7 +412,7 @@
     "close": "Close",
     "recentSearches": "Recent Searches",
     "clearHistory": "Clear History",
-    "searchIn": "Search In",
+    "searchIn": "Search in",
     "scopeAll": "All",
     "scopeProducts": "Products",
     "scopeCertificates": "Certificates",
@@ -432,7 +433,7 @@
   "profilePage": {
     "notifications": {
       "title": "Notification Settings",
-      "description": "Stay updated with important announcements, new promotions, and changes in certification status.",
+      "description": "Stay updated with important announcements, new promotions, and certification status changes.",
       "enableButton": "Enable Notifications",
       "sendTestButton": "Send Test Notification",
       "enabledText": "Notifications are enabled. You're all set!",
@@ -461,7 +462,7 @@
     "copySuccessMessage": "Link copied to clipboard!"
   },
   "promotionsPage": {
-    "subtitle": "Check out the latest deals and special offers.",
+    "subtitle": "Check out the latest deals and special promotions.",
     "items": {
       "1": {
         "title": "Discount on First Halal Certification",
@@ -490,18 +491,18 @@
         "expiry": "Ongoing"
       },
       "4": {
-        "title": "Halal Auditor Training Bundle",
-        "description": "Sign up for our auditor training and get exclusive access to our digital tools for free.",
+        "title": "Halal Auditor Training Package",
+        "description": "Sign up for our auditor training and get exclusive access to our digital toolkit for free.",
         "cta": "Enroll Now",
-        "details": "Become a certified Halal auditor with our comprehensive training program. This special bundle includes the full course material, examination fees, and a one-year subscription to our premium auditor software.",
+        "details": "Become a certified Halal auditor with our comprehensive training program. This special package includes the full course material, examination fees, and a one-year subscription to our premium auditor software.",
         "terms": "Offer valid for new enrollments only. Software subscription is non-transferable. Course must be completed within 6 months of enrollment.",
         "expiry": "October 31, 2024"
       },
       "5": {
-        "title": "UMKM Digital Go-Live Package",
-        "description": "Get your halal business online with our special package including website and marketing.",
+        "title": "UMKM Go-Digital Package",
+        "description": "Take your halal business online with our special package including a website and marketing.",
         "cta": "Get Started",
-        "details": "Let us help you take your Halal business to the next level. This package provides a simple e-commerce website, social media setup, and a starter pack for digital advertising, all tailored for Halal consumers.",
+        "details": "Let us help you take your Halal business to the next level. This package provides a simple e-commerce website, social media setup, and a starter pack for digital advertising, all tailored for the Halal consumer.",
         "terms": "This is a service provided by a third-party partner. Website hosting and ad spend are not included in the package price. Limited slots available per month.",
         "expiry": "December 31, 2024"
       },
@@ -522,7 +523,7 @@
   },
   "scanBarcode": {
     "title": "Scan Barcode/QR",
-    "subtitle": "Quickly check product status by scanning its barcode or QR code.",
+    "subtitle": "Quickly check a product's status by scanning its barcode or QR code.",
     "cameraPlaceholder": "Position the barcode or QR code within the frame.",
     "uploadButton": "Upload from Gallery",
     "scanResult": "Scan Result",
@@ -532,14 +533,14 @@
   },
   "moreServices": {
     "title": "More Services",
-    "subtitle": "Explore all the features offered by AI Halal Advisor.",
+    "subtitle": "Explore all the features offered by the AI Halal Advisor.",
     "comingSoon": "Coming Soon"
   },
   "regulation": {
     "title": "Halal Regulation",
-    "subtitle": "Access official regulations and guidelines for Halal Product Assurance.",
+    "subtitle": "Access official Halal Product Assurance regulations and guidelines.",
     "placeholder": "The regulation library feature is coming soon. Stay tuned for updates!",
-    "backToList": "Back to Regulations",
+    "backToList": "Back to Regulations List",
     "pdfPlaceholder": "PDF Viewer Placeholder",
     "categories": {
       "law": "Law",
@@ -550,50 +551,50 @@
     "docs": {
       "1": {
         "title": "Law No. 33 of 2014",
-        "description": "The primary law concerning Halal Product Assurance, establishing the mandate for halal certification for products in Indonesia."
+        "description": "The main law on Halal Product Assurance, establishing the mandate for halal certification for products in Indonesia."
       },
       "2": {
         "title": "Government Regulation No. 39 of 2021",
-        "description": "Implementing regulation for Law No. 33 of 2014, detailing the stages and procedures of halal product assurance."
+        "description": "The implementing regulation for Law No. 33 of 2014, detailing the stages and procedures for halal product assurance."
       },
       "3": {
         "title": "Minister of Religious Affairs Decree No. 748 of 2021",
         "description": "Specifies the types of products that are required to be halal certified."
       },
       "4": {
-        "title": "BPJPH Head Decree No. 1 of 2021",
+        "title": "Head of BPJPH Decree No. 1 of 2021",
         "description": "Technical guidelines regarding the implementation of Halal Product Assurance services."
       }
     }
   },
   "selfDeclare": {
-    "title": "Self Declare Halal (SEHATI)",
-    "subtitle": "Free Halal Certification Program for Micro and Small Enterprises",
+    "title": "Halal Self-Declare (SEHATI)",
+    "subtitle": "Free Halal Certification Program for Micro and Small Businesses",
     "form": {
-      "title": "Self Declaration Application",
+      "title": "Self-Declaration Form",
       "section1Title": "Business Information",
       "businessNameLabel": "Business Name",
-      "businessNamePlaceholder": "e.g., Warung Ibu Siti",
+      "businessNamePlaceholder": "e.g., Mrs. Siti's Food Stall",
       "businessIdLabel": "Business ID (NIB)",
       "businessIdPlaceholder": "Enter your 13-digit NIB",
       "businessAddressLabel": "Full Business Address",
       "businessAddressPlaceholder": "Enter the full address of your production facility",
       "section2Title": "Product Details",
       "productNameLabel": "Product Name",
-      "productNamePlaceholder": "e.g., Keripik Singkong Balado",
+      "productNamePlaceholder": "e.g., Spicy Cassava Chips",
       "ingredientsLabel": "List of Ingredients",
       "ingredientsPlaceholder": "List all ingredients used, separated by commas. e.g., Cassava, Palm Oil, Chili, Salt, Sugar",
       "section3Title": "Halal Supervisor",
       "supervisorNameLabel": "Halal Supervisor Name",
-      "supervisorNamePlaceholder": "Enter the full name of the supervisor",
-      "section4Title": "Halal Process Declaration",
+      "supervisorNamePlaceholder": "Enter the supervisor's full name",
+      "section4Title": "Halal Process Statement",
       "processStatement": "I hereby declare that the production process for the product mentioned above is free from any non-halal (haram) or impure (najis) ingredients and contaminants.",
       "uploadLabel": "Upload Supporting Documents",
       "uploadInstructions": "Upload NIB, ingredient specifications, etc. (PDF, JPG, PNG)",
       "uploadButton": "Choose File",
       "noFileChosen": "No file chosen",
       "section5Title": "Final Declaration",
-      "truthStatement": "I declare that all the information provided in this application is true and accurate to the best of my knowledge.",
+      "truthStatement": "I declare that all information provided in this application is true and accurate to the best of my knowledge.",
       "submitButton": "Submit Declaration",
       "submittingButton": "Submitting...",
       "errors": {
@@ -620,6 +621,17 @@
     },
     "notesPlaceholder": "Add notes here..."
   },
+  "auditLog": {
+    "title": "Audit Log",
+    "subtitle": "A review of all significant actions performed by auditors.",
+    "emptyStateTitle": "No Logs Found",
+    "emptyStateSubtitle": "Actions from the Audit Checklist will be recorded here.",
+    "clearLogButton": "Clear Log",
+    "confirmClear": "Are you sure you want to permanently delete all audit logs?",
+    "actionHeader": "Action",
+    "auditorHeader": "Auditor",
+    "timestampHeader": "Timestamp"
+  },
   "monitoringDashboard": {
     "title": "Monitoring Dashboard",
     "subtitle": "Oversee certification analytics and system performance.",
@@ -637,11 +649,11 @@
     "title": "About AI Halal Advisor",
     "subtitle": "Empowering the Halal Ecosystem with Technology",
     "paragraph1": "The AI Halal Advisor is a pioneering digital platform designed to support and streamline the Halal Product Assurance ecosystem in Indonesia. Developed in collaboration with the Halal Product Assurance Organizing Body (BPJPH), this application serves as a comprehensive tool for all stakeholders involved in the halal industry.",
-    "paragraph2": "Our mission is to empower businesses, halal supervisors, auditors, BPJPH officers, and consumers by providing easy access to information, simplifying certification processes, and fostering a transparent and trustworthy halal marketplace. From verifying product ingredients to accessing the latest regulations, the AI Halal Advisor is your one-stop solution for all things halal.",
+    "paragraph2": "Our mission is to empower business actors, halal supervisors, auditors, BPJPH officers, and consumers by providing easy access to information, simplifying certification processes, and fostering a transparent and trustworthy halal marketplace. From verifying product ingredients to accessing the latest regulations, the AI Halal Advisor is your one-stop solution for all things halal.",
     "bpjphTitle": "About BPJPH",
-    "bpjphParagraph1": "BPJPH (Badan Penyelenggara Jaminan Produk Halal) is a government agency under the Ministry of Religious Affairs of Indonesia. It holds the mandate to organize Halal Product Assurance as stipulated by Law No. 33 of 2014.",
-    "bpjphParagraph2": "The agency is responsible for issuing halal certificates, accrediting Halal Inspection Agencies (LPH), and developing the standards and systems that ensure the integrity of halal products circulating in Indonesia and beyond. The AI Halal Advisor is an official initiative to digitize and enhance the services provided by BPJPH.",
+    "bpjphParagraph1": "BPJPH (Badan Penyelenggara Jaminan Produk Halal) is a government agency under the Ministry of Religious Affairs of the Republic of Indonesia. It holds the mandate to organize Halal Product Assurance as stipulated by Law No. 33 of 2014.",
+    "bpjphParagraph2": "The agency is responsible for issuing halal certificates, accrediting Halal Inspection Agencies (LPH), and developing standards and systems that ensure the integrity of halal products circulating in Indonesia and abroad. The AI Halal Advisor is an official initiative to digitize and enhance the services provided by BPJPH.",
     "techTitle": "Our Technology",
-    "techParagraph1": "Powered by Google's advanced AI models, the AI Halal Advisor provides intelligent features such as the HANA AI assistant, ingredient analysis, and a smart search engine to deliver accurate and relevant information quickly and efficiently."
+    "techParagraph1": "Powered by advanced AI models from Google, the AI Halal Advisor provides intelligent features such as the HANA AI assistant, ingredient analysis, and a smart search engine to deliver accurate and relevant information quickly and efficiently."
   }
 }

@@ -38,6 +38,7 @@ import { SERVICES } from './constants';
 import type { PersonaId } from './types';
 import SelfDeclarePage from './components/SelfDeclarePage';
 import AuditChecklistPage from './components/AuditChecklistPage';
+import AuditLogPage from './components/AuditLogPage';
 import HalalVerificationPage from './components/HalalVerificationPage';
 import MonitoringDashboardPage from './components/MonitoringDashboardPage';
 
@@ -202,6 +203,7 @@ const App: React.FC = () => {
     'scan-barcode',
     'self-declare',
     'audit-checklist',
+    'audit-log',
     'monitoring-dashboard',
     'more',
     'regulation',
@@ -272,6 +274,8 @@ const App: React.FC = () => {
         return <SelfDeclarePage />;
       case 'audit-checklist':
         return <AuditChecklistPage />;
+      case 'audit-log':
+        return <AuditLogPage />;
       case 'monitoring-dashboard':
         return <MonitoringDashboardPage />;
       case 'more':

@@ -65,6 +65,8 @@ export interface Product {
   reviews: Review[];
   averageRating: number;
   reviewCount: number;
+  halalStatus: 'Certified' | 'Not Certified';
+  halalExpiry: string; // YYYY-MM-DD or N/A
 }
 
 export interface BasketItem extends Product {

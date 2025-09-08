@@ -43,6 +43,8 @@ export const useProducts = (): { products: Product[], loading: boolean } => {
                     reviews,
                     averageRating,
                     reviewCount,
+                    halalStatus: t(`marketplace.products.${id}.halalStatus`) as 'Certified' | 'Not Certified',
+                    halalExpiry: t(`marketplace.products.${id}.halalExpiry`),
                 };
             });
             setProducts(fetchedProducts);

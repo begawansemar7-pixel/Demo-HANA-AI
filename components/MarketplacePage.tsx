@@ -19,6 +19,56 @@ interface MarketplacePageProps {
     onProductSelect: (id: number) => void;
 }
 
+type EffectiveStatusKey = 'certified' | 'expired' | 'notCertified' | 'invalidDate';
+
+const getEffectiveStatusKey = (product: Pick<Product, 'halalStatus' | 'halalExpiry'>): EffectiveStatusKey => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const expiryDate = new Date(product.halalExpiry);
+
+    if (product.halalStatus === 'Certified') {
+        if (isNaN(expiryDate.getTime())) return 'invalidDate';
+        if (expiryDate < today) return 'expired';
+        return 'certified';
+    }
+    return 'notCertified';
+};
+
+
+const StatusBadge: React.FC<{
+  product: Product;
+  t: (key: string) => string;
+}> = ({ product, t }) => {
+    const statusKey = getEffectiveStatusKey(product);
+    let badgeText = '';
+    let badgeClasses = '';
+
+    switch (statusKey) {
+        case 'certified':
+            badgeText = t('certCheck.statusCertified');
+            badgeClasses = 'bg-green-100 text-green-800';
+            break;
+        case 'expired':
+            badgeText = t('certCheck.statusExpired');
+            badgeClasses = 'bg-orange-100 text-orange-800';
+            break;
+        case 'notCertified':
+            badgeText = t('certCheck.statusNotCertified');
+            badgeClasses = 'bg-red-100 text-red-800';
+            break;
+        case 'invalidDate':
+        default:
+            badgeText = t('certCheck.statusInvalidDate');
+            badgeClasses = 'bg-gray-100 text-gray-800';
+    }
+
+    return (
+        <span className={`absolute top-2 right-2 px-2 py-0.5 text-xs font-bold rounded-full ${badgeClasses} z-10`}>
+            {badgeText}
+        </span>
+    );
+};
+
 const ProductCardSkeleton: React.FC = () => (
     <div className="bg-white rounded-2xl shadow-md overflow-hidden animate-pulse">
         <div className="h-40 sm:h-56 bg-gray-200"></div>
@@ -50,6 +100,7 @@ const MarketplacePage: React.FC<MarketplacePageProps> = ({ onProductSelect }) =>
     const [currentPage, setCurrentPage] = useState(1);
     const { globalQuery, globalFilters, searchScope, isGlobalSearch, clearGlobalSearch } = useSearch();
     const [showFilters, setShowFilters] = useState(false);
+    const [statusFilter, setStatusFilter] = useState('all');
     
     // Calculate min/max price for the slider
     const { minPrice, maxPrice } = useMemo(() => {
@@ -99,7 +150,7 @@ const MarketplacePage: React.FC<MarketplacePageProps> = ({ onProductSelect }) =>
     // Reset current page when filters change
     useEffect(() => {
         setCurrentPage(1);
-    }, [activeCategory, searchTerm, debouncedPriceRange, sortOrder]);
+    }, [activeCategory, searchTerm, debouncedPriceRange, sortOrder, statusFilter]);
 
     const resetPriceFilter = () => {
         setLocalPriceRange({ min: minPrice, max: maxPrice });
@@ -110,7 +161,8 @@ const MarketplacePage: React.FC<MarketplacePageProps> = ({ onProductSelect }) =>
             const matchesCategory = activeCategory === 'all' || product.category.toLowerCase().replace(' & beverage', '') === activeCategory;
             const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) || product.producer.toLowerCase().includes(searchTerm.toLowerCase());
             const matchesPrice = product.price >= debouncedPriceRange.min && product.price <= debouncedPriceRange.max;
-            return matchesCategory && matchesSearch && matchesPrice;
+            const matchesStatus = statusFilter === 'all' || getEffectiveStatusKey(product) === statusFilter;
+            return matchesCategory && matchesSearch && matchesPrice && matchesStatus;
         });
 
         // Sorting logic
@@ -134,7 +186,7 @@ const MarketplacePage: React.FC<MarketplacePageProps> = ({ onProductSelect }) =>
 
         return productsToDisplay;
 
-    }, [allProducts, activeCategory, searchTerm, debouncedPriceRange, sortOrder]);
+    }, [allProducts, activeCategory, searchTerm, debouncedPriceRange, sortOrder, statusFilter]);
     
     // Paginate the filtered products
     const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
@@ -300,7 +352,7 @@ const MarketplacePage: React.FC<MarketplacePageProps> = ({ onProductSelect }) =>
                                     className="w-full flex items-center justify-center gap-2 py-3 px-4 border border-gray-300 rounded-full text-gray-700 font-semibold hover:bg-gray-100 transition-colors"
                                     aria-expanded={showFilters}
                                 >
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24" stroke="currentColor" strokeWidth={2}>
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 6h9m-9 6h9m-9 6h9M4 6h1v4H4V6zm0 6h1v4H4v-4zm0 6h1v4H4v-4z" />
                                     </svg>
                                     <span>{t('search.filters')}</span>
@@ -311,28 +363,53 @@ const MarketplacePage: React.FC<MarketplacePageProps> = ({ onProductSelect }) =>
                         {/* Collapsible Filter Section */}
                         {showFilters && (
                             <div className="mt-4 pt-4 border-t border-gray-200/80 animate-fadein">
-                                 <fieldset>
-                                    <div className="flex justify-between items-center mb-1">
-                                        <legend className="font-semibold text-gray-700 text-sm px-1">{t('marketplace.priceRange')}</legend>
-                                        <button 
-                                            onClick={resetPriceFilter}
-                                            className="text-sm font-medium text-halal-green hover:text-green-700 disabled:text-gray-400"
-                                            aria-label={`${t('marketplace.reset')} ${t('marketplace.priceRange')}`}
-                                            disabled={loading}
-                                        >
-                                            {t('marketplace.reset')}
-                                        </button>
-                                    </div>
-                                    {allProducts.length > 0 && maxPrice > minPrice && (
-                                        <PriceRangeSlider 
-                                            min={minPrice}
-                                            max={maxPrice}
-                                            value={localPriceRange}
-                                            onChange={setLocalPriceRange}
-                                            disabled={loading}
-                                        />
-                                    )}
-                                </fieldset>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <fieldset>
+                                        <div className="flex justify-between items-center mb-1">
+                                            <legend className="font-semibold text-gray-700 text-sm px-1">{t('marketplace.priceRange')}</legend>
+                                            <button 
+                                                onClick={resetPriceFilter}
+                                                className="text-sm font-medium text-halal-green hover:text-green-700 disabled:text-gray-400"
+                                                aria-label={`${t('marketplace.reset')} ${t('marketplace.priceRange')}`}
+                                                disabled={loading}
+                                            >
+                                                {t('marketplace.reset')}
+                                            </button>
+                                        </div>
+                                        {allProducts.length > 0 && maxPrice > minPrice && (
+                                            <PriceRangeSlider 
+                                                min={minPrice}
+                                                max={maxPrice}
+                                                value={localPriceRange}
+                                                onChange={setLocalPriceRange}
+                                                disabled={loading}
+                                            />
+                                        )}
+                                    </fieldset>
+                                    <fieldset>
+                                        <legend className="font-semibold text-gray-700 text-sm px-1 mb-1">{t('search.certificationStatus')}</legend>
+                                        <div className="relative">
+                                            <select
+                                                id="statusFilter"
+                                                value={statusFilter}
+                                                onChange={e => setStatusFilter(e.target.value)}
+                                                disabled={loading}
+                                                className="w-full py-3 pl-4 pr-10 text-gray-700 bg-white border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-halal-green disabled:bg-gray-100 appearance-none"
+                                            >
+                                                <option value="all">{t('marketplace.categories.all')}</option>
+                                                <option value="certified">{t('certCheck.statusCertified')}</option>
+                                                <option value="expired">{t('certCheck.statusExpired')}</option>
+                                                <option value="notCertified">{t('certCheck.statusNotCertified')}</option>
+                                                <option value="invalidDate">{t('certCheck.statusInvalidDate')}</option>
+                                            </select>
+                                            <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
+                                                <svg className="w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                                    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M6 8l4 4 4-4"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
                             </div>
                         )}
                     </div>
@@ -369,8 +446,9 @@ const MarketplacePage: React.FC<MarketplacePageProps> = ({ onProductSelect }) =>
                             <div 
                                 key={product.id} 
                                 onClick={() => onProductSelect(product.id)}
-                                className="bg-white rounded-2xl shadow-md overflow-hidden flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer"
+                                className="relative bg-white rounded-2xl shadow-md overflow-hidden flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer"
                             >
+                                <StatusBadge product={product} t={t} />
                                 <div className="relative h-40 sm:h-56 overflow-hidden group">
                                     <img src={product.imageUrl} alt={product.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center p-4">
