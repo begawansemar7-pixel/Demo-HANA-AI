@@ -50,6 +50,12 @@ const AuditChecklistPage: React.FC = () => {
     }
   }, [checklistState]);
 
+  // Mock details for the current auditor
+  const auditorDetails = {
+    lph: 'LPH Amanah Cendekia',
+    contact: user?.email || 'auditor@lph.id',
+  };
+
   const handleCheckboxChange = (id: string, isChecked: boolean) => {
     setChecklistState(prevState =>
       prevState.map(item => (item.id === id ? { ...item, isChecked } : item))
@@ -63,7 +69,7 @@ const AuditChecklistPage: React.FC = () => {
       details: {
         status: isChecked ? 'Completed' : 'Reopened'
       }
-    });
+    }, auditorDetails);
   };
 
   const handleNotesChange = (id: string, notes: string) => {
@@ -85,7 +91,7 @@ const AuditChecklistPage: React.FC = () => {
         entityType: 'Audit Checklist',
         entityId: 'All Items',
         details: { action: 'Saved Progress' }
-      });
+      }, auditorDetails);
   };
 
   const progress = (checklistState.filter(item => item.isChecked).length / checklistState.length) * 100;

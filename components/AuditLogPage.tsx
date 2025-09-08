@@ -28,6 +28,8 @@ const AuditLogPage: React.FC = () => {
     const headers = [
         t('auditLog.actionHeader'),
         t('auditLog.auditorHeader'),
+        t('auditLog.lphHeader'),
+        t('auditLog.contactHeader'),
         t('auditLog.timestampHeader'),
         'Entity Type',
         'Entity ID',
@@ -44,6 +46,8 @@ const AuditLogPage: React.FC = () => {
       [
         escapeCSV(log.action),
         escapeCSV(log.auditorName),
+        escapeCSV(log.auditorDetails?.lph),
+        escapeCSV(log.auditorDetails?.contact),
         escapeCSV(formatDate(log.timestamp)),
         escapeCSV(log.entityType),
         escapeCSV(log.entityId),
@@ -111,7 +115,7 @@ const AuditLogPage: React.FC = () => {
               <div className="divide-y divide-gray-200 dark:divide-gray-700">
                 {logs.map(log => {
                   const isExpanded = expandedLogId === log.id;
-                  const hasDetails = log.entityType || log.entityId || (log.details && Object.keys(log.details).length > 0);
+                  const hasDetails = log.entityType || log.entityId || log.auditorDetails || (log.details && Object.keys(log.details).length > 0);
 
                   return (
                     <div key={log.id} className="hover:bg-gray-50/50 dark:hover:bg-gray-700/50 transition-colors">
@@ -136,9 +140,21 @@ const AuditLogPage: React.FC = () => {
                       {isExpanded && hasDetails && (
                         <div id={`details-${log.id}`} className="px-6 pb-4 animate-fadein">
                           <div className="p-4 bg-gray-50 dark:bg-gray-700/50 rounded-lg border dark:border-gray-600 space-y-2 text-sm">
-                            <h4 className="font-bold text-gray-700 dark:text-gray-200 mb-2">Additional Context</h4>
+                            <h4 className="font-bold text-gray-700 dark:text-gray-200 mb-2">Additional Details</h4>
+                            {log.auditorDetails && (
+                              <>
+                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-2">
+                                  <strong className="text-gray-600 dark:text-gray-300 col-span-1">{t('auditLog.lphHeader')}:</strong>
+                                  <span className="text-gray-800 dark:text-gray-100 col-span-2">{log.auditorDetails.lph}</span>
+                                </div>
+                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-2">
+                                  <strong className="text-gray-600 dark:text-gray-300 col-span-1">{t('auditLog.contactHeader')}:</strong>
+                                  <span className="text-gray-800 dark:text-gray-100 col-span-2">{log.auditorDetails.contact}</span>
+                                </div>
+                              </>
+                            )}
                             {log.entityType && (
-                              <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-2">
+                              <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-2 pt-2 mt-2 border-t dark:border-gray-600">
                                 <strong className="text-gray-600 dark:text-gray-300 col-span-1">Entity Type:</strong>
                                 <span className="text-gray-800 dark:text-gray-100 col-span-2">{log.entityType}</span>
                               </div>

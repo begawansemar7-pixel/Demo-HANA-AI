@@ -631,7 +631,9 @@
     "actionHeader": "Tindakan",
     "auditorHeader": "Auditor",
     "timestampHeader": "Waktu",
-    "exportButton": "Ekspor ke CSV"
+    "exportButton": "Ekspor ke CSV",
+    "lphHeader": "Afiliasi LPH",
+    "contactHeader": "Kontak Auditor"
   },
   "monitoringDashboard": {
     "title": "Dasbor Monitoring",

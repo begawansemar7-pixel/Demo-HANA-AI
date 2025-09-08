@@ -1,3 +1,8 @@
+export interface AuditorDetails {
+  lph: string;
+  contact: string;
+}
+
 export interface AuditLogEntry {
   id: string;
   action: string;
@@ -6,6 +11,7 @@ export interface AuditLogEntry {
   entityType?: string;
   entityId?: string;
   details?: { [key: string]: any };
+  auditorDetails?: AuditorDetails;
 }
 
 const LOG_STORAGE_KEY = 'auditLogs';
@@ -29,6 +35,7 @@ export const getAuditLogs = (): AuditLogEntry[] => {
  * @param action A description of the action performed.
  * @param auditorName The name of the auditor who performed the action.
  * @param context Additional context about the action.
+ * @param auditorDetails Detailed information about the auditor.
  */
 export const addAuditLog = (
   action: string,
@@ -37,7 +44,8 @@ export const addAuditLog = (
     entityType?: string;
     entityId?: string;
     details?: { [key: string]: any };
-  }
+  },
+  auditorDetails?: AuditorDetails
 ): void => {
   if (!action || !auditorName) return;
 
@@ -49,6 +57,7 @@ export const addAuditLog = (
       auditorName,
       timestamp: new Date().toISOString(),
       ...context,
+      auditorDetails,
     };
     
     // Add the new log to the beginning of the array

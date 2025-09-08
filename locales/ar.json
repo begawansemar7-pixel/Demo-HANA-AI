@@ -631,7 +631,9 @@
     "actionHeader": "الإجراء",
     "auditorHeader": "المدقق",
     "timestampHeader": "الوقت",
-    "exportButton": "تصدير إلى CSV"
+    "exportButton": "تصدير إلى CSV",
+    "lphHeader": "مؤسسة فحص الحلال",
+    "contactHeader": "معلومات اتصال المدقق"
   },
   "monitoringDashboard": {
     "title": "لوحة المراقبة",

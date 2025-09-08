@@ -631,7 +631,9 @@
     "actionHeader": "Action",
     "auditorHeader": "Auditor",
     "timestampHeader": "Timestamp",
-    "exportButton": "Export to CSV"
+    "exportButton": "Export to CSV",
+    "lphHeader": "LPH Affiliation",
+    "contactHeader": "Auditor Contact"
   },
   "monitoringDashboard": {
     "title": "Monitoring Dashboard",
