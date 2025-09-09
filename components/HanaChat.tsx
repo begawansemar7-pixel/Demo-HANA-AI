@@ -6,6 +6,7 @@ import { useTranslations } from '../hooks/useTranslations';
 import { useVoiceRecognition } from '../hooks/useVoiceRecognition';
 import { useTextToSpeech } from '../hooks/useTextToSpeech';
 import { useAuth } from '../hooks/useAuth';
+import { PERSONAS } from '../constants';
 
 
 interface Message {
@@ -53,6 +54,23 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
   const [isFreeTrial, setIsFreeTrial] = useState(true);
   const [showPaymentWall, setShowPaymentWall] = useState(false);
   
+  const personaDetails = PERSONAS.find(p => p.id === persona);
+  let personaIcon: React.ReactNode = null;
+  let personaName: string = '';
+
+  if (persona === 'guest') {
+    personaName = t('personas.guest.name');
+    personaIcon = (
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+      </svg>
+    );
+  } else if (personaDetails) {
+    personaName = t(personaDetails.name);
+    // FIX: Use Object.assign to merge props safely, resolving a TypeScript error with cloneElement.
+    personaIcon = React.cloneElement(personaDetails.icon, Object.assign({}, personaDetails.icon.props, { className: 'h-4 w-4' }));
+  }
+
   const { isListening, startListening, stopListening, isSupported: isMicSupported } = useVoiceRecognition({
       onResult: (transcript) => {
           const prefix = textBeforeListeningRef.current.trim();
@@ -303,6 +321,12 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
           <header className="p-3 bg-halal-green text-white rounded-t-2xl flex justify-between items-center flex-shrink-0">
             <div className="flex-1 text-center">
                  <h3 id="hana-chat-title" className="font-bold">{t('hana.chatTitle')}</h3>
+                 {personaName && (
+                   <div className="flex items-center justify-center gap-1.5 text-xs text-white/80 mt-1">
+                       {personaIcon}
+                       <span>{personaName}</span>
+                   </div>
+                 )}
                  <div className="text-xs bg-white/20 px-2 py-0.5 rounded-full inline-block mt-1">
                     {isFreeTrial ? t('hana.freeTrial') : t('hana.sessionTime')} | {t('hana.timeRemaining', { time: formatTime(timeRemaining) })}
                  </div>

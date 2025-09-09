@@ -6,7 +6,6 @@ import ServicesMenu from './components/ServicesMenu';
 import NewsFeed from './components/NewsFeed';
 import Footer from './components/Footer';
 import BottomNav from './components/BottomNav';
-import HanaChat from './components/HanaChat';
 import PersonaSelectionModal from './components/PersonaSelectionModal';
 import HanaPage from './components/HanaPage';
 import CertificationCheckPage from './components/CertificationCheckPage';
@@ -47,7 +46,6 @@ import TermsOfServicePage from './components/TermsOfServicePage';
 
 
 const App: React.FC = () => {
-  const [isHanaChatOpen, setIsHanaChatOpen] = useState(false);
   const [isBasketOpen, setIsBasketOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState('home');
   const [mapSearchQuery, setMapSearchQuery] = useState('');
@@ -330,10 +328,6 @@ const App: React.FC = () => {
         currentPage={currentPage}
         onNavigate={navigateTo}
       />
-      {/* HANA Floating Action Button */}
-      <div id="hana-fab" className="fixed bottom-24 md:bottom-8 right-8 z-40">
-         <HanaChat isOpen={isHanaChatOpen} onOpen={() => setIsHanaChatOpen(true)} onClose={() => setIsHanaChatOpen(false)} />
-      </div>
 
       <BasketModal isOpen={isBasketOpen} onClose={() => setIsBasketOpen(false)} />
     </div>

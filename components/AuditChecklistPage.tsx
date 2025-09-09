@@ -8,6 +8,7 @@ interface ChecklistItemState {
   id: string;
   isChecked: boolean;
   notes: string;
+  dueDate: string; // Store as 'YYYY-MM-DD'
 }
 
 // Define the static data for checklist items
@@ -24,7 +25,7 @@ const NOTES_CHAR_MAX_LIMIT = 500;
 
 
 const AuditChecklistPage: React.FC = () => {
-  const { t } = useTranslations();
+  const { t, language } = useTranslations();
   const { user } = useAuth();
   
   // Initialize state from localStorage or default
@@ -32,13 +33,18 @@ const AuditChecklistPage: React.FC = () => {
     try {
       const savedState = localStorage.getItem(LOCAL_STORAGE_KEY);
       if (savedState) {
-        return JSON.parse(savedState);
+        // Ensure old data is compatible by adding dueDate if missing
+        const parsedState = JSON.parse(savedState);
+        return parsedState.map((item: any) => ({
+            ...item,
+            dueDate: item.dueDate || '',
+        }));
       }
     } catch (error) {
       console.error("Error loading checklist state from localStorage:", error);
     }
     // Default state if nothing is saved
-    return CHECKLIST_ITEMS.map(item => ({ id: item.id, isChecked: false, notes: '' }));
+    return CHECKLIST_ITEMS.map(item => ({ id: item.id, isChecked: false, notes: '', dueDate: '' }));
   });
 
   const [expandedItemId, setExpandedItemId] = useState<string | null>(null);
@@ -87,6 +93,28 @@ const AuditChecklistPage: React.FC = () => {
       prevState.map(item => (item.id === id ? { ...item, notes } : item))
     );
   };
+
+  const handleDateChange = (id: string, date: string) => {
+    const itemBeforeChange = checklistState.find(item => item.id === id);
+    const oldDueDate = itemBeforeChange?.dueDate || 'Not set';
+
+    setChecklistState(prevState =>
+      prevState.map(item => (item.id === id ? { ...item, dueDate: date } : item))
+    );
+
+    const itemName = t(CHECKLIST_ITEMS.find(i => i.id === id)!.titleKey);
+    const action = `Set due date for: "${itemName}"`;
+    addAuditLog(action, user?.name || 'Auditor', {
+        entityType: 'Checklist Item',
+        entityId: itemName,
+        details: {
+            dueDate: {
+                oldValue: oldDueDate,
+                newValue: date || 'Cleared'
+            }
+        }
+    }, auditorDetails);
+  };
   
   const toggleExpand = (id: string) => {
     setExpandedItemId(prevId => (prevId === id ? null : id));
@@ -102,6 +130,17 @@ const AuditChecklistPage: React.FC = () => {
         entityId: 'All Items',
         details: { action: 'Saved Progress' }
       }, auditorDetails);
+  };
+
+  const formatDate = (dateString: string) => {
+    if (!dateString) return '';
+    // Add timeZone UTC to prevent off-by-one day errors from local timezone conversion
+    return new Date(dateString).toLocaleDateString(language, {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        timeZone: 'UTC',
+    });
   };
 
   const progress = (checklistState.filter(item => item.isChecked).length / checklistState.length) * 100;
@@ -135,6 +174,10 @@ const AuditChecklistPage: React.FC = () => {
             const isWarn = notesLength > NOTES_CHAR_WARN_LIMIT && notesLength < NOTES_CHAR_MAX_LIMIT;
             const isError = notesLength >= NOTES_CHAR_MAX_LIMIT;
 
+            const today = new Date();
+            today.setHours(0, 0, 0, 0); // Normalize today's date
+            const isOverdue = itemState.dueDate && new Date(itemState.dueDate) < today && !itemState.isChecked;
+
             let counterClasses = "text-gray-500 dark:text-gray-400";
             if (isWarn) counterClasses = "text-orange-500 font-semibold";
             if (isError) counterClasses = "text-red-500 font-bold";
@@ -142,35 +185,52 @@ const AuditChecklistPage: React.FC = () => {
             return (
               <div key={itemInfo.id} className="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-2xl shadow-md border dark:border-gray-700 transition-all duration-300">
                 <div 
-                    className="flex items-center gap-4 cursor-pointer"
-                    onClick={() => toggleExpand(itemInfo.id)}
-                    aria-expanded={isExpanded}
-                    aria-controls={`notes-${itemInfo.id}`}
+                    className="flex items-center gap-4"
                 >
                     <input
                         type="checkbox"
                         id={`checkbox-${itemInfo.id}`}
                         checked={itemState.isChecked}
-                        onClick={e => e.stopPropagation()}
                         onChange={e => handleCheckboxChange(itemInfo.id, e.target.checked)}
                         className="h-6 w-6 rounded border-gray-300 dark:border-gray-600 text-halal-green focus:ring-halal-green flex-shrink-0 bg-gray-100 dark:bg-gray-900"
                     />
-                    <label 
-                        htmlFor={`checkbox-${itemInfo.id}`}
-                        onClick={e => e.stopPropagation()}
-                        className="text-lg font-bold text-gray-800 dark:text-gray-100 flex-1 cursor-pointer"
-                    >
-                        {t(itemInfo.titleKey)}
-                    </label>
-                    <svg 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        className={`h-6 w-6 text-gray-500 dark:text-gray-400 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} 
-                        fill="none" 
-                        viewBox="0 0 24 24" 
-                        stroke="currentColor"
-                    >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
+                    <div className="flex-1" onClick={() => toggleExpand(itemInfo.id)} role="button" aria-expanded={isExpanded} aria-controls={`notes-${itemInfo.id}`}>
+                      <label 
+                          htmlFor={`checkbox-${itemInfo.id}`}
+                          onClick={e => e.stopPropagation()}
+                          className="text-lg font-bold text-gray-800 dark:text-gray-100 cursor-pointer"
+                      >
+                          {t(itemInfo.titleKey)}
+                      </label>
+                      {itemState.dueDate && (
+                        <p className={`text-xs mt-1 font-semibold ${isOverdue ? 'text-red-500' : 'text-gray-500'}`}>
+                          <span className="font-bold">{t('auditChecklist.dueDateLabel')}: </span>
+                          {formatDate(itemState.dueDate)}
+                          {isOverdue && ` (${t('auditChecklist.overdueLabel')})`}
+                        </p>
+                      )}
+                    </div>
+                    <div className="flex items-center gap-2 ml-4">
+                      <input
+                          type="date"
+                          value={itemState.dueDate}
+                          onChange={e => handleDateChange(itemInfo.id, e.target.value)}
+                          onClick={e => e.stopPropagation()}
+                          className="p-1.5 border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:ring-halal-green dark:focus:ring-accent-gold focus:border-halal-green dark:focus:border-accent-gold bg-gray-50 dark:bg-gray-700 text-sm"
+                          aria-label={t('auditChecklist.setDueDateAriaLabel', { taskName: t(itemInfo.titleKey) })}
+                      />
+                      <button onClick={() => toggleExpand(itemInfo.id)} aria-expanded={isExpanded} aria-controls={`notes-${itemInfo.id}`}>
+                        <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            className={`h-6 w-6 text-gray-500 dark:text-gray-400 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} 
+                            fill="none" 
+                            viewBox="0 0 24 24" 
+                            stroke="currentColor"
+                        >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
+                    </div>
                 </div>
                 
                 {isExpanded && (
