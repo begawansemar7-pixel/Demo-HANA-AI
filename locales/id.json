@@ -703,72 +703,44 @@
     "searchPlaceholder": "Cari pertanyaan...",
     "questions": [
       {
-        "q": "Apa itu Sertifikasi Halal?",
-        "a": "Sertifikasi halal adalah proses formal yang memverifikasi dan menjamin bahwa produk, layanan, dan seluruh proses produksi telah sesuai dengan hukum Syariah Islam. Ini memastikan bahwa produk tersebut 'halal' (diperbolehkan) untuk dikonsumsi dan digunakan oleh umat Islam. Proses ini diawasi di Indonesia oleh BPJPH."
+        "q": "Apa peran BPJPH?",
+        "a": "BPJPH (Badan Penyelenggara Jaminan Produk Halal) adalah lembaga pemerintah Indonesia yang bertanggung jawab menyelenggarakan Jaminan Produk Halal. BPJPH berwenang menerbitkan sertifikat Halal, menetapkan regulasi, dan mengawasi seluruh ekosistem sertifikasi Halal, termasuk mengakreditasi Lembaga Pemeriksa Halal (LPH)."
       },
       {
-        "q": "Mengapa Sertifikasi Halal penting?",
-        "a": "Penting karena beberapa alasan:\n1. **Kepatuhan Agama:** Memberikan jaminan kepada konsumen Muslim bahwa produk memenuhi persyaratan diet keagamaan mereka.\n2. **Kepercayaan Konsumen:** Logo halal membangun kepercayaan dan keyakinan pada sebuah merek.\n3. **Akses Pasar:** Membuka akses ke pasar halal lokal dan global yang luas.\n4. **Mandat Hukum:** Di Indonesia, sertifikasi untuk banyak kategori produk akan menjadi wajib mulai Oktober 2024."
+        "q": "Bagaimana Proses Sertifikasi Halal?",
+        "a": "Proses ini dikelola secara online melalui portal SIHALAL. Secara ringkas:\n1. **Pengajuan:** Pelaku usaha mendaftar dan mengajukan permohonan melalui SIHALAL.\n2. **Audit:** Pelaku usaha memilih Lembaga Pemeriksa Halal (LPH) untuk mengaudit fasilitas produksi, bahan baku, dan proses.\n3. **Fatwa:** LPH menyerahkan laporan audit ke Majelis Ulama Indonesia (MUI) untuk mendapatkan fatwa kehalalan produk.\n4. **Sertifikasi:** Setelah Fatwa Halal terbit, BPJPH akan menerbitkan Sertifikat Halal resmi."
       },
       {
-        "q": "Siapa yang bisa mengajukan Sertifikasi Halal?",
-        "a": "Setiap pelaku usaha, termasuk perorangan, badan usaha, atau badan hukum, yang memproduksi atau memperdagangkan produk di Indonesia dapat mengajukan permohonan. Ini mencakup usaha mikro, kecil, menengah, dan besar."
-      },
-      {
-        "q": "Apa itu program SEHATI?",
-        "a": "SEHATI (Sertifikasi Halal Gratis) adalah program yang didanai pemerintah yang menyediakan sertifikasi halal gratis untuk Usaha Mikro dan Kecil (UMKM) yang memenuhi syarat. Tujuannya adalah untuk meringankan beban finansial dan mendorong pelaku usaha kecil untuk mematuhi peraturan halal."
+        "q": "Berapa biaya Sertifikasi Halal?",
+        "a": "Biaya bervariasi tergantung pada skala usaha dan kompleksitas produk. Untuk Usaha Mikro dan Kecil (UMKM), pemerintah sering menyediakan program sertifikasi gratis bernama SEHATI (Sertifikasi Halal Gratis), yang bergantung pada kuota tahunan. Untuk usaha lainnya, biaya dibayarkan kepada Lembaga Pemeriksa Halal (LPH) untuk jasa audit."
       },
       {
         "q": "Berapa lama masa berlaku Sertifikat Halal?",
-        "a": "Sertifikat Halal yang diterbitkan oleh BPJPH berlaku selama empat tahun sejak tanggal diterbitkan, kecuali jika ada perubahan dalam komposisi atau proses produksi produk."
+        "a": "Sertifikat Halal yang diterbitkan oleh BPJPH berlaku selama empat tahun. Pelaku usaha harus mengajukan perpanjangan melalui portal SIHALAL sebelum sertifikat kedaluwarsa untuk mempertahankan status halalnya."
       },
       {
-        "q": "Apa itu SIHALAL?",
-        "a": "SIHALAL adalah sistem informasi online resmi yang dikelola oleh BPJPH. Semua proses sertifikasi halal, mulai dari pendaftaran, pengiriman dokumen, hingga pembayaran dan penerbitan sertifikat, dilakukan melalui platform ini."
+        "q": "Apa arti 'Syubhat' pada bahan makanan?",
+        "a": "'Syubhat' berarti meragukan atau dipertanyakan. Dalam konteks Halal, ini mengacu pada bahan yang sumbernya tidak jelas dan berpotensi tidak halal (haram). Contohnya, gelatin bisa berasal dari babi (haram) atau sapi yang disembelih dengan benar (halal). Suatu bahan dianggap syubhat sampai diverifikasi berasal dari sumber yang halal."
       },
       {
-        "q": "Apa peran LPH (Lembaga Pemeriksa Halal)?",
-        "a": "LPH (Lembaga Pemeriksa Halal) adalah lembaga terakreditasi yang bertanggung jawab untuk melakukan audit dan pemeriksaan kepatuhan halal suatu produk. Pelaku usaha memilih LPH melalui sistem SIHALAL untuk melakukan audit fasilitas, bahan, dan proses mereka."
+        "q": "Bagaimana cara memverifikasi status Halal suatu produk?",
+        "a": "Anda dapat menggunakan layanan 'Cek Sertifikat Halal' di aplikasi ini untuk mencari berdasarkan nomor sertifikat, nama produk, atau produsen. Anda juga bisa menggunakan fitur 'Pindai Barcode/QR' untuk pengecekan cepat. Selalu cari logo Halal BPJPH resmi pada kemasan produk."
       },
       {
-        "q": "Apa perbedaan antara BPJPH dan MUI dalam proses sertifikasi halal?",
-        "a": "BPJPH adalah badan pemerintah yang menyelenggarakan dan menerbitkan sertifikat Halal resmi. MUI (Majelis Ulama Indonesia) bertanggung jawab untuk menetapkan kehalalan suatu produk melalui fatwa berdasarkan hasil audit dari LPH. BPJPH menerbitkan sertifikat setelah fatwa MUI ditetapkan."
-      },
-      {
-        "q": "Saya pemilik usaha kecil. Bagaimana cara memulai proses sertifikasi halal?",
-        "a": "Cara terbaik untuk memulai adalah dengan membuat akun di portal resmi SIHALAL (ptsp.halal.go.id). Siapkan Nomor Induk Berusaha (NIB) Anda dan detail tentang produk dan bahan-bahan Anda. Untuk usaha mikro dan kecil yang memenuhi syarat, Anda dapat mendaftar program SEHATI gratis saat kuota dibuka."
-      },
-      {
-        "q": "Apa arti 'Syubhat'?",
-        "a": "Syubhat berarti meragukan atau dipertanyakan. Dalam konteks makanan halal, ini mengacu pada bahan yang status halal atau haramnya tidak jelas tanpa penyelidikan lebih lanjut. Hal ini sering terjadi karena bahan tersebut dapat berasal dari berbagai sumber, beberapa di antaranya halal dan beberapa tidak.\n\nContoh umum meliputi:\n- **Gelatin:** Bisa berasal dari babi (haram), sapi (halal hanya jika disembelih sesuai syariat Islam), atau ikan (halal).\n- **Pengemulsi (misalnya, E471):** Bisa berbasis nabati (halal) atau hewani (syubhat sampai sumber hewannya dipastikan halal).\n- **Rennet Keju:** Bisa berasal dari mikroba (halal), nabati (halal), atau sumber hewani (syubhat, memerlukan penyembelihan halal).\n- **Whey:** Produk sampingan pembuatan keju, statusnya tergantung pada rennet yang digunakan.\n\nSebuah bahan tetap dianggap syubhat sampai sumber dan metode pengolahannya diverifikasi melalui proses sertifikasi halal untuk memastikan kepatuhannya terhadap hukum Syariah."
-      },
-      {
-        "q": "Bisakah saya memeriksa status halal suatu produk tanpa nomor sertifikat?",
-        "a": "Ya. Dalam fitur 'Cek Sertifikat Halal' kami, Anda tidak hanya dapat mencari berdasarkan nomor sertifikat tetapi juga berdasarkan nama produk atau nama produsen. Anda juga dapat menggunakan fitur 'Pindai Barcode' untuk pemeriksaan cepat jika produk memiliki barcode."
+        "q": "Apa itu SEHATI?",
+        "a": "SEHATI (Sertifikasi Halal Gratis) adalah program pemerintah yang menyediakan sertifikasi Halal gratis untuk Usaha Mikro dan Kecil (UMKM) yang memenuhi syarat. Tujuannya adalah membantu usaha kecil mematuhi peraturan dan meningkatkan daya saing pasar mereka. Pelaku usaha dapat mendaftar melalui layanan 'Deklarasi Mandiri Halal' di aplikasi ini saat kuota program tersedia."
       },
       {
         "q": "Apa itu Penyelia Halal?",
-        "a": "Penyelia Halal adalah orang di dalam perusahaan yang bertanggung jawab untuk memastikan seluruh Proses Produk Halal (PPH) diikuti dengan benar, mulai dari pengadaan bahan hingga produksi dan distribusi. Mereka harus memiliki pengetahuan yang cukup tentang kriteria halal dan merupakan persyaratan utama untuk sertifikasi."
+        "a": "Penyelia Halal adalah orang di dalam perusahaan yang bertanggung jawab untuk memastikan seluruh proses produksi—dari pengadaan bahan baku hingga distribusi akhir—sesuai dengan standar Halal. Memiliki Penyelia Halal yang terlatih adalah syarat utama untuk mendapatkan dan mempertahankan sertifikasi Halal."
       },
       {
-        "q": "Apa yang harus saya lakukan jika sertifikat halal saya akan kedaluwarsa?",
-        "a": "Anda harus mengajukan perpanjangan sertifikat melalui portal SIHALAL sebelum tanggal kedaluwarsa. Proses perpanjangan biasanya melibatkan audit ulang oleh LPH untuk memastikan bahwa Anda masih mematuhi semua standar halal. Disarankan untuk memulai proses perpanjangan setidaknya 6 bulan sebelum kedaluwarsa."
+        "q": "Apakah produk impor memerlukan sertifikat Halal BPJPH?",
+        "a": "Ya. Semua produk yang diimpor, didistribusikan, dan diperdagangkan di Indonesia wajib bersertifikat Halal. Ini dapat dilakukan dengan mengajukan langsung ke BPJPH atau melalui lembaga sertifikasi Halal luar negeri yang memiliki perjanjian saling pengakuan dengan BPJPH."
       },
       {
-        "q": "Apakah produk impor juga wajib memiliki sertifikat halal BPJPH?",
-        "a": "Ya, produk impor yang diedarkan dan diperdagangkan di Indonesia juga harus bersertifikat halal. Mereka dapat disertifikasi langsung oleh BPJPH atau oleh lembaga sertifikasi halal asing yang memiliki perjanjian saling pengakuan dengan BPJPH."
-      },
-      {
-        "q": "Bagaimana cara kerja Validator Bahan?",
-        "a": "Validator Bahan menggunakan AI untuk menganalisis daftar bahan yang Anda berikan terhadap database zat halal, haram, dan syubhat yang diketahui. Ini memberikan penilaian awal untuk membantu Anda mengidentifikasi bahan yang berpotensi kritis dalam formulasi produk Anda sebelum Anda secara resmi mengajukan sertifikasi."
-      },
-      {
-        "q": "Apakah informasi di Pasar Halal dijamin?",
-        "a": "Kami berusaha untuk memastikan semua informasi akurat. Produk yang terdaftar di Pasar Halal berasal dari produsen yang telah memperoleh sertifikat halal BPJPH. Namun, kami selalu menyarankan konsumen untuk memeriksa kembali logo halal dan tanggal kedaluwarsa pada kemasan produk fisik."
-      },
-      {
-        "q": "Bagaimana saya bisa menghubungi BPJPH untuk pertanyaan resmi?",
-        "a": "Untuk pertanyaan resmi, Anda dapat menghubungi Call Center BPJPH di 146 atau mengirim email ke halal@kemenag.go.id. Anda juga dapat menemukan alamat resmi dan detail kontak mereka di bagian footer aplikasi kami."
+        "q": "Bagaimana AI Halal Advisor membantu saya?",
+        "a": "Aplikasi ini adalah alat digital komprehensif untuk mendukung ekosistem Halal. Aplikasi ini membantu konsumen memverifikasi produk, membantu pelaku usaha (UMKM) dalam proses sertifikasi, menyediakan alat digital bagi auditor, dan memberi petugas BPJPH cara untuk memantau sistem. Asisten AI kami, HANA, juga siap menjawab pertanyaan Anda secara real-time."
       }
     ]
   },

@@ -703,72 +703,44 @@
     "searchPlaceholder": "Search for a question...",
     "questions": [
       {
-        "q": "What is Halal Certification?",
-        "a": "Halal certification is a formal process that verifies and guarantees that products, services, and the entire production process comply with Islamic Sharia law. It ensures that products are 'halal' (permissible) for consumption and use by Muslims. This process is overseen in Indonesia by BPJPH."
+        "q": "What is the role of BPJPH?",
+        "a": "BPJPH (The Halal Product Assurance Organizing Body) is the government agency in Indonesia responsible for organizing Halal Product Assurance. It has the authority to issue Halal certificates, set regulations, and oversee the entire Halal certification ecosystem, including accrediting Halal Inspection Agencies (LPH)."
       },
       {
-        "q": "Why is Halal Certification important?",
-        "a": "It is important for several reasons:\n1. **Religious Compliance:** It provides assurance to Muslim consumers that products meet their religious dietary requirements.\n2. **Consumer Trust:** A halal logo builds trust and confidence in a brand.\n3. **Market Access:** It opens up access to the vast local and global halal market.\n4. **Legal Mandate:** In Indonesia, certification for many product categories will become mandatory starting October 2024."
+        "q": "What is the Halal Certification Process?",
+        "a": "The process is managed online via the SIHALAL portal. In summary:\n1. **Apply:** The business owner registers and submits an application through SIHALAL.\n2. **Audit:** The owner selects a Halal Inspection Agency (LPH) to audit the production facility, ingredients, and processes.\n3. **Fatwa:** The LPH submits the audit report to the Indonesian Ulema Council (MUI) for a religious ruling (Fatwa) on the product's halal status.\n4. **Certification:** Once the Halal Fatwa is issued, BPJPH issues the official Halal Certificate."
       },
       {
-        "q": "Who can apply for Halal Certification?",
-        "a": "Any business actor, including individuals, business entities, or legal entities, that produces or trades products in Indonesia can apply. This includes micro, small, medium, and large enterprises."
-      },
-      {
-        "q": "What is the SEHATI program?",
-        "a": "SEHATI (Sertifikasi Halal Gratis) is a government-funded program that provides free halal certification for eligible Micro and Small Enterprises (UMKM). It aims to ease the financial burden and encourage smaller businesses to comply with halal regulations."
+        "q": "How much does Halal Certification cost?",
+        "a": "The cost varies depending on the scale of the business and the complexity of the product. For Micro and Small Enterprises (UMKM), the government often provides a free certification program called SEHATI (Sertifikasi Halal Gratis), subject to annual quotas. For other businesses, fees are paid to the Halal Inspection Agency (LPH) for the audit services."
       },
       {
         "q": "How long is a Halal Certificate valid for?",
-        "a": "A Halal certificate issued by BPJPH is valid for four years from the date of issuance, unless there are changes in the product's composition or production process."
+        "a": "A Halal certificate issued by BPJPH is valid for four years. Businesses must apply for renewal through the SIHALAL portal before the certificate expires to maintain their halal status."
       },
       {
-        "q": "What is SIHALAL?",
-        "a": "SIHALAL is the official online information system managed by BPJPH. All halal certification processes, from registration and document submission to payment and certificate issuance, are conducted through this platform."
+        "q": "What does 'Syubhat' mean in food ingredients?",
+        "a": "'Syubhat' means doubtful or questionable. In the context of Halal, it refers to ingredients whose source is unclear and could potentially be non-halal (haram). For example, gelatin can come from pigs (haram) or properly slaughtered cattle (halal). An ingredient is considered syubhat until it is verified to come from a halal source."
       },
       {
-        "q": "What is the role of an LPH (Halal Inspection Agency)?",
-        "a": "An LPH (Lembaga Pemeriksa Halal) is an accredited institution responsible for conducting the audit and examination of a product's halal compliance. The business owner chooses an LPH through the SIHALAL system to perform the audit of their facilities, ingredients, and processes."
+        "q": "How can I verify a product's Halal status?",
+        "a": "You can use the 'Check Halal Certificate' service in this app to search by certificate number, product name, or producer. You can also use the 'Scan Barcode/QR' feature for a quick check. Always look for the official BPJPH Halal logo on the product packaging."
       },
       {
-        "q": "What is the difference between BPJPH and MUI in the halal certification process?",
-        "a": "BPJPH is the government body that organizes and issues the official Halal certificate. MUI (Indonesian Ulema Council) is responsible for determining the halal status of a product through a fatwa (religious ruling) based on the audit results from the LPH. BPJPH issues the certificate after the MUI fatwa is declared."
+        "q": "What is SEHATI?",
+        "a": "SEHATI (Sertifikasi Halal Gratis) is a government program providing free Halal certification for eligible Micro and Small Enterprises (UMKM). It aims to help small businesses comply with regulations and increase their market competitiveness. Business owners can apply through the 'Self Declare Halal' service in this app when the program quota is available."
       },
       {
-        "q": "I am a small business owner. How do I start the halal certification process?",
-        "a": "The best way to start is by creating an account on the official SIHALAL portal (ptsp.halal.go.id). Prepare your Business Identification Number (NIB) and details about your product and ingredients. For eligible micro and small businesses, you can apply for the free SEHATI program when the quota is open."
+        "q": "What is a Halal Supervisor?",
+        "a": "A Halal Supervisor is a person within a company responsible for ensuring the entire production process—from sourcing raw materials to final distribution—complies with Halal standards. Having a trained Halal Supervisor is a key requirement for obtaining and maintaining Halal certification."
       },
       {
-        "q": "What does 'Syubhat' mean?",
-        "a": "Syubhat means doubtful or questionable in Arabic. In the context of halal food, it refers to ingredients where the halal or haram status is unclear without further investigation. This is often because the ingredient can be derived from multiple sources, some of which are halal and some are not.\n\nCommon examples include:\n- **Gelatin:** Can be sourced from pork (haram), beef (halal only if slaughtered according to Islamic rites), or fish (halal).\n- **Emulsifiers (e.g., E471):** Can be plant-based (halal) or animal-based (syubhat until the animal source is confirmed to be halal).\n- **Cheese Rennet:** Can be microbial (halal), plant-based (halal), or from an animal source (syubhat, requires halal slaughter).\n- **Whey:** A byproduct of cheese making, its status depends on the rennet used.\n\nAn ingredient remains syubhat until its source and processing method are verified through the halal certification process to be compliant with Sharia law."
+        "q": "Do imported products need a BPJPH Halal certificate?",
+        "a": "Yes. All products that are imported, distributed, and traded in Indonesia must be Halal certified. This can be done either by applying directly to BPJPH or through a foreign Halal certification body that has a mutual recognition agreement with BPJPH."
       },
       {
-        "q": "Can I check the halal status of a product without the certificate number?",
-        "a": "Yes. In our 'Check Halal Certificate' feature, you can search not only by certificate number but also by the product's name or the producer's name. You can also use the 'Scan Barcode' feature for a quick check if the product has a barcode."
-      },
-      {
-        "q": "What is a Halal Supervisor (Penyelia Halal)?",
-        "a": "A Halal Supervisor is a person within a company who is responsible for ensuring that the entire Halal Product Process (PPH) is followed correctly, from ingredient sourcing to production and distribution. They must have sufficient knowledge of halal criteria and are a key requirement for certification."
-      },
-      {
-        "q": "What should I do if my halal certificate is about to expire?",
-        "a": "You should apply for certificate renewal through the SIHALAL portal before the expiration date. The renewal process typically involves a re-audit by an LPH to ensure that you are still complying with all halal standards. It's recommended to start the renewal process at least 6 months before expiry."
-      },
-      {
-        "q": "Are imported products also required to have a BPJPH halal certificate?",
-        "a": "Yes, imported products that are circulated and traded in Indonesia must also be halal certified. They can either be certified directly by BPJPH or by a foreign halal certification body that has a mutual recognition agreement with BPJPH."
-      },
-      {
-        "q": "How does the Ingredient Validator work?",
-        "a": "The Ingredient Validator uses AI to analyze a list of ingredients you provide against a database of known halal, haram, and syubhat substances. It provides a preliminary assessment to help you identify potentially critical ingredients in your product formulation before you officially apply for certification."
-      },
-      {
-        "q": "Is the information in the Halal Marketplace guaranteed?",
-        "a": "We strive to ensure all information is accurate. The products listed in the Halal Marketplace are from producers who have obtained a BPJPH halal certificate. However, we always recommend consumers double-check the halal logo and expiry date on the physical product packaging."
-      },
-      {
-        "q": "How can I contact BPJPH for official inquiries?",
-        "a": "For official inquiries, you can contact the BPJPH Call Center at 146 or email them at halal@kemenag.go.id. You can also find their official address and contact details in the footer of our application."
+        "q": "How does the AI Halal Advisor help me?",
+        "a": "This application is a comprehensive digital tool to support the Halal ecosystem. It helps consumers verify products, assists businesses (UMKM) with the certification process, provides auditors with digital tools, and gives BPJPH officers a way to monitor the system. Our AI assistant, HANA, is also available to answer your questions in real-time."
       }
     ]
   },
