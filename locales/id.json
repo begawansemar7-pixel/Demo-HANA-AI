@@ -624,7 +624,16 @@
     "notesPlaceholder": "Tambahkan catatan di sini...",
     "dueDateLabel": "Tenggat Waktu",
     "overdueLabel": "Terlambat",
-    "setDueDateAriaLabel": "Tetapkan tenggat waktu untuk {taskName}"
+    "setDueDateAriaLabel": "Tetapkan tenggat waktu untuk {taskName}",
+    "selectClientPrompt": "Pilih Klien untuk Memulai Audit",
+    "profile": {
+      "title": "Profil Klien",
+      "product": "Produk",
+      "regNumber": "No. Registrasi",
+      "address": "Alamat Usaha",
+      "contactName": "Kontak Utama",
+      "contactEmail": "Email Kontak"
+    }
   },
   "auditLog": {
     "title": "Log Audit",

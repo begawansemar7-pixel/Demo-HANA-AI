@@ -624,7 +624,16 @@
     "notesPlaceholder": "Add notes here...",
     "dueDateLabel": "Due Date",
     "overdueLabel": "Overdue",
-    "setDueDateAriaLabel": "Set due date for {taskName}"
+    "setDueDateAriaLabel": "Set due date for {taskName}",
+    "selectClientPrompt": "Select a Client to Begin Audit",
+    "profile": {
+      "title": "Client Profile",
+      "product": "Product",
+      "regNumber": "Registration No.",
+      "address": "Business Address",
+      "contactName": "Key Contact",
+      "contactEmail": "Contact Email"
+    }
   },
   "auditLog": {
     "title": "Audit Log",

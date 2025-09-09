@@ -1,4 +1,4 @@
-import type { Service, Persona, PersonaId } from './types';
+import type { Service, Persona, PersonaId, ClientProfile } from './types';
 import React from 'react';
 
 // Icons
@@ -100,4 +100,34 @@ export const PERSONAS: Persona[] = [
         description: 'personas.officer.description',
         icon: OfficerIcon(),
     },
+];
+
+export const CLIENT_PROFILES: ClientProfile[] = [
+  { 
+    id: 'client-1', 
+    name: 'Sedaap Food Inc.', 
+    product: 'Instant Noodles', 
+    regNumber: 'ID1234567890123',
+    address: 'Jl. Industri Raya No. 4, Jakarta, Indonesia',
+    contactName: 'Budi Santoso',
+    contactEmail: 'budi.s@sedaapfood.com'
+  },
+  { 
+    id: 'client-2', 
+    name: 'Wardah Beauty', 
+    product: 'Cosmetics Line', 
+    regNumber: 'ID9876543210987',
+    address: 'Paragon Tower, Jl. TB Simatupang, Jakarta, Indonesia',
+    contactName: 'Citra Lestari',
+    contactEmail: 'citra.l@wardahbeauty.com'
+  },
+  { 
+    id: 'client-3', 
+    name: 'So Good Foods', 
+    product: 'Frozen Chicken', 
+    regNumber: 'ID1122334455667',
+    address: 'Jl. Pahlawan No. 12, Surabaya, Indonesia',
+    contactName: 'Agus Wijaya',
+    contactEmail: 'agus.w@sogood.com'
+  },
 ];

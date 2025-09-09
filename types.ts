@@ -79,3 +79,13 @@ export interface Task {
   isCompleted: boolean;
   dueDate?: string; // YYYY-MM-DD
 }
+
+export interface ClientProfile {
+  id: string;
+  name: string;
+  product: string;
+  regNumber: string;
+  address: string;
+  contactName: string;
+  contactEmail: string;
+}
