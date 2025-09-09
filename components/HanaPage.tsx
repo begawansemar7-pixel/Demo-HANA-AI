@@ -124,7 +124,7 @@ const HanaPage: React.FC = () => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  useEffect(scrollToBottom, [messages]);
+  useEffect(scrollToBottom, [messages, hanaState]);
 
   // Effect for initial load and language changes (loads history)
   useEffect(() => {
@@ -263,7 +263,7 @@ const HanaPage: React.FC = () => {
   };
   
   const isSessionEnded = timeRemaining <= 0 && !isFreeTrial && !showPaymentWall;
-  const isChatDisabled = hanaState === HanaState.THINKING || showPaymentWall || isSessionEnded;
+  const isChatDisabled = hanaState === HanaState.THINKING || hanaState === HanaState.ANSWERING || showPaymentWall || isSessionEnded;
 
 
   return (
@@ -290,7 +290,7 @@ const HanaPage: React.FC = () => {
         </div>
 
         {/* Right Column: Chat Interface */}
-        <div className="lg:w-2/3 bg-white rounded-2xl shadow-xl flex flex-col h-[75vh] relative">
+        <div className="lg:w-2/3 bg-white dark:bg-gray-800 rounded-2xl shadow-xl flex flex-col h-[75vh] relative">
            {showDownloadSuccess && (
                 <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-green-500 text-white text-sm font-semibold py-2 px-4 rounded-full animate-fadein z-10">
                     {t('hana.downloadSuccess')}
@@ -334,7 +334,7 @@ const HanaPage: React.FC = () => {
             {messages.map(msg => (
               <div key={msg.id} className={`flex items-end gap-2 ${msg.sender === 'user' ? 'justify-end' : ''}`}>
                 {msg.sender === 'hana' && <div className="w-8 h-8 rounded-full bg-halal-green text-white flex items-center justify-center text-sm font-bold flex-shrink-0">H</div>}
-                <div className={`max-w-xs md:max-w-md p-3 rounded-2xl ${msg.sender === 'user' ? 'bg-halal-green text-white rounded-br-none' : 'bg-gray-100 text-gray-800 rounded-bl-none'}`}>
+                <div className={`max-w-xs md:max-w-md p-3 rounded-2xl ${msg.sender === 'user' ? 'bg-halal-green text-white rounded-br-none' : 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100 rounded-bl-none'}`}>
                   <p className="text-sm" style={{ whiteSpace: 'pre-wrap' }}>{msg.text}</p>
                 </div>
                  {isTtsSupported && currentlySpeakingId === msg.id && (
@@ -347,9 +347,9 @@ const HanaPage: React.FC = () => {
               </div>
             ))}
              {hanaState === HanaState.THINKING && (
-                <div className="flex items-end gap-2">
+                <div className="flex items-end gap-2 animate-fadein">
                     <div className="w-8 h-8 rounded-full bg-halal-green text-white flex items-center justify-center text-sm font-bold flex-shrink-0">H</div>
-                    <div className="max-w-xs md:max-w-md p-3 rounded-2xl bg-gray-100 text-gray-800 rounded-bl-none">
+                    <div className="max-w-xs md:max-w-md p-3 rounded-2xl bg-gray-100 dark:bg-gray-700 text-gray-800 rounded-bl-none">
                         <div className="flex space-x-1">
                           <div className="w-2 h-2 bg-gray-500 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
                           <div className="w-2 h-2 bg-gray-500 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
@@ -361,7 +361,7 @@ const HanaPage: React.FC = () => {
             <div ref={chatEndRef} />
           </div>
 
-            <div className="p-4 border-t bg-white rounded-b-2xl">
+            <div className="p-4 border-t bg-white dark:bg-gray-800 rounded-b-2xl">
                 {showPaymentWall ? (
                     <div className="p-4 bg-yellow-50 text-center animate-fadein rounded-lg">
                         <h4 className="font-bold text-yellow-800">{t('hana.paymentTitle')}</h4>
@@ -390,7 +390,7 @@ const HanaPage: React.FC = () => {
                             <button
                                 type="button"
                                 onClick={toggleListening}
-                                className={`w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center transition-colors duration-300 ${isListening ? 'bg-red-500 text-white animate-pulse' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
+                                className={`w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center transition-colors duration-300 ${isListening ? 'bg-red-500 text-white animate-pulse' : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'} disabled:opacity-50 disabled:cursor-not-allowed`}
                                 aria-label={isListening ? t('hana.stopListeningLabel') : t('hana.startListeningLabel')}
                                 disabled={isChatDisabled}
                             >
@@ -407,7 +407,7 @@ const HanaPage: React.FC = () => {
                             onChange={(e) => setInput(e.target.value)}
                             onKeyPress={handleKeyPress}
                             placeholder={isListening ? t('hana.listeningPlaceholder') : t('hana.inputPlaceholder')}
-                            className="flex-1 w-full py-2 px-4 bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-halal-green"
+                            className="flex-1 w-full py-2 px-4 bg-gray-100 dark:bg-gray-700 rounded-full focus:outline-none focus:ring-2 focus:ring-halal-green disabled:bg-gray-200 dark:disabled:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed"
                             disabled={isChatDisabled}
                         />
                         <button onClick={handleSend} aria-label={t('hana.sendLabel')} disabled={isChatDisabled || input.trim() === ''} className="w-10 h-10 bg-halal-green text-white rounded-full flex-shrink-0 flex items-center justify-center hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed">

@@ -290,11 +290,11 @@
       "5": { "name": "Suplemen Vitamin C", "producer": "HalalPharm", "price": "Rp 88.000", "category": "Pharmaceuticals", "description": "Tingkatkan sistem kekebalan Anda dengan suplemen Vitamin C bersertifikat halal kami. Dibuat dengan bahan-bahan berkualitas tinggi dan bebas dari aditif non-halal.", "reviews": { "1": {"author": "Omar H.", "rating": "5", "comment": "Menjadi andalan di rumah kami, terutama saat musim flu."} }, "halalStatus": "Not Certified", "halalExpiry": "N/A" },
       "6": { "name": "Lipstik Matte", "producer": "Wardah Beauty", "price": "Rp 45.000", "category": "Cosmetics", "description": "Lipstik matte yang tahan lama dengan formula yang nyaman dan tidak membuat bibir kering. Tersedia dalam berbagai warna indah, semua ramah wudu dan halal.", "reviews": { "1": {"author": "Maryam A.", "rating": "4", "comment": "Warna yang indah, tapi bisa sedikit kering setelah beberapa jam."} }, "halalStatus": "Certified", "halalExpiry": "2026-05-30" },
       "7": { "name": "Ayam Halal Beku", "producer": "So Good Foods", "price": "Rp 60.000", "category": "Food", "description": "Ayam beku berkualitas premium, diproses dan dikemas sesuai dengan standar halal yang ketat. Empuk, juicy, dan sempurna untuk semua resep favorit Anda.", "reviews": {}, "halalStatus": "Certified", "halalExpiry": "2024-11-05" },
-      "8": { "name": "Tunik Motif", "producer": "Elzatta Hijab", "price": "Rp 250.000", "category": "Fashion", "description": "Tunik motif yang stylish dan sopan terbuat dari bahan yang nyaman dan ringan. Menampilkan desain unik yang sempurna untuk acara santai maupun formal.", "reviews": { "1": {"author": "Yasmin F.", "rating": "5", "comment": "Saya mendapat banyak pujian saat memakai ini!"} }, "halalStatus": "Certified", "halalExpiry": "2025-08-10" },
+      "8": { "name": "Tunik Motif", "producer": "Elzatta Hijab", "price": "Rp 250.000", "category": "Fashion", "description": "Tunik motif yang stylish dan sopan terbuat dari bahan yang nyaman dan ringan. Menampilkan desain unik yang sempurna untuk acara santai maupun formal.", "reviews": { "1": {"author": "Yasmin F.", "rating": "5", "comment": "Saya menerima banyak pujian saat mengenakan ini!"} }, "halalStatus": "Certified", "halalExpiry": "2025-08-10" },
       "9": { "name": "Sirup Batuk Herbal", "producer": "HalalPharm", "price": "Rp 35.000", "category": "Pharmaceuticals", "description": "Sirup batuk herbal yang menenangkan terbuat dari bahan-bahan alami dan halal. Efektif meredakan batuk dan sakit tenggorokan tanpa alkohol atau zat terlarang lainnya.", "reviews": {}, "halalStatus": "Certified", "halalExpiry": "Invalid Date" },
-      "10": { "name": "Susu UHT", "producer": "Cimory", "price": "Rp 7.500", "category": "Food", "description": "Susu UHT segar dan bergizi, bersumber dari sapi yang dirawat dengan baik dan diproses di fasilitas bersertifikat halal. Pilihan sehat untuk seluruh keluarga.", "reviews": { "1": {"author": "Ibrahim M.", "rating": "5", "comment": "Anak-anak saya suka susu ini."} }, "halalStatus": "Certified", "halalExpiry": "2025-02-20" },
-      "11": { "name": "Sabun Pembersih Wajah", "producer": "Wardah Beauty", "price": "Rp 15.000", "category": "Cosmetics", "description": "Pembersih wajah yang lembut namun efektif yang membersihkan kulit tanpa menghilangkan kelembapan alaminya. Bersertifikat halal dan cocok untuk semua jenis kulit.", "reviews": {}, "halalStatus": "Not Certified", "halalExpiry": "N/A" },
-      "12": { "name": "Rendang Sapi Siap Saji", "producer": "PT Sedaap Food", "price": "Rp 22.000", "category": "Food", "description": "Rendang Sapi otentik Indonesia, siap santap dalam hitungan menit. Dibuat dengan daging sapi bersertifikat halal dan perpaduan bumbu tradisional yang kaya untuk hidangan lezat dan praktis.", "reviews": { "1": {"author": "David L.", "rating": "5", "comment": "Rasa yang sangat otentik untuk makanan siap saji. Luar biasa!"} }, "halalStatus": "Certified", "halalExpiry": "2027-01-01" }
+      "10": { "name": "Susu UHT", "producer": "Cimory", "price": "Rp 7.000", "category": "Food", "description": "Susu UHT segar dan bergizi, bersumber dari sapi yang terawat baik dan diproses di fasilitas bersertifikat halal. Pilihan sehat untuk seluruh keluarga.", "reviews": { "1": {"author": "Ibrahim M.", "rating": "5", "comment": "Anak-anak saya suka susu ini."} }, "halalStatus": "Certified", "halalExpiry": "2025-02-20" },
+      "11": { "name": "Sabun Pembersih Wajah", "producer": "Wardah Beauty", "price": "Rp 25.000", "category": "Cosmetics", "description": "Pembersih wajah yang lembut namun efektif yang membersihkan kulit tanpa menghilangkan kelembapan alaminya. Bersertifikat halal dan cocok untuk semua jenis kulit.", "reviews": {}, "halalStatus": "Not Certified", "halalExpiry": "N/A" },
+      "12": { "name": "Rendang Sapi Siap Saji", "producer": "PT Sedaap Food", "price": "Rp 20.000", "category": "Food", "description": "Rendang Sapi otentik Indonesia, siap santap dalam hitungan menit. Dibuat dengan daging sapi bersertifikat halal dan campuran rempah-rempah tradisional yang kaya untuk hidangan lezat dan praktis.", "reviews": { "1": {"author": "David L.", "rating": "5", "comment": "Rasa yang sangat otentik untuk makanan siap saji. Luar biasa!"} }, "halalStatus": "Certified", "halalExpiry": "2027-01-01" }
     },
     "addToBasket": "Tambah ke Keranjang",
     "priceRange": "Rentang Harga",
@@ -304,7 +304,7 @@
     "exportButton": "Ekspor ke CSV",
     "sortBy": {
       "label": "Urutkan berdasarkan",
-      "default": "Pengurutan Standar",
+      "default": "Urutan Standar",
       "priceAsc": "Harga: Rendah ke Tinggi",
       "priceDesc": "Harga: Tinggi ke Rendah",
       "ratingDesc": "Peringkat Tertinggi",
@@ -312,7 +312,7 @@
     }
   },
   "productDetail": {
-    "backToMarketplace": "Kembali ke Pasar",
+    "backToMarketplace": "Kembali ke Pasar Halal",
     "customerReviews": "Ulasan Pelanggan",
     "noReviews": "Produk ini belum memiliki ulasan.",
     "reviews": "ulasan"
@@ -321,7 +321,7 @@
     "title": "Keranjang Belanja",
     "empty": "Keranjang Anda kosong.",
     "total": "Total",
-    "checkout": "Lanjutkan ke Pembayaran",
+    "checkout": "Lanjut ke Pembayaran",
     "remove": "Hapus item"
   },
   "checkout": {
@@ -338,13 +338,13 @@
     "message": "Terima kasih atas pesanan Anda. Konfirmasi telah dikirim ke email Anda.",
     "continueShopping": "Lanjutkan Belanja"
   },
-  "auth": {
+   "auth": {
     "guestAccessDenied": "Fitur ini untuk pengguna terdaftar. Silakan buat akun untuk mengakses profil Anda.",
     "accessDenied": "Akses Ditolak: Fitur ini tidak tersedia untuk peran Anda.",
     "loginTitle": "Masuk sebagai",
     "registerTitle": "Buat Akun sebagai",
     "emailLabel": "Alamat Email",
-    "emailPlaceholder": "cth., pengguna@contoh.com",
+    "emailPlaceholder": "cth., user@example.com",
     "passwordLabel": "Kata Sandi",
     "passwordPlaceholder": "Masukkan 8+ karakter",
     "loginButton": "Masuk",
@@ -363,9 +363,9 @@
     "loginIdRequired": "Email atau ID wajib diisi.",
     "forgotPasswordTitle": "Atur Ulang Kata Sandi",
     "forgotPasswordSubtitle": "Masukkan email Anda dan kami akan mengirimkan tautan untuk masuk kembali ke akun Anda.",
-    "sendResetLink": "Kirim Tautan Reset",
-    "resetLinkSent": "Jika ada akun dengan email tersebut, kami telah mengirimkan tautan reset kata sandi.",
-    "backToLogin": "Kembali ke Login",
+    "sendResetLink": "Kirim Tautan Atur Ulang",
+    "resetLinkSent": "Jika ada akun dengan email tersebut, kami telah mengirimkan tautan atur ulang kata sandi.",
+    "backToLogin": "Kembali ke Halaman Masuk",
     "fullNameLabel": "Nama Lengkap",
     "fullNamePlaceholder": "cth., Aisha Fatima",
     "confirmPasswordLabel": "Konfirmasi Kata Sandi",
@@ -378,7 +378,7 @@
     "businessNameLabel": "Nama Usaha",
     "businessNamePlaceholder": "cth., Halal Foods Nusantara",
     "businessNameRequired": "Nama usaha wajib diisi.",
-    "businessIdLabel": "Nomor Induk Berusaha (NIB)",
+    "businessIdLabel": "NIB (Nomor Induk Berusaha)",
     "businessIdPlaceholder": "Masukkan 13 digit NIB Anda",
     "businessIdRequired": "NIB wajib diisi.",
     "auditorIdLabel": "ID Auditor",
@@ -398,7 +398,7 @@
     "emailOrAuditorIdLabel": "Email atau ID Auditor",
     "emailOrAuditorIdPlaceholder": "cth., auditor@lph.com atau AUD-12345",
     "emailOrOfficerIdLabel": "Email atau ID Petugas",
-    "emailOrOfficerIdPlaceholder": "cth., petugas@bpjph.go.id atau OFF-12345",
+    "emailOrOfficerIdPlaceholder": "cth., officer@bpjph.go.id atau OFF-12345",
     "loginWithGoogle": "Masuk dengan Google",
     "registerWithGoogle": "Daftar dengan Google",
     "orDivider": "ATAU",
@@ -426,7 +426,7 @@
     "noFiltersForMap": "Tidak ada filter yang tersedia untuk pencarian peta.",
     "suggestions": {
       "title": "Pencarian Populer",
-      "1": "makanan halal di dekat saya",
+      "1": "makanan halal terdekat",
       "2": "proses sertifikasi halal",
       "3": "verifikasi produk"
     }
@@ -434,13 +434,13 @@
   "profilePage": {
     "notifications": {
       "title": "Pengaturan Notifikasi",
-      "description": "Tetap terupdate dengan pengumuman penting, promosi baru, dan perubahan status sertifikasi.",
+      "description": "Tetap terinformasi dengan pengumuman penting, promosi baru, dan perubahan status sertifikasi.",
       "enableButton": "Aktifkan Notifikasi",
-      "sendTestButton": "Kirim Notifikasi Tes",
-      "enabledText": "Notifikasi diaktifkan. Anda sudah siap!",
+      "sendTestButton": "Kirim Notifikasi Uji Coba",
+      "enabledText": "Notifikasi sudah aktif. Anda siap menerima informasi terbaru!",
       "deniedText": "Notifikasi diblokir. Harap aktifkan di pengaturan browser Anda untuk menerima pembaruan.",
       "testTitle": "AI Halal Advisor",
-      "testBody": "Ini adalah notifikasi tes. Anda sekarang berlangganan pembaruan!"
+      "testBody": "Ini adalah notifikasi uji coba. Anda sekarang terdaftar untuk menerima pembaruan!"
     }
   },
   "newsPage": {
@@ -460,7 +460,7 @@
     "validUntilTitle": "Berlaku Hingga",
     "shareButton": "Bagikan Promosi",
     "shareMessage": "Promosi berhasil dibagikan!",
-    "copySuccessMessage": "Tautan disalin ke papan klip!"
+    "copySuccessMessage": "Tautan disalin ke clipboard!"
   },
   "promotionsPage": {
     "subtitle": "Lihat penawaran terbaru dan promosi spesial.",
@@ -493,23 +493,23 @@
       },
       "4": {
         "title": "Paket Pelatihan Auditor Halal",
-        "description": "Daftar untuk pelatihan auditor kami dan dapatkan akses eksklusif ke perangkat digital kami secara gratis.",
+        "description": "Daftar untuk pelatihan auditor kami dan dapatkan akses eksklusif ke toolkit digital kami secara gratis.",
         "cta": "Daftar Sekarang",
-        "details": "Menjadi auditor Halal bersertifikat dengan program pelatihan komprehensif kami. Paket khusus ini mencakup materi kursus lengkap, biaya ujian, dan langganan satu tahun untuk perangkat lunak auditor premium kami.",
+        "details": "Jadilah auditor Halal bersertifikat dengan program pelatihan komprehensif kami. Paket khusus ini mencakup materi kursus lengkap, biaya ujian, dan langganan satu tahun untuk perangkat lunak auditor premium kami.",
         "terms": "Penawaran hanya berlaku untuk pendaftaran baru. Langganan perangkat lunak tidak dapat dialihkan. Kursus harus diselesaikan dalam waktu 6 bulan setelah pendaftaran.",
         "expiry": "31 Oktober 2024"
       },
       "5": {
         "title": "Paket UMKM Go-Digital",
-        "description": "Bawa bisnis halal Anda ke dunia online dengan paket spesial kami yang mencakup situs web dan pemasaran.",
+        "description": "Bawa bisnis halal Anda ke dunia online dengan paket spesial kami termasuk situs web dan pemasaran.",
         "cta": "Mulai Sekarang",
-        "details": "Biarkan kami membantu Anda membawa bisnis Halal Anda ke tingkat berikutnya. Paket ini menyediakan situs web e-commerce sederhana, penyiapan media sosial, dan paket awal untuk iklan digital, semuanya disesuaikan untuk konsumen Halal.",
-        "terms": "Ini adalah layanan yang disediakan oleh mitra pihak ketiga. Hosting situs web dan biaya iklan tidak termasuk dalam harga paket. Slot terbatas tersedia setiap bulan.",
+        "details": "Biarkan kami membantu Anda membawa bisnis Halal Anda ke tingkat berikutnya. Paket ini menyediakan situs web e-commerce sederhana, pengaturan media sosial, dan paket awal untuk iklan digital, semua disesuaikan untuk konsumen Halal.",
+        "terms": "Ini adalah layanan yang disediakan oleh mitra pihak ketiga. Hosting situs web dan biaya iklan tidak termasuk dalam harga paket. Slot terbatas tersedia per bulan.",
         "expiry": "31 Desember 2024"
       },
       "6": {
         "title": "Langganan Gaya Hidup Halal Keluarga",
-        "description": "Berlangganan kotak bulanan kami yang berisi produk halal pilihan untuk seluruh keluarga.",
+        "description": "Berlangganan kotak bulanan kami yang berisi produk-produk halal pilihan untuk seluruh keluarga.",
         "cta": "Berlangganan",
         "details": "Temukan produk Halal baru dan menarik setiap bulan! Setiap kotak diisi dengan pilihan makanan ringan, bahan, dan item gaya hidup dari mitra UMKM bersertifikat. Cara yang bagus untuk mendukung usaha kecil.",
         "terms": "Langganan diperpanjang secara otomatis setiap bulan. Dapat dibatalkan kapan saja. Pengiriman hanya tersedia di Indonesia.",
@@ -527,10 +527,10 @@
     "subtitle": "Periksa status produk dengan cepat dengan memindai barcode atau kode QR-nya.",
     "cameraPlaceholder": "Posisikan barcode atau kode QR di dalam bingkai.",
     "uploadButton": "Unggah dari Galeri",
-    "scanResult": "Hasil Pindai",
+    "scanResult": "Hasil Pindaian",
     "scanAgain": "Pindai Lagi",
     "noCamera": "Tidak dapat mengakses kamera. Harap periksa izin dan coba lagi.",
-    "noCodeFound": "Tidak ada barcode atau kode QR yang terdeteksi pada gambar."
+    "noCodeFound": "Tidak ada barcode atau kode QR yang dapat terdeteksi pada gambar."
   },
   "moreServices": {
     "title": "Layanan Lainnya",
@@ -542,7 +542,7 @@
     "subtitle": "Akses peraturan dan pedoman resmi Jaminan Produk Halal.",
     "placeholder": "Fitur perpustakaan regulasi akan segera hadir. Nantikan pembaruan!",
     "backToList": "Kembali ke Daftar Regulasi",
-    "pdfPlaceholder": "Tempat Penampil PDF",
+    "pdfPlaceholder": "Tempat untuk Penampil PDF",
     "categories": {
       "law": "Undang-Undang",
       "gov": "Peraturan Pemerintah",
@@ -560,11 +560,11 @@
       },
       "3": {
         "title": "Keputusan Menteri Agama No. 748 Tahun 2021",
-        "description": "Menentukan jenis-jenis produk yang wajib bersertifikat halal."
+        "description": "Menentukan jenis-jenis produk yang wajib disertifikasi halal."
       },
       "4": {
         "title": "Keputusan Kepala BPJPH No. 1 Tahun 2021",
-        "description": "Pedoman teknis mengenai pelaksanaan layanan Jaminan Produk Halal."
+        "description": "Pedoman teknis mengenai penyelenggaraan layanan Jaminan Produk Halal."
       }
     }
   },
@@ -576,7 +576,7 @@
       "section1Title": "Informasi Usaha",
       "businessNameLabel": "Nama Usaha",
       "businessNamePlaceholder": "cth., Warung Makan Ibu Siti",
-      "businessIdLabel": "Nomor Induk Berusaha (NIB)",
+      "businessIdLabel": "NIB (Nomor Induk Berusaha)",
       "businessIdPlaceholder": "Masukkan 13 digit NIB Anda",
       "businessAddressLabel": "Alamat Lengkap Usaha",
       "businessAddressPlaceholder": "Masukkan alamat lengkap fasilitas produksi Anda",
@@ -584,7 +584,7 @@
       "productNameLabel": "Nama Produk",
       "productNamePlaceholder": "cth., Keripik Singkong Pedas",
       "ingredientsLabel": "Daftar Bahan",
-      "ingredientsPlaceholder": "Sebutkan semua bahan yang digunakan, dipisahkan koma. cth., Singkong, Minyak Kelapa Sawit, Cabai, Garam, Gula",
+      "ingredientsPlaceholder": "Sebutkan semua bahan yang digunakan, dipisahkan dengan koma. cth., Singkong, Minyak Sawit, Cabai, Garam, Gula",
       "section3Title": "Penyelia Halal",
       "supervisorNameLabel": "Nama Penyelia Halal",
       "supervisorNamePlaceholder": "Masukkan nama lengkap penyelia",
@@ -599,21 +599,21 @@
       "submitButton": "Kirim Deklarasi",
       "submittingButton": "Mengirim...",
       "errors": {
-        "required": "Bidang ini wajib diisi.",
+        "required": "Kolom ini wajib diisi.",
         "agreementRequired": "Anda harus menyetujui pernyataan ini."
       }
     },
     "success": {
       "title": "Aplikasi Terkirim!",
       "message": "Aplikasi SEHATI Anda untuk produk '{productName}' telah berhasil dikirim. Tim kami akan meninjaunya dan Anda akan diberitahu tentang langkah selanjutnya melalui email. ID aplikasi Anda adalah SEHATI-{id}.",
-      "newApplicationButton": "Kirim Aplikasi Lain"
+      "newApplicationButton": "Ajukan Aplikasi Lain"
     }
   },
   "auditChecklist": {
     "title": "Daftar Periksa Audit",
     "subtitle": "Lengkapi pemeriksaan berikut untuk proses audit halal.",
-    "saveButton": "Simpan Kemajuan",
-    "saveSuccess": "Kemajuan berhasil disimpan!",
+    "saveButton": "Simpan Progres",
+    "saveSuccess": "Progres berhasil disimpan!",
     "items": {
       "ingredient": "Verifikasi Bahan",
       "process": "Tinjauan Proses Produksi",
@@ -621,14 +621,14 @@
       "documentation": "Tinjauan Dokumentasi"
     },
     "notesPlaceholder": "Tambahkan catatan di sini...",
-    "dueDateLabel": "Batas Waktu",
+    "dueDateLabel": "Tenggat Waktu",
     "overdueLabel": "Terlambat",
-    "setDueDateAriaLabel": "Atur batas waktu untuk {taskName}"
+    "setDueDateAriaLabel": "Tetapkan tenggat waktu untuk {taskName}"
   },
   "auditLog": {
     "title": "Log Audit",
-    "subtitle": "Tinjauan semua tindakan penting yang dilakukan oleh auditor.",
-    "emptyStateTitle": "Tidak Ada Log yang Ditemukan",
+    "subtitle": "Tinjauan semua tindakan signifikan yang dilakukan oleh auditor.",
+    "emptyStateTitle": "Tidak Ada Log Ditemukan",
     "emptyStateSubtitle": "Tindakan dari Daftar Periksa Audit akan dicatat di sini.",
     "clearLogButton": "Hapus Log",
     "confirmClear": "Apakah Anda yakin ingin menghapus semua log audit secara permanen?",
@@ -650,9 +650,9 @@
     },
     "kpi": {
       "totalApplications": "Total Aplikasi",
-      "certificatesIssued": "Sertifikat Terbit",
+      "certificatesIssued": "Sertifikat Diterbitkan",
       "pendingReview": "Menunggu Tinjauan",
-      "avgProcessingTime": "Waktu Proses Rata-Rata",
+      "avgProcessingTime": "Waktu Proses Rata-rata",
       "days": "Hari"
     },
     "charts": {
@@ -690,12 +690,12 @@
     "title": "Tentang AI Halal Advisor",
     "subtitle": "Memberdayakan Ekosistem Halal dengan Teknologi",
     "paragraph1": "AI Halal Advisor adalah platform digital perintis yang dirancang untuk mendukung dan menyederhanakan ekosistem Jaminan Produk Halal di Indonesia. Dikembangkan bekerja sama dengan Badan Penyelenggara Jaminan Produk Halal (BPJPH), aplikasi ini berfungsi sebagai alat komprehensif bagi semua pemangku kepentingan yang terlibat dalam industri halal.",
-    "paragraph2": "Misi kami adalah memberdayakan pelaku usaha, penyelia halal, auditor, petugas BPJPH, dan konsumen dengan menyediakan akses mudah ke informasi, menyederhanakan proses sertifikasi, dan membina pasar halal yang transparan dan dapat dipercaya. Dari memverifikasi bahan produk hingga mengakses peraturan terbaru, AI Halal Advisor adalah solusi terpadu Anda untuk segala hal tentang halal.",
+    "paragraph2": "Misi kami adalah memberdayakan pelaku usaha, penyelia halal, auditor, petugas BPJPH, dan konsumen dengan menyediakan akses mudah ke informasi, menyederhanakan proses sertifikasi, dan membina pasar halal yang transparan dan dapat dipercaya. Mulai dari memverifikasi bahan produk hingga mengakses peraturan terbaru, AI Halal Advisor adalah solusi terpadu Anda untuk semua hal yang berkaitan dengan halal.",
     "bpjphTitle": "Tentang BPJPH",
-    "bpjphParagraph1": "BPJPH (Badan Penyelenggara Jaminan Produk Halal) adalah lembaga pemerintah di bawah Kementerian Agama Republik Indonesia. BPJPH memiliki mandat untuk menyelenggarakan Jaminan Produk Halal sebagaimana diamanatkan oleh Undang-Undang No. 33 Tahun 2014.",
+    "bpjphParagraph1": "BPJPH (Badan Penyelenggara Jaminan Produk Halal) adalah lembaga pemerintah di bawah Kementerian Agama Republik Indonesia. BPJPH memegang amanat untuk menyelenggarakan Jaminan Produk Halal sebagaimana diatur oleh Undang-Undang No. 33 Tahun 2014.",
     "bpjphParagraph2": "Badan ini bertanggung jawab untuk menerbitkan sertifikat halal, mengakreditasi Lembaga Pemeriksa Halal (LPH), serta mengembangkan standar dan sistem yang menjamin integritas produk halal yang beredar di Indonesia dan luar negeri. AI Halal Advisor adalah inisiatif resmi untuk mendigitalkan dan meningkatkan layanan yang disediakan oleh BPJPH.",
     "techTitle": "Teknologi Kami",
-    "techParagraph1": "Didukung oleh model AI canggih dari Google, AI Halal Advisor menyediakan fitur cerdas seperti asisten AI HANA, analisis bahan, dan mesin pencari pintar untuk memberikan informasi yang akurat dan relevan dengan cepat dan efisien."
+    "techParagraph1": "Didukung oleh model AI canggih dari Google, AI Halal Advisor menyediakan fitur-fitur cerdas seperti asisten AI HANA, analisis bahan, dan mesin pencari pintar untuk memberikan informasi yang akurat dan relevan dengan cepat dan efisien."
   },
   "faqPage": {
     "title": "Pertanyaan yang Sering Diajukan",
@@ -704,19 +704,19 @@
     "questions": [
       {
         "q": "Apa itu Sertifikasi Halal?",
-        "a": "Sertifikasi halal adalah proses formal yang memverifikasi dan menjamin bahwa produk, layanan, dan seluruh proses produksi telah sesuai dengan hukum Syariah Islam. Ini memastikan bahwa produk tersebut 'halal' (diperbolehkan) untuk dikonsumsi dan digunakan oleh umat Muslim. Proses ini diawasi di Indonesia oleh BPJPH."
+        "a": "Sertifikasi halal adalah proses formal yang memverifikasi dan menjamin bahwa produk, layanan, dan seluruh proses produksi telah sesuai dengan hukum Syariah Islam. Ini memastikan bahwa produk tersebut 'halal' (diperbolehkan) untuk dikonsumsi dan digunakan oleh umat Islam. Proses ini diawasi di Indonesia oleh BPJPH."
       },
       {
         "q": "Mengapa Sertifikasi Halal penting?",
-        "a": "Sertifikasi ini penting karena beberapa alasan:\n1. **Kepatuhan Agama:** Memberikan jaminan kepada konsumen Muslim bahwa produk memenuhi persyaratan diet keagamaan mereka.\n2. **Kepercayaan Konsumen:** Logo halal membangun kepercayaan dan keyakinan pada sebuah merek.\n3. **Akses Pasar:** Membuka akses ke pasar halal lokal dan global yang luas.\n4. **Amanat Hukum:** Di Indonesia, sertifikasi untuk banyak kategori produk akan menjadi wajib mulai Oktober 2024."
+        "a": "Penting karena beberapa alasan:\n1. **Kepatuhan Agama:** Memberikan jaminan kepada konsumen Muslim bahwa produk memenuhi persyaratan diet keagamaan mereka.\n2. **Kepercayaan Konsumen:** Logo halal membangun kepercayaan dan keyakinan pada sebuah merek.\n3. **Akses Pasar:** Membuka akses ke pasar halal lokal dan global yang luas.\n4. **Mandat Hukum:** Di Indonesia, sertifikasi untuk banyak kategori produk akan menjadi wajib mulai Oktober 2024."
       },
       {
-        "q": "Siapa yang dapat mengajukan Sertifikasi Halal?",
+        "q": "Siapa yang bisa mengajukan Sertifikasi Halal?",
         "a": "Setiap pelaku usaha, termasuk perorangan, badan usaha, atau badan hukum, yang memproduksi atau memperdagangkan produk di Indonesia dapat mengajukan permohonan. Ini mencakup usaha mikro, kecil, menengah, dan besar."
       },
       {
         "q": "Apa itu program SEHATI?",
-        "a": "SEHATI (Sertifikasi Halal Gratis) adalah program yang didanai pemerintah yang menyediakan sertifikasi halal gratis bagi Usaha Mikro dan Kecil (UMKM) yang memenuhi syarat. Tujuannya adalah untuk meringankan beban keuangan dan mendorong usaha kecil agar mematuhi peraturan halal."
+        "a": "SEHATI (Sertifikasi Halal Gratis) adalah program yang didanai pemerintah yang menyediakan sertifikasi halal gratis untuk Usaha Mikro dan Kecil (UMKM) yang memenuhi syarat. Tujuannya adalah untuk meringankan beban finansial dan mendorong pelaku usaha kecil untuk mematuhi peraturan halal."
       },
       {
         "q": "Berapa lama masa berlaku Sertifikat Halal?",
@@ -724,7 +724,7 @@
       },
       {
         "q": "Apa itu SIHALAL?",
-        "a": "SIHALAL adalah sistem informasi online resmi yang dikelola oleh BPJPH. Semua proses sertifikasi halal, mulai dari pendaftaran dan penyerahan dokumen hingga pembayaran dan penerbitan sertifikat, dilakukan melalui platform ini."
+        "a": "SIHALAL adalah sistem informasi online resmi yang dikelola oleh BPJPH. Semua proses sertifikasi halal, mulai dari pendaftaran, pengiriman dokumen, hingga pembayaran dan penerbitan sertifikat, dilakukan melalui platform ini."
       },
       {
         "q": "Apa peran LPH (Lembaga Pemeriksa Halal)?",
@@ -732,19 +732,19 @@
       },
       {
         "q": "Apa perbedaan antara BPJPH dan MUI dalam proses sertifikasi halal?",
-        "a": "BPJPH adalah badan pemerintah yang menyelenggarakan dan menerbitkan sertifikat Halal resmi. MUI (Majelis Ulama Indonesia) bertanggung jawab untuk menentukan status kehalalan suatu produk melalui fatwa (putusan keagamaan) berdasarkan hasil audit dari LPH. BPJPH menerbitkan sertifikat setelah fatwa MUI dinyatakan."
+        "a": "BPJPH adalah badan pemerintah yang menyelenggarakan dan menerbitkan sertifikat Halal resmi. MUI (Majelis Ulama Indonesia) bertanggung jawab untuk menetapkan kehalalan suatu produk melalui fatwa berdasarkan hasil audit dari LPH. BPJPH menerbitkan sertifikat setelah fatwa MUI ditetapkan."
       },
       {
         "q": "Saya pemilik usaha kecil. Bagaimana cara memulai proses sertifikasi halal?",
-        "a": "Cara terbaik untuk memulai adalah dengan membuat akun di portal resmi SIHALAL (ptsp.halal.go.id). Siapkan Nomor Induk Berusaha (NIB) dan detail tentang produk serta bahan-bahan Anda. Untuk usaha mikro dan kecil yang memenuhi syarat, Anda dapat mendaftar program SEHATI gratis saat kuota dibuka."
+        "a": "Cara terbaik untuk memulai adalah dengan membuat akun di portal resmi SIHALAL (ptsp.halal.go.id). Siapkan Nomor Induk Berusaha (NIB) Anda dan detail tentang produk dan bahan-bahan Anda. Untuk usaha mikro dan kecil yang memenuhi syarat, Anda dapat mendaftar program SEHATI gratis saat kuota dibuka."
       },
       {
         "q": "Apa arti 'Syubhat'?",
-        "a": "Syubhat berarti meragukan atau dipertanyakan dalam bahasa Arab. Dalam konteks makanan halal, ini merujuk pada bahan-bahan yang status kehalalannya tidak jelas. Contohnya, gelatin bisa bersumber dari babi (haram), sapi (halal jika disembelih dengan benar), atau ikan (halal). Sampai sumbernya diverifikasi melalui sertifikasi, bahan tersebut dianggap syubhat."
+        "a": "Syubhat berarti meragukan atau dipertanyakan. Dalam konteks makanan halal, ini mengacu pada bahan yang status halal atau haramnya tidak jelas tanpa penyelidikan lebih lanjut. Hal ini sering terjadi karena bahan tersebut dapat berasal dari berbagai sumber, beberapa di antaranya halal dan beberapa tidak.\n\nContoh umum meliputi:\n- **Gelatin:** Bisa berasal dari babi (haram), sapi (halal hanya jika disembelih sesuai syariat Islam), atau ikan (halal).\n- **Pengemulsi (misalnya, E471):** Bisa berbasis nabati (halal) atau hewani (syubhat sampai sumber hewannya dipastikan halal).\n- **Rennet Keju:** Bisa berasal dari mikroba (halal), nabati (halal), atau sumber hewani (syubhat, memerlukan penyembelihan halal).\n- **Whey:** Produk sampingan pembuatan keju, statusnya tergantung pada rennet yang digunakan.\n\nSebuah bahan tetap dianggap syubhat sampai sumber dan metode pengolahannya diverifikasi melalui proses sertifikasi halal untuk memastikan kepatuhannya terhadap hukum Syariah."
       },
       {
         "q": "Bisakah saya memeriksa status halal suatu produk tanpa nomor sertifikat?",
-        "a": "Ya. Dalam fitur 'Cek Sertifikat Halal' kami, Anda tidak hanya dapat mencari berdasarkan nomor sertifikat, tetapi juga berdasarkan nama produk atau nama produsen. Anda juga bisa menggunakan fitur 'Pindai Barcode' untuk pemeriksaan cepat jika produk memiliki barcode."
+        "a": "Ya. Dalam fitur 'Cek Sertifikat Halal' kami, Anda tidak hanya dapat mencari berdasarkan nomor sertifikat tetapi juga berdasarkan nama produk atau nama produsen. Anda juga dapat menggunakan fitur 'Pindai Barcode' untuk pemeriksaan cepat jika produk memiliki barcode."
       },
       {
         "q": "Apa itu Penyelia Halal?",
@@ -752,19 +752,19 @@
       },
       {
         "q": "Apa yang harus saya lakukan jika sertifikat halal saya akan kedaluwarsa?",
-        "a": "Anda harus mengajukan perpanjangan sertifikat melalui portal SIHALAL sebelum tanggal kedaluwarsa. Proses perpanjangan biasanya melibatkan audit ulang oleh LPH untuk memastikan Anda masih mematuhi semua standar halal. Disarankan untuk memulai proses perpanjangan setidaknya 6 bulan sebelum kedaluwarsa."
+        "a": "Anda harus mengajukan perpanjangan sertifikat melalui portal SIHALAL sebelum tanggal kedaluwarsa. Proses perpanjangan biasanya melibatkan audit ulang oleh LPH untuk memastikan bahwa Anda masih mematuhi semua standar halal. Disarankan untuk memulai proses perpanjangan setidaknya 6 bulan sebelum kedaluwarsa."
       },
       {
         "q": "Apakah produk impor juga wajib memiliki sertifikat halal BPJPH?",
-        "a": "Ya, produk impor yang beredar dan diperdagangkan di Indonesia juga wajib bersertifikat halal. Mereka dapat disertifikasi langsung oleh BPJPH atau oleh lembaga sertifikasi halal luar negeri yang memiliki perjanjian saling pengakuan dengan BPJPH."
+        "a": "Ya, produk impor yang diedarkan dan diperdagangkan di Indonesia juga harus bersertifikat halal. Mereka dapat disertifikasi langsung oleh BPJPH atau oleh lembaga sertifikasi halal asing yang memiliki perjanjian saling pengakuan dengan BPJPH."
       },
       {
         "q": "Bagaimana cara kerja Validator Bahan?",
-        "a": "Validator Bahan menggunakan AI untuk menganalisis daftar bahan yang Anda berikan terhadap database zat yang diketahui halal, haram, dan syubhat. Ini memberikan penilaian awal untuk membantu Anda mengidentifikasi bahan-bahan yang berpotensi kritis dalam formulasi produk Anda sebelum Anda secara resmi mengajukan sertifikasi."
+        "a": "Validator Bahan menggunakan AI untuk menganalisis daftar bahan yang Anda berikan terhadap database zat halal, haram, dan syubhat yang diketahui. Ini memberikan penilaian awal untuk membantu Anda mengidentifikasi bahan yang berpotensi kritis dalam formulasi produk Anda sebelum Anda secara resmi mengajukan sertifikasi."
       },
       {
         "q": "Apakah informasi di Pasar Halal dijamin?",
-        "a": "Kami berusaha untuk memastikan semua informasi akurat. Produk yang terdaftar di Pasar Halal berasal dari produsen yang telah memperoleh sertifikat halal BPJPH. Namun, kami selalu merekomendasikan konsumen untuk memeriksa kembali logo halal dan tanggal kedaluwarsa pada kemasan produk fisik."
+        "a": "Kami berusaha untuk memastikan semua informasi akurat. Produk yang terdaftar di Pasar Halal berasal dari produsen yang telah memperoleh sertifikat halal BPJPH. Namun, kami selalu menyarankan konsumen untuk memeriksa kembali logo halal dan tanggal kedaluwarsa pada kemasan produk fisik."
       },
       {
         "q": "Bagaimana saya bisa menghubungi BPJPH untuk pertanyaan resmi?",
@@ -777,10 +777,10 @@
     "subtitle": "Privasi Anda penting bagi kami. Terakhir diperbarui: 26 Oktober 2024",
     "content": {
       "section1Title": "1. Informasi yang Kami Kumpulkan",
-      "section1Paragraph1": "Kami mengumpulkan informasi untuk menyediakan layanan yang lebih baik bagi semua pengguna kami. Jenis informasi yang kami kumpulkan meliputi:",
+      "section1Paragraph1": "Kami mengumpulkan informasi untuk memberikan layanan yang lebih baik kepada semua pengguna kami. Jenis informasi yang kami kumpulkan meliputi:",
       "section1List": [
         "**Informasi Pribadi:** Saat Anda mendaftar, kami meminta informasi pribadi seperti nama, alamat email, dan nomor telepon Anda.",
-        "**Informasi Usaha:** Untuk layanan terkait bisnis, kami mengumpulkan informasi seperti nama usaha Anda, Nomor Induk Berusaha (NIB), dan detail produk.",
+        "**Informasi Bisnis:** Untuk layanan terkait bisnis, kami mengumpulkan informasi seperti nama bisnis Anda, Nomor Induk Berusaha (NIB), dan detail produk.",
         "**Data Penggunaan:** Kami secara otomatis mengumpulkan informasi tentang interaksi Anda dengan layanan kami, seperti halaman yang dikunjungi, fitur yang digunakan, dan kueri pencarian.",
         "**Informasi Perangkat:** Kami dapat mengumpulkan informasi spesifik perangkat (seperti model perangkat keras dan versi sistem operasi Anda)."
       ],
@@ -796,19 +796,19 @@
       "section3Title": "3. Berbagi Informasi",
       "section3Paragraph1": "Kami tidak membagikan informasi pribadi Anda dengan perusahaan, organisasi, atau individu di luar BPJPH kecuali dalam kasus-kasus berikut:",
       "section3List": [
-        "**Dengan persetujuan Anda:** Kami akan membagikan informasi pribadi jika kami memiliki persetujuan eksplisit dari Anda.",
+        "**Dengan persetujuan Anda:** Kami akan membagikan informasi pribadi ketika kami memiliki persetujuan eksplisit dari Anda.",
         "**Untuk alasan hukum:** Kami akan membagikan informasi pribadi jika kami yakin dengan itikad baik bahwa akses, penggunaan, penyimpanan, atau pengungkapan informasi tersebut diperlukan secara wajar untuk memenuhi hukum, peraturan, proses hukum, atau permintaan pemerintah yang berlaku."
       ],
       "section4Title": "4. Keamanan Data",
-      "section4Paragraph1": "Kami bekerja keras untuk melindungi pengguna kami dari akses tidak sah atau perubahan, pengungkapan, atau perusakan informasi yang kami simpan secara tidak sah. Kami menggunakan enkripsi untuk menjaga kerahasiaan data Anda saat transit."
+      "section4Paragraph1": "Kami bekerja keras untuk melindungi pengguna kami dari akses yang tidak sah atau perubahan, pengungkapan, atau perusakan informasi yang kami simpan tanpa izin. Kami menggunakan enkripsi untuk menjaga privasi data Anda saat transit."
     }
   },
   "termsOfServicePage": {
-    "title": "Syarat dan Ketentuan Layanan",
+    "title": "Syarat Layanan",
     "subtitle": "Harap baca syarat ini dengan saksama sebelum menggunakan layanan kami. Terakhir diperbarui: 26 Oktober 2024",
     "content": {
       "section1Title": "1. Persetujuan terhadap Syarat",
-      "section1Paragraph1": "Dengan menggunakan aplikasi AI Halal Advisor ('Layanan'), Anda setuju untuk terikat oleh Syarat dan Ketentuan Layanan ini. Jika Anda tidak setuju dengan syarat ini, jangan gunakan Layanan.",
+      "section1Paragraph1": "Dengan menggunakan aplikasi AI Halal Advisor ('Layanan'), Anda setuju untuk terikat oleh Syarat Layanan ini. Jika Anda tidak menyetujui syarat ini, jangan gunakan Layanan.",
       "section2Title": "2. Penggunaan Layanan",
       "section2Paragraph1": "Anda setuju untuk menggunakan Layanan hanya untuk tujuan yang sah. Anda bertanggung jawab untuk memastikan bahwa penggunaan Anda atas Layanan mematuhi semua hukum, aturan, dan peraturan yang berlaku. Anda tidak boleh:",
       "section2List": [
@@ -819,11 +819,11 @@
       "section3Title": "3. Akun",
       "section3Paragraph1": "Saat Anda membuat akun dengan kami, Anda harus memberikan informasi yang akurat, lengkap, dan terkini setiap saat. Anda bertanggung jawab untuk menjaga kata sandi yang Anda gunakan untuk mengakses Layanan dan untuk setiap aktivitas atau tindakan di bawah kata sandi Anda.",
       "section4Title": "4. Kekayaan Intelektual",
-      "section4Paragraph1": "Layanan dan konten asli, fitur, serta fungsionalitasnya adalah dan akan tetap menjadi milik eksklusif BPJPH dan pemberi lisensinya. Layanan ini dilindungi oleh hak cipta, merek dagang, dan hukum lain di Indonesia.",
-      "section5Title": "5. Penghentian",
-      "section5Paragraph1": "Kami dapat menghentikan atau menangguhkan akun Anda dan membatasi akses ke Layanan dengan segera, tanpa pemberitahuan atau kewajiban sebelumnya, untuk alasan apa pun, termasuk namun tidak terbatas pada jika Anda melanggar Syarat.",
+      "section4Paragraph1": "Layanan dan konten, fitur, serta fungsionalitas aslinya adalah dan akan tetap menjadi milik eksklusif BPJPH dan pemberi lisensinya. Layanan ini dilindungi oleh hak cipta, merek dagang, dan hukum lain di Indonesia.",
+      "section5Title": "5. Pengakhiran",
+      "section5Paragraph1": "Kami dapat menghentikan atau menangguhkan akun Anda dan melarang akses ke Layanan dengan segera, tanpa pemberitahuan atau kewajiban sebelumnya, untuk alasan apa pun, termasuk tanpa batasan jika Anda melanggar Syarat.",
       "section6Title": "6. Batasan Tanggung Jawab",
-      "section6Paragraph1": "Dalam keadaan apa pun, BPJPH, maupun direktur, karyawan, mitra, agen, pemasok, atau afiliasinya, tidak akan bertanggung jawab atas kerusakan tidak langsung, insidental, khusus, konsekuensial, atau hukuman, termasuk namun tidak terbatas pada, kehilangan keuntungan, data, penggunaan, niat baik, atau kerugian tidak berwujud lainnya, yang diakibatkan oleh akses Anda ke atau penggunaan atau ketidakmampuan untuk mengakses atau menggunakan Layanan."
+      "section6Paragraph1": "Dalam keadaan apa pun, BPJPH, maupun direktur, karyawan, mitra, agen, pemasok, atau afiliasinya, tidak akan bertanggung jawab atas kerusakan tidak langsung, insidental, khusus, konsekuensial, atau hukuman, termasuk tanpa batasan, kehilangan keuntungan, data, penggunaan, nama baik, atau kerugian tidak berwujud lainnya, yang diakibatkan oleh akses Anda ke atau penggunaan atau ketidakmampuan untuk mengakses atau menggunakan Layanan."
     }
   }
 }

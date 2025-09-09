@@ -123,7 +123,7 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  useEffect(scrollToBottom, [messages]);
+  useEffect(scrollToBottom, [messages, hanaState]);
   
   useEffect(() => {
     // Reset or initialize chat when the modal opens or language changes
@@ -293,7 +293,7 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
   };
   
   const isSessionEnded = timeRemaining <= 0 && !isFreeTrial && !showPaymentWall;
-  const isChatDisabled = hanaState === HanaState.THINKING || showPaymentWall || isSessionEnded;
+  const isChatDisabled = hanaState === HanaState.THINKING || hanaState === HanaState.ANSWERING || showPaymentWall || isSessionEnded;
 
   return (
     <>
@@ -353,7 +353,7 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
               </div>
             ))}
             {hanaState === HanaState.THINKING && (
-                <div className="flex items-end gap-2">
+                <div className="flex items-end gap-2 animate-fadein">
                     <div className="w-8 h-8 rounded-full bg-halal-green text-white flex items-center justify-center text-sm font-bold flex-shrink-0">H</div>
                     <div className="max-w-xs p-3 rounded-2xl bg-gray-100 dark:bg-gray-700 text-gray-800 rounded-bl-none">
                         <div className="flex space-x-1">
@@ -383,11 +383,11 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
             ) : (
                 <div className="flex items-center space-x-2">
                     {isMicSupported && isVoiceModeEnabled && (
-                        <button onClick={toggleListening} className={`w-9 h-9 rounded-full flex-shrink-0 flex items-center justify-center transition-colors duration-300 ${isListening ? 'bg-red-500 text-white animate-pulse' : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'}`} disabled={isChatDisabled}>
+                        <button onClick={toggleListening} className={`w-9 h-9 rounded-full flex-shrink-0 flex items-center justify-center transition-colors duration-300 ${isListening ? 'bg-red-500 text-white animate-pulse' : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'} disabled:opacity-50 disabled:cursor-not-allowed`} disabled={isChatDisabled}>
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" /></svg>
                         </button>
                     )}
-                    <input type="text" value={input} onChange={e => setInput(e.target.value)} onKeyPress={handleKeyPress} placeholder={isListening ? t('hana.listeningPlaceholder') : t('hana.inputPlaceholder')} className="flex-1 w-full py-2 px-4 bg-gray-100 dark:bg-gray-700 rounded-full focus:outline-none focus:ring-2 focus:ring-halal-green disabled:bg-gray-200 dark:disabled:bg-gray-600" disabled={isChatDisabled} />
+                    <input type="text" value={input} onChange={e => setInput(e.target.value)} onKeyPress={handleKeyPress} placeholder={isListening ? t('hana.listeningPlaceholder') : t('hana.inputPlaceholder')} className="flex-1 w-full py-2 px-4 bg-gray-100 dark:bg-gray-700 rounded-full focus:outline-none focus:ring-2 focus:ring-halal-green disabled:bg-gray-200 dark:disabled:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed" disabled={isChatDisabled} />
                     <button onClick={() => handleSend(input)} disabled={isChatDisabled || input.trim() === ''} className="w-9 h-9 bg-halal-green text-white rounded-full flex-shrink-0 flex items-center justify-center hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
                     </button>

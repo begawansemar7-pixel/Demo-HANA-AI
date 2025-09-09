@@ -740,7 +740,7 @@
       },
       {
         "q": "What does 'Syubhat' mean?",
-        "a": "Syubhat means doubtful or questionable in Arabic. In the context of halal food, it refers to ingredients where the halal status is unclear. For example, gelatin can be sourced from pork (haram), beef (halal if slaughtered correctly), or fish (halal). Until the source is verified through certification, it is considered syubhat."
+        "a": "Syubhat means doubtful or questionable in Arabic. In the context of halal food, it refers to ingredients where the halal or haram status is unclear without further investigation. This is often because the ingredient can be derived from multiple sources, some of which are halal and some are not.\n\nCommon examples include:\n- **Gelatin:** Can be sourced from pork (haram), beef (halal only if slaughtered according to Islamic rites), or fish (halal).\n- **Emulsifiers (e.g., E471):** Can be plant-based (halal) or animal-based (syubhat until the animal source is confirmed to be halal).\n- **Cheese Rennet:** Can be microbial (halal), plant-based (halal), or from an animal source (syubhat, requires halal slaughter).\n- **Whey:** A byproduct of cheese making, its status depends on the rennet used.\n\nAn ingredient remains syubhat until its source and processing method are verified through the halal certification process to be compliant with Sharia law."
       },
       {
         "q": "Can I check the halal status of a product without the certificate number?",
