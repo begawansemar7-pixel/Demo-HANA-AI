@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { PERSONAS } from '../constants';
-import type { Persona } from '../types';
+import type { Persona, PersonaId } from '../types';
 import { useTranslations } from '../hooks/useTranslations';
 import { useTextToSpeech } from '../hooks/useTextToSpeech';
 
 interface PersonaSelectionModalProps {
-  onSelect: (personaId: string) => void;
+  onSelect: (personaId: PersonaId) => void;
   onContinueAsGuest: () => void;
 }
 
@@ -96,7 +96,7 @@ const PersonaSelectionModal: React.FC<PersonaSelectionModalProps> = ({ onSelect,
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {PERSONAS.map(persona => (
-                <PersonaCard key={persona.id} persona={persona} onClick={() => onSelect(persona.id)} />
+                <PersonaCard key={persona.id} persona={persona} onClick={() => onSelect(persona.id as PersonaId)} />
             ))}
             </div>
             

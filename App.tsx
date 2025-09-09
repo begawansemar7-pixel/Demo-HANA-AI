@@ -160,7 +160,7 @@ const App: React.FC = () => {
   
   if (!persona) {
     return <PersonaSelectionModal 
-      onSelect={(p) => { selectPersona(p); setCurrentPage('login'); }}
+      onSelect={(p) => { selectPersona(p as PersonaId); setCurrentPage('login'); }}
       onContinueAsGuest={() => { selectPersona('guest'); setCurrentPage('home'); }} 
     />;
   }
