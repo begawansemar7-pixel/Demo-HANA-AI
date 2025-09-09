@@ -79,10 +79,11 @@ const Hero: React.FC = () => {
                 aria-roledescription="slide"
                 aria-label={`${index + 1} of ${heroSlides.length}`}
             >
-              <img 
-                src={`https://picsum.photos/seed/${slide.imageUrlSeed}/1200/500`} 
-                alt={t(slide.titleKey)} 
-                className="w-full h-full object-cover" 
+              <div 
+                className="w-full h-full bg-cover bg-center"
+                style={{ backgroundImage: `url(https://picsum.photos/seed/${slide.imageUrlSeed}/1200/500)` }}
+                role="img"
+                aria-label={t(slide.titleKey)}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent p-8 md:p-12 flex flex-col justify-center items-start text-left">
                 <div className="max-w-md">
