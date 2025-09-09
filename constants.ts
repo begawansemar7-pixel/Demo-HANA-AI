@@ -43,6 +43,10 @@ const AuditLogIcon = () => React.createElement('svg', { xmlns: "http://www.w3.or
     React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" }),
     React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M9 14h6m-6 4h6" })
 );
+const TaskIcon = () => React.createElement('svg', { xmlns: "http://www.w3.org/2000/svg", className: "h-8 w-8", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor" },
+  React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" }),
+  React.createElement('path', { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M9 14l2 2 4-4" })
+);
 
 
 const ALL_LOGGED_IN: PersonaId[] = ['consumer', 'umkm', 'auditor', 'officer'];
@@ -62,6 +66,7 @@ export const SERVICES: Service[] = [
   { id: 'regulation', title: 'home.services.items.regulation', icon: RegulationIcon(), personas: ALL_LOGGED_IN },
   { id: 'supplier-verification', title: 'home.services.items.supplierVerification', icon: SupplierIcon(), personas: BUSINESS_ROLES },
   { id: 'scan-barcode', title: 'home.services.items.scanBarcode', icon: ScanIcon(), personas: ['consumer'] },
+  { id: 'task-list', title: 'home.services.items.taskList', icon: TaskIcon(), personas: BUSINESS_ROLES },
   { id: 'about', title: 'home.services.items.about', icon: InfoIcon() },
   { id: 'more', title: 'home.services.items.more', icon: MoreIcon() },
 ];

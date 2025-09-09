@@ -164,8 +164,8 @@ const PersonaIndicator: React.FC = () => {
     }
 
     // A smaller icon for the header.
-    // FIX: Use Object.assign to merge props, preventing a TypeScript error from spreading a property of type 'any'.
-    const icon = React.cloneElement(personaDetails.icon, Object.assign({}, personaDetails.icon.props, { className: "h-4 w-4" }));
+    // FIX: Use Object.assign to merge new props with existing ones, resolving a TypeScript error with cloneElement.
+    const icon = React.cloneElement(personaDetails.icon, Object.assign({}, personaDetails.icon.props, { className: 'h-4 w-4' }));
 
     return (
         <div className="hidden lg:flex items-center gap-2 bg-gray-100 dark:bg-gray-800/80 text-halal-green dark:text-accent-gold font-semibold px-3 py-1.5 rounded-full text-sm animate-fadein">

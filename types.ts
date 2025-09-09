@@ -72,3 +72,10 @@ export interface Product {
 export interface BasketItem extends Product {
   quantity: number;
 }
+
+export interface Task {
+  id: string;
+  text: string;
+  isCompleted: boolean;
+  dueDate?: string; // YYYY-MM-DD
+}

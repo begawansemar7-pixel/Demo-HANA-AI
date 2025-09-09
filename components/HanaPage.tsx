@@ -386,19 +386,6 @@ const HanaPage: React.FC = () => {
                     </div>
                 ) : (
                     <div className="flex items-center space-x-2">
-                        {isMicSupported && isVoiceModeEnabled && (
-                            <button
-                                type="button"
-                                onClick={toggleListening}
-                                className={`w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center transition-colors duration-300 ${isListening ? 'bg-red-500 text-white animate-pulse' : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'} disabled:opacity-50 disabled:cursor-not-allowed`}
-                                aria-label={isListening ? t('hana.stopListeningLabel') : t('hana.startListeningLabel')}
-                                disabled={isChatDisabled}
-                            >
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
-                                </svg>
-                            </button>
-                        )}
                         <label htmlFor="hana-page-input" className="sr-only">{t('hana.inputPlaceholder')}</label>
                         <input
                             id="hana-page-input"
@@ -410,9 +397,29 @@ const HanaPage: React.FC = () => {
                             className="flex-1 w-full py-2 px-4 bg-gray-100 dark:bg-gray-700 rounded-full focus:outline-none focus:ring-2 focus:ring-halal-green disabled:bg-gray-200 dark:disabled:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed"
                             disabled={isChatDisabled}
                         />
-                        <button onClick={handleSend} aria-label={t('hana.sendLabel')} disabled={isChatDisabled || input.trim() === ''} className="w-10 h-10 bg-halal-green text-white rounded-full flex-shrink-0 flex items-center justify-center hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
-                        </button>
+                        {input.trim() === '' && isMicSupported && isVoiceModeEnabled ? (
+                            <button
+                                type="button"
+                                onClick={toggleListening}
+                                className={`w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center transition-colors duration-300 ${isListening ? 'bg-red-500 text-white animate-pulse' : 'bg-halal-green text-white hover:bg-opacity-90'} disabled:opacity-50 disabled:cursor-not-allowed`}
+                                aria-label={isListening ? t('hana.stopListeningLabel') : t('hana.startListeningLabel')}
+                                disabled={isChatDisabled}
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                                </svg>
+                            </button>
+                        ) : (
+                            <button 
+                                type="button"
+                                onClick={handleSend} 
+                                aria-label={t('hana.sendLabel')} 
+                                disabled={isChatDisabled || input.trim() === ''} 
+                                className="w-10 h-10 bg-halal-green text-white rounded-full flex-shrink-0 flex items-center justify-center hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
+                            </button>
+                        )}
                     </div>
                 )}
             </div>
