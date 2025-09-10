@@ -64,6 +64,14 @@
                 '0%': { top: '0%' },
                 '100%': { top: '100%' },
               },
+              'highlight-fade-light': {
+                '0%': { backgroundColor: 'rgba(30, 113, 69, 0.2)' },
+                '100%': { backgroundColor: 'transparent' }
+              },
+              'highlight-fade-dark': {
+                '0%': { backgroundColor: 'rgba(30, 113, 69, 0.3)' },
+                '100%': { backgroundColor: 'transparent' }
+              },
             },
             animation: {
               breathing: 'breathing 4s ease-in-out infinite',
@@ -72,12 +80,27 @@
               'pulse-eye': 'pulse-eye 2.5s ease-in-out infinite',
               speaking: 'speaking 0.7s ease-in-out infinite',
               'scan-line': 'scan-line 3s ease-in-out infinite alternate',
+              'highlight-fade': 'highlight-fade-light 1.5s ease-out'
             }
           }
         }
       }
     </script>
     <style>
+      @keyframes pulse-red-ring {
+        0% {
+          box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+        }
+      }
+      .mic-pulse {
+        animation: pulse-red-ring 2s infinite;
+      }
       .bg-halal-pattern {
         background-color: #f9fafb; /* bg-gray-50 */
       }
@@ -94,6 +117,25 @@
         clip: rect(0, 0, 0, 0);
         white-space: nowrap;
         border-width: 0;
+      }
+      .task-text::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        height: 2px;
+        width: 0;
+        background-color: currentColor;
+        transition: width 0.3s ease-in-out;
+      }
+      .task-text.task-completed::after {
+        width: 100%;
+      }
+      .animate-highlight-fade {
+        animation: highlight-fade-light 1.5s ease-out;
+      }
+      .dark .animate-highlight-fade {
+        animation-name: highlight-fade-dark;
       }
     </style>
   <script type="importmap">

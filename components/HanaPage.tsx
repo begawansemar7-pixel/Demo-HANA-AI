@@ -7,7 +7,6 @@ import { useVoiceRecognition } from '../hooks/useVoiceRecognition';
 import { useTextToSpeech } from '../hooks/useTextToSpeech';
 import { useAuth } from '../hooks/useAuth';
 import { PERSONAS } from '../constants';
-import ListeningModal from './ListeningModal';
 
 
 interface Message {
@@ -19,13 +18,13 @@ interface Message {
 const CHAT_HISTORY_KEY_PAGE = 'hanaPageChatHistory'; // Separate key for the full page
 
 const SpeakerIcon: React.FC = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24" stroke="currentColor" strokeWidth={2}>
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
     </svg>
 );
 
 const SpeakerMutedIcon: React.FC = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24" stroke="currentColor" strokeWidth={2}>
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
       <path strokeLinecap="round" strokeLinejoin="round" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
     </svg>
@@ -55,7 +54,7 @@ const HanaPage: React.FC = () => {
   if (persona === 'guest') {
     personaName = t('personas.guest.name');
     personaIcon = (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24" stroke="currentColor" strokeWidth={2}>
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
       </svg>
     );
@@ -222,7 +221,11 @@ const HanaPage: React.FC = () => {
   
   const handleMicClick = () => {
     textBeforeListeningRef.current = input;
-    startListening();
+    if(isListening) {
+      stopListening();
+    } else {
+      startListening();
+    }
   };
 
   const handleDownloadChat = () => {
@@ -270,12 +273,10 @@ const HanaPage: React.FC = () => {
   
   const isSessionEnded = timeRemaining <= 0 && !isFreeTrial && !showPaymentWall;
   const isChatDisabled = hanaState === HanaState.THINKING || hanaState === HanaState.ANSWERING || showPaymentWall || isSessionEnded || isListening;
-  
-  const isMicVisible = input.trim() === '' && isMicSupported && isVoiceModeEnabled;
+  const isSendVisible = input.trim() !== '' && !isListening;
 
   return (
     <div className="container mx-auto px-4 py-8 animate-fadein">
-      <ListeningModal isOpen={isListening} onStop={stopListening} />
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
         
         {/* Left Column: Avatar & Info */}
@@ -320,7 +321,7 @@ const HanaPage: React.FC = () => {
               <div className="flex items-center gap-1">
                 {messages.length > 1 && (
                   <button onClick={handleDownloadChat} className="p-1.5 rounded-full hover:bg-white/20 transition-colors" title={t('hana.downloadChat')} aria-label={t('hana.downloadChat')}>
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24" stroke="currentColor" strokeWidth={2}>
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                       </svg>
                   </button>
@@ -401,28 +402,32 @@ const HanaPage: React.FC = () => {
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
                             onKeyPress={handleKeyPress}
-                            placeholder={t('hana.inputPlaceholder')}
+                            placeholder={isListening ? t('hana.listeningPlaceholder') : t('hana.inputPlaceholder')}
                             className="flex-1 w-full py-3 px-4 pr-12 bg-gray-100 dark:bg-gray-700 rounded-full focus:outline-none focus:ring-2 focus:ring-halal-green disabled:bg-gray-200 dark:disabled:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed"
                             disabled={isChatDisabled}
                         />
                         <div className="absolute inset-y-0 right-0 flex items-center pr-2">
                             <button
                                 type="button"
-                                onClick={isMicVisible ? handleMicClick : () => handleSend(input)}
-                                aria-label={isMicVisible ? t('hana.startListeningLabel') : t('hana.sendLabel')}
-                                disabled={isMicVisible ? isChatDisabled : (isChatDisabled || input.trim() === '')}
+                                onClick={isSendVisible ? () => handleSend(input) : handleMicClick}
+                                aria-label={isListening ? t('hana.stopListeningLabel') : (isSendVisible ? t('hana.sendLabel') : t('hana.startListeningLabel'))}
+                                disabled={isChatDisabled || (isSendVisible && input.trim() === '')}
                                 className={`w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed ${
-                                    isMicVisible 
-                                    ? (isListening ? 'bg-red-500 text-white' : 'bg-halal-green text-white hover:bg-opacity-90') 
-                                    : 'bg-halal-green text-white hover:bg-opacity-90'
+                                    isListening
+                                        ? 'bg-red-500 text-white mic-pulse'
+                                        : isSendVisible
+                                        ? 'bg-halal-green text-white hover:bg-opacity-90'
+                                        : 'bg-halal-green text-white hover:bg-opacity-90'
                                 }`}
                             >
-                                {isMicVisible ? (
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24" stroke="currentColor" strokeWidth={2}>
+                                {isListening ? (
+                                    <div className="w-4 h-4 bg-white rounded-sm"></div>
+                                ) : isSendVisible ? (
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
+                                ) : (
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
                                     </svg>
-                                ) : (
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
                                 )}
                             </button>
                         </div>
