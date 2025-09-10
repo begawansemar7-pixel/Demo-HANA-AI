@@ -795,5 +795,19 @@
       "section2Title": "2. استخدام الخدمة",
       "section2Paragraph1": "أنت توافق على استخدام"
     }
+  },
+  "taskList": {
+    "addTaskPlaceholder": "أضف مهمة جديدة...",
+    "addButton": "إضافة مهمة",
+    "emptyState": "لا توجد مهام بعد. أضف واحدة للبدء!",
+    "deleteConfirm": "هل أنت متأكد من أنك تريد حذف هذه المهمة؟",
+    "editModalTitle": "تعديل المهمة",
+    "descriptionLabel": "الوصف",
+    "dueDateLabel": "تاريخ الاستحقاق",
+    "saveButton": "حفظ",
+    "cancelButton": "إلغاء",
+    "editTooltip": "تعديل المهمة",
+    "deleteTooltip": "حذف المهمة",
+    "overdueLabel": "متأخرة"
   }
 }

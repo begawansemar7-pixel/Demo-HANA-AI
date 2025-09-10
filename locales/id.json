@@ -808,5 +808,19 @@
       "section6Title": "6. Batasan Tanggung Jawab",
       "section6Paragraph1": "Dalam keadaan apa pun, BPJPH, maupun direktur, karyawan, mitra, agen, pemasok, atau afiliasinya, tidak akan bertanggung jawab atas kerusakan tidak langsung, insidental, khusus, konsekuensial, atau hukuman, termasuk tanpa batasan, kehilangan keuntungan, data, penggunaan, nama baik, atau kerugian tidak berwujud lainnya, yang diakibatkan oleh akses Anda ke atau penggunaan atau ketidakmampuan untuk mengakses atau menggunakan Layanan."
     }
+  },
+  "taskList": {
+    "addTaskPlaceholder": "Tambahkan tugas baru...",
+    "addButton": "Tambah Tugas",
+    "emptyState": "Belum ada tugas. Tambahkan satu untuk memulai!",
+    "deleteConfirm": "Apakah Anda yakin ingin menghapus tugas ini?",
+    "editModalTitle": "Ubah Tugas",
+    "descriptionLabel": "Deskripsi",
+    "dueDateLabel": "Tenggat Waktu",
+    "saveButton": "Simpan",
+    "cancelButton": "Batal",
+    "editTooltip": "Ubah Tugas",
+    "deleteTooltip": "Hapus Tugas",
+    "overdueLabel": "Terlambat"
   }
 }

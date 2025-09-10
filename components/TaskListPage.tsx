@@ -69,6 +69,8 @@ const TaskListPage: React.FC = () => {
     const [newTaskText, setNewTaskText] = useState('');
     const [newDueDate, setNewDueDate] = useState('');
     const [editingTask, setEditingTask] = useState<Task | null>(null);
+    const [recentlyAddedTaskId, setRecentlyAddedTaskId] = useState<string | null>(null);
+
 
     useEffect(() => {
         try {
@@ -90,20 +92,28 @@ const TaskListPage: React.FC = () => {
             if (a.isCompleted !== b.isCompleted) {
                 return a.isCompleted ? 1 : -1;
             }
-            if (a.dueDate && b.dueDate) {
-                return new Date(a.dueDate).getTime() - new Date(b.dueDate).getTime();
+
+            if (!a.isCompleted) {
+                const aHasDate = !!a.dueDate;
+                const bHasDate = !!b.dueDate;
+
+                if (aHasDate && !bHasDate) return -1;
+                if (!aHasDate && bHasDate) return 1;
+                if (aHasDate && bHasDate) {
+                    return new Date(a.dueDate!).getTime() - new Date(b.dueDate!).getTime();
+                }
             }
-            if (a.dueDate) return -1;
-            if (b.dueDate) return 1;
-            return 0;
+            
+            return parseInt(b.id) - parseInt(a.id);
         });
     }, [tasks]);
 
     const handleAddTask = (e: React.FormEvent) => {
         e.preventDefault();
         if (newTaskText.trim() === '') return;
+        const newTaskId = Date.now().toString();
         const newTask: Task = {
-            id: Date.now().toString(),
+            id: newTaskId,
             text: newTaskText.trim(),
             isCompleted: false,
             dueDate: newDueDate || undefined,
@@ -111,6 +121,11 @@ const TaskListPage: React.FC = () => {
         setTasks(prev => [newTask, ...prev]);
         setNewTaskText('');
         setNewDueDate('');
+
+        setRecentlyAddedTaskId(newTaskId);
+        setTimeout(() => {
+            setRecentlyAddedTaskId(null);
+        }, 1500);
     };
 
     const toggleTask = (id: string) => {
@@ -127,7 +142,7 @@ const TaskListPage: React.FC = () => {
     
     const handleSaveTask = (id: string, newText: string, newDueDate?: string) => {
         setTasks(prev => prev.map(task =>
-            task.id === id ? { ...task, text: newText, dueDate: newDueDate } : task
+            task.id === id ? { ...task, text: newText, dueDate: newDueDate || undefined } : task
         ));
     };
     
@@ -175,7 +190,7 @@ const TaskListPage: React.FC = () => {
 
                     <div className="space-y-4">
                         {sortedTasks.map(task => (
-                            <div key={task.id} className={`p-4 rounded-xl border flex items-start gap-4 transition-all duration-300 ${task.isCompleted ? 'bg-gray-100 dark:bg-gray-800/50 opacity-60' : 'bg-white dark:bg-gray-800'}`}>
+                            <div key={task.id} className={`p-4 rounded-xl border flex items-start gap-4 transition-all duration-300 ${task.isCompleted ? 'bg-gray-100 dark:bg-gray-800/50 opacity-60' : 'bg-white dark:bg-gray-800'} ${task.id === recentlyAddedTaskId ? 'animate-highlight-fade' : ''}`}>
                                 <label htmlFor={`task-${task.id}`} className="sr-only">{`Mark task "${task.text}" as complete`}</label>
                                 <input
                                     id={`task-${task.id}`}

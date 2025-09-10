@@ -1,19 +1,10 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import HanaAvatar, { HanaState } from './HanaAvatar';
-import { createHanaChat, sendMessageToHana } from '../services/geminiService';
-import { Chat } from '@google/genai';
 import { useTranslations } from '../hooks/useTranslations';
-import { useVoiceRecognition } from '../hooks/useVoiceRecognition';
-import { useTextToSpeech } from '../hooks/useTextToSpeech';
 import { useAuth } from '../hooks/useAuth';
 import { PERSONAS } from '../constants';
-
-
-interface Message {
-  id: number;
-  text: string;
-  sender: 'user' | 'hana';
-}
+import { useHanaChatLogic } from './HanaPage';
+import type { Message } from '../types';
 
 interface HanaChatProps {
   isOpen: boolean;
@@ -35,25 +26,20 @@ const SpeakerMutedIcon: React.FC = () => (
 );
 
 const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
-  const { t, language } = useTranslations();
+  const { t } = useTranslations();
   const { persona } = useAuth();
-  const [hanaState, setHanaState] = useState<HanaState>(HanaState.IDLE);
-  const [messages, setMessages] = useState<Message[]>([{ id: Date.now(), text: t('hana.welcomeMessage'), sender: 'hana' }]);
-  const [input, setInput] = useState('');
-  const [currentlySpeakingId, setCurrentlySpeakingId] = useState<number | null>(null);
   const [showDownloadSuccess, setShowDownloadSuccess] = useState(false);
-  const chatEndRef = useRef<HTMLDivElement>(null);
-  const chatRef = useRef<Chat | null>(null);
-  const textBeforeListeningRef = useRef('');
-  const [isVoiceModeEnabled, setIsVoiceModeEnabled] = useState(true);
   
   const modalRef = useRef<HTMLDivElement>(null);
   const triggerButtonRef = useRef<HTMLButtonElement>(null);
 
-  const [timeRemaining, setTimeRemaining] = useState(300); // 5 minutes free trial
-  const [isFreeTrial, setIsFreeTrial] = useState(true);
-  const [showPaymentWall, setShowPaymentWall] = useState(false);
-  
+  const {
+      hanaState, messages, input, setInput, isVoiceModeEnabled, setIsVoiceModeEnabled,
+      timeRemaining, isFreeTrial, showPaymentWall, isListening, isTtsSupported, isMicSupported,
+      isInteractionDisabled, isInputDisabled, handleSend, handleMicClick, handlePayment,
+      handleDownloadChat, chatEndRef, startNewSession
+  } = useHanaChatLogic(null, isOpen); // Pass null for storageKey to disable history persistence
+
   const personaDetails = PERSONAS.find(p => p.id === persona);
   let personaIcon: React.ReactNode = null;
   let personaName: string = '';
@@ -67,69 +53,8 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
     );
   } else if (personaDetails) {
     personaName = t(personaDetails.name);
-    // FIX: Use Object.assign to merge props safely, resolving a TypeScript error with cloneElement.
     personaIcon = React.cloneElement(personaDetails.icon, Object.assign({}, personaDetails.icon.props, { className: 'h-4 w-4' }));
   }
-
-  const { speak, cancel, isSupported: isTtsSupported } = useTextToSpeech({
-    onStart: () => setHanaState(HanaState.ANSWERING),
-    onEnd: () => {
-        setHanaState(HanaState.IDLE);
-        setCurrentlySpeakingId(null);
-    },
-    language: language
-  });
-
-  const handleSend = useCallback(async (messageToSend: string) => {
-    if (messageToSend.trim() === '' || !chatRef.current) return;
-    
-    const userMessage: Message = { id: Date.now(), text: messageToSend, sender: 'user' };
-    setMessages(prev => [...prev, userMessage]);
-    setInput('');
-    setHanaState(HanaState.THINKING);
-
-    try {
-        const response = await sendMessageToHana(chatRef.current, messageToSend, language);
-        const hanaMessage: Message = { id: Date.now() + 1, text: response, sender: 'hana' };
-        setMessages(prev => [...prev, hanaMessage]);
-
-        if (isTtsSupported && isVoiceModeEnabled) {
-            speak(response);
-            setCurrentlySpeakingId(hanaMessage.id);
-        } else {
-            setHanaState(HanaState.IDLE);
-        }
-    } catch (error) {
-        const errorMessage: Message = { id: Date.now() + 1, text: t('hana.errorMessage'), sender: 'hana' };
-        setMessages(prev => [...prev, errorMessage]);
-        setHanaState(HanaState.IDLE);
-    }
-  }, [language, isTtsSupported, isVoiceModeEnabled, speak, t]);
-  
-  const { isListening, startListening, stopListening, isSupported: isMicSupported } = useVoiceRecognition({
-      onResult: (transcript) => {
-          const prefix = textBeforeListeningRef.current.trim();
-          const separator = prefix ? ' ' : '';
-          setInput(prefix + separator + transcript);
-      },
-      onSpeechEnd: (finalTranscript) => {
-          const prefix = textBeforeListeningRef.current.trim();
-          const separator = prefix ? ' ' : '';
-          const fullMessage = prefix + separator + finalTranscript;
-          if (fullMessage.trim()) {
-              handleSend(fullMessage);
-          }
-      },
-      language: language
-  });
-
-  // Effect to handle side-effects of toggling voice mode
-  useEffect(() => {
-    if (!isVoiceModeEnabled) {
-        cancel(); // Stop any ongoing speech
-        stopListening(); // Stop any ongoing listening
-    }
-  }, [isVoiceModeEnabled, cancel, stopListening]);
 
   const formatTime = (seconds: number) => {
     const minutes = Math.floor(seconds / 60);
@@ -137,73 +62,24 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
     return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
   };
 
-  // Timer effect
   useEffect(() => {
-      if (!isOpen || showPaymentWall || timeRemaining <= 0) return;
-      const timer = setInterval(() => {
-          setTimeRemaining(prev => prev - 1);
-      }, 1000);
-      return () => clearInterval(timer);
-  }, [isOpen, showPaymentWall, timeRemaining]);
-  
-  // Effect to handle session end
-  useEffect(() => {
-      if (timeRemaining <= 0 && isFreeTrial) {
-          setShowPaymentWall(true);
-      }
-  }, [timeRemaining, isFreeTrial]);
-
-  const scrollToBottom = () => {
-    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  useEffect(scrollToBottom, [messages, hanaState]);
-  
-  useEffect(() => {
-    // Reset or initialize chat when the modal opens or language changes
     if (isOpen) {
-      chatRef.current = createHanaChat(language);
-      setMessages([{ id: Date.now(), text: t('hana.welcomeMessage'), sender: 'hana' }]);
-      setInput('');
-      setTimeRemaining(300);
-      setIsFreeTrial(true);
-      setShowPaymentWall(false);
-    } else {
-        cancel(); // Stop speech when modal is closed
+        startNewSession(); // Reset chat state every time the modal opens
     }
-  }, [isOpen, language, t, cancel]);
-
-  useEffect(() => {
-    if (isListening) {
-        setHanaState(HanaState.LISTENING);
-    } else if (hanaState === HanaState.LISTENING) {
-        setHanaState(HanaState.IDLE);
-    }
-  }, [isListening, hanaState]);
+  }, [isOpen, startNewSession]);
   
-  // Keyboard listener for open/close shortcut and escape key
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      // Ctrl/Cmd + K to toggle chat
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
         e.preventDefault();
-        if (isOpen) {
-          onClose();
-        } else {
-          onOpen();
-        }
+        if (isOpen) onClose(); else onOpen();
       }
-      // Escape to close
-      if (e.key === 'Escape' && isOpen) {
-        onClose();
-      }
+      if (e.key === 'Escape' && isOpen) onClose();
     };
-
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [isOpen, onOpen, onClose]);
 
-  // Focus management on open/close and focus trap
   useEffect(() => {
     if (isOpen) {
       setTimeout(() => {
@@ -213,21 +89,15 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
 
       const handleFocusTrap = (e: KeyboardEvent) => {
         if (e.key !== 'Tab' || !modalRef.current) return;
-
-        const focusableElements = Array.from(
-          modalRef.current.querySelectorAll<HTMLElement>(
-            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-          )
-        );
+        const focusableElements = Array.from(modalRef.current.querySelectorAll<HTMLElement>('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'));
         const firstElement = focusableElements[0];
         const lastElement = focusableElements[focusableElements.length - 1];
-
-        if (e.shiftKey) { // Shift + Tab
+        if (e.shiftKey) {
           if (document.activeElement === firstElement) {
             lastElement.focus();
             e.preventDefault();
           }
-        } else { // Tab
+        } else {
           if (document.activeElement === lastElement) {
             firstElement.focus();
             e.preventDefault();
@@ -247,61 +117,9 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
       handleSend(input);
     }
   };
-
-  const handleMicClick = () => {
-    textBeforeListeningRef.current = input;
-    if(isListening) {
-      stopListening();
-    } else {
-      startListening();
-    }
-  };
-
-  const handleDownloadChat = () => {
-    const chatLogForDb = {
-        sessionId: `chat_${Date.now()}`,
-        timestamp: new Date().toISOString(),
-        persona: persona || 'guest',
-        messages: messages.map(msg => ({
-            sender: msg.sender,
-            text: msg.text,
-            timestamp: new Date(msg.id).toISOString()
-        }))
-    };
-    console.log(`Saving to AI Halal Advisor Database (Simulation): ${JSON.stringify(chatLogForDb)}`);
-
-    const header = `AI Halal Advisor Consultation Log\nGenerated on: ${new Date().toLocaleString()}\n\n---\n\n`;
-    const formattedContent = messages.map(msg => {
-        const sender = msg.sender === 'hana' ? 'HANA' : 'User';
-        return `${sender}:\n${msg.text}\n`;
-    }).join('\n---\n');
-
-    const fullContent = header + formattedContent;
-    
-    const blob = new Blob([fullContent], { type: 'text/plain;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    const timestamp = new Date().toISOString().split('T')[0];
-    link.download = `HANA_Chat_Log_${timestamp}.txt`;
-    link.href = url;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(url);
-
-    setShowDownloadSuccess(true);
-    setTimeout(() => setShowDownloadSuccess(false), 3000);
-  };
   
-  const handlePayment = () => {
-      setShowPaymentWall(false);
-      setIsFreeTrial(false);
-      setTimeRemaining(3600); // 60 minutes
-  };
-  
-  const isSessionEnded = timeRemaining <= 0 && !isFreeTrial && !showPaymentWall;
-  const isChatDisabled = hanaState === HanaState.THINKING || hanaState === HanaState.ANSWERING || showPaymentWall || isSessionEnded || isListening;
   const isSendVisible = input.trim() !== '' && !isListening;
+  const isSessionEnded = timeRemaining <= 0 && !isFreeTrial && !showPaymentWall;
 
   return (
     <>
@@ -341,7 +159,10 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
             </div>
             <div className="flex items-center gap-1">
                 {messages.length > 1 && (
-                    <button onClick={handleDownloadChat} className="p-1.5 rounded-full hover:bg-white/20 transition-colors" title={t('hana.downloadChat')} aria-label={t('hana.downloadChat')}>
+                    <button onClick={() => handleDownloadChat(() => {
+                        setShowDownloadSuccess(true);
+                        setTimeout(() => setShowDownloadSuccess(false), 3000);
+                    })} className="p-1.5 rounded-full hover:bg-white/20 transition-colors" title={t('hana.downloadChat')} aria-label={t('hana.downloadChat')}>
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                         </svg>
@@ -404,14 +225,14 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
                         onKeyPress={handleKeyPress} 
                         placeholder={isListening ? t('hana.listeningPlaceholder') : t('hana.inputPlaceholder')} 
                         className="flex-1 w-full py-2 px-4 pr-10 bg-gray-100 dark:bg-gray-700 rounded-full focus:outline-none focus:ring-2 focus:ring-halal-green disabled:bg-gray-200 dark:disabled:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed" 
-                        disabled={isChatDisabled} 
+                        disabled={isInputDisabled} 
                     />
                     <div className="absolute inset-y-0 right-0 flex items-center pr-1.5">
                         <button
                             type="button"
                             onClick={isSendVisible ? () => handleSend(input) : handleMicClick}
                             aria-label={isListening ? t('hana.stopListeningLabel') : (isSendVisible ? t('hana.sendLabel') : t('hana.startListeningLabel'))}
-                            disabled={isChatDisabled || (isSendVisible && input.trim() === '')}
+                            disabled={isInteractionDisabled}
                             className={`w-9 h-9 rounded-full flex-shrink-0 flex items-center justify-center transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed ${
                                 isListening
                                     ? 'bg-red-500 text-white mic-pulse'

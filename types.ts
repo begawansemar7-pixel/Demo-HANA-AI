@@ -89,3 +89,9 @@ export interface ClientProfile {
   contactName: string;
   contactEmail: string;
 }
+
+export interface Message {
+  id: number;
+  text: string;
+  sender: 'user' | 'hana';
+}
