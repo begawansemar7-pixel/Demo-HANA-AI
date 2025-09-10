@@ -277,7 +277,6 @@ const HanaPage: React.FC = () => {
   ];
 
   const handleChipClick = (suggestion: string) => {
-    setInput(suggestion);
     handleSend(suggestion);
   };
   
@@ -298,7 +297,11 @@ const HanaPage: React.FC = () => {
               <h3 className="font-semibold text-gray-700 mb-3">{t('hana.suggestionsTitle')}</h3>
               <div className="flex flex-wrap justify-center gap-2">
                   {suggestionChips.map((chip, index) => (
-                      <button key={index} onClick={() => handleChipClick(chip)} className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-halal-green hover:text-white transition-colors">
+                      <button 
+                          key={index} 
+                          onClick={() => handleChipClick(chip)} 
+                          className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-halal-green hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                          disabled={isInteractionDisabled}>
                           {chip}
                       </button>
                   ))}
