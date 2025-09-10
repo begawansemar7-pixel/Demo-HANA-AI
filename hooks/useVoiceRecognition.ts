@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef, useCallback } from 'react';
 
 // Define the interface for the SpeechRecognition API to ensure type safety
@@ -19,10 +18,11 @@ const SpeechRecognition: ISpeechRecognition = (window as any).SpeechRecognition 
 
 interface UseVoiceRecognitionProps {
     onResult: (transcript: string) => void;
+    onSpeechEnd?: (finalTranscript: string) => void;
     language: string;
 }
 
-export const useVoiceRecognition = ({ onResult, language }: UseVoiceRecognitionProps) => {
+export const useVoiceRecognition = ({ onResult, onSpeechEnd, language }: UseVoiceRecognitionProps) => {
     const [isListening, setIsListening] = useState(false);
     const recognitionRef = useRef<ISpeechRecognition | null>(null);
     const isSupported = !!SpeechRecognition;
@@ -35,18 +35,8 @@ export const useVoiceRecognition = ({ onResult, language }: UseVoiceRecognitionP
             default: return 'en-US';
         }
     };
-    
-    const stopListening = useCallback(() => {
-        if (recognitionRef.current && isListening) {
-            try {
-                recognitionRef.current.stop();
-            } catch (error) {
-                console.error("Error stopping recognition:", error);
-            }
-            // The onend event will set isListening to false
-        }
-    }, [isListening]);
 
+    // This effect sets up and tears down the recognition object.
     useEffect(() => {
         if (!isSupported) {
             console.warn('Speech Recognition API is not supported in this browser.');
@@ -54,48 +44,64 @@ export const useVoiceRecognition = ({ onResult, language }: UseVoiceRecognitionP
         }
 
         const recognition = new SpeechRecognition();
-        recognition.continuous = false; // Stop after one phrase is detected
+        recognition.continuous = false;
         recognition.interimResults = true;
         recognition.lang = mapLanguage(language);
 
+        let finalTranscript = '';
+
         recognition.onresult = (event) => {
-            const transcript = Array.from(event.results)
-                .map(result => result[0])
-                .map(result => result.transcript)
+            const currentTranscript = Array.from(event.results)
+                .map(result => result[0].transcript)
                 .join('');
-            onResult(transcript);
+            
+            if (event.results[event.results.length - 1].isFinal) {
+                finalTranscript = currentTranscript;
+            }
+            onResult(currentTranscript);
         };
 
         recognition.onerror = (event) => {
             console.error('Speech recognition error:', event.error);
-            // Ensure listening stops on error
-             if (isListening) {
-                stopListening();
-             }
+            setIsListening(false);
         };
 
         recognition.onend = () => {
             setIsListening(false);
+            if (onSpeechEnd && finalTranscript) {
+                onSpeechEnd(finalTranscript);
+            }
         };
         
         recognitionRef.current = recognition;
         
-        // Cleanup function to stop recognition if the component unmounts
         return () => {
-            if (recognitionRef.current) {
-                recognitionRef.current.stop();
-            }
+            recognition.stop();
         };
+    }, [language, onResult, onSpeechEnd, isSupported]);
 
-    }, [language, onResult, isSupported, isListening, stopListening]);
-    
+
     const startListening = useCallback(() => {
         if (recognitionRef.current && !isListening) {
             try {
                 recognitionRef.current.start();
                 setIsListening(true);
             } catch (error) {
+                // Common error: starting recognition that has already started.
                 console.error("Error starting recognition:", error);
+                setIsListening(false);
+            }
+        }
+    }, [isListening]);
+    
+    const stopListening = useCallback(() => {
+        if (recognitionRef.current && isListening) {
+            try {
+                recognitionRef.current.stop();
+                // onend will set isListening to false
+            } catch (error) {
+                console.error("Error stopping recognition:", error);
+                setIsListening(false);
             }
         }
     }, [isListening]);

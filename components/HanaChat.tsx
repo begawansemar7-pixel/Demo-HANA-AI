@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import HanaAvatar, { HanaState } from './HanaAvatar';
 import { createHanaChat, sendMessageToHana } from '../services/geminiService';
 import { Chat } from '@google/genai';
@@ -71,15 +71,6 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
     personaIcon = React.cloneElement(personaDetails.icon, Object.assign({}, personaDetails.icon.props, { className: 'h-4 w-4' }));
   }
 
-  const { isListening, startListening, stopListening, isSupported: isMicSupported } = useVoiceRecognition({
-      onResult: (transcript) => {
-          const prefix = textBeforeListeningRef.current.trim();
-          const separator = prefix ? ' ' : '';
-          setInput(prefix + separator + transcript);
-      },
-      language: language
-  });
-  
   const { speak, cancel, isSupported: isTtsSupported } = useTextToSpeech({
     onStart: () => setHanaState(HanaState.ANSWERING),
     onEnd: () => {
@@ -87,6 +78,49 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
         setCurrentlySpeakingId(null);
     },
     language: language
+  });
+
+  const handleSend = useCallback(async (messageToSend: string) => {
+    if (messageToSend.trim() === '' || !chatRef.current) return;
+    
+    const userMessage: Message = { id: Date.now(), text: messageToSend, sender: 'user' };
+    setMessages(prev => [...prev, userMessage]);
+    setInput('');
+    setHanaState(HanaState.THINKING);
+
+    try {
+        const response = await sendMessageToHana(chatRef.current, messageToSend, language);
+        const hanaMessage: Message = { id: Date.now() + 1, text: response, sender: 'hana' };
+        setMessages(prev => [...prev, hanaMessage]);
+
+        if (isTtsSupported && isVoiceModeEnabled) {
+            speak(response);
+            setCurrentlySpeakingId(hanaMessage.id);
+        } else {
+            setHanaState(HanaState.IDLE);
+        }
+    } catch (error) {
+        const errorMessage: Message = { id: Date.now() + 1, text: t('hana.errorMessage'), sender: 'hana' };
+        setMessages(prev => [...prev, errorMessage]);
+        setHanaState(HanaState.IDLE);
+    }
+  }, [language, isTtsSupported, isVoiceModeEnabled, speak, t]);
+  
+  const { isListening, startListening, stopListening, isSupported: isMicSupported } = useVoiceRecognition({
+      onResult: (transcript) => {
+          const prefix = textBeforeListeningRef.current.trim();
+          const separator = prefix ? ' ' : '';
+          setInput(prefix + separator + transcript);
+      },
+      onSpeechEnd: (finalTranscript) => {
+          const prefix = textBeforeListeningRef.current.trim();
+          const separator = prefix ? ' ' : '';
+          const fullMessage = prefix + separator + finalTranscript;
+          if (fullMessage.trim()) {
+              handleSend(fullMessage);
+          }
+      },
+      language: language
   });
 
   // Effect to handle side-effects of toggling voice mode
@@ -208,37 +242,9 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
     }
   }, [isOpen]);
 
-
-  const handleSend = async () => {
-    if (input.trim() === '' || !chatRef.current) return;
-    
-    const userMessage: Message = { id: Date.now(), text: input, sender: 'user' };
-    setMessages(prev => [...prev, userMessage]);
-    const currentInput = input;
-    setInput('');
-    setHanaState(HanaState.THINKING);
-
-    try {
-        const response = await sendMessageToHana(chatRef.current, currentInput, language);
-        const hanaMessage: Message = { id: Date.now() + 1, text: response, sender: 'hana' };
-        setMessages(prev => [...prev, hanaMessage]);
-
-        if (isTtsSupported && isVoiceModeEnabled) {
-            speak(response);
-            setCurrentlySpeakingId(hanaMessage.id);
-        } else {
-            setHanaState(HanaState.IDLE);
-        }
-    } catch (error) {
-        const errorMessage: Message = { id: Date.now() + 1, text: t('hana.errorMessage'), sender: 'hana' };
-        setMessages(prev => [...prev, errorMessage]);
-        setHanaState(HanaState.IDLE);
-    }
-  };
-  
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
-      handleSend();
+      handleSend(input);
     }
   };
 
@@ -405,7 +411,7 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
                     ) : (
                         <button 
                             type="button"
-                            onClick={handleSend} 
+                            onClick={() => handleSend(input)} 
                             disabled={isChatDisabled || input.trim() === ''} 
                             className="w-9 h-9 bg-halal-green text-white rounded-full flex-shrink-0 flex items-center justify-center hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
                             aria-label={t('hana.sendLabel')}
