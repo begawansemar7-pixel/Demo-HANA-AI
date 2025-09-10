@@ -72,6 +72,10 @@
                 '0%': { backgroundColor: 'rgba(30, 113, 69, 0.3)' },
                 '100%': { backgroundColor: 'transparent' }
               },
+              'modal-overlay-fade-in': { from: { opacity: 0 }, to: { opacity: 1 } },
+              'modal-overlay-fade-out': { from: { opacity: 1 }, to: { opacity: 0 } },
+              'modal-content-enter': { from: { opacity: 0, transform: 'scale(0.95)' }, to: { opacity: 1, transform: 'scale(1)' } },
+              'modal-content-exit': { from: { opacity: 1, transform: 'scale(1)' }, to: { opacity: 0, transform: 'scale(0.95)' } },
             },
             animation: {
               breathing: 'breathing 4s ease-in-out infinite',
@@ -80,7 +84,11 @@
               'pulse-eye': 'pulse-eye 2.5s ease-in-out infinite',
               speaking: 'speaking 0.7s ease-in-out infinite',
               'scan-line': 'scan-line 3s ease-in-out infinite alternate',
-              'highlight-fade': 'highlight-fade-light 1.5s ease-out'
+              'highlight-fade': 'highlight-fade-light 1.5s ease-out',
+              'modal-overlay-enter': 'modal-overlay-fade-in 0.3s ease-out forwards',
+              'modal-overlay-exit': 'modal-overlay-fade-out 0.3s ease-out forwards',
+              'modal-content-enter': 'modal-content-enter 0.3s ease-out',
+              'modal-content-exit': 'modal-content-exit 0.3s ease-out forwards',
             }
           }
         }

@@ -6,6 +6,27 @@ import { useSearch } from '../contexts/SearchContext';
 import { useDebounce } from '../hooks/useDebounce';
 import { useAuth } from '../hooks/useAuth';
 
+const ANIMATION_DURATION = 300; // in milliseconds
+
+// A custom hook to delay unmounting of a component for exit animations
+const useAnimatedRender = (isOpen: boolean, duration: number = ANIMATION_DURATION) => {
+    const [shouldRender, setShouldRender] = useState(isOpen);
+
+    useEffect(() => {
+        let timeoutId: NodeJS.Timeout;
+        if (isOpen) {
+            setShouldRender(true);
+        } else if (shouldRender) {
+            // When closing, wait for animation to finish before unmounting
+            timeoutId = setTimeout(() => setShouldRender(false), duration);
+        }
+        return () => clearTimeout(timeoutId);
+    }, [isOpen, duration, shouldRender]);
+
+    return shouldRender;
+};
+
+
 interface Certificate {
   id: string;
   product: string;
@@ -96,17 +117,23 @@ const StatusBadge: React.FC<{
 };
 
 const CertificateDetailModal: React.FC<{
-  certificate: Certificate;
+  certificate: Certificate | null;
+  isOpen: boolean;
   onClose: () => void;
   t: (key: string) => string;
-}> = ({ certificate, onClose, t }) => {
+}> = ({ certificate, isOpen, onClose, t }) => {
+  if (!certificate) return null;
+
+  const overlayAnimation = isOpen ? 'animate-modal-overlay-enter' : 'animate-modal-overlay-exit';
+  const contentAnimation = isOpen ? 'animate-modal-content-enter' : 'animate-modal-content-exit';
+
   return (
     <div
-      className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[60] flex items-center justify-center p-4 animate-fadein"
+      className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-[60] flex items-center justify-center p-4 ${overlayAnimation}`}
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-2xl shadow-2xl w-full max-w-md"
+        className={`bg-white rounded-2xl shadow-2xl w-full max-w-md ${contentAnimation}`}
         onClick={(e) => e.stopPropagation()}
       >
         <div className="p-6 border-b flex justify-between items-center">
@@ -199,11 +226,12 @@ const AddCertificateModal: React.FC<{
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    if (!isOpen) return null;
+    const overlayAnimation = isOpen ? 'animate-modal-overlay-enter' : 'animate-modal-overlay-exit';
+    const contentAnimation = isOpen ? 'animate-modal-content-enter' : 'animate-modal-content-exit';
 
     return (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[60] flex items-center justify-center p-4 animate-fadein" onClick={onClose}>
-            <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md" onClick={e => e.stopPropagation()}>
+        <div className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-[60] flex items-center justify-center p-4 ${overlayAnimation}`} onClick={onClose}>
+            <div className={`bg-white rounded-2xl shadow-2xl w-full max-w-md ${contentAnimation}`} onClick={e => e.stopPropagation()}>
                 <form onSubmit={handleSubmit} noValidate>
                     <div className="p-6 border-b">
                         <h3 className="text-xl font-bold text-halal-green">{t('certCheck.modalTitle')}</h3>
@@ -288,7 +316,7 @@ const CertificationCheckPage: React.FC = () => {
     const [appliedFilters, setAppliedFilters] = useState({ term: '', start: '', end: '', status: '' });
     const [searchResults, setSearchResults] = useState<Certificate[] | null>(null);
     const [loading, setLoading] = useState(false);
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isAddModalOpen, setIsAddModalOpen] = useState(false);
     const [showSuccessBanner, setShowSuccessBanner] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [selectedCertificate, setSelectedCertificate] = useState<Certificate | null>(null);
@@ -296,6 +324,9 @@ const CertificationCheckPage: React.FC = () => {
     const isInitialLoad = useRef(true);
     const [showAdvancedFilters, setShowAdvancedFilters] = useState(false);
     
+    const shouldRenderDetailModal = useAnimatedRender(!!selectedCertificate);
+    const shouldRenderAddModal = useAnimatedRender(isAddModalOpen);
+
     const canManageCertificates = useMemo(() => {
         if (!persona) return false;
         return ['auditor', 'officer'].includes(persona);
@@ -480,7 +511,7 @@ const CertificationCheckPage: React.FC = () => {
             <p className="mt-2 text-gray-600">{t('certCheck.emptyStateSubtitle')}</p>
             {canManageCertificates && (
                 <button
-                    onClick={() => setIsModalOpen(true)}
+                    onClick={() => setIsAddModalOpen(true)}
                     className="mt-8 px-8 py-3 bg-halal-green text-white font-semibold rounded-full hover:bg-opacity-90 transition-colors shadow-lg hover:shadow-xl"
                 >
                     {t('certCheck.addFirstCertificate')}
@@ -681,7 +712,7 @@ const CertificationCheckPage: React.FC = () => {
 
                     <div className="text-center mb-8 flex flex-wrap justify-center items-center gap-4">
                         {canManageCertificates && (
-                            <button onClick={() => setIsModalOpen(true)} className="text-halal-green font-semibold hover:text-green-700 transition-colors">
+                            <button onClick={() => setIsAddModalOpen(true)} className="text-halal-green font-semibold hover:text-green-700 transition-colors">
                                 + {t('certCheck.addCertificate')}
                             </button>
                         )}
@@ -705,20 +736,23 @@ const CertificationCheckPage: React.FC = () => {
                 </>
             )}
             
-            {selectedCertificate && (
+            {shouldRenderDetailModal && (
                 <CertificateDetailModal
                     certificate={selectedCertificate}
+                    isOpen={!!selectedCertificate}
                     onClose={() => setSelectedCertificate(null)}
                     t={t}
                 />
             )}
 
-            <AddCertificateModal
-                isOpen={isModalOpen}
-                onClose={() => setIsModalOpen(false)}
-                onAdd={handleAddCertificate}
-                t={t}
-            />
+            {shouldRenderAddModal && (
+                <AddCertificateModal
+                    isOpen={isAddModalOpen}
+                    onClose={() => setIsAddModalOpen(false)}
+                    onAdd={handleAddCertificate}
+                    t={t}
+                />
+            )}
         </div>
     );
 };
