@@ -7,6 +7,7 @@ import { useVoiceRecognition } from '../hooks/useVoiceRecognition';
 import { useTextToSpeech } from '../hooks/useTextToSpeech';
 import { useAuth } from '../hooks/useAuth';
 import { PERSONAS } from '../constants';
+import ListeningModal from './ListeningModal';
 
 
 interface Message {
@@ -248,13 +249,9 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
     }
   };
 
-  const toggleListening = () => {
-    if (isListening) {
-      stopListening();
-    } else {
-      textBeforeListeningRef.current = input;
-      startListening();
-    }
+  const handleMicClick = () => {
+    textBeforeListeningRef.current = input;
+    startListening();
   };
 
   const handleDownloadChat = () => {
@@ -300,7 +297,8 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
   };
   
   const isSessionEnded = timeRemaining <= 0 && !isFreeTrial && !showPaymentWall;
-  const isChatDisabled = hanaState === HanaState.THINKING || hanaState === HanaState.ANSWERING || showPaymentWall || isSessionEnded;
+  const isChatDisabled = hanaState === HanaState.THINKING || hanaState === HanaState.ANSWERING || showPaymentWall || isSessionEnded || isListening;
+  const isMicVisible = input.trim() === '' && isMicSupported && isVoiceModeEnabled;
 
   return (
     <>
@@ -312,6 +310,8 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
         aria-expanded={isOpen}
         aria-label={t('hana.toggleChatLabel')}
       />
+      
+      <ListeningModal isOpen={isListening} onStop={stopListening} />
       
       {isOpen && (
         <div 
@@ -388,37 +388,35 @@ const HanaChat: React.FC<HanaChatProps> = ({ isOpen, onClose, onOpen }) => {
                     <p className="text-sm text-gray-700 dark:text-gray-300">{t('hana.sessionEndedMessage')}</p>
                 </div>
             ) : (
-                <div className="flex items-center space-x-2">
+                <div className="relative flex items-center">
                     <input 
                         type="text" 
                         value={input} 
                         onChange={e => setInput(e.target.value)} 
                         onKeyPress={handleKeyPress} 
-                        placeholder={isListening ? t('hana.listeningPlaceholder') : t('hana.inputPlaceholder')} 
-                        className="flex-1 w-full py-2 px-4 bg-gray-100 dark:bg-gray-700 rounded-full focus:outline-none focus:ring-2 focus:ring-halal-green disabled:bg-gray-200 dark:disabled:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed" 
+                        placeholder={t('hana.inputPlaceholder')} 
+                        className="flex-1 w-full py-2 px-4 pr-10 bg-gray-100 dark:bg-gray-700 rounded-full focus:outline-none focus:ring-2 focus:ring-halal-green disabled:bg-gray-200 dark:disabled:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed" 
                         disabled={isChatDisabled} 
                     />
-                    {input.trim() === '' && isMicSupported && isVoiceModeEnabled ? (
-                        <button 
+                    <div className="absolute inset-y-0 right-0 flex items-center pr-1.5">
+                        <button
                             type="button"
-                            onClick={toggleListening} 
-                            className={`w-9 h-9 rounded-full flex-shrink-0 flex items-center justify-center transition-colors duration-300 ${isListening ? 'bg-red-500 text-white animate-pulse' : 'bg-halal-green text-white hover:bg-opacity-90'} disabled:opacity-50 disabled:cursor-not-allowed`} 
-                            disabled={isChatDisabled}
-                            aria-label={isListening ? t('hana.stopListeningLabel') : t('hana.startListeningLabel')}
+                            onClick={isMicVisible ? handleMicClick : () => handleSend(input)}
+                            aria-label={isMicVisible ? t('hana.startListeningLabel') : t('hana.sendLabel')}
+                            disabled={isMicVisible ? isChatDisabled : (isChatDisabled || input.trim() === '')}
+                            className={`w-9 h-9 rounded-full flex-shrink-0 flex items-center justify-center transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed ${
+                                isMicVisible 
+                                ? (isListening ? 'bg-red-500 text-white' : 'bg-halal-green text-white hover:bg-opacity-90') 
+                                : 'bg-halal-green text-white hover:bg-opacity-90'
+                            }`}
                         >
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" /></svg>
+                            {isMicVisible ? (
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" /></svg>
+                            ) : (
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
+                            )}
                         </button>
-                    ) : (
-                        <button 
-                            type="button"
-                            onClick={() => handleSend(input)} 
-                            disabled={isChatDisabled || input.trim() === ''} 
-                            className="w-9 h-9 bg-halal-green text-white rounded-full flex-shrink-0 flex items-center justify-center hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
-                            aria-label={t('hana.sendLabel')}
-                        >
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
-                        </button>
-                    )}
+                    </div>
                 </div>
             )}
           </div>

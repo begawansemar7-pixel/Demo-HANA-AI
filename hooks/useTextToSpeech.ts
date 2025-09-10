@@ -70,6 +70,11 @@ export const useTextToSpeech = ({ onStart, onEnd, language }: UseTextToSpeechPro
         };
 
         utterance.onerror = (event: SpeechSynthesisErrorEvent) => {
+            // The 'interrupted' error is expected when we cancel speech to start a new one.
+            // We can safely ignore logging it as a critical error, as onend will handle cleanup.
+            if (event.error === 'interrupted') {
+                return;
+            }
             if (event.error === 'not-allowed') {
                 console.info('Speech synthesis playback failed: Autoplay was blocked by the browser. User interaction is required to start audio.');
             } else {

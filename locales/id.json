@@ -174,8 +174,9 @@
     "openChatLabel": "Buka Asisten AI HANA",
     "closeChatLabel": "Tutup percakapan",
     "startListeningLabel": "Mulai input suara",
-    "stopListeningLabel": "Hentikan input suara",
-    "sendLabel": "Kirim pesan"
+    "stopListeningLabel": "Hentikan Mendengarkan",
+    "sendLabel": "Kirim pesan",
+    "speakNow": "Mulai berbicara untuk berinteraksi dengan HANA"
   },
   "certCheck": {
     "title": "Cek Sertifikat Halal",
